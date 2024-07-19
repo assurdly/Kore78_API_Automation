@@ -2768,6 +2768,97 @@
 							"item": [
 								{
 									"name": "Get Accounts",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bfe876a9-b24a-47e6-888f-8327e89bb64c",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response time is within an acceptable range\", function () {",
+													"  pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the structure of the response schema\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data').to.be.an('object');",
+													"    pm.expect(responseData.data).to.have.property('id');",
+													"    pm.expect(responseData.data).to.have.property('walletGroupId');",
+													"    pm.expect(responseData.data).to.have.property('customerId');",
+													"    pm.expect(responseData.data).to.have.property('availableBalance');",
+													"    pm.expect(responseData.data).to.have.property('ledgerBalance');",
+													"    pm.expect(responseData.data).to.have.property('walletRestrictionId');",
+													"    pm.expect(responseData.data).to.have.property('walletClassificationId');",
+													"    pm.expect(responseData.data).to.have.property('currencyId');",
+													"    pm.expect(responseData.data).to.have.property('isInternal');",
+													"    pm.expect(responseData.data).to.have.property('isDefault');",
+													"    pm.expect(responseData.data).to.have.property('name');",
+													"    pm.expect(responseData.data).to.have.property('overdraft');",
+													"    pm.expect(responseData.data).to.have.property('virtualAccount').to.be.an('object');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('accountNumber');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('bankCode');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('bankName');",
+													"    pm.expect(responseData.data).to.have.property('mobNum');",
+													"    pm.expect(responseData.data).to.have.property('customerTypeId');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data object should contain required fields\", function () {",
+													"    const responseData = pm.response.json().data;",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.id).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.walletGroupId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.customerId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.availableBalance).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.ledgerBalance).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.walletClassificationId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.currencyId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.isInternal).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.isDefault).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.name).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.virtualAccount).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.virtualAccount.accountNumber).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.virtualAccount.bankCode).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.virtualAccount.bankName).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.mobNum).to.exist.and.to.be.a('string');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Virtual account object should be present with expected fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.virtualAccount).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.virtualAccount).to.have.property('accountNumber');",
+													"    pm.expect(responseData.virtualAccount).to.have.property('bankCode');",
+													"    pm.expect(responseData.virtualAccount).to.have.property('bankName');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "84a07f53-6ae4-44ee-8500-0a3083313288",
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"id": "c3763e2c-0bc0-4e77-b53b-2533daa4509c",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2784,11 +2875,255 @@
 												}
 											}
 										},
-										"url": "{{base_url}}/wallets/get/wallet/1506"
+										"url": "{{base_url}}/wallets/get/wallet/{{walletID}}"
 									},
 									"response": [
 										{
 											"id": "b09d319a-f606-46de-9815-1b57e707bda3",
+											"name": "Get Account",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/get/wallet/3445"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:44:06 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=nirtT83e5rsJl8SIm4NDYBWNWHNafPfXzw2J4mq8DnKwKZgOZURq1xl98R2Bv9JTW4ElEDjrOEWL64AABPw82ufUL8b3soV75qFukAIHLWs5RMHS8oL1QJhRYS45CF9swXxn05dhoA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a50286d594f2eb7-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "No ID - Get Accounts",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bfe876a9-b24a-47e6-888f-8327e89bb64c",
+												"exec": [
+													"pm.test(\"Response status code is 404\", function () {",
+													"    pm.response.to.have.status(404, \"Not Found\");",
+													"});",
+													"",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "84a07f53-6ae4-44ee-8500-0a3083313288",
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "7af44d3c-88ac-486c-af6f-479ac4a16fce",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/get/wallet/"
+									},
+									"response": [
+										{
+											"id": "f7d76de6-2235-4adb-ae33-c0613fb0e8e4",
+											"name": "Get Account",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/get/wallet/3445"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:44:06 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=nirtT83e5rsJl8SIm4NDYBWNWHNafPfXzw2J4mq8DnKwKZgOZURq1xl98R2Bv9JTW4ElEDjrOEWL64AABPw82ufUL8b3soV75qFukAIHLWs5RMHS8oL1QJhRYS45CF9swXxn05dhoA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a50286d594f2eb7-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "No ID - Get Accounts Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "bfe876a9-b24a-47e6-888f-8327e89bb64c",
+												"exec": [
+													"pm.test(\"Response status code is 404\", function () {",
+													"    pm.response.to.have.status(404, \"Not Found\");",
+													"});",
+													"",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "84a07f53-6ae4-44ee-8500-0a3083313288",
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "2acd3288-18af-4395-b3cb-dd39b62405e0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/get/wallet/"
+									},
+									"response": [
+										{
+											"id": "5f2ebaa5-99f6-4fad-9eb7-84fb451eee43",
 											"name": "Get Account",
 											"originalRequest": {
 												"method": "GET",
@@ -3949,7 +4284,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "c2f6d5f8-0706-45b4-89be-6728f18397a0",
+				"id": "44fda222-1027-4607-ae7d-9b79f2cc688d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3960,7 +4295,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e8f7a32e-2078-4a88-803b-eebde44eeaa4",
+				"id": "95005092-724d-4c43-bf5e-e79d20e6740b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3984,6 +4319,11 @@
 		{
 			"key": "auth-key",
 			"value": "SK-ppTqE853F4jnUE3MlscobTbWZPU23vurg6aiAAq8Xoq7pR0bVulCp4He1obsVe5ehag",
+			"type": "string"
+		},
+		{
+			"key": "walletID",
+			"value": "1506",
 			"type": "string"
 		}
 	]
