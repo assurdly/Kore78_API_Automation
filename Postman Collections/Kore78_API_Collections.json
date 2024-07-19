@@ -1,0 +1,3990 @@
+{
+	"info": {
+		"_postman_id": "be48e8bc-f7f7-4017-bbc3-abe76c951fab",
+		"name": "Kore 78",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Core APIS",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Vault",
+							"item": [
+								{
+									"name": "Get Funds",
+									"item": [
+										{
+											"name": "Get Vault Plans",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dc666419-fcd1-457d-ba4e-15a057c4a4b2",
+														"exec": [
+															"pm.test(\"Response status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"",
+															"",
+															"pm.test(\"Validate the response schema for the required fields - code, success, message, and data\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData).to.be.an('object');",
+															"    pm.expect(responseData.code).to.exist;",
+															"    pm.expect(responseData.success).to.exist;",
+															"    pm.expect(responseData.message).to.exist;",
+															"    pm.expect(responseData.data).to.exist;",
+															"});",
+															"",
+															"",
+															"pm.test(\"Each object in the 'data' array has non-empty currencyName, currencyShortName, and valid numerical values for tenor, bandValueLow, bandValueHigh, and interestRate\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
+															"",
+															"    responseData.data.forEach((obj) => {",
+															"        pm.expect(obj.currencyName).to.be.a('string').and.to.have.lengthOf.at.least(1, \"currencyName should not be empty\");",
+															"        pm.expect(obj.currencyShortName).to.be.a('string').and.to.have.lengthOf.at.least(1, \"currencyShortName should not be empty\");",
+															"        pm.expect(obj.tenor).to.be.a('number', \"tenor should be a number\");",
+															"        pm.expect(obj.bandValueLow).to.be.a('number', \"bandValueLow should be a number\");",
+															"        pm.expect(obj.bandValueHigh).to.be.a('number', \"bandValueHigh should be a number\");",
+															"        pm.expect(obj.interestRate).to.be.a('number', \"interestRate should be a number\");",
+															"    });",
+															"});",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "ff08e05c-ea49-4577-8e71-3d2c9590db0b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": "{{base_url}}/wallets/vault/plans"
+											},
+											"response": [
+												{
+													"id": "2a60e2c3-5534-48e9-b1fa-c81c6f4be925",
+													"name": "Get vault plan",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": "{{base_url}}/wallets/vault/plans"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:46:32 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=mt1m6qM72xd%2FV9Qbl6qruq7ikhiBdCR2xO5NPEPT9%2B5wuGo81elaxTy51nWvaoyB%2B4Td%2BDuj3HG0ahkPFaMSQZAUeCHeRmw9MRNXSN19bhY8yd%2Fi8SkYFx5UuqmOUpvSfg3z5mQzBg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a502bfdd82b0fcd-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": [\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 0,\n            \"bandValueHigh\": 1000000,\n            \"interestRate\": 5.83\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 1000001,\n            \"bandValueHigh\": 10000000,\n            \"interestRate\": 6.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 10000001,\n            \"bandValueHigh\": 50000000,\n            \"interestRate\": 6.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 50000001,\n            \"bandValueHigh\": 100000000,\n            \"interestRate\": 7.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 100000001,\n            \"bandValueHigh\": 500000000,\n            \"interestRate\": 8.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 500000001,\n            \"bandValueHigh\": 1000000000,\n            \"interestRate\": 8.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 1000000001,\n            \"bandValueHigh\": 2147483647,\n            \"interestRate\": 9.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 0,\n            \"bandValueHigh\": 1000000,\n            \"interestRate\": 5.83\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 1000001,\n            \"bandValueHigh\": 10000000,\n            \"interestRate\": 6.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 10000001,\n            \"bandValueHigh\": 50000000,\n            \"interestRate\": 7.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 50000001,\n            \"bandValueHigh\": 100000000,\n            \"interestRate\": 7.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 100000001,\n            \"bandValueHigh\": 500000000,\n            \"interestRate\": 8.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 500000001,\n            \"bandValueHigh\": 1000000000,\n            \"interestRate\": 9.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 1000000001,\n            \"bandValueHigh\": 2147483647,\n            \"interestRate\": 10.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 0,\n            \"bandValueHigh\": 1000000,\n            \"interestRate\": 5.83\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 1000001,\n            \"bandValueHigh\": 10000000,\n            \"interestRate\": 6.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 10000001,\n            \"bandValueHigh\": 50000000,\n            \"interestRate\": 7.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 50000001,\n            \"bandValueHigh\": 100000000,\n            \"interestRate\": 7.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 100000001,\n            \"bandValueHigh\": 500000000,\n            \"interestRate\": 8.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 500000001,\n            \"bandValueHigh\": 1000000000,\n            \"interestRate\": 9.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 1000000001,\n            \"bandValueHigh\": 2147483647,\n            \"interestRate\": 10.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 0,\n            \"bandValueHigh\": 1000000,\n            \"interestRate\": 5.83\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 1000001,\n            \"bandValueHigh\": 10000000,\n            \"interestRate\": 6.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 10000001,\n            \"bandValueHigh\": 50000000,\n            \"interestRate\": 7.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 50000001,\n            \"bandValueHigh\": 100000000,\n            \"interestRate\": 8.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 100000001,\n            \"bandValueHigh\": 500000000,\n            \"interestRate\": 8.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 500000001,\n            \"bandValueHigh\": 1000000000,\n            \"interestRate\": 9.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 1000000001,\n            \"bandValueHigh\": 2147483647,\n            \"interestRate\": 10.75\n        }\n    ]\n}"
+												}
+											]
+										}
+									],
+									"id": "ad5196fc-9fa6-4c95-b23a-6c4dc95169a0"
+								},
+								{
+									"name": "Create Vault",
+									"item": [
+										{
+											"name": "Create Vault",
+											"id": "b72342ec-93d6-48bd-9e60-f94f15c490f9",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "x-api-key",
+														"value": "SK-f8QbALOmoqSfFFC9EgMrj9GrTBidVjz5BE2erRfSFq9uvu1fCV7uT6Ej40SYeeZE16u",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"0000000802\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "72bba3f4-1f2f-422b-b451-8195c8b248a3",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with account to debit as number",
+											"id": "562aa04a-e1ee-47c3-9122-63cf945a8d37",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "59c54496-a153-4362-9d4c-9fa6bb2187be",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with account to debit as empty string",
+											"id": "c43d078f-c6a9-40db-a745-3c0ddd238847",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "619c2ae0-3e5b-467e-b826-10a1413ea6b2",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with amount as string",
+											"id": "ee19a33d-5629-4bb9-b588-520e11b2c2fc",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "530ce52b-1466-4d49-949e-085d2aabb51b",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with amount as alphanumeric value",
+											"id": "140dc7aa-e385-457c-8fe4-855ca1f832dd",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "42018bdb-29bc-4eb0-b1f6-389a6d1d1886",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with amount as empty field",
+											"id": "c15710e2-115d-4fb6-bf48-63491dc12dd0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "8127efa5-d55b-4840-9491-5a58a50a35b6",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with tenor as a string",
+											"id": "2f2168ce-53d1-4f6d-bc3a-eaf737e433a6",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "0fb71c66-e391-433b-b7e7-170c33b8e566",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with tenor as alphanumeric value",
+											"id": "158544f7-3490-4ba4-a50b-6a3494bc0dd6",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "2a29c23f-11f6-47b2-bbae-80b3ad33a7b9",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with tenor as empty field",
+											"id": "e87b1cb9-a100-4678-a100-385aa6c5ca2c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "74e3cc13-0f60-4d81-8f2d-e43d27b688aa",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										},
+										{
+											"name": "Create Vault with empty field",
+											"id": "50c32357-7f7a-4115-b664-7ffeff3171d8",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/add"
+											},
+											"response": [
+												{
+													"id": "277a3ef3-5e3c-4ae7-a046-c64fd88e28c8",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										}
+									],
+									"id": "a6e920ff-d4a8-436a-ba9a-e18317800e24"
+								},
+								{
+									"name": "Interest Accrured",
+									"item": [
+										{
+											"name": "Interest Accrued",
+											"id": "83dd18fd-1c70-4509-a44b-7216f4ed53ca",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/interests/accrued/account/0000035169"
+											},
+											"response": [
+												{
+													"id": "f6d49730-08cc-45d2-ab98-0e749c784997",
+													"name": "Get vault plan",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": "{{base_url}}/wallets/vault/plans"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:46:32 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=mt1m6qM72xd%2FV9Qbl6qruq7ikhiBdCR2xO5NPEPT9%2B5wuGo81elaxTy51nWvaoyB%2B4Td%2BDuj3HG0ahkPFaMSQZAUeCHeRmw9MRNXSN19bhY8yd%2Fi8SkYFx5UuqmOUpvSfg3z5mQzBg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a502bfdd82b0fcd-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": [\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 0,\n            \"bandValueHigh\": 1000000,\n            \"interestRate\": 5.83\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 1000001,\n            \"bandValueHigh\": 10000000,\n            \"interestRate\": 6.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 10000001,\n            \"bandValueHigh\": 50000000,\n            \"interestRate\": 6.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 50000001,\n            \"bandValueHigh\": 100000000,\n            \"interestRate\": 7.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 100000001,\n            \"bandValueHigh\": 500000000,\n            \"interestRate\": 8.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 500000001,\n            \"bandValueHigh\": 1000000000,\n            \"interestRate\": 8.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 30,\n            \"bandValueLow\": 1000000001,\n            \"bandValueHigh\": 2147483647,\n            \"interestRate\": 9.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 0,\n            \"bandValueHigh\": 1000000,\n            \"interestRate\": 5.83\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 1000001,\n            \"bandValueHigh\": 10000000,\n            \"interestRate\": 6.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 10000001,\n            \"bandValueHigh\": 50000000,\n            \"interestRate\": 7.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 50000001,\n            \"bandValueHigh\": 100000000,\n            \"interestRate\": 7.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 100000001,\n            \"bandValueHigh\": 500000000,\n            \"interestRate\": 8.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 500000001,\n            \"bandValueHigh\": 1000000000,\n            \"interestRate\": 9.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 60,\n            \"bandValueLow\": 1000000001,\n            \"bandValueHigh\": 2147483647,\n            \"interestRate\": 10.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 0,\n            \"bandValueHigh\": 1000000,\n            \"interestRate\": 5.83\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 1000001,\n            \"bandValueHigh\": 10000000,\n            \"interestRate\": 6.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 10000001,\n            \"bandValueHigh\": 50000000,\n            \"interestRate\": 7.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 50000001,\n            \"bandValueHigh\": 100000000,\n            \"interestRate\": 7.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 100000001,\n            \"bandValueHigh\": 500000000,\n            \"interestRate\": 8.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 500000001,\n            \"bandValueHigh\": 1000000000,\n            \"interestRate\": 9.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 90,\n            \"bandValueLow\": 1000000001,\n            \"bandValueHigh\": 2147483647,\n            \"interestRate\": 10.38\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 0,\n            \"bandValueHigh\": 1000000,\n            \"interestRate\": 5.83\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 1000001,\n            \"bandValueHigh\": 10000000,\n            \"interestRate\": 6.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 10000001,\n            \"bandValueHigh\": 50000000,\n            \"interestRate\": 7.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 50000001,\n            \"bandValueHigh\": 100000000,\n            \"interestRate\": 8.13\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 100000001,\n            \"bandValueHigh\": 500000000,\n            \"interestRate\": 8.88\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 500000001,\n            \"bandValueHigh\": 1000000000,\n            \"interestRate\": 9.63\n        },\n        {\n            \"currencyName\": \"Nigeria Naira\",\n            \"currencyShortName\": \"NGN\",\n            \"tenor\": 180,\n            \"bandValueLow\": 1000000001,\n            \"bandValueHigh\": 2147483647,\n            \"interestRate\": 10.75\n        }\n    ]\n}"
+												}
+											]
+										}
+									],
+									"id": "c0fc81ca-6e9b-44b1-82cf-ae106f40cc10"
+								},
+								{
+									"name": "Pre-Liquidate",
+									"item": [
+										{
+											"name": "Pre-Liquidate",
+											"id": "a630db2e-5c83-4129-b352-4da3639f2341",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/vault/0000035169/preliquidate"
+											},
+											"response": [
+												{
+													"id": "9f9a8eb1-090b-4166-87ff-1a49abaa990e",
+													"name": "Create Vault",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{base_url}}/wallets/vault/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 18 Jul 2024 05:59:28 GMT"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json; charset=utf-8"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														},
+														{
+															"key": "CF-Cache-Status",
+															"value": "DYNAMIC"
+														},
+														{
+															"key": "Report-To",
+															"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F3alqVooVi4STOn77vt8c6xdFiUdl9C5LytAP59yqb1BCj2o2E3TRnr6iRYUS4LWhPFVPW6Fa52Dovm5zdvkqdtWwckYewfHqrjyVIkNhpJigxUv9U4nPX7QcT1ZFnZxE57WXtrwEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "NEL",
+															"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+														},
+														{
+															"key": "Server",
+															"value": "cloudflare"
+														},
+														{
+															"key": "CF-RAY",
+															"value": "8a503eeeaa426a2e-LAX"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "br"
+														},
+														{
+															"key": "alt-svc",
+															"value": "h3=\":443\"; ma=86400"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"interestRate\": 5.83,\n        \"accountNumber\": \"0000035169\",\n        \"bookingReference\": \"0000035169\",\n        \"estimatedYield\": 2.4,\n        \"maturityDate\": \"2024-04-30T00:00:00\"\n    }\n}"
+												}
+											]
+										}
+									],
+									"id": "fd147f02-4a21-441e-a4e3-d0d0be59bcb7"
+								}
+							],
+							"id": "4ef43178-f53b-4509-a0a3-426440ed79df"
+						},
+						{
+							"name": "End of Day",
+							"item": [
+								{
+									"name": "Get Accounts Copy",
+									"id": "069ec022-7462-482d-bd07-b6cb5ce8f374",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/get/wallet/3446"
+									},
+									"response": [
+										{
+											"id": "f6ce500a-a2a9-47ab-8d5e-bffc02917aff",
+											"name": "Get Account",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/get/wallet/3445"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:44:06 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=nirtT83e5rsJl8SIm4NDYBWNWHNafPfXzw2J4mq8DnKwKZgOZURq1xl98R2Bv9JTW4ElEDjrOEWL64AABPw82ufUL8b3soV75qFukAIHLWs5RMHS8oL1QJhRYS45CF9swXxn05dhoA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a50286d594f2eb7-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": null\n    }\n}"
+										}
+									]
+								}
+							],
+							"id": "965fbe1c-6f82-454e-8da4-d8ad819ac293"
+						},
+						{
+							"name": "Create Account",
+							"item": [
+								{
+									"name": "Create Account",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "216f7aa3-6956-4e7d-a792-dbd23b474034",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Validate the response schema for the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data.id).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.walletGroupId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.customerId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.availableBalance).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.ledgerBalance).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.walletClassificationId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.currencyId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.isInternal).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.data.isDefault).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.data.name).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data.virtualAccount).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.mobNum).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data.customerTypeId).to.exist.and.to.be.a('number');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Account number in virtual account is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data.virtualAccount.accountNumber).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Account number should not be empty\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Bank code and bank name in virtual account are non-empty strings\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(typeof jsonData.data.virtualAccount.bankCode).to.eql('string').and.to.not.be.null;",
+													"    pm.expect(typeof jsonData.data.virtualAccount.bankName).to.eql('string').and.to.not.be.null;",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "7e1a7790-a163-4e2b-8657-30dee06848c3",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1506,\n    \"walletClassificationId\": 2, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "e07b64cb-c1f5-4830-98c9-4242d02aa004",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account invalid wallet group Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "69fb0755-fbab-40ef-8465-cfd7d8ac5fc6",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Validate the response schema for the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data.id).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.walletGroupId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.customerId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.availableBalance).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.ledgerBalance).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.walletClassificationId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.currencyId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.isInternal).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.data.isDefault).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.data.name).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data.virtualAccount).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.mobNum).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data.customerTypeId).to.exist.and.to.be.a('number');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Account number in virtual account is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data.virtualAccount.accountNumber).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Account number should not be empty\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Bank code and bank name in virtual account are non-empty strings\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(typeof jsonData.data.virtualAccount.bankCode).to.eql('string').and.to.not.be.null;",
+													"    pm.expect(typeof jsonData.data.virtualAccount.bankName).to.eql('string').and.to.not.be.null;",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "993c6b63-0abf-4cfd-b5e9-ce72be968305",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 90, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "e0eaa5d1-f492-4759-84b3-16a340f53a14",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with empty wallet group Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "d6b0fb3e-21c3-4a3a-a9d8-eecc8b0a3d6a",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Body contains message\", function () {",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\").and.to.not.be.empty;",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "30de4a30-0a62-47ba-bda5-b71eb956a785",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": \"\", //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "e983ba09-997d-4080-a499-35f70c547eb8",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with invalid customerId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "70f658c9-7e82-4dba-9c46-72db7bf38506",
+												"exec": [
+													"pm.test(\"Response status code is 400\", function () {",
+													"  pm.response.to.have.status(400);",
+													"});",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.be.null;",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "be5b577b-1517-4f51-b41a-81f2e673ad8f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 123289,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "4c1d15d8-cdad-4a67-be17-0d407c76aeac",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with empty customerId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "f568851a-690a-41f5-9c76-b304ab48fde3",
+												"exec": [
+													"pm.test(\"Response status code is 400\", function () {",
+													"  pm.response.to.have.status(400);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.be.null;",
+													"});",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "721b674a-435f-4876-91ee-34873df66ac6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": \"\",\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "32caa357-922f-4e3d-9e9f-aa8b6a451e8c",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with invalid wallet classification Id",
+									"id": "74deb9b2-17dc-46a7-aec0-fcd0782ced96",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "673884c6-8a8a-4c43-9cdc-e99047b330d6",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with empty wallet classification Id",
+									"id": "28a59211-e70a-45ee-9ee3-a06b412033d9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "75303e41-d3a6-49be-9f46-a34a23e88345",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with invalid currency Id",
+									"id": "f6649c0e-5314-46b5-97c5-2f019c384b5f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "5f280338-049d-4daa-a298-532c126b89d7",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with empty currency Id",
+									"id": "62276c24-57b1-4927-9ca9-93ad89adaef5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "15fb7fbd-cc87-4ae8-b8aa-cd5f3391afd3",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with name as number",
+									"id": "19ecceea-adbc-44a1-8edc-b276858f46d0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "8cb1108f-e256-4583-a2a5-a606b9da5d5a",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with name as compound name",
+									"id": "fee6b1f6-2919-4f58-9c94-e33603c877f9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "d61fa96a-c9ea-4429-a210-36cbaf2567f1",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with name as empty field",
+									"id": "21bbc16d-4c2a-4a2b-a563-f091d9968b8e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "654c905d-6fb6-4183-b184-14037d06fc2c",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account with empty field",
+									"id": "8d1b592f-5e69-4f83-a9b8-3af99c7d9eef",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/add"
+									},
+									"response": [
+										{
+											"id": "5a05a67c-93af-445a-8232-f97a9f5d25bf",
+											"name": "Create Account",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:42:08 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CwY8sBQTu1jTE3UPKidkoeiIPLuD331bm1kLPPIp%2BKxUGzPS3DPCnPF6RkAtFtG2%2FRbAjRm9hq0GaUy6OQBvZ2mrQqndnZUn%2F9TI1Ft8VyTZ0EnW1FHfPz4mbDshSip8ng4x49af6g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5025889ab72f4c-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": 1\n    }\n}"
+										}
+									]
+								}
+							],
+							"id": "9e09b1f5-30d2-4ee1-8fb2-d48e9b8b2fa0"
+						},
+						{
+							"name": "Get Account",
+							"item": [
+								{
+									"name": "Get Accounts",
+									"id": "c3763e2c-0bc0-4e77-b53b-2533daa4509c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/wallets/get/wallet/1506"
+									},
+									"response": [
+										{
+											"id": "b09d319a-f606-46de-9815-1b57e707bda3",
+											"name": "Get Account",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/wallets/get/wallet/3445"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:44:06 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=nirtT83e5rsJl8SIm4NDYBWNWHNafPfXzw2J4mq8DnKwKZgOZURq1xl98R2Bv9JTW4ElEDjrOEWL64AABPw82ufUL8b3soV75qFukAIHLWs5RMHS8oL1QJhRYS45CF9swXxn05dhoA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a50286d594f2eb7-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 3446,\n        \"walletGroupId\": 23,\n        \"customerId\": 1232,\n        \"availableBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"walletRestrictionId\": null,\n        \"walletClassificationId\": 1,\n        \"currencyId\": 1,\n        \"isInternal\": false,\n        \"isDefault\": false,\n        \"name\": \"Yoyo's Account\",\n        \"overdraft\": null,\n        \"virtualAccount\": {\n            \"accountNumber\": \"0000034461\",\n            \"bankCode\": \"101101\",\n            \"bankName\": \"78 Finance Company Limited\"\n        },\n        \"mobNum\": \"3446\",\n        \"customerTypeId\": null\n    }\n}"
+										}
+									]
+								}
+							],
+							"id": "abb821c9-76ce-47e2-a1b3-1d452c2a52ee"
+						}
+					],
+					"id": "1bd8cb6e-5c74-41a5-8fed-b08c711149e8"
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Add Customer",
+							"id": "a045a8c5-2e93-453d-9865-f79f755a4c97",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"customer\",\n    \"lastName\": \"Yoyo\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"Abule Aegba\",\n    \"mobileNumber\": \"234812344456\",\n    \"emailAddress\": \"customer.yoyo@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/customers/add"
+							},
+							"response": [
+								{
+									"id": "886b411c-b476-4965-8aad-844850765f23",
+									"name": "Add new customer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"customer\",\n    \"lastName\": \"Yoyo\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"Abule Aegba\",\n    \"mobileNumber\": \"234812344456\",\n    \"emailAddress\": \"customer.yoyo@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/customers/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:14:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=rSgzLO7PMBBrWtuajXENxsPPYP6vsIrRTVFqw%2B8HXAiMJGq3lzoco92M%2FmvOgGjc4ejhjFqsLFrZzP4e4XK4Ro7uLGx8YhcmJjLPoQ8dswOqO6XxwaXTm0J2GwTLkPQjI2NKcAcasQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a4ffcf728f614f8-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Customer",
+							"id": "731b5ba9-30b9-41b3-83be-903579c55447",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/customers/get/id/1502"
+							},
+							"response": [
+								{
+									"id": "b83737a7-95ff-43a9-9c16-e316eccfc6cc",
+									"name": "Get customer success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/customers/get/id/1232"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:14:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=uvNvvu4JYEmAKSgnGUrOJd5ry5fM9Ft3ll%2BWIkxpEQLgIus4Ie3LQ7AiEl14X%2BIzTE2VmAbuIo4uLTP0KMUSLQoJqo0YZM8qV%2FWuViRPC256IpIz3SiGQccX6sUbBqEQsmMPzU8ZPQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a4ffd816c3d14f8-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "f03faffb-ce5e-45bc-9591-a3c400b881e4",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2c190223-e7f6-4623-b9f1-71e5fa5f108b",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "20cafe54-3e4e-4070-8e42-b652dcf0cf8d",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Create Product",
+							"id": "c4bbd6ed-a59d-442d-ac94-c6f15f3fab12",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Account Transfer To Other Bank\",\n    \"description\": \"Send money to other banks\",\n    \"direction\": \"D\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/products/add"
+							},
+							"response": [
+								{
+									"id": "9932a8e4-c6cf-4071-b001-d7d5349d6097",
+									"name": "Add new customer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"customer\",\n    \"lastName\": \"Yoyo\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"Abule Aegba\",\n    \"mobileNumber\": \"234812344456\",\n    \"emailAddress\": \"customer.yoyo@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/customers/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:14:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=rSgzLO7PMBBrWtuajXENxsPPYP6vsIrRTVFqw%2B8HXAiMJGq3lzoco92M%2FmvOgGjc4ejhjFqsLFrZzP4e4XK4Ro7uLGx8YhcmJjLPoQ8dswOqO6XxwaXTm0J2GwTLkPQjI2NKcAcasQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a4ffcf728f614f8-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Product",
+							"id": "3efe87fe-27ec-49bd-9ac8-6926029ad57a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/products/get"
+							},
+							"response": [
+								{
+									"id": "0e2a3bb2-37c8-45ff-8d5a-15d486f28ebe",
+									"name": "Get customer success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/customers/get/id/1232"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:14:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=uvNvvu4JYEmAKSgnGUrOJd5ry5fM9Ft3ll%2BWIkxpEQLgIus4Ie3LQ7AiEl14X%2BIzTE2VmAbuIo4uLTP0KMUSLQoJqo0YZM8qV%2FWuViRPC256IpIz3SiGQccX6sUbBqEQsmMPzU8ZPQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a4ffd816c3d14f8-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "0507c43f-83d2-4bdd-ba39-7309a223d3b1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2c190223-e7f6-4623-b9f1-71e5fa5f108b",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "20cafe54-3e4e-4070-8e42-b652dcf0cf8d",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Chart of Account (Wallet Groups)",
+					"item": [
+						{
+							"name": "Create Account Type",
+							"id": "ec9f83d6-dfaf-40a1-8d6c-ceac93bf4e16",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Vault Account\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/walletgroups/add"
+							},
+							"response": [
+								{
+									"id": "46f5afee-59cf-4ea6-9c51-b0b87bd1f679",
+									"name": "Get Account Type",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"EUR Accounts\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:29:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lGABCZjlIpF4eF6TTsO%2FrOGibZrENO7X0JpPj9jRejkJmkm6C6mIPNjFbMtLveZPRbjcnyzONJ50c%2BGq336xbQSxT%2BJTvaD6gLG63PKRKWQdWzEutmVCE03BHITDRwBrpqueAYdIRg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a5013238c262a9d-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 23,\n        \"name\": \"EUR Accounts\",\n        \"walletGroupFeatureDto\": null\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Accounts (Wallet group))",
+							"id": "bda66e61-b1fb-48fd-b48c-afc63fbebfc0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/walletgroups/get"
+							},
+							"response": [
+								{
+									"id": "20d4a3a0-c06d-474f-b6d3-930fd5ec776b",
+									"name": "Get account",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:20:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=qf4hgtcqwRDIE%2FjzoQnmEdO6eWs%2FAZXdjrRA%2BX6V6FOtZkLnu90nNskLDLJfOFNLmVxE5Xo2sBhlSGfVkqVFBBwDO1CE5TD86BV2ffCGiQ3G5I4pgz8gxX9VefKXosIuGwdPAHDA%2BQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a5005fc8e4b0906-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 21,\n            \"name\": \"Dom Accounts\",\n            \"walletGroupFeatureDto\": []\n        },\n        {\n            \"id\": 22,\n            \"name\": \"GBP Accounts\",\n            \"walletGroupFeatureDto\": []\n        }\n    ]\n}"
+								},
+								{
+									"id": "0805a081-3bfe-4725-abc3-b8135796a81c",
+									"name": "Get Account",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:35:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=tdBRjDsG1TKm91hhTPgz0rO1pEi91uWFO9DuT7fXPt7eErp437apg6t5PffZCW2OEfVTcFWz2VNJHvdEg4o%2FOCRZuturehb2bVtjbOZYe7vjfRJCSl6cho1WdeWI6V4Yr582AHhk%2BA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a501bc798ec2f63-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 21,\n            \"name\": \"Dom Accounts\",\n            \"walletGroupFeatureDto\": []\n        },\n        {\n            \"id\": 22,\n            \"name\": \"GBP Accounts\",\n            \"walletGroupFeatureDto\": []\n        },\n        {\n            \"id\": 23,\n            \"name\": \"EUR Accounts\",\n            \"walletGroupFeatureDto\": [\n                {\n                    \"featureName\": \"Interests\",\n                    \"featurePropertyName\": \"Maximum Withdrawal\",\n                    \"featurePropertyValue\": \"4\"\n                },\n                {\n                    \"featureName\": \"Interests\",\n                    \"featurePropertyName\": \"Interest Rate\",\n                    \"featurePropertyValue\": \"5\"\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Account Type by Id",
+							"id": "2f6e662d-2820-45e8-827b-30542a0cc1ae",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/walletgroups/get/28"
+							},
+							"response": [
+								{
+									"id": "d02ae1b8-e247-4473-bd0e-119cec64715e",
+									"name": "Get account type",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get/21"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:31:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ZBBkjQFYVHEyVI5wfL25oT5%2FOsKE4%2FGjT0lOR6iDFTaBHLuG%2F6sSaGKx4IzkTMzlXCk9UyIFMXJbvwFlTcDKLiY%2FD788geHLmGs3AyDH8rYbJDDZSkMwt7mTDJ0s4vbu52eyQyVaPQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a5015e29b5014ea-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 21,\n        \"name\": \"Dom Accounts\",\n        \"walletGroupFeatureDto\": []\n    }\n}"
+								},
+								{
+									"id": "43aba21e-ce85-42d4-91e7-b9aec0659a6c",
+									"name": "Get account type",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get/22"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:37:51 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=k4xgq6JbietBXgkRU%2BeH7QsXPJROnJbEGoUd7z8DPIJBn%2F4LXW030QXkMjfGQgiiQY2u1I3%2FNmObPDbQ%2BLBnGL%2Febwa7SrbI9482wqsxEQjVeQpsrOp70uOY%2F9iHATn8ZZs3khwWwQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a501f47aa832f63-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 22,\n        \"name\": \"GBP Accounts\",\n        \"walletGroupFeatureDto\": [\n            {\n                \"featureName\": \"Interests\",\n                \"featurePropertyName\": \"Maximum Withdrawal\",\n                \"featurePropertyValue\": \"5\"\n            },\n            {\n                \"featureName\": \"Interests\",\n                \"featurePropertyName\": \"Interest Rate\",\n                \"featurePropertyValue\": \"6\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Account Features",
+							"id": "a4298425-26f8-4979-bbc1-8a80a117c520",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/walletgroups/walletfeatures/get"
+							},
+							"response": [
+								{
+									"id": "99aff168-c005-4892-b9f7-8ead52594024",
+									"name": "Get wallet features",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/walletfeatures/get"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:17:24 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=MdBDTrwBpld%2FFYlKqZgzmoW4z2Fpu%2FfaEBIk%2BVJX3iHfCKwk6AQPl9BO2BNPMDhQ08is3Z4fk%2FAVnk%2BxUCsVLbPiIyfPpPb9EXx0sdfJg5jT1fS983bZ5GheAiDpnjl0M6OL3N8XUQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a50014d7ad478dd-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Interests\",\n            \"description\": \"Interest yielding wallet\",\n            \"direction\": \"C\",\n            \"isPercentage\": true,\n            \"isEveryMonth\": true,\n            \"isEveryTransaction\": false,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Interest Rate\",\n                    \"dataType\": \"decimal\"\n                },\n                {\n                    \"name\": \"Maximum Withdrawal\",\n                    \"dataType\": \"int\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Stamp Duty\",\n            \"description\": \"stamp duty payments\",\n            \"direction\": \"D\",\n            \"isPercentage\": false,\n            \"isEveryMonth\": false,\n            \"isEveryTransaction\": true,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Amount\",\n                    \"dataType\": \"decimal\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Service Charge\",\n            \"description\": \"Monthly service charge\",\n            \"direction\": \"D\",\n            \"isPercentage\": true,\n            \"isEveryMonth\": true,\n            \"isEveryTransaction\": false,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Amount\",\n                    \"dataType\": \"decimal\"\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Balance Limit\",\n            \"description\": \"wallets with limit on balances\",\n            \"direction\": \"C\",\n            \"isPercentage\": false,\n            \"isEveryMonth\": false,\n            \"isEveryTransaction\": true,\n            \"hasMinimumAmount\": true,\n            \"hasMaximumAmount\": true,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Limit Amount\",\n                    \"dataType\": \"decimal\"\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Dormancy\",\n            \"description\": \"Accounts that will automatically go into PND due to inactivity for some time\",\n            \"direction\": \"D\",\n            \"isPercentage\": false,\n            \"isEveryMonth\": true,\n            \"isEveryTransaction\": false,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Number of Months\",\n                    \"dataType\": \"int\"\n                }\n            ]\n        },\n        {\n            \"id\": 51,\n            \"name\": \"Witholding Tax\",\n            \"description\": \"Witholding Tax\",\n            \"direction\": \"D\",\n            \"isPercentage\": true,\n            \"isEveryMonth\": false,\n            \"isEveryTransaction\": true,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"WHT Rate\",\n                    \"dataType\": \"decimal\"\n                }\n            ]\n        },\n        {\n            \"id\": 52,\n            \"name\": \"VaultCharge\",\n            \"description\": \"Penalty on Pre liquidation of Vault\",\n            \"direction\": \"D\",\n            \"isPercentage\": true,\n            \"isEveryMonth\": false,\n            \"isEveryTransaction\": true,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Threshold\",\n                    \"dataType\": \"int\"\n                },\n                {\n                    \"name\": \"Rate\",\n                    \"dataType\": \"int\"\n                }\n            ]\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Add account feature to account type",
+							"id": "e05adf52-4d9f-4dfc-8e1e-9eb66e1768f2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"groupId\": 28, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/walletgroups/feature/add"
+							},
+							"response": [
+								{
+									"id": "2b1cc955-594a-4944-b27f-34bb2787a7a8",
+									"name": "Add feature",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"groupId\": 22, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/feature/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:36:47 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CLpBfgwRkOnO4IG6DSIso5iuU%2BpRvjkw%2FaPLnR6zKa9anl9h0OX4Hoa8gDxj%2Fu71TaCSoZhAaVk5GNbMDVkKaraeXkUbj71cCz36enl5%2BcGmTHLuSAfEjejyJE9ZyoyM9WnVaCD2Jg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a501db4acda2f63-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Added Successfully\",\n    \"data\": 0\n}"
+								}
+							]
+						}
+					],
+					"id": "490f0de7-5f58-443b-a1be-2c05fcc1c9b0"
+				}
+			],
+			"id": "3577bb4e-e511-40d0-acf6-3ff9628cf91f",
+			"description": "To pass authorization for each of the request under this core api folder,\n\npass the x-api-key on the header of the request. The value is the organization auth key",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "37de82e3-e82f-4dc5-ac6c-75f47c096413",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							"const authkey = pm.collectionVariables.get(\"auth-key\");",
+							"pm.request.addHeader(\"x-api-key:\" + authkey);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3154accb-6116-4eeb-961f-3d98e3d44ccd",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "{{auth-key}}",
+			"key": "x-api-key"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c2f6d5f8-0706-45b4-89be-6728f18397a0",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e8f7a32e-2078-4a88-803b-eebde44eeaa4",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://wallet-dev.bank78.co/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "auth-key",
+			"value": "SK-tAsPts2rqBXKkL92V2cL8CC1jppzYDUFc2P96QCRLse4i2O2WwOocWAHI2hgPw2DwdW",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "auth-key",
+			"value": "SK-ppTqE853F4jnUE3MlscobTbWZPU23vurg6aiAAq8Xoq7pR0bVulCp4He1obsVe5ehag",
+			"type": "string"
+		}
+	]
+}
