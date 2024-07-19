@@ -3073,15 +3073,39 @@
 									]
 								},
 								{
-									"name": "No ID - Get Accounts Copy",
+									"name": "Non Exist ID - Get Accounts",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"id": "bfe876a9-b24a-47e6-888f-8327e89bb64c",
 												"exec": [
-													"pm.test(\"Response status code is 404\", function () {",
-													"    pm.response.to.have.status(404, \"Not Found\");",
+													"pm.test(\"Response status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"  pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    pm.expect(responseData.code).to.eql(\"404\");",
+													"    pm.expect(responseData.success).to.eql(false);",
+													"    pm.expect(responseData.message).to.contain(\"Wallet not found\");",
+													"    pm.expect(responseData.data).to.be.null;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the data object properties\", function () {",
+													"    const responseData = pm.response.json();",
+													"    pm.expect(responseData).to.include.all.keys(",
+													"        'code', ",
+													"        'success', ",
+													"        'message', ",
+													"        'data', ",
+													"    );",
 													"});",
 													"",
 													"",
@@ -3119,7 +3143,7 @@
 												}
 											}
 										},
-										"url": "{{base_url}}/wallets/get/wallet/"
+										"url": "{{base_url}}/wallets/get/wallet/23900"
 									},
 									"response": [
 										{
