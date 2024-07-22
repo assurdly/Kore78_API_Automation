@@ -3356,6 +3356,134 @@
 							]
 						},
 						{
+							"name": "Add Customer with invalid DOB format",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ce2e7d13-3dbe-48a4-8c56-6995b20bc247",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Validate the response schema for the required fields\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.data.id).to.exist;",
+											"    pm.expect(responseData.data.organizationId).to.exist;",
+											"    pm.expect(responseData.data.firstName).to.exist;",
+											"    pm.expect(responseData.data.lastName).to.exist;",
+											"    pm.expect(responseData.data.dob).to.exist;",
+											"    pm.expect(responseData.data.customerTypeId).to.exist;",
+											"    pm.expect(responseData.data.countryId).to.exist;",
+											"    pm.expect(responseData.data.city).to.exist;",
+											"    pm.expect(responseData.data.address).to.exist;",
+											"    pm.expect(responseData.data.mobileNumber).to.exist;",
+											"    pm.expect(responseData.data.emailAddress).to.exist;",
+											"    pm.expect(responseData.data.dateCreated).to.exist;",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "6b55caf7-8d13-4d19-86b8-0b631b511b42",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"{{$randomStreetAddress}}\",\n    \"mobileNumber\": \"234{{$randomPhoneNumber}}\",\n    \"emailAddress\": \"{{$randomEmail}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/customers/add"
+							},
+							"response": [
+								{
+									"id": "4e7ebec2-7bc5-4e59-b1a4-1e5128fcf588",
+									"name": "Add new customer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"customer\",\n    \"lastName\": \"Yoyo\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"Abule Aegba\",\n    \"mobileNumber\": \"234812344456\",\n    \"emailAddress\": \"customer.yoyo@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/customers/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:14:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=rSgzLO7PMBBrWtuajXENxsPPYP6vsIrRTVFqw%2B8HXAiMJGq3lzoco92M%2FmvOgGjc4ejhjFqsLFrZzP4e4XK4Ro7uLGx8YhcmJjLPoQ8dswOqO6XxwaXTm0J2GwTLkPQjI2NKcAcasQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a4ffcf728f614f8-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
+								}
+							]
+						},
+						{
 							"name": "Get Customer",
 							"id": "731b5ba9-30b9-41b3-83be-903579c55447",
 							"protocolProfileBehavior": {
