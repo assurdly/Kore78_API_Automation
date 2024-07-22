@@ -3229,6 +3229,41 @@
 					"item": [
 						{
 							"name": "Add Customer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ce2e7d13-3dbe-48a4-8c56-6995b20bc247",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Validate the response schema for the required fields\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.data.id).to.exist;",
+											"    pm.expect(responseData.data.organizationId).to.exist;",
+											"    pm.expect(responseData.data.firstName).to.exist;",
+											"    pm.expect(responseData.data.lastName).to.exist;",
+											"    pm.expect(responseData.data.dob).to.exist;",
+											"    pm.expect(responseData.data.customerTypeId).to.exist;",
+											"    pm.expect(responseData.data.countryId).to.exist;",
+											"    pm.expect(responseData.data.city).to.exist;",
+											"    pm.expect(responseData.data.address).to.exist;",
+											"    pm.expect(responseData.data.mobileNumber).to.exist;",
+											"    pm.expect(responseData.data.emailAddress).to.exist;",
+											"    pm.expect(responseData.data.dateCreated).to.exist;",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "a045a8c5-2e93-453d-9865-f79f755a4c97",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -3238,7 +3273,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"customer\",\n    \"lastName\": \"Yoyo\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"Abule Aegba\",\n    \"mobileNumber\": \"234812344456\",\n    \"emailAddress\": \"customer.yoyo@gmail.com\"\n}",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"{{$randomStreetAddress}}\",\n    \"mobileNumber\": \"234{{$randomPhoneNumber}}\",\n    \"emailAddress\": \"{{$randomEmail}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
