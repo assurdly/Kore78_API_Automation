@@ -1,0 +1,13 @@
+{
+    "firstName": "Raphaelle",
+    "lastName": "Bailey",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "09291 Hermiston Ramp",
+    "mobileNumber": "234569-990-1471",
+    "emailAddress": "Anibal_Koss@gmail.com"
+}

@@ -1,0 +1,13 @@
+{
+    "firstName": "Scotty",
+    "lastName": "Ritchie",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "03849 Mohr Shoals",
+    "mobileNumber": "234718-787-4205",
+    "emailAddress": "Rashawn.Collier2@hotmail.com"
+}
