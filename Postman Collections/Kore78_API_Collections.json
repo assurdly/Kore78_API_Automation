@@ -2519,6 +2519,28 @@
 								},
 								{
 									"name": "Create Account with name as number",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "3bb6c773-0af7-4ed6-919b-6522e10d5eec",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 400\", function () {",
+													"  pm.expect(pm.response.code).to.equal(400);",
+													"});",
+													"",
+													"pm.test(\"name is a string\", function (){",
+													"   pm.expect(typeof jsonData.data.name).to.eql(\"string\")",
+													"})",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "19ecceea-adbc-44a1-8edc-b276858f46d0",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2528,7 +2550,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": 123456 // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
