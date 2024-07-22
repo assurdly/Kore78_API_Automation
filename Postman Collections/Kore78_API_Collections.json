@@ -4278,6 +4278,52 @@
 						},
 						{
 							"name": "Get Account Type by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b45b8455-c583-455c-92e5-121704583197",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('code');",
+											"    pm.expect(responseData).to.have.property('success');",
+											"    pm.expect(responseData).to.have.property('message');",
+											"    pm.expect(responseData).to.have.property('data');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Data object properties - id, name, walletGroupFeatureDto exist\", function () {",
+											"  const responseData = pm.response.json();",
+											"",
+											"  pm.expect(responseData).to.be.an('object');",
+											"  pm.expect(responseData.data.id).to.exist;",
+											"  pm.expect(responseData.data.name).to.exist;",
+											"  pm.expect(responseData.data.walletGroupFeatureDto).to.exist;",
+											"});",
+											"",
+											"",
+											"pm.test(\"WalletGroupFeatureDto array is present and contains the expected number of elements\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.have.property('data');",
+											"    pm.expect(responseData.data).to.have.property('walletGroupFeatureDto').that.is.an('array');",
+											"    pm.expect(responseData.data.walletGroupFeatureDto).to.have.lengthOf.at.least(0);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "2f6e662d-2820-45e8-827b-30542a0cc1ae",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -4294,7 +4340,7 @@
 										}
 									}
 								},
-								"url": "{{base_url}}/walletgroups/get/28"
+								"url": "{{base_url}}/walletgroups/get/32"
 							},
 							"response": [
 								{
@@ -4369,6 +4415,215 @@
 								},
 								{
 									"id": "43aba21e-ce85-42d4-91e7-b9aec0659a6c",
+									"name": "Get account type",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get/22"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:37:51 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=k4xgq6JbietBXgkRU%2BeH7QsXPJROnJbEGoUd7z8DPIJBn%2F4LXW030QXkMjfGQgiiQY2u1I3%2FNmObPDbQ%2BLBnGL%2Febwa7SrbI9482wqsxEQjVeQpsrOp70uOY%2F9iHATn8ZZs3khwWwQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a501f47aa832f63-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 22,\n        \"name\": \"GBP Accounts\",\n        \"walletGroupFeatureDto\": [\n            {\n                \"featureName\": \"Interests\",\n                \"featurePropertyName\": \"Maximum Withdrawal\",\n                \"featurePropertyValue\": \"5\"\n            },\n            {\n                \"featureName\": \"Interests\",\n                \"featurePropertyName\": \"Interest Rate\",\n                \"featurePropertyValue\": \"6\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Account Type by Id with invalid id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b45b8455-c583-455c-92e5-121704583197",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('code');",
+											"    pm.expect(responseData).to.have.property('success');",
+											"    pm.expect(responseData).to.have.property('message');",
+											"    pm.expect(responseData).to.have.property('data');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Data object properties - id, name, walletGroupFeatureDto exist\", function () {",
+											"  const responseData = pm.response.json();",
+											"",
+											"  pm.expect(responseData).to.be.an('object');",
+											"  pm.expect(responseData.data.id).to.exist;",
+											"  pm.expect(responseData.data.name).to.exist;",
+											"  pm.expect(responseData.data.walletGroupFeatureDto).to.exist;",
+											"});",
+											"",
+											"",
+											"pm.test(\"WalletGroupFeatureDto array is present and contains the expected number of elements\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.have.property('data');",
+											"    pm.expect(responseData.data).to.have.property('walletGroupFeatureDto').that.is.an('array');",
+											"    pm.expect(responseData.data.walletGroupFeatureDto).to.have.lengthOf.at.least(0);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "ee4a6d08-dfb1-4a7c-900d-2e0a5bb47fdf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/walletgroups/get/32"
+							},
+							"response": [
+								{
+									"id": "4eb43110-4e98-4977-9483-a612bbb42062",
+									"name": "Get account type",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get/21"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:31:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ZBBkjQFYVHEyVI5wfL25oT5%2FOsKE4%2FGjT0lOR6iDFTaBHLuG%2F6sSaGKx4IzkTMzlXCk9UyIFMXJbvwFlTcDKLiY%2FD788geHLmGs3AyDH8rYbJDDZSkMwt7mTDJ0s4vbu52eyQyVaPQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a5015e29b5014ea-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 21,\n        \"name\": \"Dom Accounts\",\n        \"walletGroupFeatureDto\": []\n    }\n}"
+								},
+								{
+									"id": "6575129c-82cf-44b6-b39f-81907d85afc6",
 									"name": "Get account type",
 									"originalRequest": {
 										"method": "GET",
