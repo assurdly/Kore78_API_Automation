@@ -3707,8 +3707,8 @@
 									"script": {
 										"id": "2e85161e-31ce-4e88-97f0-8c8cf5cab09f",
 										"exec": [
-											"pm.test(\"Response status code is 400\", function () {",
-											"  pm.response.to.have.status(400);",
+											"pm.test(\"Response status code is 200\", function () {",
+											"  pm.response.to.have.status(200);",
 											"});",
 											"",
 											"",
@@ -3716,10 +3716,14 @@
 											"    const responseData = pm.response.json();",
 											"",
 											"    pm.expect(responseData).to.be.an('object');",
-											"    pm.expect(responseData).to.have.property('code');",
-											"    pm.expect(responseData).to.have.property('success');",
-											"    pm.expect(responseData).to.have.property('message');",
 											"    pm.expect(responseData).to.have.property('data');",
+											"    pm.expect(responseData.data).to.have.property('id');",
+											"    pm.expect(responseData.data).to.have.property('name');",
+											"    pm.expect(responseData.data).to.have.property('organizationId');",
+											"    pm.expect(responseData.data).to.have.property('description');",
+											"    pm.expect(responseData.data).to.have.property('direction');",
+											"    pm.expect(responseData.data).to.have.property('isActive');",
+											"    pm.expect(responseData.data).to.have.property('dateCreated');",
 											"});",
 											""
 										],
@@ -3737,7 +3741,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Interest Accrual\",\n    \"description\": \"Send money to Vault\",\n    \"direction\": \"D\"\n}",
+									"raw": "{\n    \"name\": \"Liquidation\",\n    \"description\": \"Send money to Vault\",\n    \"direction\": \"C\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3749,6 +3753,130 @@
 							"response": [
 								{
 									"id": "c6de8a8d-9abd-4d38-9315-6f49d39a3618",
+									"name": "Add new customer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"customer\",\n    \"lastName\": \"Yoyo\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"Abule Aegba\",\n    \"mobileNumber\": \"234812344456\",\n    \"emailAddress\": \"customer.yoyo@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/customers/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:14:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=rSgzLO7PMBBrWtuajXENxsPPYP6vsIrRTVFqw%2B8HXAiMJGq3lzoco92M%2FmvOgGjc4ejhjFqsLFrZzP4e4XK4Ro7uLGx8YhcmJjLPoQ8dswOqO6XxwaXTm0J2GwTLkPQjI2NKcAcasQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a4ffcf728f614f8-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Product with a duplicate product name with a different direction",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2e85161e-31ce-4e88-97f0-8c8cf5cab09f",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response has the required fields\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('data');",
+											"    pm.expect(responseData.data).to.have.property('id');",
+											"    pm.expect(responseData.data).to.have.property('name');",
+											"    pm.expect(responseData.data).to.have.property('organizationId');",
+											"    pm.expect(responseData.data).to.have.property('description');",
+											"    pm.expect(responseData.data).to.have.property('direction');",
+											"    pm.expect(responseData.data).to.have.property('isActive');",
+											"    pm.expect(responseData.data).to.have.property('dateCreated');",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b5a77d8a-080e-43a3-8910-827df3734ca0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Liquidation\",\n    \"description\": \"Send money to Vault\",\n    \"direction\": \"C\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/products/add"
+							},
+							"response": [
+								{
+									"id": "b7143a57-37de-4139-8be2-c456519dfaec",
 									"name": "Add new customer",
 									"originalRequest": {
 										"method": "POST",
