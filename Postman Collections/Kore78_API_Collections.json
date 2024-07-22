@@ -4024,43 +4024,23 @@
 									"script": {
 										"id": "ce2e7d13-3dbe-48a4-8c56-6995b20bc247",
 										"exec": [
-											"pm.test(\"Response status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Response status code is 400\", function () {",
+											"    pm.expect(pm.response.code).to.equal(400);",
 											"});",
 											"",
 											"",
-											"pm.test(\"Validate the response schema for the required fields\", function () {",
+											"pm.test(\"Response has the required fields\", function () {",
 											"    const responseData = pm.response.json();",
-											"    ",
-											"    pm.expect(responseData).to.be.an('object');",
-											"    pm.expect(responseData.data.id).to.exist;",
-											"    pm.expect(responseData.data.organizationId).to.exist;",
-											"    pm.expect(responseData.data.firstName).to.exist;",
-											"    pm.expect(responseData.data.lastName).to.exist;",
-											"    pm.expect(responseData.data.dob).to.exist;",
-											"    pm.expect(responseData.data.customerTypeId).to.exist;",
-											"    pm.expect(responseData.data.countryId).to.exist;",
-											"    pm.expect(responseData.data.city).to.exist;",
-											"    pm.expect(responseData.data.address).to.exist;",
-											"    pm.expect(responseData.data.mobileNumber).to.exist;",
-											"    pm.expect(responseData.data.emailAddress).to.exist;",
-											"    pm.expect(responseData.data.dateCreated).to.exist;",
+											"",
+											"    pm.expect(responseData).to.have.property('errors');",
+											"    pm.expect(responseData).to.have.property('type');",
+											"    pm.expect(responseData).to.have.property('title');",
+											"    pm.expect(responseData).to.have.property('status');",
+											"    pm.expect(responseData).to.have.property('traceId');",
 											"});",
 											"",
-											"",
-											"pm.test(\"Code is a non-empty string\", function () {",
-											"    const responseData = pm.response.json();",
-											"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
-											"});",
-											"",
-											"pm.test(\"Success is a boolean\", function () {",
-											"    const responseData = pm.response.json();",
-											"    pm.expect(responseData.success).to.be.a('boolean');",
-											"});",
-											"",
-											"pm.test(\"Message is a string\", function () {",
-											"    const responseData = pm.response.json();",
-											"    pm.expect(responseData.message).to.be.a('string');",
+											"pm.test(\"Validate the format of the Content-Type header is application/problem+json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/problem+json\");",
 											"});",
 											""
 										],
@@ -4078,7 +4058,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"middleName\": \"\",\n    \"dob\": \"12-01-2000\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"{{$randomStreetAddress}}\",\n    \"mobileNumber\": \"2343303383338\",\n    \"emailAddress\": \"test@.test.com.com\"\n}",
+									"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"middleName\": \"\",\n    \"dob\": \"\",\n    \"customerTypeId\": \"\",\n    \"alias\": \"\",\n    \"countryId\": \"\",\n    \"city\": \"\",\n    \"address\": \"\",\n    \"mobileNumber\": \"\",\n    \"emailAddress\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4162,6 +4142,40 @@
 						},
 						{
 							"name": "Get Customer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e6be36c1-9f04-401e-a5e9-23f1066c911b",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"pm.test(\"Validate the response schema for the required fields\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.data.id).to.exist.and.to.be.a('number');",
+											"    pm.expect(responseData.data.organizationId).to.exist.and.to.be.a('number');",
+											"    pm.expect(responseData.data.firstName).to.exist.and.to.be.a('string');",
+											"    pm.expect(responseData.data.lastName).to.exist.and.to.be.a('string');",
+											"    pm.expect(responseData.data.dob).to.exist.and.to.be.a('string');",
+											"    pm.expect(responseData.data.customerTypeId).to.exist.and.to.be.a('number');",
+											"    pm.expect(responseData.data.countryId).to.exist.and.to.be.a('number');",
+											"    pm.expect(responseData.data.city).to.exist.and.to.be.a('string');",
+											"    pm.expect(responseData.data.address).to.exist.and.to.be.a('string');",
+											"    pm.expect(responseData.data.mobileNumber).to.exist.and.to.be.a('string');",
+											"    pm.expect(responseData.data.emailAddress).to.exist.and.to.be.a('string');",
+											"    pm.expect(responseData.data.dateCreated).to.exist.and.to.be.a('string');",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "731b5ba9-30b9-41b3-83be-903579c55447",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -4178,7 +4192,7 @@
 										}
 									}
 								},
-								"url": "{{base_url}}/customers/get/id/1502"
+								"url": "{{base_url}}/customers/get/id/1585"
 							},
 							"response": [
 								{
