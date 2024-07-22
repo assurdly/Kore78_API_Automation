@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 90, 
-    "customerId": 1232,
-    "walletClassificationId": 1, 
-    "currencyId": 1, 
-    "name": "Marlene Simonis" 
-}

@@ -1,0 +1,13 @@
+{
+    "firstName": "Eliza",
+    "lastName": "Fritsch",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "90069 Wilkinson Valleys",
+    "mobileNumber": "234769-265-2465",
+    "emailAddress": "Jayde_Weber71@hotmail.com"
+}

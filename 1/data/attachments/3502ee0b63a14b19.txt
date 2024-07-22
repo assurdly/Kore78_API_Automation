@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Retrieved Successfully","data":{"id":1502,"organizationId":56,"firstName":"customer","lastName":"Yoyo","middleName":"","dob":"2000-12-01T00:00:00","customerTypeId":1,"alias":null,"countryId":1,"city":"Ibadan","address":"Abule Aegba","mobileNumber":"234812344456","emailAddress":"customer.yoyo@gmail.com","dateCreated":"2024-07-18T11:10:00"}}

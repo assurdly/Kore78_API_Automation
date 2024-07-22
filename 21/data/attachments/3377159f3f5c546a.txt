@@ -1,0 +1,13 @@
+{
+    "firstName": "Lilly",
+    "lastName": "Aufderhar",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "028 Douglas Glens",
+    "mobileNumber": "234488-548-1100",
+    "emailAddress": "Randall_Hoppe47@gmail.com"
+}

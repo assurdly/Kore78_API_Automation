@@ -1,0 +1,13 @@
+{
+    "firstName": "Bert",
+    "lastName": "Schultz",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "630 Carolina Via",
+    "mobileNumber": "2343303383339",
+    "emailAddress": "Ulices_Boyle@hotmail.com"
+}
