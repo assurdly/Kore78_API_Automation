@@ -1,0 +1,5 @@
+{
+    "name": "Interest Accrual",
+    "description": "Send money to Vault",
+    "direction": "D"
+}

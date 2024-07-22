@@ -1,0 +1,13 @@
+{
+    "firstName": "Angie",
+    "lastName": "Jones",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "59650 Brekke Hollow",
+    "mobileNumber": "2343303383339",
+    "emailAddress": "Baby.Labadie@hotmail.com"
+}
