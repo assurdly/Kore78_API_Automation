@@ -1,0 +1,13 @@
+{
+    "firstName": "Cora",
+    "lastName": "Toy",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "36165 Fred Forge",
+    "mobileNumber": "234279-674-0881",
+    "emailAddress": "Ellis_Rosenbaum31@gmail.com"
+}
