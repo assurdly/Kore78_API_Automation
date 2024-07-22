@@ -1,5 +1,0 @@
-{
-    "name": "Account Transfer To Other Bank",
-    "description": "Send money to other banks",
-    "direction": "D"
-}

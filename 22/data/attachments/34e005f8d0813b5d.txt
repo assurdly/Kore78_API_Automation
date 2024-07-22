@@ -1,0 +1,13 @@
+{
+    "firstName": "Elaina",
+    "lastName": "Bednar",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "871 Kendall Isle",
+    "mobileNumber": "2343303383338",
+    "emailAddress": "test@.test.com.com"
+}

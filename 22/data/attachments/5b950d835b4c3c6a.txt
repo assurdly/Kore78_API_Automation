@@ -1,0 +1,13 @@
+{
+    "firstName": "Kimberly",
+    "lastName": "Dach",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "533 Ryder Summit",
+    "mobileNumber": "234410-548-5069",
+    "emailAddress": "Ian24@gmail.com"
+}

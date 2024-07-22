@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":1617,"organizationId":23,"firstName":"Kimberly","lastName":"Dach","middleName":"","dob":"2000-12-01T00:00:00","customerTypeId":1,"alias":null,"countryId":1,"city":"Ibadan","address":"533 Ryder Summit","mobileNumber":"234410-548-5069","emailAddress":"Ian24@gmail.com","dateCreated":"2024-07-22T17:04:10"}}
