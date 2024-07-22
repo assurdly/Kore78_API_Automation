@@ -1,0 +1,6 @@
+{
+    "groupId": "", 
+    "featureId": "", 
+    "param1": "", 
+    "param2": "" 
+}
