@@ -2018,6 +2018,54 @@
 								},
 								{
 									"name": "Create Account with invalid wallet classification Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "5d228b5b-a795-4e1f-91ef-045624bb56b6",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"    pm.expect(responseData.data).to.have.property('id');",
+													"    pm.expect(responseData.data).to.have.property('walletGroupId');",
+													"    pm.expect(responseData.data).to.have.property('customerId');",
+													"    pm.expect(responseData.data).to.have.property('availableBalance');",
+													"    pm.expect(responseData.data).to.have.property('ledgerBalance');",
+													"    pm.expect(responseData.data).to.have.property('walletClassificationId');",
+													"    pm.expect(responseData.data).to.have.property('currencyId');",
+													"    pm.expect(responseData.data).to.have.property('isInternal');",
+													"    pm.expect(responseData.data).to.have.property('isDefault');",
+													"    pm.expect(responseData.data).to.have.property('name');",
+													"    pm.expect(responseData.data).to.have.property('virtualAccount');",
+													"    pm.expect(responseData.data).to.have.property('mobNum');",
+													"    pm.expect(responseData.data).to.have.property('customerTypeId');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Virtual account object contains required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data.virtualAccount).to.be.an('object');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('accountNumber').that.is.a('string');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('bankCode').that.is.a('string');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('bankName').that.is.a('string');",
+													"});",
+													"",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "74deb9b2-17dc-46a7-aec0-fcd0782ced96",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2111,6 +2159,34 @@
 								},
 								{
 									"name": "Create Account with empty wallet classification Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "eec9ea36-6583-4b14-95cc-c66429f863fe",
+												"exec": [
+													"pm.test(\"Response status code is 400\", function () {",
+													"  pm.expect(pm.response.code).to.equal(400);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.have.property('errors');",
+													"    pm.expect(responseData).to.have.property('type');",
+													"    pm.expect(responseData).to.have.property('title');",
+													"    pm.expect(responseData).to.have.property('status');",
+													"    pm.expect(responseData).to.have.property('traceId');",
+													"});",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "28a59211-e70a-45ee-9ee3-a06b412033d9",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2120,7 +2196,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": \"\", //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
