@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":138,"name":"Account Transfer To Other Bank","organizationId":23,"description":"Send money to other banks","direction":"D","isActive":true,"dateCreated":"2024-07-22T15:34:55"}}
