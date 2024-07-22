@@ -4071,6 +4071,38 @@
 						},
 						{
 							"name": "Get Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5a398fff-6de8-427c-bfff-0c0fc7ed10b2",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response has the required fields - id, name, organizationId, description, direction, isActive, dateCreated\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('data').that.is.an('array');",
+											"",
+											"    responseData.data.forEach(function(item) {",
+											"        pm.expect(item).to.have.property('id').that.is.a('number');",
+											"        pm.expect(item).to.have.property('name').that.is.a('string');",
+											"        pm.expect(item).to.have.property('organizationId').that.is.a('number');",
+											"        pm.expect(item).to.have.property('description').that.is.a('string');",
+											"        pm.expect(item).to.have.property('direction').that.is.a('string');",
+											"        pm.expect(item).to.have.property('isActive').that.is.a('boolean');",
+											"        pm.expect(item).to.have.property('dateCreated').that.is.a('string');",
+											"    });",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "3efe87fe-27ec-49bd-9ac8-6926029ad57a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
