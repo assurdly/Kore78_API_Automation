@@ -1,0 +1,13 @@
+{
+    "firstName": "Dominique",
+    "lastName": "Lind",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "42962 Erdman Pike",
+    "mobileNumber": "234619-960-2831",
+    "emailAddress": "Priscilla45@gmail.com"
+}

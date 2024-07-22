@@ -1,0 +1,13 @@
+{
+    "firstName": "Hildegard",
+    "lastName": "Hackett",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "8665 Hilpert Locks",
+    "mobileNumber": "234894-219-4053",
+    "emailAddress": "Abdiel_Ullrich@hotmail.com"
+}

@@ -1,0 +1,13 @@
+{
+    "firstName": "Marie",
+    "lastName": "Johnson",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "8685 Halvorson Fords",
+    "mobileNumber": "234617-391-8757",
+    "emailAddress": "Brandyn_Rowe@gmail.com"
+}
