@@ -1,0 +1,1 @@
+{"code":"-2500","success":false,"message":"A wallet group witht he name already exists","data":null}
