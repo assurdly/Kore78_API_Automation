@@ -1,0 +1,13 @@
+{
+    "firstName": "Kole",
+    "lastName": "Corkery",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "2964 Greenfelder Valley",
+    "mobileNumber": "234658-485-3334",
+    "emailAddress": "Colby24@gmail.com"
+}

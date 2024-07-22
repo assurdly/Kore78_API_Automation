@@ -1,0 +1,13 @@
+{
+    "firstName": "Jacynthe",
+    "lastName": "Lakin",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "19186 Eda Trace",
+    "mobileNumber": "234526-457-9297",
+    "emailAddress": "Gonzalo7@hotmail.com"
+}
