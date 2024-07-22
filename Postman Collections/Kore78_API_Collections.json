@@ -3942,8 +3942,8 @@
 										"exec": [
 											"const jsonData = pm.response.json();",
 											"",
-											"pm.test(\"Response status code is 400\", function () {",
-											"  pm.response.to.have.status(400);",
+											"pm.test(\"Response status code is 200\", function () {",
+											"  pm.response.to.have.status(200);",
 											"});",
 											"",
 											"",
@@ -3978,7 +3978,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Vault Account\"\n}",
+									"raw": "{\n    \"name\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4062,6 +4062,59 @@
 						},
 						{
 							"name": "Get Accounts (Wallet group))",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "be8ba319-9d40-4112-8f9d-f35aeda9454f",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Ensure the response has the required fields - code, success, message, and data\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('code');",
+											"    pm.expect(responseData).to.have.property('success');",
+											"    pm.expect(responseData).to.have.property('message');",
+											"    pm.expect(responseData).to.have.property('data');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Validate the data object is an array with at least one element\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.data).to.be.an('array').and.to.have.lengthOf.at.least(1);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Verify the structure of walletGroupFeatureDto array\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.data).to.be.an('array').and.to.have.lengthOf.at.least(1, \"Data array should not be empty\");",
+											"",
+											"    responseData.data.forEach(function(walletGroup) {",
+											"        pm.expect(walletGroup).to.have.property('id').that.is.a('number', \"Id should be a number\");",
+											"        pm.expect(walletGroup).to.have.property('name').that.is.a('string', \"Name should be a string\");",
+											"        ",
+											"        walletGroup.walletGroupFeatureDto.forEach(function(feature) {",
+											"            pm.expect(feature).to.have.property('featureName').that.is.a('string', \"FeatureName should be a string\");",
+											"            pm.expect(feature).to.have.property('featurePropertyName').that.is.a('string', \"FeaturePropertyName should be a string\");",
+											"            pm.expect(feature).to.have.property('featurePropertyValue').that.is.a('string', \"FeaturePropertyValue should be a string\");",
+											"        });",
+											"    });",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "bda66e61-b1fb-48fd-b48c-afc63fbebfc0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
