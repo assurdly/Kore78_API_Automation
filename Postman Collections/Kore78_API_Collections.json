@@ -2280,6 +2280,33 @@
 								},
 								{
 									"name": "Create Account with invalid currency Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "585e34db-345c-437d-945b-e4430619a2e6",
+												"exec": [
+													"pm.test(\"Response status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "f6649c0e-5314-46b5-97c5-2f019c384b5f",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2289,7 +2316,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 700, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2373,6 +2400,32 @@
 								},
 								{
 									"name": "Create Account with empty currency Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "5290053f-3258-4c53-8837-ff53073fba65",
+												"exec": [
+													"pm.test(\"Response status code is 400\", function () {",
+													"    pm.expect(pm.response.code).to.equal(400);",
+													"});",
+													"",
+													"pm.test(\"Verify the response includes fields such as type, title, status, and traceId\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.type).to.exist;",
+													"    pm.expect(responseData.title).to.exist;",
+													"    pm.expect(responseData.status).to.exist;",
+													"    pm.expect(responseData.traceId).to.exist;",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "62276c24-57b1-4927-9ca9-93ad89adaef5",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2382,7 +2435,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": \"\", // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
