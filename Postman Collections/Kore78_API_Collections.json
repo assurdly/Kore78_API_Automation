@@ -2027,7 +2027,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 5, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
