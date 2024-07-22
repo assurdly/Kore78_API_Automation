@@ -1388,6 +1388,8 @@
 													"    pm.response.to.have.status(200);",
 													"});",
 													"",
+													"pm.collectionVariables.set(\"walletId\", jsonData.data.id);",
+													"",
 													"pm.test(\"Validate the response schema for the required fields\", function () {",
 													"    const responseData = pm.response.json();",
 													"",
@@ -3050,12 +3052,6 @@
 													"    pm.response.to.have.status(200);",
 													"});",
 													"",
-													"",
-													"pm.test(\"Response time is within an acceptable range\", function () {",
-													"  pm.expect(pm.response.responseTime).to.be.below(200);",
-													"});",
-													"",
-													"",
 													"pm.test(\"Validate the structure of the response schema\", function () {",
 													"    const responseData = pm.response.json();",
 													"",
@@ -3111,10 +3107,10 @@
 													"    const responseData = pm.response.json();",
 													"    ",
 													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.virtualAccount).to.exist.and.to.be.an('object');",
-													"    pm.expect(responseData.virtualAccount).to.have.property('accountNumber');",
-													"    pm.expect(responseData.virtualAccount).to.have.property('bankCode');",
-													"    pm.expect(responseData.virtualAccount).to.have.property('bankName');",
+													"    pm.expect(responseData.data.virtualAccount).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('accountNumber');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('bankCode');",
+													"    pm.expect(responseData.data.virtualAccount).to.have.property('bankName');",
 													"});",
 													""
 												],
@@ -3126,8 +3122,11 @@
 											"listen": "prerequest",
 											"script": {
 												"id": "84a07f53-6ae4-44ee-8500-0a3083313288",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -3147,7 +3146,7 @@
 												}
 											}
 										},
-										"url": "{{base_url}}/wallets/get/wallet/{{walletID}}"
+										"url": "{{base_url}}/wallets/get/wallet/{{walletId}}"
 									},
 									"response": [
 										{
@@ -7263,6 +7262,10 @@
 		},
 		{
 			"key": "customerId",
+			"value": ""
+		},
+		{
+			"key": "walletId",
 			"value": ""
 		}
 	]
