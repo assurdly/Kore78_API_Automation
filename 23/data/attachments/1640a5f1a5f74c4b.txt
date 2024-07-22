@@ -1,0 +1,13 @@
+{
+    "firstName": "Kenny",
+    "lastName": "Kuphal",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "1444 Quitzon Estate",
+    "mobileNumber": "234710-837-8361",
+    "emailAddress": "Dandre_Rice92@gmail.com"
+}

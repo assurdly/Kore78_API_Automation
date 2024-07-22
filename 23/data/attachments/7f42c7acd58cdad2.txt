@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":1621,"organizationId":23,"firstName":"Nyasia","lastName":"Bauch","middleName":"","dob":"2000-12-01T00:00:00","customerTypeId":1,"alias":null,"countryId":1,"city":"Ibadan","address":"25192 Huel Pass","mobileNumber":"234737-215-6850","emailAddress":"Brain_Fay@hotmail.com","dateCreated":"2024-07-22T17:07:22"}}

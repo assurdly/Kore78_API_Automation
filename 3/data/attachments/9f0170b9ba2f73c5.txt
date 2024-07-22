@@ -1,1 +1,0 @@
-{"code":"-2003","success":false,"message":"The wallet and the group does not belong in the same organization","data":null}

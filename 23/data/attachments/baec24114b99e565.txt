@@ -1,0 +1,13 @@
+{
+    "firstName": "Nyasia",
+    "lastName": "Bauch",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "25192 Huel Pass",
+    "mobileNumber": "234737-215-6850",
+    "emailAddress": "Brain_Fay@hotmail.com"
+}

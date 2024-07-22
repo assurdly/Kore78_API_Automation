@@ -1,0 +1,13 @@
+{
+    "firstName": "Javon",
+    "lastName": "Brown",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "34508 Wolf Curve",
+    "mobileNumber": "234635-493-0368",
+    "emailAddress": "Morton.Conroy@gmail.com"
+}
