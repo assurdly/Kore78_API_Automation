@@ -2634,6 +2634,56 @@
 								},
 								{
 									"name": "Create Account with name as compound name",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "772d12c3-e6b1-49da-aa64-f840d5827ca9",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"    pm.expect(responseData.data).to.have.property('id');",
+													"    pm.expect(responseData.data).to.have.property('walletGroupId');",
+													"    pm.expect(responseData.data).to.have.property('customerId');",
+													"    pm.expect(responseData.data).to.have.property('availableBalance');",
+													"    pm.expect(responseData.data).to.have.property('ledgerBalance');",
+													"    pm.expect(responseData.data).to.have.property('walletClassificationId');",
+													"    pm.expect(responseData.data).to.have.property('currencyId');",
+													"    pm.expect(responseData.data).to.have.property('isInternal');",
+													"    pm.expect(responseData.data).to.have.property('isDefault');",
+													"    pm.expect(responseData.data).to.have.property('name');",
+													"    pm.expect(responseData.data).to.have.property('virtualAccount');",
+													"    pm.expect(responseData.data).to.have.property('mobNum');",
+													"    pm.expect(responseData.data).to.have.property('customerTypeId');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Id, walletGroupId, customerId, availableBalance, ledgerBalance, walletClassificationId, currencyId, and customerTypeId are non-negative integers\", function () {",
+													"    const responseData = pm.response.json().data;",
+													"",
+													"    pm.expect(responseData.id).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.walletGroupId).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.customerId).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.availableBalance).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.ledgerBalance).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.walletClassificationId).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.currencyId).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.customerTypeId).to.be.a('number').and.to.be.at.least(0);",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "fee6b1f6-2919-4f58-9c94-e33603c877f9",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2643,7 +2693,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Moses-George Test\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2727,6 +2777,56 @@
 								},
 								{
 									"name": "Create Account with name as empty field",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7597ea93-b02b-416d-bd0a-eeb05ecfd088",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"    pm.expect(responseData.data).to.have.property('id');",
+													"    pm.expect(responseData.data).to.have.property('walletGroupId');",
+													"    pm.expect(responseData.data).to.have.property('customerId');",
+													"    pm.expect(responseData.data).to.have.property('availableBalance');",
+													"    pm.expect(responseData.data).to.have.property('ledgerBalance');",
+													"    pm.expect(responseData.data).to.have.property('walletClassificationId');",
+													"    pm.expect(responseData.data).to.have.property('currencyId');",
+													"    pm.expect(responseData.data).to.have.property('isInternal');",
+													"    pm.expect(responseData.data).to.have.property('isDefault');",
+													"    pm.expect(responseData.data).to.have.property('name');",
+													"    pm.expect(responseData.data).to.have.property('virtualAccount');",
+													"    pm.expect(responseData.data).to.have.property('mobNum');",
+													"    pm.expect(responseData.data).to.have.property('customerTypeId');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Id, walletGroupId, customerId, availableBalance, ledgerBalance, walletClassificationId, currencyId, and customerTypeId are non-negative integers\", function () {",
+													"    const responseData = pm.response.json().data;",
+													"",
+													"    pm.expect(responseData.id).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.walletGroupId).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.customerId).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.availableBalance).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.ledgerBalance).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.walletClassificationId).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.currencyId).to.be.a('number').and.to.be.at.least(0);",
+													"    pm.expect(responseData.customerTypeId).to.be.a('number').and.to.be.at.least(0);",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "21bbc16d-4c2a-4a2b-a563-f091d9968b8e",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2736,7 +2836,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
