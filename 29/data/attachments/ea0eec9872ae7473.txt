@@ -1,0 +1,13 @@
+{
+    "firstName": "Aric",
+    "lastName": "Beatty",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "195 Christelle Valleys",
+    "mobileNumber": "234991-612-7124",
+    "emailAddress": "Gabriella.Cole82@hotmail.com"
+}

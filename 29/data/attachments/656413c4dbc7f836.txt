@@ -1,0 +1,13 @@
+{
+    "firstName": "Adolphus",
+    "lastName": "Brown",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "70829 Homenick Cliffs",
+    "mobileNumber": "2343303383339",
+    "emailAddress": "Consuelo_Conn89@hotmail.com"
+}
