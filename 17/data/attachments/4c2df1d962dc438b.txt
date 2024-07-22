@@ -1,0 +1,13 @@
+{
+    "firstName": "Jordy",
+    "lastName": "Jast",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "5131 Schuppe Island",
+    "mobileNumber": "234506-808-8134",
+    "emailAddress": "Elian.Lesch74@yahoo.com"
+}

@@ -1,0 +1,13 @@
+{
+    "firstName": "Mabelle",
+    "lastName": "Harris",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "3981 Jade Overpass",
+    "mobileNumber": "234305-554-6527",
+    "emailAddress": "Jaydon.Stroman@gmail.com"
+}

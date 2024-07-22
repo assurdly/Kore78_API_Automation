@@ -1,0 +1,13 @@
+{
+    "firstName": "Waylon",
+    "lastName": "Harvey",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "996 Kelly Ferry",
+    "mobileNumber": "234565-534-3364",
+    "emailAddress": "Mauricio.Schroeder60@hotmail.com"
+}
