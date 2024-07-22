@@ -1,0 +1,13 @@
+{
+    "firstName": "Magnolia",
+    "lastName": "Krajcik",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "7865 Antone Burg",
+    "mobileNumber": "234342-895-4316",
+    "emailAddress": "Saige.Beer33@yahoo.com"
+}
