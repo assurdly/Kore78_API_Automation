@@ -2920,6 +2920,27 @@
 								},
 								{
 									"name": "Create Account with empty field",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "6edafe51-52e9-4d50-b935-cbdcb9f38bf9",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"",
+													"pm.test(\"Body contains errors\", function (){",
+													"    pm.expect(typeof jsonData.errors).to.eql(\"object\").to.exist;",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "8d1b592f-5e69-4f83-a9b8-3af99c7d9eef",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2929,7 +2950,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1232,\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"Yoyo's Account\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": \"\", //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": \"\",\n    \"walletClassificationId\": \"\", //1 = customer account, 2 = internal account\n    \"currencyId\": \"\", // 1 = NGN\n    \"name\": \"\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
