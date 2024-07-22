@@ -3445,6 +3445,49 @@
 					"item": [
 						{
 							"name": "Create Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2e85161e-31ce-4e88-97f0-8c8cf5cab09f",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('code');",
+											"    pm.expect(responseData).to.have.property('success');",
+											"    pm.expect(responseData).to.have.property('message');",
+											"    pm.expect(responseData).to.have.property('data');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Validate the data object\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.data).to.be.an('object');",
+											"    ",
+											"    const data = responseData.data;",
+											"    pm.expect(data.id).to.exist.and.to.be.a('number');",
+											"    pm.expect(data.name).to.exist.and.to.be.a('string');",
+											"    pm.expect(data.organizationId).to.exist.and.to.be.a('number');",
+											"    pm.expect(data.description).to.exist.and.to.be.a('string');",
+											"    pm.expect(data.direction).to.exist.and.to.be.a('string');",
+											"    pm.expect(data.isActive).to.exist.and.to.be.a('boolean');",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "c4bbd6ed-a59d-442d-ac94-c6f15f3fab12",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -3454,7 +3497,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Account Transfer To Other Bank\",\n    \"description\": \"Send money to other banks\",\n    \"direction\": \"D\"\n}",
+									"raw": "{\n    \"name\": \"Interest Accrual\",\n    \"description\": \"Send money to Vault\",\n    \"direction\": \"D\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3466,6 +3509,142 @@
 							"response": [
 								{
 									"id": "9932a8e4-c6cf-4071-b001-d7d5349d6097",
+									"name": "Add new customer",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"customer\",\n    \"lastName\": \"Yoyo\",\n    \"middleName\": \"\",\n    \"dob\": \"2000-12-01\",\n    \"customerTypeId\": 1,\n    \"alias\": \"Customer Yoyo\",\n    \"countryId\": 1,\n    \"city\": \"Ibadan\",\n    \"address\": \"Abule Aegba\",\n    \"mobileNumber\": \"234812344456\",\n    \"emailAddress\": \"customer.yoyo@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/customers/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:14:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=rSgzLO7PMBBrWtuajXENxsPPYP6vsIrRTVFqw%2B8HXAiMJGq3lzoco92M%2FmvOgGjc4ejhjFqsLFrZzP4e4XK4Ro7uLGx8YhcmJjLPoQ8dswOqO6XxwaXTm0J2GwTLkPQjI2NKcAcasQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a4ffcf728f614f8-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Product with a duplicate product name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2e85161e-31ce-4e88-97f0-8c8cf5cab09f",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('code');",
+											"    pm.expect(responseData).to.have.property('success');",
+											"    pm.expect(responseData).to.have.property('message');",
+											"    pm.expect(responseData).to.have.property('data');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Validate the data object\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.data).to.be.an('object');",
+											"    ",
+											"    const data = responseData.data;",
+											"    pm.expect(data.id).to.exist.and.to.be.a('number');",
+											"    pm.expect(data.name).to.exist.and.to.be.a('string');",
+											"    pm.expect(data.organizationId).to.exist.and.to.be.a('number');",
+											"    pm.expect(data.description).to.exist.and.to.be.a('string');",
+											"    pm.expect(data.direction).to.exist.and.to.be.a('string');",
+											"    pm.expect(data.isActive).to.exist.and.to.be.a('boolean');",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "cfbcf51c-6a20-44c0-89bd-e79cefd2540d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Interest Accrual\",\n    \"description\": \"Send money to Vault\",\n    \"direction\": \"D\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/products/add"
+							},
+							"response": [
+								{
+									"id": "11517a7e-d072-4592-b5c4-959502a99903",
 									"name": "Add new customer",
 									"originalRequest": {
 										"method": "POST",
@@ -5235,32 +5414,41 @@
 									"script": {
 										"id": "461e356c-d812-429a-96f2-430405754835",
 										"exec": [
-											"const jsonData = pm.response.json();",
-											"",
 											"pm.test(\"Response status code is 400\", function () {",
 											"    pm.response.to.have.status(400);",
 											"});",
+											"",
 											"",
 											"pm.test(\"Response has the required fields\", function () {",
 											"    const responseData = pm.response.json();",
 											"    ",
 											"    pm.expect(responseData).to.be.an('object');",
-											"    pm.expect(responseData).to.have.property('code');",
-											"    pm.expect(responseData).to.have.property('success');",
-											"    pm.expect(responseData).to.have.property('message');",
-											"    pm.expect(responseData).to.have.property('data');",
+											"    pm.expect(responseData.errors).to.exist;",
+											"    pm.expect(responseData.type).to.exist;",
+											"    pm.expect(responseData.title).to.exist;",
+											"    pm.expect(responseData.status).to.exist;",
+											"    pm.expect(responseData.traceId).to.exist;",
 											"});",
 											"",
 											"",
-											"pm.test(\"Code is a non-empty string\", function () {",
+											"pm.test(\"Errors object contains groupId, request, and featureId\", function () {",
+											"  const responseData = pm.response.json();",
+											"  ",
+											"  pm.expect(responseData.errors).to.exist;",
+											"  pm.expect(responseData.errors).to.have.property('groupId');",
+											"  pm.expect(responseData.errors).to.have.property('request');",
+											"  pm.expect(responseData.errors).to.have.property('featureId');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Type, title, and traceId are non-empty strings\", function () {",
 											"    const responseData = pm.response.json();",
-											"",
-											"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+											"    ",
+											"    pm.expect(responseData.type).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Type should be a non-empty string\");",
+											"    pm.expect(responseData.title).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Title should be a non-empty string\");",
+											"    pm.expect(responseData.traceId).to.be.a('string').and.to.have.lengthOf.at.least(1, \"TraceId should be a non-empty string\");",
 											"});",
-											"",
-											"pm.test(\"Body contains message\", function () {",
-											"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The wallet group  you have specified does not exist\");",
-											"})"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -5276,7 +5464,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 32, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+									"raw": "{\n    \"groupId\": \"\", // Account type (EUR Account)\n    \"featureId\": \"\", // feature (Interests)\n    \"param1\": \"\", // Interest rate\n    \"param2\": \"\" //  maximum withdrawal\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
