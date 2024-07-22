@@ -1438,7 +1438,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 23, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": 1506,\n    \"walletClassificationId\": 2, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 2, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3235,10 +3235,13 @@
 									"script": {
 										"id": "ce2e7d13-3dbe-48a4-8c56-6995b20bc247",
 										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
 											"pm.test(\"Response status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
 											"});",
 											"",
+											"pm.collectionVariables.set(\"customerId\", jsonData.data.id);",
 											"",
 											"pm.test(\"Validate the response schema for the required fields\", function () {",
 											"    const responseData = pm.response.json();",
@@ -6985,6 +6988,10 @@
 			"key": "walletID",
 			"value": "1506",
 			"type": "string"
+		},
+		{
+			"key": "customerId",
+			"value": ""
 		}
 	]
 }
