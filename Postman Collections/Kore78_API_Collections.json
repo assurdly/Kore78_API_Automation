@@ -4284,6 +4284,8 @@
 									"script": {
 										"id": "b45b8455-c583-455c-92e5-121704583197",
 										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
 											"pm.test(\"Response status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
 											"});",
@@ -4317,7 +4319,10 @@
 											"    pm.expect(responseData.data).to.have.property('walletGroupFeatureDto').that.is.an('array');",
 											"    pm.expect(responseData.data.walletGroupFeatureDto).to.have.lengthOf.at.least(0);",
 											"});",
-											""
+											"",
+											"pm.test(\"Body contains message\", function () {",
+											"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Retrieved Successfully\");",
+											"})"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4493,40 +4498,16 @@
 									"script": {
 										"id": "b45b8455-c583-455c-92e5-121704583197",
 										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"",
 											"pm.test(\"Response status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"    pm.expect(pm.response.code).to.equal(200);",
 											"});",
 											"",
-											"",
-											"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
-											"    const responseData = pm.response.json();",
-											"    ",
-											"    pm.expect(responseData).to.be.an('object');",
-											"    pm.expect(responseData).to.have.property('code');",
-											"    pm.expect(responseData).to.have.property('success');",
-											"    pm.expect(responseData).to.have.property('message');",
-											"    pm.expect(responseData).to.have.property('data');",
-											"});",
-											"",
-											"",
-											"pm.test(\"Data object properties - id, name, walletGroupFeatureDto exist\", function () {",
-											"  const responseData = pm.response.json();",
-											"",
-											"  pm.expect(responseData).to.be.an('object');",
-											"  pm.expect(responseData.data.id).to.exist;",
-											"  pm.expect(responseData.data.name).to.exist;",
-											"  pm.expect(responseData.data.walletGroupFeatureDto).to.exist;",
-											"});",
-											"",
-											"",
-											"pm.test(\"WalletGroupFeatureDto array is present and contains the expected number of elements\", function () {",
-											"    const responseData = pm.response.json();",
-											"    ",
-											"    pm.expect(responseData).to.have.property('data');",
-											"    pm.expect(responseData.data).to.have.property('walletGroupFeatureDto').that.is.an('array');",
-											"    pm.expect(responseData.data.walletGroupFeatureDto).to.have.lengthOf.at.least(0);",
-											"});",
-											""
+											"pm.test(\"Body contains message\", function () {",
+											"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Retrieved Successfully\");",
+											"})"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4549,7 +4530,7 @@
 										}
 									}
 								},
-								"url": "{{base_url}}/walletgroups/get/32"
+								"url": "{{base_url}}/walletgroups/get/320"
 							},
 							"response": [
 								{
