@@ -1,0 +1,13 @@
+{
+    "firstName": "Carolyn",
+    "lastName": "Friesen",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "9587 Lafayette Center",
+    "mobileNumber": "234353-420-8009",
+    "emailAddress": "Niko_Rempel80@yahoo.com"
+}

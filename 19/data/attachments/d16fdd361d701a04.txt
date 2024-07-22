@@ -1,0 +1,13 @@
+{
+    "firstName": "Elva",
+    "lastName": "Romaguera",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "46749 Nienow Street",
+    "mobileNumber": "234207-272-7870",
+    "emailAddress": "Connie26@gmail.com"
+}

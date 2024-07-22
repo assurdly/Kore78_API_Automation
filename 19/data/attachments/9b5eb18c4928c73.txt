@@ -1,0 +1,13 @@
+{
+    "firstName": "Eusebio",
+    "lastName": "Schimmel",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "623 Mosciski Key",
+    "mobileNumber": "234964-641-8998",
+    "emailAddress": "Shayne15@yahoo.com"
+}
