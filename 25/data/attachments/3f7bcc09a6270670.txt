@@ -1,0 +1,13 @@
+{
+    "firstName": "Boyd",
+    "lastName": "Green",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "1995 Theron Unions",
+    "mobileNumber": "234867-904-8336",
+    "emailAddress": "Keeley_Mann@hotmail.com"
+}

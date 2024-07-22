@@ -1,0 +1,13 @@
+{
+    "firstName": "Arvilla",
+    "lastName": "Bogan",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "1668 Mitchell Plains",
+    "mobileNumber": "234492-564-2032",
+    "emailAddress": "Kaela_DuBuque@gmail.com"
+}

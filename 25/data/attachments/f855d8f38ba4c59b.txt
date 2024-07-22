@@ -1,0 +1,13 @@
+{
+    "firstName": "Ivory",
+    "lastName": "Wolf",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "72050 Kiarra Pines",
+    "mobileNumber": "2343303383339",
+    "emailAddress": "Laura25@gmail.com"
+}

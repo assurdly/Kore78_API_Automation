@@ -1,0 +1,13 @@
+{
+    "firstName": "Linda",
+    "lastName": "Parker",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "893 Bo Divide",
+    "mobileNumber": "2343303383338",
+    "emailAddress": "test@.test.com.com"
+}

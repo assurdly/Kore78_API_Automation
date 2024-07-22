@@ -1,0 +1,13 @@
+{
+    "firstName": "",
+    "lastName": "",
+    "middleName": "",
+    "dob": "",
+    "customerTypeId": "",
+    "alias": "",
+    "countryId": "",
+    "city": "",
+    "address": "",
+    "mobileNumber": "",
+    "emailAddress": ""
+}
