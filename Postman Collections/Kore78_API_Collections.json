@@ -5097,7 +5097,7 @@
 							]
 						},
 						{
-							"name": "Add account feature to account type with invalid groupId Copy",
+							"name": "Add account feature to account type with invalid featureId",
 							"event": [
 								{
 									"listen": "test",
@@ -5145,7 +5145,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"groupId\": 320, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+									"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 32, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5157,6 +5157,137 @@
 							"response": [
 								{
 									"id": "56365e7b-277e-4471-a4b5-7dc1a057f8f7",
+									"name": "Add feature",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"groupId\": 22, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/feature/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:36:47 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CLpBfgwRkOnO4IG6DSIso5iuU%2BpRvjkw%2FaPLnR6zKa9anl9h0OX4Hoa8gDxj%2Fu71TaCSoZhAaVk5GNbMDVkKaraeXkUbj71cCz36enl5%2BcGmTHLuSAfEjejyJE9ZyoyM9WnVaCD2Jg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a501db4acda2f63-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Added Successfully\",\n    \"data\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "Add account feature to account type with empty fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "461e356c-d812-429a-96f2-430405754835",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Response status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Response has the required fields\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('code');",
+											"    pm.expect(responseData).to.have.property('success');",
+											"    pm.expect(responseData).to.have.property('message');",
+											"    pm.expect(responseData).to.have.property('data');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Code is a non-empty string\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+											"});",
+											"",
+											"pm.test(\"Body contains message\", function () {",
+											"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The wallet group  you have specified does not exist\");",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "fc37d571-8707-4121-9b72-5102c8d49a5a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 32, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/walletgroups/feature/add"
+							},
+							"response": [
+								{
+									"id": "106562c7-aa28-4afd-acef-2c94e8fdd0fc",
 									"name": "Add feature",
 									"originalRequest": {
 										"method": "POST",
