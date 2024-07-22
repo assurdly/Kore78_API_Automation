@@ -4266,6 +4266,120 @@
 									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Get Customer with invalid id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e6be36c1-9f04-401e-a5e9-23f1066c911b",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Body contains message\", function (){",
+											"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Retrieved Successfully\")",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "9c4d315f-df8b-4a24-9e81-2f13d3c3af22",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/customers/get/id/15858"
+							},
+							"response": [
+								{
+									"id": "b56c2c87-2689-4607-8820-65859745fc32",
+									"name": "Get customer success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/customers/get/id/1232"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:14:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=uvNvvu4JYEmAKSgnGUrOJd5ry5fM9Ft3ll%2BWIkxpEQLgIus4Ie3LQ7AiEl14X%2BIzTE2VmAbuIo4uLTP0KMUSLQoJqo0YZM8qV%2FWuViRPC256IpIz3SiGQccX6sUbBqEQsmMPzU8ZPQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a4ffd816c3d14f8-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 1232,\n        \"organizationId\": 81,\n        \"firstName\": \"customer\",\n        \"lastName\": \"Yoyo\",\n        \"middleName\": \"\",\n        \"dob\": \"2000-12-01T00:00:00\",\n        \"customerTypeId\": 1,\n        \"alias\": null,\n        \"countryId\": 1,\n        \"city\": \"Ibadan\",\n        \"address\": \"Abule Aegba\",\n        \"mobileNumber\": \"234812344456\",\n        \"emailAddress\": \"customer.yoyo@gmail.com\",\n        \"dateCreated\": \"2024-07-18T05:14:26\"\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "f03faffb-ce5e-45bc-9591-a3c400b881e4",
