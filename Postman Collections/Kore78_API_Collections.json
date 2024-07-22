@@ -3805,7 +3805,7 @@
 							]
 						},
 						{
-							"name": "Create Account Type with duplicate account type",
+							"name": "Create Account Type with duplicate name",
 							"event": [
 								{
 									"listen": "test",
@@ -3814,8 +3814,8 @@
 										"exec": [
 											"const jsonData = pm.response.json();",
 											"",
-											"pm.test(\"Response status code is 200\", function () {",
-											"  pm.response.to.have.status(200);",
+											"pm.test(\"Response status code is 400\", function () {",
+											"  pm.response.to.have.status(400);",
 											"});",
 											"",
 											"",
@@ -3826,24 +3826,7 @@
 											"    pm.expect(responseData.code).to.exist;",
 											"    pm.expect(responseData.success).to.exist;",
 											"    pm.expect(responseData.message).to.exist;",
-											"    pm.expect(responseData.data).to.exist;",
 											"});",
-											"",
-											"",
-											"pm.test(\"Validate the data object properties\", function () {",
-											"  const responseData = pm.response.json();",
-											"  ",
-											"  pm.expect(responseData.data).to.be.an('object');",
-											"  pm.expect(responseData.data.id).to.be.a('number').and.to.be.at.least(0, \"ID should be a non-negative integer\");",
-											"  pm.expect(responseData.data.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should be a non-empty string\");",
-											"  pm.expect(responseData.data.walletGroupFeatureDto).to.satisfy((value) => value === null || typeof value === 'object', \"walletGroupFeatureDto should be either null or an object\");",
-											"});",
-											"",
-											"",
-											"pm.test(\"Ensure that the response content type is application/json\", function () {",
-											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
-											"});",
-											"",
 											"",
 											"pm.test(\"Message is a non-empty string\", function () {",
 											"    const responseData = pm.response.json();",
@@ -3879,6 +3862,134 @@
 							"response": [
 								{
 									"id": "7a27cf1a-621f-4e62-97d5-4cbba08abf8b",
+									"name": "Get Account Type",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"EUR Accounts\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/add"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 18 Jul 2024 05:29:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lGABCZjlIpF4eF6TTsO%2FrOGibZrENO7X0JpPj9jRejkJmkm6C6mIPNjFbMtLveZPRbjcnyzONJ50c%2BGq336xbQSxT%2BJTvaD6gLG63PKRKWQdWzEutmVCE03BHITDRwBrpqueAYdIRg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "8a5013238c262a9d-LAX"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 23,\n        \"name\": \"EUR Accounts\",\n        \"walletGroupFeatureDto\": null\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Account Type with empty fields",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7c6f20d2-8f73-4565-8bf0-ffb016051fd0",
+										"exec": [
+											"const jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Response status code is 400\", function () {",
+											"  pm.response.to.have.status(400);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.code).to.exist;",
+											"    pm.expect(responseData.success).to.exist;",
+											"    pm.expect(responseData.message).to.exist;",
+											"});",
+											"",
+											"pm.test(\"Message is a non-empty string\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should not be empty\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "252c4117-a93b-4551-8919-6afb7f1b98a0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Vault Account\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/walletgroups/add"
+							},
+							"response": [
+								{
+									"id": "ab75594b-261f-4608-bff0-b734a0798188",
 									"name": "Get Account Type",
 									"originalRequest": {
 										"method": "POST",
