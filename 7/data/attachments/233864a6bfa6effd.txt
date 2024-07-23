@@ -1,0 +1,13 @@
+{
+    "firstName": "Joaquin",
+    "lastName": "Reinger",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "900 Beahan Forks",
+    "mobileNumber": "234742-648-6525",
+    "emailAddress": "Jordyn.Heaney@gmail.com"
+}
