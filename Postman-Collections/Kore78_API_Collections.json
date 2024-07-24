@@ -510,6 +510,36 @@
 										},
 										{
 											"name": "Create Vault with amount as string",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "7bafd30f-b72a-4cda-9629-47e435a00bf2",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Body contains a success message\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
+															"})",
+															"",
+															"pm.test(\"Body contaoins message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\");",
+															"})",
+															"",
+															"pm.test(\"Body contains data meta data\", function (){",
+															"    pm.expect(typeof jsonData.data).to.eql(\"object\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.data.interestRate).to.eql(\"number\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.accountNumber).to.eql(\"string\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.bookingReference).to.eql(\"string\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.estimatedYield).to.eql(\"number\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.maturityDate).to.eql(\"string\").to.not.be.null;",
+															"})"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "ee19a33d-5629-4bb9-b588-520e11b2c2fc",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -519,7 +549,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": \"0000047809\",\n  \"amount\": \"500\",\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
