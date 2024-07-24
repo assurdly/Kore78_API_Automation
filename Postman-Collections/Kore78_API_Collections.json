@@ -143,6 +143,36 @@
 									"item": [
 										{
 											"name": "Create Vault",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "b569bd80-82e1-49f3-a2b3-f79bdc5dbe60",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Body contains a success message\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
+															"})",
+															"",
+															"pm.test(\"Body contaoins message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\");",
+															"})",
+															"",
+															"pm.test(\"Body contains data meta data\", function (){",
+															"    pm.expect(typeof jsonData.data).to.eql(\"object\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.data.interestRate).to.eql(\"number\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.accountNumber).to.eql(\"string\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.bookingReference).to.eql(\"string\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.estimatedYield).to.eql(\"number\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.maturityDate).to.eql(\"string\").to.not.be.null;",
+															"})"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "b72342ec-93d6-48bd-9e60-f94f15c490f9",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
