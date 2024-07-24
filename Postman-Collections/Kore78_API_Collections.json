@@ -158,7 +158,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"0000000802\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": \"0000047809\",\n  \"amount\": 50000,\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
