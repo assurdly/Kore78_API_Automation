@@ -1,1 +1,0 @@
-{"errors":{"request":["The request field is required."],"customerId":["An undefined token is not a valid System.Nullable`1[System.Int64]. Path 'customerId', line 3, position 18."]},"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-54908ce0ab2d5fd4b82399f970afce01-f9a2493aedfa6eeb-00"}

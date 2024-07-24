@@ -1,0 +1,13 @@
+{
+    "firstName": "Elroy",
+    "lastName": "Schumm",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "66422 Bernier Mountains",
+    "mobileNumber": "234267-313-8188",
+    "emailAddress": "Stanley.Konopelski38@gmail.com"
+}
