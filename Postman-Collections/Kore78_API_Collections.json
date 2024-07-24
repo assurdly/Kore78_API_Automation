@@ -633,6 +633,30 @@
 										},
 										{
 											"name": "Create Vault with amount as alphanumeric value",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dff68ffb-f672-4780-84d2-971548d05b91",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body conatins errors\", function (){",
+															"    pm.expect(typeof jsonData.errors).to.eql(\"object\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.errors.amount[0]).to.eql(\"string\").to.not.be.empty;",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "140dc7aa-e385-457c-8fe4-855ca1f832dd",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -642,7 +666,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": \"0000047809\",\n  \"amount\": \"500k\",\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
