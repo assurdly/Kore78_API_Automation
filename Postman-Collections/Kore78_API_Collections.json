@@ -272,6 +272,32 @@
 										},
 										{
 											"name": "Create Vault with account to debit as number",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "64d48537-7256-4615-88e8-2a89dc3ff2c4",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body conatins success message and it is false\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", false)",
+															"})",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Input string was not in a correct format.\")",
+															"})"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "562aa04a-e1ee-47c3-9122-63cf945a8d37",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -281,7 +307,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": 4812344456,\n  \"amount\": 500,\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -365,6 +391,32 @@
 										},
 										{
 											"name": "Create Vault with account to debit as empty string",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4d8d22db-9124-41a7-b44a-6ec26bf6c594",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body conatins success message and it is false\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", false)",
+															"})",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Invalid account number to debit\")",
+															"})"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "c43d078f-c6a9-40db-a745-3c0ddd238847",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -374,7 +426,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": \"\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
