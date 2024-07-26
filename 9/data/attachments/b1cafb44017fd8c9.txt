@@ -1,0 +1,13 @@
+{
+    "firstName": "Clementina",
+    "lastName": "Trantow",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "6159 Crooks Meadow",
+    "mobileNumber": "2343303383339",
+    "emailAddress": "Loyal_Mosciski@yahoo.com"
+}

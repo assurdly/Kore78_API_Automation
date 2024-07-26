@@ -1,0 +1,13 @@
+{
+    "firstName": "Marquise",
+    "lastName": "Bogisich",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "1033 Melba Ridges",
+    "mobileNumber": "234868-444-6288",
+    "emailAddress": "Furman0@hotmail.com"
+}
