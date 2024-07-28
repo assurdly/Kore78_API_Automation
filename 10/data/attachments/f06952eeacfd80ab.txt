@@ -1,0 +1,13 @@
+{
+    "firstName": "Jess",
+    "lastName": "Cremin",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "8517 Huel Club",
+    "mobileNumber": "234271-422-0501",
+    "emailAddress": "Piper_Thiel72@yahoo.com"
+}

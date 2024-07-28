@@ -1,0 +1,13 @@
+{
+    "firstName": "Brain",
+    "lastName": "Pagac",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "91325 Rebekah Parkways",
+    "mobileNumber": "234654-467-0935",
+    "emailAddress": "Georgianna35@gmail.com"
+}
