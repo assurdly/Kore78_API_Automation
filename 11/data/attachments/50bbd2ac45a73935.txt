@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 123289,
+    "walletClassificationId": 1, 
+    "currencyId": 1, 
+    "name": "Mitchell Greenfelder" 
+}

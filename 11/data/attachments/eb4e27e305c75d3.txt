@@ -1,0 +1,13 @@
+{
+    "firstName": "Bettie",
+    "lastName": "Block",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "311 Gaylord Bridge",
+    "mobileNumber": "234282-224-0860",
+    "emailAddress": "Robb74@yahoo.com"
+}

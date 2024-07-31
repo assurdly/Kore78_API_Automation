@@ -1,0 +1,12 @@
+{
+    "Date": "Wed, 31 Jul 2024 18:08:36 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "71",
+    "Connection": "keep-alive",
+    "CF-Cache-Status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=uLItCfKnN%2FAI0ZsabMfDDWT5gel9Mom7eEC51eBL8jq1CmEeyJnyOsiA3Ms73kZ3z6wyM1Ra7fBE6h%2BqRgccYg6pQBxvTm1f9UjMlksiyHXy4%2FEFqNnL1jhVobWtFm%2F%2F%2BImX6%2FJfLA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Server": "cloudflare",
+    "CF-RAY": "8abf88e20bed9864-SJC",
+    "alt-svc": "h3=\":443\"; ma=86400"
+}

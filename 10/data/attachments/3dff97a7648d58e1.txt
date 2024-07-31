@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": ,
-    "walletClassificationId": 2, 
-    "currencyId": 1, 
-    "name": "Whitney Lockman" 
-}

@@ -1,0 +1,13 @@
+{
+    "firstName": "Florida",
+    "lastName": "Reichert",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "8178 Marley Trail",
+    "mobileNumber": "234839-727-8492",
+    "emailAddress": "Tiana_Bradtke11@hotmail.com"
+}
