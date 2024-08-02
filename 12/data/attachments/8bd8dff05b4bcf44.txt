@@ -1,0 +1,13 @@
+{
+    "firstName": "Dashawn",
+    "lastName": "Denesik",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "4769 Michelle Mission",
+    "mobileNumber": "234683-464-0082",
+    "emailAddress": "Dagmar.Botsford@yahoo.com"
+}

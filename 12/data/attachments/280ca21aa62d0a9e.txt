@@ -1,0 +1,13 @@
+{
+    "firstName": "Chadrick",
+    "lastName": "Hermiston",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "8899 Pfeffer Place",
+    "mobileNumber": "234744-621-4859",
+    "emailAddress": "Giovanna11@hotmail.com"
+}
