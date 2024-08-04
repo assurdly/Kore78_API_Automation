@@ -1,0 +1,13 @@
+{
+    "firstName": "Tevin",
+    "lastName": "Volkman",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "6582 Bernhard Point",
+    "mobileNumber": "234294-628-1875",
+    "emailAddress": "Dora.Volkman@gmail.com"
+}

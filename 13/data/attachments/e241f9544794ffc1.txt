@@ -1,0 +1,13 @@
+{
+    "firstName": "Amalia",
+    "lastName": "Gerhold",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "6311 Nienow Motorway",
+    "mobileNumber": "234357-638-1988",
+    "emailAddress": "Catherine_Runolfsson@hotmail.com"
+}
