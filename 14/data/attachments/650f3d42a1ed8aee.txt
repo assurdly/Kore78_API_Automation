@@ -1,0 +1,13 @@
+{
+    "firstName": "Ramona",
+    "lastName": "Wisozk",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "6197 Ivy Field",
+    "mobileNumber": "234966-600-4041",
+    "emailAddress": "Else_Breitenberg@gmail.com"
+}
