@@ -7359,7 +7359,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "192b5739-6b95-49bc-a9c0-dc4d9aee0c43",
+				"id": "1ae0916b-addd-4c23-9dda-2c6619a886bd",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7370,7 +7370,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a2928d8e-a91e-4f94-990f-bc4b19af78d5",
+				"id": "65655f00-fe7d-42f2-98ae-6661ac7fef19",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7382,7 +7382,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "https://wallet-dev.bank78.co/api/v1",
+			"value": "https://kore78-dev.bank78.co",
 			"type": "string"
 		},
 		{
@@ -7393,7 +7393,7 @@
 		},
 		{
 			"key": "auth-key",
-			"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
+			"value": "SK-ppTqE853F4jnUE3MlscobTbWZPU23vurg6aiAAq8Xoq7pR0bVulCp4He1obsVe5ehag",
 			"type": "string"
 		},
 		{
