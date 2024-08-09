@@ -1,0 +1,13 @@
+{
+    "firstName": "Lily",
+    "lastName": "Klein",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "225 Casper Island",
+    "mobileNumber": "234938-656-8541",
+    "emailAddress": "Jamir7@hotmail.com"
+}
