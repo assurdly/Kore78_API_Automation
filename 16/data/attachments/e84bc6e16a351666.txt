@@ -1,0 +1,13 @@
+{
+    "firstName": "Irving",
+    "lastName": "Tillman",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "424 Chesley Center",
+    "mobileNumber": "234727-518-4549",
+    "emailAddress": "Jerrold61@hotmail.com"
+}
