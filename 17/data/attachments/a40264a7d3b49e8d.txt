@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": ,
+    "walletClassificationId": 5, 
+    "currencyId": 1, 
+    "name": "Yoyo's Account" 
+}

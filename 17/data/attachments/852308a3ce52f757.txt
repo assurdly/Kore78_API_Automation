@@ -1,0 +1,13 @@
+{
+    "firstName": "Electa",
+    "lastName": "MacGyver",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 100,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "3831 Keven Estate",
+    "mobileNumber": "234304-412-1003",
+    "emailAddress": "Cale_White53@yahoo.com"
+}

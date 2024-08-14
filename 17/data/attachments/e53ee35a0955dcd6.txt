@@ -1,0 +1,13 @@
+{
+    "firstName": "Arnoldo",
+    "lastName": "Hessel",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "9305 Mayert Meadows",
+    "mobileNumber": "234938-693-2347",
+    "emailAddress": "Greyson_Schowalter@hotmail.com"
+}

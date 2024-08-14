@@ -1,0 +1,13 @@
+{
+    "firstName": "Nestor",
+    "lastName": "Feest",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 100,
+    "city": "Ibadan",
+    "address": "71664 Milo Freeway",
+    "mobileNumber": "234345-429-8139",
+    "emailAddress": "Cordell.Crist34@hotmail.com"
+}
