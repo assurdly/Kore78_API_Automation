@@ -1,0 +1,13 @@
+{
+    "firstName": "Thora",
+    "lastName": "Reinger",
+    "middleName": "",
+    "dob": "2000-12-01",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "47937 Alfreda Stream",
+    "mobileNumber": "234778-268-0580",
+    "emailAddress": "Isabelle14@yahoo.com"
+}

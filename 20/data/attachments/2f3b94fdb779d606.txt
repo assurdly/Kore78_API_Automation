@@ -1,0 +1,13 @@
+{
+    "firstName": "Karianne",
+    "lastName": "Will",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "423 Littel Route",
+    "mobileNumber": "234629-736-7051",
+    "emailAddress": "Grayce_Lang@yahoo.com"
+}
