@@ -2350,6 +2350,12 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{accessToken}}"
+											}
+										},
 										"method": "PATCH",
 										"header": [
 											{
@@ -2368,7 +2374,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/v1/customers/customer/:customerId/updatename/organization/",
+											"raw": "{{baseUrl}}/api/v1/customers/u/:customerId/update",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -2376,11 +2382,9 @@
 												"api",
 												"v1",
 												"customers",
-												"customer",
+												"u",
 												":customerId",
-												"updatename",
-												"organization",
-												""
+												"update"
 											],
 											"variable": [
 												{
@@ -9556,7 +9560,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"Stock Exchange\",\n  \"organizationId\": 1,\n  \"description\": \"Stock Exchange product\",\n  \"direction\": \"Test direction\",\n  \"isActive\": true\n}",
+													"raw": "{\n  \"name\": \"Utility Payment\",\n  \"description\": \"Utility payment\",\n  \"direction\": \"C\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
