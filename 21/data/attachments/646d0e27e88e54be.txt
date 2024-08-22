@@ -1,0 +1,13 @@
+{
+    "firstName": "Lucile",
+    "lastName": "Vandervort",
+    "middleName": "",
+    "dob": "12-01-2000",
+    "customerTypeId": 1,
+    "alias": "Customer Yoyo",
+    "countryId": 1,
+    "city": "Ibadan",
+    "address": "28652 Marquardt Harbors",
+    "mobileNumber": "234544-896-8894",
+    "emailAddress": "Hermann_Spencer@yahoo.com"
+}
