@@ -4125,6 +4125,34 @@
 								},
 								{
 									"name": "/api/v1/products/update",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "f266312c-b007-45cb-bbc5-0a49f3f9ca62",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the data object schema\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"",
+													"    const dataKeys = [\"id\", \"name\", \"organizationId\", \"description\", \"direction\", \"isActive\", \"dateCreated\"];",
+													"    dataKeys.forEach(key => {",
+													"        pm.expect(responseData.data).to.have.property(key);",
+													"    });",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "e3a40df2-1791-436f-877c-53c924186da4",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4139,7 +4167,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"organizationId\": \"<long>\",\n  \"description\": \"<string>\",\n  \"direction\": \"<string>\",\n  \"isActive\": \"<boolean>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+											"raw": "{\n  \"id\": \"{{productId}}\",\n  \"name\": \"{{$randomJobArea}} Payment\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"D\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -9359,7 +9387,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"674455\"\r\n}",
+															"raw": "{\r\n\r\n  \"emailAddress\": \"{{emailAddress}}\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"863107\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
