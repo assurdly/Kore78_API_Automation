@@ -2273,6 +2273,54 @@
 								},
 								{
 									"name": "/api/v1/customers/get/all",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "94bbf9f5-ca2d-4216-92a2-0f309ceaef0d",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data array is present in the response\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('array');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the structure of the data object\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data).to.be.an('array');",
+													"    ",
+													"    responseData.data.forEach(function(customer) {",
+													"        pm.expect(customer).to.have.property('id').that.is.a('number');",
+													"        pm.expect(customer).to.have.property('organizationId').that.is.a('number');",
+													"        pm.expect(customer).to.have.property('firstName').that.is.a('string');",
+													"        pm.expect(customer).to.have.property('lastName').that.is.a('string');",
+													"        pm.expect(customer).to.have.property('dob').that.is.a('string');",
+													"        pm.expect(customer).to.have.property('customerTypeId').that.is.a('number');",
+													"        pm.expect(customer).to.have.property('alias').that.is.null;",
+													"        pm.expect(customer).to.have.property('countryId').that.is.a('number');",
+													"        pm.expect(customer).to.have.property('city').that.is.a('string');",
+													"        pm.expect(customer).to.have.property('address').that.is.a('string');",
+													"        pm.expect(customer).to.have.property('mobileNumber').that.is.a('string');",
+													"        pm.expect(customer).to.have.property('emailAddress').that.is.a('string');",
+													"        pm.expect(customer).to.have.property('dateCreated').that.is.a('string');",
+													"    });",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "ff6041e5-c9bf-4067-a578-c6b136c62118",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2309,6 +2357,47 @@
 								},
 								{
 									"name": "/api/v1/customers/types/all",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "29a8ef7d-70f3-4540-8346-52ad791e1277",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data schema is valid\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.be.an('array');",
+													"  ",
+													"  responseData.data.forEach(function(item) {",
+													"    pm.expect(item).to.have.property('id').that.is.a('number');",
+													"    pm.expect(item).to.have.property('name').that.is.a('string');",
+													"  });",
+													"});",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "388abbbe-bcc2-4620-9b4e-2cb072d35fea",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -2345,6 +2434,49 @@
 								},
 								{
 									"name": "/api/v1/customers/customer/:customerId/updatename/organization/:organizationId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "f3665ce1-7fb1-46ef-9f5d-6974bc966cc8",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Code is a non-empty string, success is a boolean, message is a string, and data is a boolean\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should be a non-empty string\");",
+													"  pm.expect(responseData.success).to.be.a('boolean', \"Success should be a boolean\");",
+													"  pm.expect(responseData.message).to.be.a('string', \"Message should be a string\");",
+													"  pm.expect(responseData.data).to.be.a('boolean', \"Data should be a boolean\");",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "2e62834c-a49c-4ee7-b456-9f6b8d0a4aeb",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -9075,7 +9207,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n\r\n  \"emailAddress\": \"{{emailAddress}}\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"721259\"\r\n}",
+															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"674455\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
