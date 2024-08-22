@@ -2591,11 +2591,64 @@
 								},
 								{
 									"name": "/api/v1/customers/find/email",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "18fa2f2f-ab6e-4980-b860-0106e75da7bb",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data.customer).to.have.property('id');",
+													"    pm.expect(responseData.data.customer).to.have.property('organizationId');",
+													"    pm.expect(responseData.data.customer).to.have.property('firstName');",
+													"    pm.expect(responseData.data.customer).to.have.property('lastName');",
+													"    pm.expect(responseData.data.customer).to.have.property('dob');",
+													"    pm.expect(responseData.data.customer).to.have.property('customerTypeId');",
+													"    pm.expect(responseData.data.customer).to.have.property('countryId');",
+													"    pm.expect(responseData.data.customer).to.have.property('city');",
+													"    pm.expect(responseData.data.customer).to.have.property('address');",
+													"    pm.expect(responseData.data.customer).to.have.property('mobileNumber');",
+													"    pm.expect(responseData.data.customer).to.have.property('emailAddress');",
+													"    pm.expect(responseData.data.customer).to.have.property('dateCreated');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the structure of the 'data' object\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.customer).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.customerType).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.walletDtos).to.exist.and.to.be.an('array');",
+													"    pm.expect(responseData.data.customerProperties).to.exist.and.to.be.an('array');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "cf3ae12a-89ae-4002-920e-3acd3d451c43",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{accessToken}}"
+											}
+										},
 										"method": "POST",
 										"header": [
 											{
@@ -2605,7 +2658,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"emailAddress\": \"<string>\",\n  \"organizationId\": \"<long>\"\n}",
+											"raw": "{\n  \"emailAddress\": \"Marc33@hotmail.com\",\n  \"organizationId\": 1\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -2613,7 +2666,7 @@
 												}
 											}
 										},
-										"url": "{{baseUrl}}/api/v1/customers/find/email"
+										"url": "{{baseUrl}}/api/v1/customers/u/find/email"
 									},
 									"response": [
 										{
