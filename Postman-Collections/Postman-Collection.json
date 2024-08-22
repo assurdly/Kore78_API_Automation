@@ -4020,16 +4020,27 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{accessToken}}"
+											}
+										},
 										"method": "POST",
 										"header": [
 											{
 												"key": "Content-Type",
 												"value": "application/json"
+											},
+											{
+												"key": "x-api-key",
+												"value": "{{api-key}}",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"organizationId\": \"<long>\",\n  \"description\": \"<string>\",\n  \"direction\": \"<string>\",\n  \"isActive\": \"<boolean>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+											"raw": "{\n  \"name\": \"Utility Payment\",\n  \"description\": \"Utility Payment\",\n  \"direction\": \"C\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
