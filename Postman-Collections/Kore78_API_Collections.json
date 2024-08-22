@@ -143,6 +143,36 @@
 									"item": [
 										{
 											"name": "Create Vault",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "b569bd80-82e1-49f3-a2b3-f79bdc5dbe60",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Body contains a success message\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
+															"})",
+															"",
+															"pm.test(\"Body contaoins message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\");",
+															"})",
+															"",
+															"pm.test(\"Body contains data meta data\", function (){",
+															"    pm.expect(typeof jsonData.data).to.eql(\"object\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.data.interestRate).to.eql(\"number\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.accountNumber).to.eql(\"string\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.bookingReference).to.eql(\"string\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.estimatedYield).to.eql(\"number\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.maturityDate).to.eql(\"string\").to.not.be.null;",
+															"})"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "b72342ec-93d6-48bd-9e60-f94f15c490f9",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -158,7 +188,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"0000000802\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": \"0000047809\",\n  \"amount\": 50000,\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -242,6 +272,32 @@
 										},
 										{
 											"name": "Create Vault with account to debit as number",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "64d48537-7256-4615-88e8-2a89dc3ff2c4",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body conatins success message and it is false\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", false)",
+															"})",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Input string was not in a correct format.\")",
+															"})"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "562aa04a-e1ee-47c3-9122-63cf945a8d37",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -251,7 +307,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": 4812344456,\n  \"amount\": 500,\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -335,6 +391,32 @@
 										},
 										{
 											"name": "Create Vault with account to debit as empty string",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4d8d22db-9124-41a7-b44a-6ec26bf6c594",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body conatins success message and it is false\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", false)",
+															"})",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Invalid account number to debit\")",
+															"})"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "c43d078f-c6a9-40db-a745-3c0ddd238847",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -344,7 +426,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": \"\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -428,6 +510,36 @@
 										},
 										{
 											"name": "Create Vault with amount as string",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "7bafd30f-b72a-4cda-9629-47e435a00bf2",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Body contains a success message\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
+															"})",
+															"",
+															"pm.test(\"Body contaoins message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\");",
+															"})",
+															"",
+															"pm.test(\"Body contains data meta data\", function (){",
+															"    pm.expect(typeof jsonData.data).to.eql(\"object\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.data.interestRate).to.eql(\"number\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.accountNumber).to.eql(\"string\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.bookingReference).to.eql(\"string\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.estimatedYield).to.eql(\"number\").to.not.be.null;",
+															"    pm.expect(typeof jsonData.data.maturityDate).to.eql(\"string\").to.not.be.null;",
+															"})"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "ee19a33d-5629-4bb9-b588-520e11b2c2fc",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -437,7 +549,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": \"0000047809\",\n  \"amount\": \"500\",\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -521,6 +633,30 @@
 										},
 										{
 											"name": "Create Vault with amount as alphanumeric value",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dff68ffb-f672-4780-84d2-971548d05b91",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body conatins errors\", function (){",
+															"    pm.expect(typeof jsonData.errors).to.eql(\"object\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.errors.amount[0]).to.eql(\"string\").to.not.be.empty;",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "140dc7aa-e385-457c-8fe4-855ca1f832dd",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -530,7 +666,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"4812344456\",\n  \"amount\": 500,\n  \"tenor\": 30\n}",
+													"raw": "{\n  \"accountToDebit\": \"0000047809\",\n  \"amount\": \"500k\",\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -7223,7 +7359,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "192b5739-6b95-49bc-a9c0-dc4d9aee0c43",
+				"id": "1ae0916b-addd-4c23-9dda-2c6619a886bd",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7234,7 +7370,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a2928d8e-a91e-4f94-990f-bc4b19af78d5",
+				"id": "65655f00-fe7d-42f2-98ae-6661ac7fef19",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7246,7 +7382,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "https://wallet-dev.bank78.co/api/v1",
+			"value": "https://kore78-dev.bank78.co",
 			"type": "string"
 		},
 		{
@@ -7257,7 +7393,7 @@
 		},
 		{
 			"key": "auth-key",
-			"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
+			"value": "SK-ppTqE853F4jnUE3MlscobTbWZPU23vurg6aiAAq8Xoq7pR0bVulCp4He1obsVe5ehag",
 			"type": "string"
 		},
 		{
