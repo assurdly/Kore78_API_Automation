@@ -4021,6 +4021,10 @@
 											"script": {
 												"id": "5b5e6ce6-606a-4ebf-b5b6-544b49bb1222",
 												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.collectionVariables.set(\"productId\", jsonData.data.id);",
+													"",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.response.to.have.status(200);",
 													"});",
@@ -4070,7 +4074,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"name\": \"Utility Payment\",\n  \"description\": \"Utility Payment\",\n  \"direction\": \"C\"\n}",
+											"raw": "{\n  \"name\": \"{{$randomJobArea}} Payment\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"C\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -11251,6 +11255,10 @@
 		},
 		{
 			"key": "emailAddress",
+			"value": ""
+		},
+		{
+			"key": "productId",
 			"value": ""
 		}
 	]
