@@ -10075,6 +10075,43 @@
 										},
 										{
 											"name": "/api/v1/products/activate/:id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "35878dff-a93a-4987-9d92-d30945f94b91",
+														"exec": [
+															"pm.test(\"Response status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"",
+															"pm.test(\"Verify the response schema for the presence of all required fields\", function () {",
+															"    const responseData = pm.response.json();",
+															"",
+															"    pm.expect(responseData.data).to.be.an('object');",
+															"    pm.expect(responseData.data.id).to.exist;",
+															"    pm.expect(responseData.data.name).to.exist;",
+															"    pm.expect(responseData.data.organizationId).to.exist;",
+															"    pm.expect(responseData.data.description).to.exist;",
+															"    pm.expect(responseData.data.direction).to.exist;",
+															"    pm.expect(responseData.data.isActive).to.exist;",
+															"    pm.expect(responseData.data.dateCreated).to.exist;",
+															"});",
+															"",
+															"",
+															"pm.test(\"Ensure that the isActive field is a boolean value\", function () {",
+															"  const responseData = pm.response.json();",
+															"  ",
+															"  pm.expect(responseData.data.isActive).to.be.a('boolean');",
+															"});",
+															"",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "e5850436-d48a-4905-9547-e98f6b060964",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -10096,9 +10133,8 @@
 													],
 													"variable": [
 														{
-															"id": "ac1154ef-1c5a-4e72-99f5-a85a94994e09",
 															"key": "id",
-															"value": "<string>",
+															"value": "{{productId_1}}",
 															"description": "(Required) "
 														}
 													]
