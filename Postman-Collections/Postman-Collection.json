@@ -2719,6 +2719,12 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{accessToken}}"
+											}
+										},
 										"method": "POST",
 										"header": [
 											{
@@ -8318,7 +8324,7 @@
 																}
 															}
 														},
-														"url": "{{baseurl}}/api/v1/account/setup"
+														"url": "{{baseUrl}}/api/v1/account/setup"
 													},
 													"response": []
 												},
@@ -9153,6 +9159,12 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{accessToken}}"
+													}
+												},
 												"method": "GET",
 												"header": [],
 												"url": "{{baseUrl}}/api/v1/users/u/all"
@@ -9234,11 +9246,17 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{accessToken}}"
+													}
+												},
 												"method": "PATCH",
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"id\": 68,\n    \"emailAddress\": \"td.jakes@rove10.com\",\n    \"firstName\": \"Tiller\",\n    \"lastName\": \"Jakes\",\n    \"username\": \"td.jsasakes@rove10.com\"\n}",
+													"raw": "",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -9262,12 +9280,10 @@
 													],
 													"variable": [
 														{
-															"id": "93bb4a3b-0320-4b76-a4a6-153fc0ff3412",
 															"key": "userId",
-															"value": "68"
+															"value": "9"
 														},
 														{
-															"id": "8ae301e1-97a9-4e91-a752-cb1e98d35ff9",
 															"key": "status",
 															"value": "deactivate",
 															"description": "activate/deactivate"
@@ -10447,7 +10463,7 @@
 													"variable": [
 														{
 															"key": "roleId",
-															"value": "2"
+															"value": "16"
 														}
 													]
 												}
@@ -10661,7 +10677,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "[\n    {\n        \"name\": \"{{permissionName}}\"\n    },\n    {\n        \"name\": \"{{permissionName1}}\"\n    },\n    {\n        \"name\": \"{{permissionName2}}\"\n    }\n]",
+													"raw": "[\n    {\n        \"name\": \"{{permissionName}}\"\n    },\n     {\n        \"name\": \"{{permissionName1}}\"\n    },\n     {\n        \"name\": \"{{permissionName2}}\"\n    }\n]",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
