@@ -130,7 +130,7 @@ jobs:
           SLACK_CHANNEL: 'C070KUKPDLZ'
           SLACK_MESSAGE: |
             *ERA-Admin - API Quality Readiness*
-            *Contributors - Moses George, Mary Francis*
+            *Contributors - Moses George*
             Status: ${{ job.status }}
             Passing Tests: ${{ steps.parse_json.outputs.passing_percentage }}%
             Failing Tests: ${{ steps.parse_json.outputs.failing_percentage }}%
