@@ -11264,6 +11264,1720 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "Chart of Account (Wallet Groups)",
+							"item": [
+								{
+									"name": "Create Account Type",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7c6f20d2-8f73-4565-8bf0-ffb016051fd0",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the data object properties\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData.data).to.be.an('object');",
+													"  pm.expect(responseData.data.id).to.be.a('number').and.to.be.at.least(0, \"ID should be a non-negative integer\");",
+													"  pm.expect(responseData.data.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should be a non-empty string\");",
+													"  pm.expect(responseData.data.walletGroupFeatureDto).to.satisfy((value) => value === null || typeof value === 'object', \"walletGroupFeatureDto should be either null or an object\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure that the response content type is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Message is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should not be empty\");",
+													"});",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "6dda90c2-6b5d-4e67-b222-057e95ca537a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Vault Account\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/add"
+									},
+									"response": [
+										{
+											"id": "9a8960a9-36a0-4bc7-b084-f64fc6bbf542",
+											"name": "Get Account Type",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"EUR Accounts\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:29:34 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lGABCZjlIpF4eF6TTsO%2FrOGibZrENO7X0JpPj9jRejkJmkm6C6mIPNjFbMtLveZPRbjcnyzONJ50c%2BGq336xbQSxT%2BJTvaD6gLG63PKRKWQdWzEutmVCE03BHITDRwBrpqueAYdIRg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5013238c262a9d-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 23,\n        \"name\": \"EUR Accounts\",\n        \"walletGroupFeatureDto\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account Type with duplicate name",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7c6f20d2-8f73-4565-8bf0-ffb016051fd0",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 400\", function () {",
+													"  pm.response.to.have.status(400);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"});",
+													"",
+													"pm.test(\"Message is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should not be empty\");",
+													"});",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "838a5b6f-1854-4bd5-938d-0d63ce1dd254",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Vault Account\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/add"
+									},
+									"response": [
+										{
+											"id": "2043e651-53aa-4f95-9648-74a942f975e4",
+											"name": "Get Account Type",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"EUR Accounts\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:29:34 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lGABCZjlIpF4eF6TTsO%2FrOGibZrENO7X0JpPj9jRejkJmkm6C6mIPNjFbMtLveZPRbjcnyzONJ50c%2BGq336xbQSxT%2BJTvaD6gLG63PKRKWQdWzEutmVCE03BHITDRwBrpqueAYdIRg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5013238c262a9d-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 23,\n        \"name\": \"EUR Accounts\",\n        \"walletGroupFeatureDto\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Account Type with empty fields",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7c6f20d2-8f73-4565-8bf0-ffb016051fd0",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"});",
+													"",
+													"pm.test(\"Message is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should not be empty\");",
+													"});",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "cf86285f-a449-4177-9832-50c5a831d47c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/add"
+									},
+									"response": [
+										{
+											"id": "be2a0121-dcec-415f-aa8b-8159fdec587d",
+											"name": "Get Account Type",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"EUR Accounts\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:29:34 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lGABCZjlIpF4eF6TTsO%2FrOGibZrENO7X0JpPj9jRejkJmkm6C6mIPNjFbMtLveZPRbjcnyzONJ50c%2BGq336xbQSxT%2BJTvaD6gLG63PKRKWQdWzEutmVCE03BHITDRwBrpqueAYdIRg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5013238c262a9d-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Created Successfully\",\n    \"data\": {\n        \"id\": 23,\n        \"name\": \"EUR Accounts\",\n        \"walletGroupFeatureDto\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Get Accounts (Wallet group))",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "be8ba319-9d40-4112-8f9d-f35aeda9454f",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure the response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the data object is an array with at least one element\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('array').and.to.have.lengthOf.at.least(1);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Verify the structure of walletGroupFeatureDto array\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data).to.be.an('array').and.to.have.lengthOf.at.least(1, \"Data array should not be empty\");",
+													"",
+													"    responseData.data.forEach(function(walletGroup) {",
+													"        pm.expect(walletGroup).to.have.property('id').that.is.a('number', \"Id should be a number\");",
+													"        pm.expect(walletGroup).to.have.property('name').that.is.a('string', \"Name should be a string\");",
+													"        ",
+													"        walletGroup.walletGroupFeatureDto.forEach(function(feature) {",
+													"            pm.expect(feature).to.have.property('featureName').that.is.a('string', \"FeatureName should be a string\");",
+													"            pm.expect(feature).to.have.property('featurePropertyName').that.is.a('string', \"FeaturePropertyName should be a string\");",
+													"            pm.expect(feature).to.have.property('featurePropertyValue').that.is.a('string', \"FeaturePropertyValue should be a string\");",
+													"        });",
+													"    });",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "2edbd35c-b332-4b1c-9abe-0daa1c8c4811",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get"
+									},
+									"response": [
+										{
+											"id": "75900cf4-de30-4a82-9a06-1df2a94f2294",
+											"name": "Get account",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/get"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:20:35 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=qf4hgtcqwRDIE%2FjzoQnmEdO6eWs%2FAZXdjrRA%2BX6V6FOtZkLnu90nNskLDLJfOFNLmVxE5Xo2sBhlSGfVkqVFBBwDO1CE5TD86BV2ffCGiQ3G5I4pgz8gxX9VefKXosIuGwdPAHDA%2BQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5005fc8e4b0906-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 21,\n            \"name\": \"Dom Accounts\",\n            \"walletGroupFeatureDto\": []\n        },\n        {\n            \"id\": 22,\n            \"name\": \"GBP Accounts\",\n            \"walletGroupFeatureDto\": []\n        }\n    ]\n}"
+										},
+										{
+											"id": "bfaa00e4-2be2-4674-8be0-6b4de61c15fe",
+											"name": "Get Account",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/get"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:35:28 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=tdBRjDsG1TKm91hhTPgz0rO1pEi91uWFO9DuT7fXPt7eErp437apg6t5PffZCW2OEfVTcFWz2VNJHvdEg4o%2FOCRZuturehb2bVtjbOZYe7vjfRJCSl6cho1WdeWI6V4Yr582AHhk%2BA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a501bc798ec2f63-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 21,\n            \"name\": \"Dom Accounts\",\n            \"walletGroupFeatureDto\": []\n        },\n        {\n            \"id\": 22,\n            \"name\": \"GBP Accounts\",\n            \"walletGroupFeatureDto\": []\n        },\n        {\n            \"id\": 23,\n            \"name\": \"EUR Accounts\",\n            \"walletGroupFeatureDto\": [\n                {\n                    \"featureName\": \"Interests\",\n                    \"featurePropertyName\": \"Maximum Withdrawal\",\n                    \"featurePropertyValue\": \"4\"\n                },\n                {\n                    \"featureName\": \"Interests\",\n                    \"featurePropertyName\": \"Interest Rate\",\n                    \"featurePropertyValue\": \"5\"\n                }\n            ]\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Get Account Type by Id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b45b8455-c583-455c-92e5-121704583197",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data object properties - id, name, walletGroupFeatureDto exist\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data.id).to.exist;",
+													"  pm.expect(responseData.data.name).to.exist;",
+													"  pm.expect(responseData.data.walletGroupFeatureDto).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"WalletGroupFeatureDto array is present and contains the expected number of elements\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.have.property('data');",
+													"    pm.expect(responseData.data).to.have.property('walletGroupFeatureDto').that.is.an('array');",
+													"    pm.expect(responseData.data.walletGroupFeatureDto).to.have.lengthOf.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"Body contains message\", function () {",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Retrieved Successfully\");",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "1547601c-8ae5-4890-b5cc-ae33292474e8",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get/32"
+									},
+									"response": [
+										{
+											"id": "ed4d6855-a99b-4001-9d27-1b6c575e4c1c",
+											"name": "Get account type",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/get/21"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:31:29 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ZBBkjQFYVHEyVI5wfL25oT5%2FOsKE4%2FGjT0lOR6iDFTaBHLuG%2F6sSaGKx4IzkTMzlXCk9UyIFMXJbvwFlTcDKLiY%2FD788geHLmGs3AyDH8rYbJDDZSkMwt7mTDJ0s4vbu52eyQyVaPQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5015e29b5014ea-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 21,\n        \"name\": \"Dom Accounts\",\n        \"walletGroupFeatureDto\": []\n    }\n}"
+										},
+										{
+											"id": "c245a73f-445e-42cb-8e4d-ab6b5a47f297",
+											"name": "Get account type",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/get/22"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:37:51 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=k4xgq6JbietBXgkRU%2BeH7QsXPJROnJbEGoUd7z8DPIJBn%2F4LXW030QXkMjfGQgiiQY2u1I3%2FNmObPDbQ%2BLBnGL%2Febwa7SrbI9482wqsxEQjVeQpsrOp70uOY%2F9iHATn8ZZs3khwWwQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a501f47aa832f63-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 22,\n        \"name\": \"GBP Accounts\",\n        \"walletGroupFeatureDto\": [\n            {\n                \"featureName\": \"Interests\",\n                \"featurePropertyName\": \"Maximum Withdrawal\",\n                \"featurePropertyValue\": \"5\"\n            },\n            {\n                \"featureName\": \"Interests\",\n                \"featurePropertyName\": \"Interest Rate\",\n                \"featurePropertyValue\": \"6\"\n            }\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Get Account Type by Id with invalid id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b45b8455-c583-455c-92e5-121704583197",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Body contains message\", function () {",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Retrieved Successfully\");",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "036beabc-87df-4b39-a94e-aee4603ed0cb",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/get/320"
+									},
+									"response": [
+										{
+											"id": "20249047-eaca-4dd0-81f2-c0f59601f38d",
+											"name": "Get account type",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/get/21"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:31:29 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ZBBkjQFYVHEyVI5wfL25oT5%2FOsKE4%2FGjT0lOR6iDFTaBHLuG%2F6sSaGKx4IzkTMzlXCk9UyIFMXJbvwFlTcDKLiY%2FD788geHLmGs3AyDH8rYbJDDZSkMwt7mTDJ0s4vbu52eyQyVaPQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a5015e29b5014ea-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 21,\n        \"name\": \"Dom Accounts\",\n        \"walletGroupFeatureDto\": []\n    }\n}"
+										},
+										{
+											"id": "b24b6e29-61b0-4e64-bae2-da180a7b013e",
+											"name": "Get account type",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/get/22"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:37:51 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=k4xgq6JbietBXgkRU%2BeH7QsXPJROnJbEGoUd7z8DPIJBn%2F4LXW030QXkMjfGQgiiQY2u1I3%2FNmObPDbQ%2BLBnGL%2Febwa7SrbI9482wqsxEQjVeQpsrOp70uOY%2F9iHATn8ZZs3khwWwQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a501f47aa832f63-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": {\n        \"id\": 22,\n        \"name\": \"GBP Accounts\",\n        \"walletGroupFeatureDto\": [\n            {\n                \"featureName\": \"Interests\",\n                \"featurePropertyName\": \"Maximum Withdrawal\",\n                \"featurePropertyValue\": \"5\"\n            },\n            {\n                \"featureName\": \"Interests\",\n                \"featurePropertyName\": \"Interest Rate\",\n                \"featurePropertyValue\": \"6\"\n            }\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Get Account Features",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "18d57885-0ae5-45b5-9067-7fbc0cf413e5",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json().data;",
+													"",
+													"    pm.expect(responseData).to.be.an('array');",
+													"",
+													"    responseData.forEach(function(walletFeature) {",
+													"        pm.expect(walletFeature).to.have.property('id');",
+													"        pm.expect(walletFeature).to.have.property('name');",
+													"        pm.expect(walletFeature).to.have.property('description');",
+													"        pm.expect(walletFeature).to.have.property('direction');",
+													"        pm.expect(walletFeature).to.have.property('isPercentage');",
+													"        pm.expect(walletFeature).to.have.property('isEveryMonth');",
+													"        pm.expect(walletFeature).to.have.property('isEveryTransaction');",
+													"        pm.expect(walletFeature).to.have.property('hasMinimumAmount');",
+													"        pm.expect(walletFeature).to.have.property('hasMaximumAmount');",
+													"        pm.expect(walletFeature).to.have.property('walletFeaturePropertyDtos').that.is.an('array');",
+													"    });",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data properties validation\", function () {",
+													"    const responseData = pm.response.json().data;",
+													"    ",
+													"    responseData.forEach(function(item) {",
+													"        pm.expect(item).to.be.an('object');",
+													"        pm.expect(item.id).to.be.a('number').and.to.be.at.least(0, \"Id should be a non-negative integer\");",
+													"        pm.expect(item.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should be a non-empty string\");",
+													"        pm.expect(item.description).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Description should be a non-empty string\");",
+													"        pm.expect(item.isPercentage).to.be.a('boolean');",
+													"        pm.expect(item.isEveryMonth).to.be.a('boolean');",
+													"        pm.expect(item.isEveryTransaction).to.be.a('boolean');",
+													"        pm.expect(item.hasMinimumAmount).to.be.a('boolean');",
+													"        pm.expect(item.hasMaximumAmount).to.be.a('boolean');",
+													"    });",
+													"});",
+													"",
+													"pm.test(\"Body contains message\", function () {",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Retrieved Successfully\");",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "67aff674-3550-4765-99b4-be7ed0ad5046",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/walletfeatures/get"
+									},
+									"response": [
+										{
+											"id": "935b4458-2156-4d20-8240-bdd1dfe65a08",
+											"name": "Get wallet features",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/walletfeatures/get"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:17:24 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=MdBDTrwBpld%2FFYlKqZgzmoW4z2Fpu%2FfaEBIk%2BVJX3iHfCKwk6AQPl9BO2BNPMDhQ08is3Z4fk%2FAVnk%2BxUCsVLbPiIyfPpPb9EXx0sdfJg5jT1fS983bZ5GheAiDpnjl0M6OL3N8XUQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a50014d7ad478dd-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Interests\",\n            \"description\": \"Interest yielding wallet\",\n            \"direction\": \"C\",\n            \"isPercentage\": true,\n            \"isEveryMonth\": true,\n            \"isEveryTransaction\": false,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Interest Rate\",\n                    \"dataType\": \"decimal\"\n                },\n                {\n                    \"name\": \"Maximum Withdrawal\",\n                    \"dataType\": \"int\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Stamp Duty\",\n            \"description\": \"stamp duty payments\",\n            \"direction\": \"D\",\n            \"isPercentage\": false,\n            \"isEveryMonth\": false,\n            \"isEveryTransaction\": true,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Amount\",\n                    \"dataType\": \"decimal\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Service Charge\",\n            \"description\": \"Monthly service charge\",\n            \"direction\": \"D\",\n            \"isPercentage\": true,\n            \"isEveryMonth\": true,\n            \"isEveryTransaction\": false,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Amount\",\n                    \"dataType\": \"decimal\"\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Balance Limit\",\n            \"description\": \"wallets with limit on balances\",\n            \"direction\": \"C\",\n            \"isPercentage\": false,\n            \"isEveryMonth\": false,\n            \"isEveryTransaction\": true,\n            \"hasMinimumAmount\": true,\n            \"hasMaximumAmount\": true,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Limit Amount\",\n                    \"dataType\": \"decimal\"\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Dormancy\",\n            \"description\": \"Accounts that will automatically go into PND due to inactivity for some time\",\n            \"direction\": \"D\",\n            \"isPercentage\": false,\n            \"isEveryMonth\": true,\n            \"isEveryTransaction\": false,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Number of Months\",\n                    \"dataType\": \"int\"\n                }\n            ]\n        },\n        {\n            \"id\": 51,\n            \"name\": \"Witholding Tax\",\n            \"description\": \"Witholding Tax\",\n            \"direction\": \"D\",\n            \"isPercentage\": true,\n            \"isEveryMonth\": false,\n            \"isEveryTransaction\": true,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"WHT Rate\",\n                    \"dataType\": \"decimal\"\n                }\n            ]\n        },\n        {\n            \"id\": 52,\n            \"name\": \"VaultCharge\",\n            \"description\": \"Penalty on Pre liquidation of Vault\",\n            \"direction\": \"D\",\n            \"isPercentage\": true,\n            \"isEveryMonth\": false,\n            \"isEveryTransaction\": true,\n            \"hasMinimumAmount\": false,\n            \"hasMaximumAmount\": false,\n            \"walletFeaturePropertyDtos\": [\n                {\n                    \"name\": \"Threshold\",\n                    \"dataType\": \"int\"\n                },\n                {\n                    \"name\": \"Rate\",\n                    \"dataType\": \"int\"\n                }\n            ]\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Add account feature to account type",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "461e356c-d812-429a-96f2-430405754835",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Code is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data is a non-negative integer\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData.data).to.be.a('number');",
+													"  pm.expect(responseData.data).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"Body contains message\", function () {",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Added Successfully\");",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "ef787fb7-0409-444e-96f8-a038aa82ad65",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/feature/add"
+									},
+									"response": [
+										{
+											"id": "c8315611-5e48-4e72-8d9e-438baf517b27",
+											"name": "Add feature",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 22, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/feature/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:36:47 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CLpBfgwRkOnO4IG6DSIso5iuU%2BpRvjkw%2FaPLnR6zKa9anl9h0OX4Hoa8gDxj%2Fu71TaCSoZhAaVk5GNbMDVkKaraeXkUbj71cCz36enl5%2BcGmTHLuSAfEjejyJE9ZyoyM9WnVaCD2Jg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a501db4acda2f63-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Added Successfully\",\n    \"data\": 0\n}"
+										}
+									]
+								},
+								{
+									"name": "Add account feature to account type with invalid groupId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "461e356c-d812-429a-96f2-430405754835",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Code is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+													"});",
+													"",
+													"pm.test(\"Body contains message\", function () {",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The wallet group  you have specified does not exist\");",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "086d8a0b-8711-4577-9338-def26fb5dffe",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"groupId\": 320, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/feature/add"
+									},
+									"response": [
+										{
+											"id": "71957798-4c8f-41b6-bc36-87cd938d4bbb",
+											"name": "Add feature",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 22, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/feature/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:36:47 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CLpBfgwRkOnO4IG6DSIso5iuU%2BpRvjkw%2FaPLnR6zKa9anl9h0OX4Hoa8gDxj%2Fu71TaCSoZhAaVk5GNbMDVkKaraeXkUbj71cCz36enl5%2BcGmTHLuSAfEjejyJE9ZyoyM9WnVaCD2Jg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a501db4acda2f63-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Added Successfully\",\n    \"data\": 0\n}"
+										}
+									]
+								},
+								{
+									"name": "Add account feature to account type with invalid featureId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "461e356c-d812-429a-96f2-430405754835",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Code is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+													"});",
+													"",
+													"pm.test(\"Body contains message\", function () {",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The wallet group  you have specified does not exist\");",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "9e574252-5b67-48c9-b72d-0cd1d0393459",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 32, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/feature/add"
+									},
+									"response": [
+										{
+											"id": "de5e891e-4d87-49fd-8be7-b858929befdc",
+											"name": "Add feature",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 22, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/feature/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:36:47 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CLpBfgwRkOnO4IG6DSIso5iuU%2BpRvjkw%2FaPLnR6zKa9anl9h0OX4Hoa8gDxj%2Fu71TaCSoZhAaVk5GNbMDVkKaraeXkUbj71cCz36enl5%2BcGmTHLuSAfEjejyJE9ZyoyM9WnVaCD2Jg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a501db4acda2f63-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Added Successfully\",\n    \"data\": 0\n}"
+										}
+									]
+								},
+								{
+									"name": "Add account feature to account type with empty fields",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "461e356c-d812-429a-96f2-430405754835",
+												"exec": [
+													"pm.test(\"Response status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.errors).to.exist;",
+													"    pm.expect(responseData.type).to.exist;",
+													"    pm.expect(responseData.title).to.exist;",
+													"    pm.expect(responseData.status).to.exist;",
+													"    pm.expect(responseData.traceId).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Errors object contains groupId, request, and featureId\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData.errors).to.exist;",
+													"  pm.expect(responseData.errors).to.have.property('groupId');",
+													"  pm.expect(responseData.errors).to.have.property('request');",
+													"  pm.expect(responseData.errors).to.have.property('featureId');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Type, title, and traceId are non-empty strings\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.type).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Type should be a non-empty string\");",
+													"    pm.expect(responseData.title).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Title should be a non-empty string\");",
+													"    pm.expect(responseData.traceId).to.be.a('string').and.to.have.lengthOf.at.least(1, \"TraceId should be a non-empty string\");",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "5eb55518-4901-4666-a144-e62a2af5f03f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"groupId\": \"\", // Account type (EUR Account)\n    \"featureId\": \"\", // feature (Interests)\n    \"param1\": \"\", // Interest rate\n    \"param2\": \"\" //  maximum withdrawal\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/walletgroups/feature/add"
+									},
+									"response": [
+										{
+											"id": "90537feb-9944-44cc-bb0e-ff12b4d8b03b",
+											"name": "Add feature",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 22, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/walletgroups/feature/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Thu, 18 Jul 2024 05:36:47 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "CF-Cache-Status",
+													"value": "DYNAMIC"
+												},
+												{
+													"key": "Report-To",
+													"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CLpBfgwRkOnO4IG6DSIso5iuU%2BpRvjkw%2FaPLnR6zKa9anl9h0OX4Hoa8gDxj%2Fu71TaCSoZhAaVk5GNbMDVkKaraeXkUbj71cCz36enl5%2BcGmTHLuSAfEjejyJE9ZyoyM9WnVaCD2Jg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "NEL",
+													"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+												},
+												{
+													"key": "Server",
+													"value": "cloudflare"
+												},
+												{
+													"key": "CF-RAY",
+													"value": "8a501db4acda2f63-LAX"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "br"
+												},
+												{
+													"key": "alt-svc",
+													"value": "h3=\":443\"; ma=86400"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"code\": \"00\",\n    \"success\": true,\n    \"message\": \"Added Successfully\",\n    \"data\": 0\n}"
+										}
+									]
+								}
+							],
+							"id": "54af9e21-3f1b-4b36-be62-45e05917a913"
 						}
 					],
 					"id": "569f7105-2da3-4adb-a031-7cfaf98bf166"
