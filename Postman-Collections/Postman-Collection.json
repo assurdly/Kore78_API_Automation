@@ -9014,7 +9014,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n  \"emailAddress\": \"{{$randomFirstName}}@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"firstName\": \"{{$randomFirstName}}\",\r\n  \"lastName\": \"{{$randomLastName}}\",\r\n  \"username\": \"{{$randomUserName}}\",\r\n  \"roleId\": {{roleId}},\r\n  \"branchId\": 2\r\n}",
+															"raw": "{\r\n  \"emailAddress\": \"{{$randomFirstName}}@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"firstName\": \"{{$randomFirstName}}\",\r\n  \"lastName\": \"{{$randomLastName}}\",\r\n  \"username\": \"{{$randomUserName}}\",\r\n  \"roleId\": {{roleId}},\r\n  \"branchId\": 8\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
