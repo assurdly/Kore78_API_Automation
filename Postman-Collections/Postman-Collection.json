@@ -9852,13 +9852,18 @@
 													"script": {
 														"id": "a553e068-df2d-451d-8d93-272caba0adbf",
 														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.collectionVariables.set(\"productId_1\", jsonData.data.id);",
+															"",
 															"pm.test(\"Response status code is 200\", function () {",
 															"    pm.response.to.have.status(200);",
 															"});",
 															"",
-															"pm.test(\"Validate the response schema for the fields - id, name, organizationId, description, direction, isActive, dateCreated\", function () {",
+															"",
+															"pm.test(\"Validate the response schema for the required fields\", function () {",
 															"    const responseData = pm.response.json();",
-															"    ",
+															"",
 															"    pm.expect(responseData.data).to.be.an('object');",
 															"    pm.expect(responseData.data.id).to.exist.and.to.be.a('number');",
 															"    pm.expect(responseData.data.name).to.exist.and.to.be.a('string');",
@@ -9901,7 +9906,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"Transfer Payment\",\n  \"description\": \"Transfer payment\",\n  \"direction\": \"C\"\n}",
+													"raw": "{\n  \"name\": \"{{$randomJobArea}} Payment\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"C\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -10004,6 +10009,12 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{accessToken}}"
+													}
+												},
 												"method": "PATCH",
 												"header": [
 													{
@@ -10013,7 +10024,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": \"{{productId}}\",\n  \"name\": \"{{$randomJobArea}} Payment\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"D\"\n}",
+													"raw": "{\n  \"id\": \"{{productId_1}}\",\n  \"name\": \"{{$randomJobArea}} Payment\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"D\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -10063,7 +10074,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/products/activate/:id Copy",
+											"name": "/api/v1/products/activate/:id",
 											"id": "e5850436-d48a-4905-9547-e98f6b060964",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -10136,7 +10147,41 @@
 											]
 										},
 										{
-											"name": "/api/v1/products/deactivate/:id Copy",
+											"name": "/api/v1/products/deactivate/:id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "7f42dc56-7dfd-47be-b1c4-255d03020fd8",
+														"exec": [
+															"pm.test(\"Response status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"",
+															"",
+															"pm.test(\"Content-Type header is application/json\", function () {",
+															"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+															"});",
+															"",
+															"pm.test(\"Validate the response schema for id, name, organizationId, description, direction, isActive, and dateCreated\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData.data).to.be.an('object');",
+															"    pm.expect(responseData.data.id).to.exist.and.to.be.a('number');",
+															"    pm.expect(responseData.data.name).to.exist.and.to.be.a('string');",
+															"    pm.expect(responseData.data.organizationId).to.exist.and.to.be.a('number');",
+															"    pm.expect(responseData.data.description).to.exist.and.to.be.a('string');",
+															"    pm.expect(responseData.data.direction).to.exist.and.to.be.a('string');",
+															"    pm.expect(responseData.data.isActive).to.exist.and.to.be.a('boolean');",
+															"    pm.expect(responseData.data.dateCreated).to.exist.and.to.be.a('string');",
+															"});",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "ff4e6464-083e-4b88-a134-569aa12cce20",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -10158,9 +10203,8 @@
 													],
 													"variable": [
 														{
-															"id": "aee2dde0-44bb-43e0-b9b5-18d63302a9b1",
 															"key": "id",
-															"value": "<string>",
+															"value": "{{productId_1}}",
 															"description": "(Required) "
 														}
 													]
@@ -10209,7 +10253,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/products/get Copy",
+											"name": "/api/v1/products/get",
 											"event": [
 												{
 													"listen": "test",
@@ -11294,6 +11338,10 @@
 		},
 		{
 			"key": "productId",
+			"value": ""
+		},
+		{
+			"key": "productId_1",
 			"value": ""
 		}
 	]
