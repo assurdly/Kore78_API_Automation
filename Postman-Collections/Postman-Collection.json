@@ -9387,7 +9387,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n\r\n  \"emailAddress\": \"{{emailAddress}}\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"863107\"\r\n}",
+															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"807004\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
@@ -10680,6 +10680,12 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{accessToken}}"
+													}
+												},
 												"method": "PATCH",
 												"header": [
 													{
