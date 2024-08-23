@@ -10814,6 +10814,34 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "Chart Of Account",
+							"item": [
+								{
+									"name": "Create Chart Of Account",
+									"id": "4d375dfc-4be8-478d-bdfa-231e502ebf82",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Vault Charges\",\n    \"walletGroupFeatureDto\": [\n        {\n            \"featureName\": \"VaultCharge\",\n            \"featurePropertyName\": \"Threshold\",\n            \"featurePropertyValue\": \"5\"\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/walletgroups/add"
+									},
+									"response": []
+								}
+							],
+							"id": "dd1a849f-ae11-4f4a-80d1-3504649beef7"
 						}
 					],
 					"id": "569f7105-2da3-4adb-a031-7cfaf98bf166"
