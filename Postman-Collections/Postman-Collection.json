@@ -1139,6 +1139,11 @@
 											"script": {
 												"id": "e3957ad9-8569-43c3-bd53-70a335c87516",
 												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.collectionVariables.set(\"branchId\", jsonData.data[0].id);",
+													"",
+													"",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.response.to.have.status(200);",
 													"});",
@@ -10907,6 +10912,10 @@
 		},
 		{
 			"key": "productId_1",
+			"value": ""
+		},
+		{
+			"key": "branchId",
 			"value": ""
 		}
 	]
