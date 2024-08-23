@@ -9872,7 +9872,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"Utility Payment\",\n  \"description\": \"Utility payment\",\n  \"direction\": \"C\"\n}",
+													"raw": "{\n  \"name\": \"Transfer Payment\",\n  \"description\": \"Transfer payment\",\n  \"direction\": \"C\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
