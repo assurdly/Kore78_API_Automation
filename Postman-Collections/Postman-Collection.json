@@ -10944,7 +10944,7 @@
 									"response": []
 								},
 								{
-									"name": "New Request",
+									"name": "Get Account Type By ID",
 									"id": "0b32c97a-9260-4cb8-b31e-45f9e657f5df",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
