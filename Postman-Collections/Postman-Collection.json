@@ -10877,6 +10877,83 @@
 										"url": "{{baseUrl}}/api/v1/walletgroups/add"
 									},
 									"response": []
+								},
+								{
+									"name": "Get Account Types",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "d16ffb61-cf12-4e43-bb3a-7184dea5ec06",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the data object and its properties\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data[0]).to.be.an('object');",
+													"    pm.expect(responseData.data[0].id).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data[0].name).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data[0].walletGroupFeatureDto).to.exist.and.to.be.an('array');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure walletGroupFeatureDto contains expected properties\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
+													"    ",
+													"    responseData.data.forEach(function(walletGroup) {",
+													"        walletGroup.walletGroupFeatureDto.forEach(function(feature) {",
+													"            pm.expect(feature).to.have.property('featureName');",
+													"            pm.expect(feature).to.have.property('featurePropertyName');",
+													"            pm.expect(feature).to.have.property('featurePropertyValue');",
+													"        });",
+													"    });",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "a2dd7a71-97ff-4875-9f24-7fa94ec435f1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/walletgroups/get"
+									},
+									"response": []
+								},
+								{
+									"name": "New Request",
+									"id": "0b32c97a-9260-4cb8-b31e-45f9e657f5df",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
 								}
 							],
 							"id": "dd1a849f-ae11-4f4a-80d1-3504649beef7"
