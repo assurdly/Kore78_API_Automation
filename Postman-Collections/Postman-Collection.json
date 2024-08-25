@@ -10945,7 +10945,98 @@
 								},
 								{
 									"name": "Get Account Type By ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "a4320eed-cb27-44cf-9f65-4a18131340ab",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the data object and its properties\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"    pm.expect(responseData.data.id).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.name).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data.walletGroupFeatureDto).to.exist.and.to.be.an('array');",
+													"});",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "0b32c97a-9260-4cb8-b31e-45f9e657f5df",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/walletgroups/get/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"walletgroups",
+												"get",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "32"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add Features To Account Type",
+									"id": "de83092a-2d9e-47d8-8570-1d42004c2c02",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/walletgroups/feature/add"
+									},
+									"response": []
+								},
+								{
+									"name": "New Request",
+									"id": "c873c743-7933-4c35-9217-ab632bf22db1",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
