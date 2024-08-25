@@ -11035,14 +11035,52 @@
 									"response": []
 								},
 								{
-									"name": "New Request",
+									"name": "Add Wallet To Account",
 									"id": "c873c743-7933-4c35-9217-ab632bf22db1",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/walletgroups/:id/wallet/:walletId/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"walletgroups",
+												":id",
+												"wallet",
+												":walletId",
+												"add"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": ""
+												},
+												{
+													"key": "walletId",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Account Type Feature",
+									"id": "eba30a14-fab6-46c2-95f9-555f347fe40b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
 										"method": "GET",
-										"header": []
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/walletgroups/walletfeatures/get"
 									},
 									"response": []
 								}
