@@ -8961,7 +8961,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"906397\"\r\n}",
+															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"645851\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
@@ -9082,7 +9082,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiMSIsImdyb3Vwc2lkIjoiMSIsIm5iZiI6MTcyMzc5Mzc3MywiZXhwIjoxNzIzNzk0OTczLCJpYXQiOjE3MjM3OTM3NzN9.ZCTQrsaHRkKFoEo9xiVJI77zptQqfOAA3d5k3H270oY"
+																"token": "{{accessToken}}"
 															}
 														},
 														"method": "GET",
@@ -9103,7 +9103,7 @@
 																}
 															}
 														},
-														"url": "{{baseurl}}/api/v1/users/u/me"
+														"url": "{{baseUrl}}/api/v1/users/u/me"
 													},
 													"response": []
 												}
