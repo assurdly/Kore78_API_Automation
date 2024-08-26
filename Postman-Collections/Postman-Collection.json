@@ -8961,7 +8961,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"184305\"\r\n}",
+															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"906397\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
