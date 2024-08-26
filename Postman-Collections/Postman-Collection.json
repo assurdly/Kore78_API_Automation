@@ -11377,6 +11377,24 @@
 								}
 							],
 							"id": "dd1a849f-ae11-4f4a-80d1-3504649beef7"
+						},
+						{
+							"name": "Multi-Currency",
+							"item": [
+								{
+									"name": "New Request",
+									"id": "876cafbe-6496-4a07-8db6-aece8d5c7a3b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								}
+							],
+							"id": "4db3f968-be3f-44f8-b03b-eebe1a24fd45"
 						}
 					],
 					"id": "569f7105-2da3-4adb-a031-7cfaf98bf166"
