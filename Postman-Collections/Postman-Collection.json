@@ -11304,6 +11304,31 @@
 								},
 								{
 									"name": "Get Account Type Feature",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "5d21b5eb-f07d-4a36-9f92-b9355d5db519",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Body contains message\", function (){",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Retrieved Successfully\")",
+													"})",
+													"",
+													"pm.test(\"Body contains meta data\", function (){",
+													"    pm.expect(typeof jsonData.data).to.eql(\"object\")",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "eba30a14-fab6-46c2-95f9-555f347fe40b",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
