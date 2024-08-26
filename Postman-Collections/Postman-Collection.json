@@ -42,6 +42,17 @@
 														"type": "text/javascript",
 														"packages": {}
 													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "d5557919-d3b2-4b7d-b65d-ec97de0170fc",
+														"exec": [
+															"pm.environment.set('baseUrl', 'https://kore78-dev.bank78.co')"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
 												}
 											],
 											"id": "a501d788-76b9-486c-9af0-895b61b01a4d",
@@ -586,6 +597,17 @@
 														"type": "text/javascript",
 														"packages": {}
 													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "6dff14e7-fe1e-4031-8636-a1424d5bc5de",
+														"exec": [
+															"pm.environment.set('baseUrl', 'https://kore78-dev.bank78.co')"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
 												}
 											],
 											"id": "8c08c894-8455-4a39-9756-855175e61f17",
@@ -602,7 +624,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 0,\n  \"name\": \"Zimbabwe Dollars\",\n  \"shortName\": \"ZDollars\"\n}",
+													"raw": "{\n  \"id\": 0,\n  \"name\": \"Canadian Dollars\",\n  \"shortName\": \"ZDollars\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -1191,6 +1213,17 @@
 													"  });",
 													"});",
 													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "b6013257-ed57-40b3-9906-d531016ac1e6",
+												"exec": [
+													"pm.environment.set('baseUrl', 'https://kore78-dev.bank78.co')"
 												],
 												"type": "text/javascript",
 												"packages": {}
