@@ -11128,26 +11128,98 @@
 									"id": "9a26d47a-69bf-4df1-a681-56f54db79723"
 								},
 								{
-									"name": "Add Features To Account Type",
-									"id": "de83092a-2d9e-47d8-8570-1d42004c2c02",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 1, // feature (Interests)\n    \"param1\": 5.5, // Interest rate\n    \"param2\": 5 //  maximum withdrawal\n}",
-											"options": {
-												"raw": {
-													"language": "json"
+									"name": "Add Feature To Account",
+									"item": [
+										{
+											"name": "Add Features To Account Type",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ceefaa01-f513-44d0-8ea0-89cf56ca83bd",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Added Successfully\")",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
 												}
-											}
+											],
+											"id": "de83092a-2d9e-47d8-8570-1d42004c2c02",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 52, // Vault Charge\n    \"param1\": 6.5, // Interest rate\n    \"param2\": 10 //  maximum withdrawal\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/walletgroups/feature/add"
+											},
+											"response": []
 										},
-										"url": "{{baseUrl}}/api/v1/walletgroups/feature/add"
-									},
-									"response": []
+										{
+											"name": "Add Features To Account Type Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ceefaa01-f513-44d0-8ea0-89cf56ca83bd",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Added Successfully\")",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e9b5604f-3f8e-4d76-b689-2c72bd921c94",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 52, // Vault Charge\n    \"param1\": 6.5, // Interest rate\n    \"param2\": 10 //  maximum withdrawal\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/walletgroups/feature/add"
+											},
+											"response": []
+										}
+									],
+									"id": "f70bfa7a-5dcf-49d2-addc-0a5b9fcf07fa"
 								},
 								{
 									"name": "Add Wallet To Account",
