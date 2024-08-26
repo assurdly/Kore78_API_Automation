@@ -10814,6 +10814,534 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "Chart Of Account",
+							"item": [
+								{
+									"name": "Create Account",
+									"item": [
+										{
+											"name": "Create Chart Of Account",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "36622c85-1e65-4895-ab33-c45d79afb198",
+														"exec": [
+															"pm.test(\"Response status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"",
+															"",
+															"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData).to.be.an('object');",
+															"    pm.expect(responseData.code).to.exist;",
+															"    pm.expect(responseData.success).to.exist;",
+															"    pm.expect(responseData.message).to.exist;",
+															"    pm.expect(responseData.data).to.exist;",
+															"});",
+															"",
+															"",
+															"pm.test(\"Validate the data object\", function () {",
+															"  const responseData = pm.response.json();",
+															"  ",
+															"  pm.expect(responseData).to.be.an('object');",
+															"  pm.expect(responseData.data).to.be.an('object');",
+															"  pm.expect(responseData.data.id).to.be.a('number').and.to.be.at.least(0);",
+															"  pm.expect(responseData.data.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+															"  pm.expect(responseData.data.walletGroupFeatureDto).to.satisfy((value) => value === null || typeof value === 'object');",
+															"});",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "4d375dfc-4be8-478d-bdfa-231e502ebf82",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"Vault Charges\",\n    \"walletGroupFeatureDto\": [\n        {\n            \"featureName\": \"VaultCharge\",\n            \"featurePropertyName\": \"Threshold\",\n            \"featurePropertyValue\": \"5\"\n        }\n    ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/walletgroups/add"
+											},
+											"response": []
+										},
+										{
+											"name": "Create Chart Of Account - Empty Name Field",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "36622c85-1e65-4895-ab33-c45d79afb198",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Wallet group name is required\")",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "0e1517ff-4248-45de-819c-42a5920dcf51",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"\",\n    \"walletGroupFeatureDto\": [\n        {\n            \"featureName\": \"VaultCharge\",\n            \"featurePropertyName\": \"Threshold\",\n            \"featurePropertyValue\": \"5\"\n        }\n    ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/walletgroups/add"
+											},
+											"response": []
+										}
+									],
+									"id": "e144ef14-c5ef-4d3a-8978-11811a389e54"
+								},
+								{
+									"name": "Get Account Type",
+									"item": [
+										{
+											"name": "Get Account Types",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "d16ffb61-cf12-4e43-bb3a-7184dea5ec06",
+														"exec": [
+															"pm.test(\"Response status code is 200\", function () {",
+															"  pm.response.to.have.status(200);",
+															"});",
+															"",
+															"",
+															"pm.test(\"Response has the required fields\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData).to.be.an('object');",
+															"    pm.expect(responseData.code).to.exist;",
+															"    pm.expect(responseData.success).to.exist;",
+															"    pm.expect(responseData.message).to.exist;",
+															"    pm.expect(responseData.data).to.exist;",
+															"});",
+															"",
+															"",
+															"pm.test(\"Validate the data object and its properties\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData.data[0]).to.be.an('object');",
+															"    pm.expect(responseData.data[0].id).to.exist.and.to.be.a('number');",
+															"    pm.expect(responseData.data[0].name).to.exist.and.to.be.a('string');",
+															"    pm.expect(responseData.data[0].walletGroupFeatureDto).to.exist.and.to.be.an('array');",
+															"});",
+															"",
+															"",
+															"pm.test(\"Ensure walletGroupFeatureDto contains expected properties\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
+															"    ",
+															"    responseData.data.forEach(function(walletGroup) {",
+															"        walletGroup.walletGroupFeatureDto.forEach(function(feature) {",
+															"            pm.expect(feature).to.have.property('featureName');",
+															"            pm.expect(feature).to.have.property('featurePropertyName');",
+															"            pm.expect(feature).to.have.property('featurePropertyValue');",
+															"        });",
+															"    });",
+															"});",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "a2dd7a71-97ff-4875-9f24-7fa94ec435f1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/walletgroups/get"
+											},
+											"response": []
+										}
+									],
+									"id": "ee0bd576-e8c8-4dfc-a253-a128b35bf6ef"
+								},
+								{
+									"name": "Get Account Type ID",
+									"item": [
+										{
+											"name": "Get Account Type By ID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "a4320eed-cb27-44cf-9f65-4a18131340ab",
+														"exec": [
+															"pm.test(\"Response status code is 200\", function () {",
+															"  pm.response.to.have.status(200);",
+															"});",
+															"",
+															"",
+															"pm.test(\"Response has the required fields\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData).to.be.an('object');",
+															"    pm.expect(responseData.code).to.exist;",
+															"    pm.expect(responseData.success).to.exist;",
+															"    pm.expect(responseData.message).to.exist;",
+															"    pm.expect(responseData.data).to.exist;",
+															"});",
+															"",
+															"",
+															"pm.test(\"Validate the data object and its properties\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData.data).to.be.an('object');",
+															"    pm.expect(responseData.data.id).to.exist.and.to.be.a('number');",
+															"    pm.expect(responseData.data.name).to.exist.and.to.be.a('string');",
+															"    pm.expect(responseData.data.walletGroupFeatureDto).to.exist.and.to.be.an('array');",
+															"});",
+															"",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "0b32c97a-9260-4cb8-b31e-45f9e657f5df",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/walletgroups/get/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"walletgroups",
+														"get",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "32"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get Account Type By ID - Invalid ID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "a4320eed-cb27-44cf-9f65-4a18131340ab",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Wallet group was not found\")",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "8c737ddc-7968-44a8-aa3d-a7f34444f923",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/walletgroups/get/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"walletgroups",
+														"get",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "320"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"id": "9a26d47a-69bf-4df1-a681-56f54db79723"
+								},
+								{
+									"name": "Add Feature To Account",
+									"item": [
+										{
+											"name": "Add Features To Account Type",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ceefaa01-f513-44d0-8ea0-89cf56ca83bd",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Added Successfully\")",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "de83092a-2d9e-47d8-8570-1d42004c2c02",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 52, // Vault Charge\n    \"param1\": 6.5, // Interest rate\n    \"param2\": 10 //  maximum withdrawal\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/walletgroups/feature/add"
+											},
+											"response": []
+										},
+										{
+											"name": "Add Features To Account Type - Invalid GroupId",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ceefaa01-f513-44d0-8ea0-89cf56ca83bd",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The wallet group  you have specified does not exist\")",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e9b5604f-3f8e-4d76-b689-2c72bd921c94",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 320, // Account type (EUR Account)\n    \"featureId\": 52, // Vault Charge\n    \"param1\": 6.5, // Interest rate\n    \"param2\": 10 //  maximum withdrawal\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/walletgroups/feature/add"
+											},
+											"response": []
+										},
+										{
+											"name": "Add Features To Account Type - Invalid FeatureId",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ceefaa01-f513-44d0-8ea0-89cf56ca83bd",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The wallet feature you have specified does not exist\")",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "c00de331-eaf5-463d-a0a8-7d389cbf045a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 520, // Vault Charge\n    \"param1\": 6.5, // Interest rate\n    \"param2\": 10 //  maximum withdrawal\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/walletgroups/feature/add"
+											},
+											"response": []
+										}
+									],
+									"id": "f70bfa7a-5dcf-49d2-addc-0a5b9fcf07fa"
+								},
+								{
+									"name": "Add Wallet To Account",
+									"id": "c873c743-7933-4c35-9217-ab632bf22db1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/walletgroups/:id/wallet/:walletId/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"walletgroups",
+												":id",
+												"wallet",
+												":walletId",
+												"add"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": ""
+												},
+												{
+													"key": "walletId",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Account Type Feature",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "5d21b5eb-f07d-4a36-9f92-b9355d5db519",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Body contains message\", function (){",
+													"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Retrieved Successfully\")",
+													"})",
+													"",
+													"pm.test(\"Body contains meta data\", function (){",
+													"    pm.expect(typeof jsonData.data).to.eql(\"object\")",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "eba30a14-fab6-46c2-95f9-555f347fe40b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/walletgroups/walletfeatures/get"
+									},
+									"response": []
+								}
+							],
+							"id": "dd1a849f-ae11-4f4a-80d1-3504649beef7"
 						}
 					],
 					"id": "569f7105-2da3-4adb-a031-7cfaf98bf166"
