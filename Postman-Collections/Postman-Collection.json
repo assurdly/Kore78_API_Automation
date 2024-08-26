@@ -11175,7 +11175,7 @@
 											"response": []
 										},
 										{
-											"name": "Add Features To Account Type Copy",
+											"name": "Add Features To Account Type - Invalid GroupId",
 											"event": [
 												{
 													"listen": "test",
@@ -11184,12 +11184,12 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Response status code is 200\", function () {",
-															"    pm.response.to.have.status(200);",
+															"pm.test(\"Response status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
 															"});",
 															"",
 															"pm.test(\"Body contains message\", function (){",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Added Successfully\")",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The wallet group  you have specified does not exist\")",
 															"})",
 															""
 														],
@@ -11207,7 +11207,51 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 52, // Vault Charge\n    \"param1\": 6.5, // Interest rate\n    \"param2\": 10 //  maximum withdrawal\n}",
+													"raw": "{\n    \"groupId\": 320, // Account type (EUR Account)\n    \"featureId\": 52, // Vault Charge\n    \"param1\": 6.5, // Interest rate\n    \"param2\": 10 //  maximum withdrawal\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/walletgroups/feature/add"
+											},
+											"response": []
+										},
+										{
+											"name": "Add Features To Account Type - Invalid FeatureId",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ceefaa01-f513-44d0-8ea0-89cf56ca83bd",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"",
+															"pm.test(\"Body contains message\", function (){",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The wallet feature you have specified does not exist\")",
+															"})",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "c00de331-eaf5-463d-a0a8-7d389cbf045a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"groupId\": 32, // Account type (EUR Account)\n    \"featureId\": 520, // Vault Charge\n    \"param1\": 6.5, // Interest rate\n    \"param2\": 10 //  maximum withdrawal\n}",
 													"options": {
 														"raw": {
 															"language": "json"
