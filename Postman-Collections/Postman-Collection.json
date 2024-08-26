@@ -10712,7 +10712,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "[\n    {\n        \"name\": \"{{permissionName}}\"\n    },\n     {\n        \"name\": \"{{permissionName1}}\"\n    },\n     {\n        \"name\": \"{{permissionName2}}\"\n    }\n]",
+													"raw": "[\n    {\n        \"name\": \"{{permissionName}}\"\n    },\n     {\n        \"name\": \"{{permissionName1}}\"\n    },\n     {\n        \"name\": \"{{permissionName2}}\"\n    },\n    {\n        \"name\": \"User.Create\"\n    }\n]",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
