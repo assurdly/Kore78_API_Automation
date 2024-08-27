@@ -6567,7 +6567,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": \"<long>\",\n  \"walletGroupId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"availableBalance\": \"<double>\",\n  \"ledgerBalance\": \"<double>\",\n  \"walletRestrictionId\": \"<integer>\",\n  \"walletClassificationId\": \"<integer>\",\n  \"currencyId\": \"<integer>\",\n  \"isInternal\": \"<boolean>\",\n  \"isDefault\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"overdraft\": \"<double>\",\n  \"virtualAccount\": {\n    \"accountNumber\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n  },\n  \"mobNum\": \"<string>\",\n  \"customerTypeId\": \"<integer>\"\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
