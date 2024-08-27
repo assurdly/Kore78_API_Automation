@@ -6553,6 +6553,21 @@
 								},
 								{
 									"name": "/api/v1/wallets/add",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "09e0f058-bfe2-4b10-bf0c-59d3ea03c60f",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "a930d0bc-79c4-400f-9ab1-6ae266904900",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -11624,6 +11639,10 @@
 		},
 		{
 			"key": "branchId",
+			"value": ""
+		},
+		{
+			"key": "accountNumber",
 			"value": ""
 		}
 	]
