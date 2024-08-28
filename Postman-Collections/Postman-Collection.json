@@ -11464,7 +11464,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
+											"raw": "{\n    \"CurrencyId\": 4,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -11486,14 +11486,14 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
+											"raw": "{\n    \"CurrencyId\": 4,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/reactivate"
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/deactivate"
 									},
 									"response": []
 								},
