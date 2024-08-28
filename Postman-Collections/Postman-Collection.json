@@ -11407,7 +11407,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"2\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"ZWL\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"Zimbabwe Dollars\",\n    \"IsoCode\": \"ZWE\",\n    \"BankCode\": \"930\"\n}",
+											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"2\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"EUR\",\n    \"BankCode\": \"930\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -11442,7 +11442,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"1\",\n    \"SellRate\": \"2\",\n    \"MidRate\": \"1\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"NGN\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"31\",\n    \"Name\": \"NGN\",\n    \"IsoCode\": \"566\",\n    \"BankCode\": \"045\"\n}",
+											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"1\",\n    \"SellRate\": \"3\",\n    \"MidRate\": \"1\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"NGN\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"31\",\n    \"Name\": \"NGN\",\n    \"IsoCode\": \"566\",\n    \"BankCode\": \"045\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
