@@ -6553,6 +6553,21 @@
 								},
 								{
 									"name": "/api/v1/wallets/add",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "09e0f058-bfe2-4b10-bf0c-59d3ea03c60f",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "a930d0bc-79c4-400f-9ab1-6ae266904900",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -6567,7 +6582,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"id\": \"<long>\",\n  \"walletGroupId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"availableBalance\": \"<double>\",\n  \"ledgerBalance\": \"<double>\",\n  \"walletRestrictionId\": \"<integer>\",\n  \"walletClassificationId\": \"<integer>\",\n  \"currencyId\": \"<integer>\",\n  \"isInternal\": \"<boolean>\",\n  \"isDefault\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"overdraft\": \"<double>\",\n  \"virtualAccount\": {\n    \"accountNumber\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n  },\n  \"mobNum\": \"<string>\",\n  \"customerTypeId\": \"<integer>\"\n}",
+											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -8961,7 +8976,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"184305\"\r\n}",
+															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"645851\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
@@ -9082,7 +9097,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiMSIsImdyb3Vwc2lkIjoiMSIsIm5iZiI6MTcyMzc5Mzc3MywiZXhwIjoxNzIzNzk0OTczLCJpYXQiOjE3MjM3OTM3NzN9.ZCTQrsaHRkKFoEo9xiVJI77zptQqfOAA3d5k3H270oY"
+																"token": "{{accessToken}}"
 															}
 														},
 														"method": "GET",
@@ -9103,7 +9118,7 @@
 																}
 															}
 														},
-														"url": "{{baseurl}}/api/v1/users/u/me"
+														"url": "{{baseUrl}}/api/v1/users/u/me"
 													},
 													"response": []
 												}
@@ -10712,7 +10727,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "[\n    {\n        \"name\": \"{{permissionName}}\"\n    },\n     {\n        \"name\": \"{{permissionName1}}\"\n    },\n     {\n        \"name\": \"{{permissionName2}}\"\n    }\n]",
+													"raw": "[\n    {\n        \"name\": \"{{permissionName}}\"\n    },\n     {\n        \"name\": \"{{permissionName1}}\"\n    },\n     {\n        \"name\": \"{{permissionName2}}\"\n    },\n    {\n        \"name\": \"User.Create\"\n    }\n]",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -11326,11 +11341,11 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": ""
+													"value": "32"
 												},
 												{
 													"key": "walletId",
-													"value": ""
+													"value": "6969"
 												}
 											]
 										}
@@ -11377,6 +11392,135 @@
 								}
 							],
 							"id": "dd1a849f-ae11-4f4a-80d1-3504649beef7"
+						},
+						{
+							"name": "Multi-Currency",
+							"item": [
+								{
+									"name": "Add New currency rate",
+									"id": "876cafbe-6496-4a07-8db6-aece8d5c7a3b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"2\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"EUR\",\n    \"BankCode\": \"930\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/add"
+									},
+									"response": []
+								},
+								{
+									"name": "Get currency rate",
+									"id": "c297c0fc-e2ba-4889-b01c-ded5315c03b9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rates"
+									},
+									"response": []
+								},
+								{
+									"name": "Modify currency rate",
+									"id": "8bbc0585-2046-46cd-a75d-de2406426457",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"CurrencyId\": 181,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"3\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"31\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"978\",\n    \"BankCode\": \"045\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/modify"
+									},
+									"response": []
+								},
+								{
+									"name": "Reactivate Currency Rate",
+									"id": "6ff83681-580a-4048-9214-465e14503c51",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"CurrencyId\": 4,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/reactivate"
+									},
+									"response": []
+								},
+								{
+									"name": "Deactivate Currency Rate",
+									"id": "1437274a-e113-4530-99f0-882bc9d019c4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"CurrencyId\": 4,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/deactivate"
+									},
+									"response": []
+								},
+								{
+									"name": "Fx Transfer",
+									"id": "5328dbef-03ba-4b14-b5e4-3a5bea7cc101",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"FromAccountNumber\": \"\",\n    \"ToAccountNumber\": \"\",\n    \"Fee\": \"\",\n    \"ProductId\": \"\",\n    \"TransactionReference\": \"\",\n    \"BatchReference\": \"\",\n    \"Amount\": \"\",\n    \"Remarks\": \"\",\n    \"BranchCode\": \"\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"\",\n    \"OrganizationId\": \"\",\n    \"ValueDate\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/transfer"
+									},
+									"response": []
+								}
+							],
+							"id": "4db3f968-be3f-44f8-b03b-eebe1a24fd45"
 						}
 					],
 					"id": "569f7105-2da3-4adb-a031-7cfaf98bf166"
@@ -11495,6 +11639,10 @@
 		},
 		{
 			"key": "branchId",
+			"value": ""
+		},
+		{
+			"key": "accountNumber",
 			"value": ""
 		}
 	]
