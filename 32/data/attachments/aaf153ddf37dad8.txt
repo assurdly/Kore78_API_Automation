@@ -1,0 +1,12 @@
+{
+  "firstName": "Buster",
+  "lastName": "Hirthe",
+  "middleName": "Evans",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "392 Jedediah Parkways",
+  "mobileNumber": "234917186299912",
+  "emailAddress": "Ressie.Kuhlman@yahoo.com"
+}

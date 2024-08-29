@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Marvin",
+  "middleName": "Marisol",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "6598 Ella Circles",
+  "mobileNumber": "234917040738512",
+  "emailAddress": "Kylee.Carter@hotmail.com"
+}
