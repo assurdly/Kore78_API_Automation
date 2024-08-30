@@ -5669,7 +5669,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
+													"raw": "{\n  \"accountToDebit\": \"{{accountNumber}}\",\n  \"amount\": \"5000\",\n  \"tenor\": 30\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -6174,7 +6174,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"productId\": \"<integer>\",\n  \"organizationId\": \"<long>\",\n  \"amount\": \"<double>\",\n  \"fee\": \"<double>\",\n  \"postedDate\": \"<dateTime>\",\n  \"valueDate\": \"<dateTime>\",\n  \"transactionReference\": \"<string>\",\n  \"walletId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"isPosted\": \"<boolean>\",\n  \"direction\": \"<string>\",\n  \"remarks\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"batchReference\": \"<string>\",\n  \"accountNumber\": \"<string>\"\n}",
+													"raw": "{\n  \"productId\": 1,\n  \"organizationId\": 1,\n  \"amount\": \"50000\",\n  \"fee\": \"50\",\n  \"postedDate\": \"2024-08-30\",\n  \"valueDate\": null,\n  \"transactionReference\": \"Ref-0186347\",\n  \"customerId\": 1625,\n  \"isPosted\": true,\n  \"direction\": \"C\",\n  \"remarks\": \"Testing\",\n  \"currency\": \"NGN\",\n  \"batchReference\": \"Ref-0736364\",\n  \"accountNumber\": \"{{accountNumber}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
