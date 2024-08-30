@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Rau",
+  "middleName": "Valentina",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "2078 Alia Hills",
+  "mobileNumber": "234915255380812",
+  "emailAddress": "Janick34@hotmail.com"
+}

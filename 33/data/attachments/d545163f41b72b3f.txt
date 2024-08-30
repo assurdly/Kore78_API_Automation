@@ -1,0 +1,12 @@
+{
+  "firstName": "Brandyn",
+  "lastName": "Morissette",
+  "middleName": "Terrell",
+  "dob": "1990-05-20",
+  "city": "New Caterinaside",
+  "address": "2459 Anissa Mission",
+  "occupation": "Internal Functionality Developer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

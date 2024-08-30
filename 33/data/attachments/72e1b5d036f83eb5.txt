@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Updated Successfully","data":{"id":18,"name":"Accountability Payment","organizationId":1,"description":"Legacy Payment","direction":"D","isActive":true,"dateCreated":"2024-08-30T18:03:37"}}

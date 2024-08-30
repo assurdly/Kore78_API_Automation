@@ -1,0 +1,12 @@
+{
+    "Date": "Fri, 30 Aug 2024 18:03:44 GMT",
+    "Content-Type": "application/problem+json; charset=utf-8",
+    "Content-Length": "1300",
+    "Connection": "keep-alive",
+    "CF-Cache-Status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=WvkNxz0AaYMsKKyhxvYfmKW3yfhh3zaw6YfhPzYZqw6jTbrNMru5FYHSM8QsYzouL5B5vqfNZN2nsvREyfPMzS9vsjGmXtzR11U40rwnUXJSyE9fCUOcdxw3wmxyVdGyFJQdjKEfhw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Server": "cloudflare",
+    "CF-RAY": "8bb6b301cd5086cf-ORD",
+    "alt-svc": "h3=\":443\"; ma=86400"
+}
