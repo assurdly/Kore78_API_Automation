@@ -1,0 +1,6 @@
+{
+    "groupId": 32, 
+    "featureId": 52, 
+    "param1": 6.5, 
+    "param2": 10 
+}

@@ -1,0 +1,1 @@
+{"errors":{"amount":["Could not convert string to decimal: <double>. Path 'amount', line 4, position 22."],"request":["The request field is required."]},"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-18a8f6aae33e11e11de3a385e2dd6afa-38ac11983d73fe13-00"}
