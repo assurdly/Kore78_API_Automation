@@ -5850,6 +5850,71 @@
 															"body": ""
 														}
 													]
+												},
+												{
+													"name": "/api/v1/wallets/vault/add - Invalid tenor",
+													"id": "7fa85dae-2381-42b5-9f3b-4a0377045d35",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"0000083603\",\n  \"amount\": \"5000\",\n  \"tenor\": \"30AD\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+													},
+													"response": [
+														{
+															"id": "94e2780d-5649-4e0a-bdeb-987a1793d1f0",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "x-api-key",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
 												}
 											],
 											"id": "ad54dbe0-9309-4d30-8b28-4760e4093a73"
