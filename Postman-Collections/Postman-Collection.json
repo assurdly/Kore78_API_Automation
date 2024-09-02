@@ -5672,7 +5672,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"accountToDebit\": \"{{accountNumber}}\",\n  \"amount\": \"5000\",\n  \"tenor\": 30\n}",
+															"raw": "{\n  \"accountToDebit\": \"{{accountNumber}}\",\n  \"amount\": \"5000\",\n  \"tenor\": 60\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
