@@ -5985,50 +5985,17 @@
 											"id": "ad54dbe0-9309-4d30-8b28-4760e4093a73"
 										},
 										{
-											"name": "/api/v1/wallets/vault/:accountNumber/preliquidate",
-											"id": "248d205b-e99c-4346-be9c-6abc3304107b",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/wallets/vault/:accountNumber/preliquidate",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"wallets",
-														"vault",
-														":accountNumber",
-														"preliquidate"
-													],
-													"variable": [
-														{
-															"id": "eb5b2b3e-c1c1-4e50-a5b7-c1f030d8f8a4",
-															"key": "accountNumber",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
+											"name": "Preliquidate",
+											"item": [
 												{
-													"id": "7187bc8d-17f1-4c8d-a5ee-ee05ef3a5255",
-													"name": "Success",
-													"originalRequest": {
+													"name": "/api/v1/wallets/vault/:accountNumber/preliquidate",
+													"id": "248d205b-e99c-4346-be9c-6abc3304107b",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
 														"method": "POST",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
-															}
-														],
+														"header": [],
 														"url": {
 															"raw": "{{baseUrl}}/api/v1/wallets/vault/:accountNumber/preliquidate",
 															"host": [
@@ -6044,20 +6011,58 @@
 															],
 															"variable": [
 																{
-																	"key": "accountNumber"
+																	"key": "accountNumber",
+																	"value": "{{accountNumber}}",
+																	"description": "(Required) "
 																}
 															]
 														}
 													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
+													"response": [
+														{
+															"id": "7187bc8d-17f1-4c8d-a5ee-ee05ef3a5255",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "x-api-key",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/wallets/vault/:accountNumber/preliquidate",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"wallets",
+																		"vault",
+																		":accountNumber",
+																		"preliquidate"
+																	],
+																	"variable": [
+																		{
+																			"key": "accountNumber"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
 												}
-											]
+											],
+											"id": "88b03d09-b798-4649-aa56-5ada791214fa"
 										},
 										{
 											"name": "/api/v1/wallets/vault/plans",
