@@ -5932,7 +5932,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"accountToDebit\": \"0000083603\",\n  \"amount\": \"5000\",\n  \"tenor\": \"30AD\"\n}",
+															"raw": "{\n  \"accountToDebit\": \"\",\n  \"amount\": \"\",\n  \"tenor\": \"\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
