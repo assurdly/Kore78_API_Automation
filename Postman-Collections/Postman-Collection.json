@@ -6174,7 +6174,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"productId\": 1,\n  \"organizationId\": 1,\n  \"amount\": \"50000\",\n  \"fee\": \"50\",\n  \"postedDate\": \"2024-08-30\",\n  \"valueDate\": null,\n  \"transactionReference\": \"Ref-0186347\",\n  \"customerId\": 1625,\n  \"isPosted\": true,\n  \"direction\": \"C\",\n  \"remarks\": \"Testing\",\n  \"currency\": \"NGN\",\n  \"batchReference\": \"Ref-0736364\",\n  \"accountNumber\": \"{{accountNumber}}\"\n}",
+													"raw": "{\n    \"productId\": 1,\n    \"amount\": 100000,\n    \"fee\": 1,\n    \"postedDate\": \"2024-09-02\",\n    \"transactionReference\": \"1212121212-{{$randomAlphaNumeric}}\",\n    \"walletId\": 8360,\n    \"customerId\": 1625,\n    \"isPosted\": true,\n    \"direction\": \"C\",\n    \"remarks\": \"Test\",\n    \"currency\": \"NGN\",\n    \"batchReference\": \"BATCH-1212121212-MMJMJ111\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -7426,9 +7426,8 @@
 											],
 											"variable": [
 												{
-													"id": "94c65b69-4c12-4e99-9638-aba4f9f462cc",
 													"key": "accountNumber",
-													"value": "<string>",
+													"value": "{{accountNumber}}",
 													"description": "(Required) "
 												}
 											]
