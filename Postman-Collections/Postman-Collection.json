@@ -6126,9 +6126,8 @@
 													],
 													"variable": [
 														{
-															"id": "c76c9bf0-e8e9-4cac-91b0-c5109bb59d7d",
 															"key": "accountNumber",
-															"value": "<string>",
+															"value": "{{accountNumber}}",
 															"description": "(Required) "
 														}
 													]
@@ -6915,7 +6914,7 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
+															"pm.collectionVariables.set(\"accountNumber1\", jsonData.data.virtualAccount.accountNumber);"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -6936,7 +6935,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
+													"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 107, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -11864,7 +11863,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"FromAccountNumber\": \"\",\n    \"ToAccountNumber\": \"\",\n    \"Fee\": \"\",\n    \"ProductId\": \"\",\n    \"TransactionReference\": \"\",\n    \"BatchReference\": \"\",\n    \"Amount\": \"\",\n    \"Remarks\": \"\",\n    \"BranchCode\": \"\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"\",\n    \"OrganizationId\": \"\",\n    \"ValueDate\": \"\"\n}",
+											"raw": "{\n    \"FromAccountNumber\": \"{{accountNumber}}\",\n    \"ToAccountNumber\": \"{{accountNumber1}}\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"4\",\n    \"TransactionReference\": \"Ref-017358691\",\n    \"BatchReference\": \"Ref-ahd77384003\",\n    \"Amount\": \"10000\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1\",\n    \"OrganizationId\": \"1\",\n    \"ValueDate\": \"2024-04-09\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
