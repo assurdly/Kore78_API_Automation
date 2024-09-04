@@ -6823,66 +6823,40 @@
 									"id": "d68bf1f5-5fbb-4d9d-8aba-d251fd8950e2"
 								},
 								{
-									"name": "/api/v1/wallets/add",
-									"event": [
+									"name": "Create Account",
+									"item": [
 										{
-											"listen": "test",
-											"script": {
-												"id": "09e0f058-bfe2-4b10-bf0c-59d3ea03c60f",
-												"exec": [
-													"const jsonData = pm.response.json();",
-													"",
-													"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "a930d0bc-79c4-400f-9ab1-6ae266904900",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
+											"name": "/api/v1/wallets/add - Naira",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "09e0f058-bfe2-4b10-bf0c-59d3ea03c60f",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
 												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/wallets/add"
-									},
-									"response": [
-										{
-											"id": "5330a4c3-aaa3-451e-9bd9-e27cb995bc58",
-											"name": "Success",
-											"originalRequest": {
+											],
+											"id": "a930d0bc-79c4-400f-9ab1-6ae266904900",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
 												"method": "POST",
 												"header": [
 													{
 														"key": "Content-Type",
 														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
 													}
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"walletGroupId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"availableBalance\": \"<double>\",\n  \"ledgerBalance\": \"<double>\",\n  \"walletRestrictionId\": \"<integer>\",\n  \"walletClassificationId\": \"<integer>\",\n  \"currencyId\": \"<integer>\",\n  \"isInternal\": \"<boolean>\",\n  \"isDefault\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"overdraft\": \"<double>\",\n  \"virtualAccount\": {\n    \"accountNumber\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n  },\n  \"mobNum\": \"<string>\",\n  \"customerTypeId\": \"<integer>\"\n}",
+													"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -6892,15 +6866,127 @@
 												},
 												"url": "{{baseUrl}}/api/v1/wallets/add"
 											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
+											"response": [
+												{
+													"id": "5330a4c3-aaa3-451e-9bd9-e27cb995bc58",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"walletGroupId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"availableBalance\": \"<double>\",\n  \"ledgerBalance\": \"<double>\",\n  \"walletRestrictionId\": \"<integer>\",\n  \"walletClassificationId\": \"<integer>\",\n  \"currencyId\": \"<integer>\",\n  \"isInternal\": \"<boolean>\",\n  \"isDefault\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"overdraft\": \"<double>\",\n  \"virtualAccount\": {\n    \"accountNumber\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n  },\n  \"mobNum\": \"<string>\",\n  \"customerTypeId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/wallets/add - Dollars",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "09e0f058-bfe2-4b10-bf0c-59d3ea03c60f",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "97f9c12a-ff39-47c4-956b-a9c8c81e8427",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/wallets/add"
+											},
+											"response": [
+												{
+													"id": "fc022e25-416d-4e3d-ac8b-00555248d2ed",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"walletGroupId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"availableBalance\": \"<double>\",\n  \"ledgerBalance\": \"<double>\",\n  \"walletRestrictionId\": \"<integer>\",\n  \"walletClassificationId\": \"<integer>\",\n  \"currencyId\": \"<integer>\",\n  \"isInternal\": \"<boolean>\",\n  \"isDefault\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"overdraft\": \"<double>\",\n  \"virtualAccount\": {\n    \"accountNumber\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n  },\n  \"mobNum\": \"<string>\",\n  \"customerTypeId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										}
-									]
+									],
+									"id": "ae578bc1-e0f4-43a5-b9c3-63855f8d96fe"
 								},
 								{
 									"name": "/api/v1/wallets/history",
