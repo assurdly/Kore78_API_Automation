@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Auer",
+  "middleName": "Carter",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "90811 Candido Spurs",
+  "mobileNumber": "234910578927212",
+  "emailAddress": "Joanie.McLaughlin@gmail.com"
+}

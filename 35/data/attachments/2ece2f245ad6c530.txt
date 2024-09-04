@@ -1,0 +1,5 @@
+{
+  "name": "Factors Payment",
+  "description": "Internal Payment",
+  "direction": "C"
+}

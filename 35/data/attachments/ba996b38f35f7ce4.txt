@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Marketing Payment",
+  "description": "Chief Payment",
+  "direction": "D"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Bernadine",
+  "lastName": "Kerluke",
+  "middleName": "Dominique",
+  "dob": "1990-05-20",
+  "city": "North Florian",
+  "address": "966 Johan Branch",
+  "occupation": "Dynamic Markets Director",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

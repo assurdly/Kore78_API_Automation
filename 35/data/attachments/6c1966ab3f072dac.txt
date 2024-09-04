@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Aufderhar",
+  "middleName": "Dixie",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "1874 Spencer Tunnel",
+  "mobileNumber": "234910373659612",
+  "emailAddress": "Benton.Stark@hotmail.com"
+}

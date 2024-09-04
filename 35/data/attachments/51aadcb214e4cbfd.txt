@@ -1,0 +1,7 @@
+{
+  "accountNumber": "<string>",
+  "accountClosureReasonId": "<integer>",
+  "tellerId": "<integer>",
+  "closeOrDelete": "<boolean>",
+  "customerOrAccount": "<boolean>"
+}
