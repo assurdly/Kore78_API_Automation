@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Beahan",
+  "middleName": "Tianna",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "7507 Millie Inlet",
+  "mobileNumber": "234917320331512",
+  "emailAddress": "Dameon_Bartoletti@hotmail.com"
+}
