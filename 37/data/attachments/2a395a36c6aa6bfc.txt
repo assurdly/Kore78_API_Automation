@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Stamm",
+  "middleName": "Emory",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "1027 Auer Courts",
+  "mobileNumber": "234911718696512",
+  "emailAddress": "Garrett_Gulgowski17@yahoo.com"
+}

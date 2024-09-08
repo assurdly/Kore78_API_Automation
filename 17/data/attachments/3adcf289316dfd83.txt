@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":1593,"organizationId":23,"firstName":"Jolie","lastName":"Haag","middleName":"","dob":"2000-12-01T00:00:00","customerTypeId":1,"alias":null,"countryId":1,"city":"Ibadan","address":"57867 Erdman Hills","mobileNumber":"234478-481-6346","emailAddress":"Vida35@yahoo.com","dateCreated":"2024-07-22T16:47:53"}}

@@ -1,0 +1,15 @@
+{
+    "FromAccountNumber": "",
+    "ToAccountNumber": "",
+    "Fee": "",
+    "ProductId": "",
+    "TransactionReference": "",
+    "BatchReference": "",
+    "Amount": "",
+    "Remarks": "",
+    "BranchCode": "",
+    "TransactionTypeId": "",
+    "FxRate": "",
+    "OrganizationId": "",
+    "ValueDate": ""
+}

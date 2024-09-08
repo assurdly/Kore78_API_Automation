@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "O'Connell",
+  "middleName": "Edwardo",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "50559 Dare View",
+  "mobileNumber": "2349187397598",
+  "emailAddress": "Arnold_Roberts4@yahoo.com"
+}

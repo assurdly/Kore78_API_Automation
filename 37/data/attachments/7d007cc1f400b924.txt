@@ -1,0 +1,12 @@
+{
+  "firstName": "Trent",
+  "lastName": "Marks",
+  "middleName": "Kailey",
+  "dob": "1990-05-20",
+  "city": "Ludiemouth",
+  "address": "58204 Murray Points",
+  "occupation": "Legacy Integration Consultant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

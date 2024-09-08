@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":46,"name":"Operations Payment","organizationId":1,"description":"Future Payment","direction":"C","isActive":true,"dateCreated":"2024-09-08T20:02:20"}}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Mitchell",
+  "middleName": "Irving",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "260 Willis Forks",
+  "mobileNumber": "234910812858812",
+  "emailAddress": "Travon_Hayes11@gmail.com"
+}
