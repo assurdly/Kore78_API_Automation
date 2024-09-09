@@ -5655,6 +5655,49 @@
 											"item": [
 												{
 													"name": "/api/v1/wallets/vault/add",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "3f4e8dc2-23a2-4275-a0ef-b57993daf8d4",
+																"exec": [
+																	"pm.test(\"Response status code is 200\", function () {",
+																	"  pm.response.to.have.status(200);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response Content-Type is application/json\", function () {",
+																	"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Validate the data object schema\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"",
+																	"    pm.expect(responseData.data).to.be.an('object');",
+																	"    pm.expect(responseData.data.interestRate).to.be.a('number');",
+																	"    pm.expect(responseData.data.accountNumber).to.be.a('string');",
+																	"    pm.expect(responseData.data.bookingReference).to.be.a('string');",
+																	"    pm.expect(responseData.data.estimatedYield).to.be.a('number');",
+																	"    pm.expect(responseData.data.maturityDate).to.be.a('string');",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code and message should be empty strings if success is true\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.success).to.equal(true);",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.not.be.empty;",
+																	"    pm.expect(responseData.message).to.be.a('string').and.to.not.be.empty;",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "1c6442d1-ca88-40c4-80eb-f05c021c3b65",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -5669,7 +5712,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"accountToDebit\": \"{{accountNumber}}\",\n  \"amount\": \"5000\",\n  \"tenor\": 60\n}",
+															"raw": "{\n  \"accountToDebit\": \"{{accountNumber}}\",\n  \"amount\": \"5000\",\n  \"tenor\": 30\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -5720,6 +5763,47 @@
 												},
 												{
 													"name": "/api/v1/wallets/vault/add - Invalid Account Number",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "8045bd8d-f52c-4944-9fac-ee115863876e",
+																"exec": [
+																	"pm.test(\"Response status code is 400\", function () {",
+																	"  pm.response.to.have.status(400);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+																	"  const responseData = pm.response.json();",
+																	"",
+																	"  pm.expect(responseData).to.be.an('object');",
+																	"  pm.expect(responseData.code).to.exist;",
+																	"  pm.expect(responseData.success).to.exist;",
+																	"  pm.expect(responseData.message).to.exist;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code is a non-empty string\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should be a non-empty string\");",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Success is a boolean value\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.success).to.be.a('boolean');",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "1215cebf-4f24-4f1b-8ba0-1a1ac4ace248",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
