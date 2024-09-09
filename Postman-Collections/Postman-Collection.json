@@ -4188,19 +4188,16 @@
 											],
 											"variable": [
 												{
-													"id": "80801559-c9d8-44c7-9f27-12bdd9687582",
 													"key": "productId",
-													"value": "<string>",
+													"value": "4",
 													"description": "(Required) "
 												},
 												{
-													"id": "7df82140-e5bd-4436-a4c2-d52ab4e76bd0",
 													"key": "currencyId",
 													"value": "<string>",
 													"description": "(Required) "
 												},
 												{
-													"id": "f5464285-51ea-4c69-877a-e00c44f8b17b",
 													"key": "customerId",
 													"value": "<string>",
 													"description": "(Required) "
