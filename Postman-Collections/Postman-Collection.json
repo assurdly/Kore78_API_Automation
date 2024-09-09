@@ -5869,6 +5869,47 @@
 												},
 												{
 													"name": "/api/v1/wallets/vault/add - Invalid Amount",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "99439607-4bb8-4f43-82e4-376b87ced03d",
+																"exec": [
+																	"pm.test(\"Response status code is 400\", function () {",
+																	"  pm.response.to.have.status(400);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.exist;",
+																	"    pm.expect(responseData.success).to.exist;",
+																	"    pm.expect(responseData.message).to.exist;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code is a non-empty string\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Success field is a boolean value\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData.success).to.be.a('boolean');",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "6071dd92-a91e-4b5e-9732-ed2b37d5ea28",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -5934,6 +5975,45 @@
 												},
 												{
 													"name": "/api/v1/wallets/vault/add - Invalid tenor",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "3d1d420a-b5a4-439f-b93a-fd2731061e59",
+																"exec": [
+																	"pm.test(\"Response status code is 400\", function () {",
+																	"  pm.response.to.have.status(400);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response has the required fields\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.exist;",
+																	"    pm.expect(responseData.success).to.exist;",
+																	"    pm.expect(responseData.message).to.exist;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code is a non-empty string\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should be a non-empty string\");",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response time is less than 500ms\", function () {",
+																	"  pm.expect(pm.response.responseTime).to.be.below(500);",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "7fa85dae-2381-42b5-9f3b-4a0377045d35",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -5999,6 +6079,48 @@
 												},
 												{
 													"name": "/api/v1/wallets/vault/add - Empty Fields",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "f42b9cc6-b024-46d3-9fac-415b051cf629",
+																"exec": [
+																	"pm.test(\"Response status code is 400\", function () {",
+																	"  pm.response.to.have.status(400);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.exist;",
+																	"    pm.expect(responseData.success).to.exist;",
+																	"    pm.expect(responseData.message).to.exist;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code is a non-empty string, success is a boolean, message is a non-empty string, and data is null\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should be a non-empty string\");",
+																	"    pm.expect(responseData.success).to.be.a('boolean', \"Success should be a boolean\");",
+																	"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should be a non-empty string\");",
+																	"    pm.expect(responseData.data).to.be.null;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response time is less than 500ms\", function () {",
+																	"  pm.expect(pm.response.responseTime).to.be.below(500);",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "a221b0b7-db50-4024-a81e-ad8f98e50f3d",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
