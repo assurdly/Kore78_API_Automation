@@ -11884,8 +11884,28 @@
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/wallets/end-of-day/branch/:branchCode",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"wallets",
+												"end-of-day",
+												"branch",
+												":branchCode"
+											],
+											"variable": [
+												{
+													"key": "branchCode",
+													"value": "999"
+												}
+											]
+										}
 									},
 									"response": []
 								}
