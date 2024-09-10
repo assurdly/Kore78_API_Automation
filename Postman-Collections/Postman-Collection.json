@@ -12057,6 +12057,48 @@
 								},
 								{
 									"name": "Fx Transfer",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type header is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data object contains the expected fields - status and message\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"  pm.expect(responseData.data).to.have.property('status');",
+													"  pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "5328dbef-03ba-4b14-b5e4-3a5bea7cc101",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -12066,7 +12108,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"FromAccountNumber\": \"{{accountNumber}}\",\n    \"ToAccountNumber\": \"{{accountNumber1}}\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"4\",\n    \"TransactionReference\": \"Ref-017358691\",\n    \"BatchReference\": \"Ref-ahd77384003\",\n    \"Amount\": \"10000\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1\",\n    \"OrganizationId\": \"1\",\n    \"ValueDate\": \"2024-04-09\"\n}",
+											"raw": "{\n    \"FromAccountNumber\": \"{{accountNumber}}\",\n    \"ToAccountNumber\": \"{{accountNumber1}}\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"4\",\n    \"TransactionReference\": \"Ref-{{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref-{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": null,\n    \"OrganizationId\": \"1\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
