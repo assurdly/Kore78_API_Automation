@@ -7020,6 +7020,18 @@
 													"body": ""
 												}
 											]
+										},
+										{
+											"name": "Transfer to other account",
+											"id": "9da4cc25-8996-4dbb-9158-d827674c64a8",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": []
+											},
+											"response": []
 										}
 									],
 									"id": "d68bf1f5-5fbb-4d9d-8aba-d251fd8950e2"
