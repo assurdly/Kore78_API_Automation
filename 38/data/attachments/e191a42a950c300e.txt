@@ -1,0 +1,12 @@
+{
+  "firstName": "Bette",
+  "lastName": "Goyette",
+  "middleName": "Howell",
+  "dob": "1990-05-20",
+  "city": "Wilson",
+  "address": "0471 William Crossing",
+  "occupation": "National Applications Specialist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

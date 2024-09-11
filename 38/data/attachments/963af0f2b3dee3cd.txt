@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Casper",
+  "middleName": "Milford",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "382 Emmanuel Street",
+  "mobileNumber": "234919212193612",
+  "emailAddress": "Ramiro_Champlin10@yahoo.com"
+}

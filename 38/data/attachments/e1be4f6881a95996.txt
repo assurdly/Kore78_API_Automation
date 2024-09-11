@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hilpert",
+  "middleName": "Jarrett",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "8030 Kshlerin Prairie",
+  "mobileNumber": "2349184602896",
+  "emailAddress": "Rosemary9@yahoo.com"
+}

@@ -1,0 +1,17 @@
+{
+  "sessionId": "<string>",
+  "accountNumber": "<string>",
+  "tranRemarks": "<string>",
+  "transactionAmount": "<string>",
+  "settledAmount": "<string>",
+  "feeAmount": "<string>",
+  "vatAmount": "<string>",
+  "currency": "<string>",
+  "initiationTranRef": "<string>",
+  "settlementId": "<string>",
+  "sourceAccountNumber": "<string>",
+  "sourceAccountName": "<string>",
+  "sourceBankName": "<string>",
+  "channelId": "<string>",
+  "tranDateTime": "<string>"
+}

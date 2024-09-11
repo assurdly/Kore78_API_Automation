@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Accountability Payment",
+  "description": "Central Payment",
+  "direction": "D"
+}
