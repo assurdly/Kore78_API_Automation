@@ -4189,17 +4189,17 @@
 											"variable": [
 												{
 													"key": "productId",
-													"value": "4",
+													"value": "{{productId}}",
 													"description": "(Required) "
 												},
 												{
 													"key": "currencyId",
-													"value": "<string>",
+													"value": "127",
 													"description": "(Required) "
 												},
 												{
 													"key": "customerId",
-													"value": "<string>",
+													"value": "{{customerId}}",
 													"description": "(Required) "
 												}
 											]
@@ -4282,15 +4282,13 @@
 											],
 											"variable": [
 												{
-													"id": "ab393acd-d85c-41c7-95ea-a44ff1046958",
 													"key": "productId",
-													"value": "<string>",
+													"value": "4",
 													"description": "(Required) "
 												},
 												{
-													"id": "2fe99d8e-b87d-4b1f-aaff-ec795370bf4b",
 													"key": "currencyId",
-													"value": "<string>",
+													"value": "107",
 													"description": "(Required) "
 												}
 											]
@@ -4417,7 +4415,25 @@
 									"request": {
 										"method": "GET",
 										"header": [],
-										"url": "{{baseUrl}}/api/v1/limits/default"
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/limits/default?currencyId=107",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"limits",
+												"default"
+											],
+											"query": [
+												{
+													"key": "currencyId",
+													"value": "107",
+													"type": "text"
+												}
+											]
+										}
 									},
 									"response": [
 										{
@@ -6647,7 +6663,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"productId\": 1,\n    \"amount\": 10000000,\n    \"postedDate\": \"2024-09-02\",\n    \"transactionReference\": \"1212121212-{{$randomAlphaNumeric}}\",\n    \"walletId\": 236,\n    \"customerId\": 1188,\n    \"isPosted\": true,\n    \"direction\": \"C\",\n    \"remarks\": \"Test\",\n    \"currency\": \"NGN\",\n    \"batchReference\": \"BATCH-1212121212-MMJMJ111\",\n    \"accountNumber\": \"0000036726236\"\n}",
+													"raw": "{\n    \"productId\": 1,\n    \"amount\": 10000000,\n    \"postedDate\": \"2024-09-02\",\n    \"transactionReference\": \"1212121212-{{$randomAlphaNumeric}}\",\n    \"walletId\": 236,\n    \"customerId\": 1188,\n    \"isPosted\": true,\n    \"direction\": \"C\",\n    \"remarks\": \"Test\",\n    \"currency\": \"NGN\",\n    \"batchReference\": \"BATCH-1212121212-MMJMJ111\",\n    \"accountNumber\": \"0000044860\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -7023,13 +7039,36 @@
 										},
 										{
 											"name": "Transfer to other account",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "e380f454-17af-4e3c-b5f3-b6d2228fb6c3",
+														"exec": [
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "9da4cc25-8996-4dbb-9158-d827674c64a8",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
 											"request": {
-												"method": "GET",
-												"header": []
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": \"6000\",\n  \"beneficiaryCurrency\": \"GHS\",\n  \"beneficiaryId\":\"{{businessBeneficiaryId1}}\",\n  \"destinationAmount\": \"59\",\n  \"exchangeRateAmount\": \"0.0098\",\n  \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n  \"multiplier\": \"0.0098\",\n  \"sourceWalletId\": \"{{bizSourceWalletId}}\",\n  \"transactionPin\": \"2345\",\n   \"isNegotiated\": false,\n  \"negotiatedRate\": 0.0100\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/transfer/api/v1/transfers"
 											},
 											"response": []
 										}
@@ -12119,7 +12158,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"FromAccountNumber\": \"0000044860\",\n    \"ToAccountNumber\": \"0000162667\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"4\",\n    \"TransactionReference\": \"Ref-{{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref-{{$randomBankAccount}}\",\n    \"Amount\": \"15\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": null,\n    \"OrganizationId\": \"1\"\n}\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }",
+											"raw": "// {\n//     \"FromAccountNumber\": \"0000044860\",\n//     \"ToAccountNumber\": \"0000162667\",\n//     \"Fee\": \"1\",\n//     \"ProductId\": \"4\",\n//     \"TransactionReference\": \"Ref-{{$randomBankAccount}}\",\n//     \"BatchReference\": \"Ref-{{$randomBankAccount}}\",\n//     \"Amount\": \"15\",\n//     \"Remarks\": \"Convert FX\",\n//     \"BranchCode\": \"999\",\n//     \"TransactionTypeId\": \"\",\n//     \"FxRate\": null,\n//     \"OrganizationId\": \"1\"\n// }\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n{\n  \"Fee\": 0,\n  \"Amount\": 10000,\n  \"FxRate\": null,\n  \"Remarks\": \"Debit NGN79365.08 into 0000179807 [+NGN127721429.5932] |Ferrry Den|0000179807|Rove10\",\n  \"Currency\": 1,\n  \"Direction\": null,\n  \"AccountNumber\": null,\n  \"BatchReference\": null,\n  \"ToAccountNumber\": \"0000179807\",\n  \"FromAccountNumber\": \"0000045685\",\n  \"TransactionReference\": \"{{$randomBankAccount}}05NGN2USD072782\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
