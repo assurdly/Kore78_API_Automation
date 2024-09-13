@@ -3812,9 +3812,8 @@
 											],
 											"variable": [
 												{
-													"id": "ac1154ef-1c5a-4e72-99f5-a85a94994e09",
 													"key": "id",
-													"value": "<string>",
+													"value": "2",
 													"description": "(Required) "
 												}
 											]
