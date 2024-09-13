@@ -1,0 +1,5 @@
+{
+  "name": "Integration Payment",
+  "description": "Global Payment",
+  "direction": "C"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Carter",
+  "middleName": "Tillman",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "632 Kassulke Fort",
+  "mobileNumber": "234912231283812",
+  "emailAddress": "Sally.Nolan@yahoo.com"
+}

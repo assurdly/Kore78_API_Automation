@@ -1,0 +1,10 @@
+{
+  "accountNumber": "<string>",
+  "customerId": "<long>",
+  "walletId": "<long>",
+  "amount": "<double>",
+  "fee": "<double>",
+  "bankCode": "<string>",
+  "customerReference": "<string>",
+  "remarks": "<string>"
+}

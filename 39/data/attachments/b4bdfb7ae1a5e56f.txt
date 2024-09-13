@@ -1,0 +1,6 @@
+{
+  "name": "<string>",
+  "organizationId": "<long>",
+  "id": "<long>",
+  "dateCreated": "<dateTime>"
+}

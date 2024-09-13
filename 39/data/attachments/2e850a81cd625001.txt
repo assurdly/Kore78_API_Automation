@@ -1,0 +1,12 @@
+{
+  "firstName": "Linnie",
+  "lastName": "Bailey",
+  "middleName": "Billie",
+  "dob": "1990-05-20",
+  "city": "Hoppeport",
+  "address": "556 Dan Circle",
+  "occupation": "Product Mobility Engineer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
