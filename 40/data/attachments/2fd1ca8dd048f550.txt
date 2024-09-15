@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Wunsch",
+  "middleName": "Deven",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "473 Nellie Lake",
+  "mobileNumber": "2349175112708",
+  "emailAddress": "Elton.Corkery@hotmail.com"
+}

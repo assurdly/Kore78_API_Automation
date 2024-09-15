@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Updated Successfully","data":{"id":65,"name":"Program Payment","organizationId":1,"description":"Dynamic Payment","direction":"D","isActive":true,"dateCreated":"2024-09-15T20:02:12"}}

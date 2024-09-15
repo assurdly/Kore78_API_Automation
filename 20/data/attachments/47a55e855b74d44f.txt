@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 23, 
-    "customerId": "",
-    "walletClassificationId": 1, 
-    "currencyId": 1, 
-    "name": "Maryann Krajcik" 
-}

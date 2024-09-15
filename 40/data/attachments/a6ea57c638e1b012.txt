@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Gibson",
+  "middleName": "Syble",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "5221 Marilou Stravenue",
+  "mobileNumber": "234918125304512",
+  "emailAddress": "Clyde_Quigley9@yahoo.com"
+}

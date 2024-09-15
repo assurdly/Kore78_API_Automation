@@ -1,0 +1,8 @@
+{
+  "fromAccount": "<string>",
+  "toAccount": "<string>",
+  "amount": "<double>",
+  "transactionReference": "<string>",
+  "remarks": "<string>",
+  "transactionTypeId": "<integer>"
+}

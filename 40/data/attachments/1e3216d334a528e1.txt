@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Paradigm Payment",
+  "description": "Forward Payment",
+  "direction": "D"
+}
