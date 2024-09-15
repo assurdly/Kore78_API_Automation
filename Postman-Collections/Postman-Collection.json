@@ -10227,11 +10227,16 @@
 													{
 														"key": "Content-Type",
 														"value": "application/json"
+													},
+													{
+														"key": "x-api-key",
+														"value": "{{api-key}}",
+														"type": "text"
 													}
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": \"{{productId_1}}\",\n  \"name\": \"{{$randomJobArea}} Payment\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"D\"\n}",
+													"raw": "{\n  \"id\": \"59\",\n  \"name\": \"{{$randomJobArea}} Larry\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"D\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
