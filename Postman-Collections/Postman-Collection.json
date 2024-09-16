@@ -9028,19 +9028,20 @@
 															{
 																"key": "x-api-key",
 																"value": "AdminTest",
-																"type": "text"
+																"type": "text",
+																"disabled": true
 															}
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n  \"firstName\": \"{{$randomFirstName}}\",\r\n  \"lastName\": \"{{$randomLastName}}\",\r\n  \"emailAddress\": \"{{$randomFirstName}}@rove10.com\",\r\n  \"password\": \"Qwerty123@\"\r\n}",
+															"raw": "{\r\n    \"firstName\": \"QA\",\r\n    \"lastName\": \"Tester\",\r\n    \"emailAddress\": \"QA@assurdly.com\",\r\n    \"password\": \"Test123@\",\r\n    \"apiKey\": \"NewOrgSetup@!22323\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
 																}
 															}
 														},
-														"url": "{{baseUrl}}/api/v1/account/setup"
+														"url": "{{baseUrl}}/api/v1/account/u/setup"
 													},
 													"response": []
 												},
