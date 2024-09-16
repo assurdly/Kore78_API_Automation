@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Mayert",
+  "middleName": "Buck",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "49254 Douglas Ford",
+  "mobileNumber": "234918591378012",
+  "emailAddress": "Jordi68@gmail.com"
+}
