@@ -8984,6 +8984,67 @@
 													"response": []
 												},
 												{
+													"name": "1. Account Setup Copy",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "c2578a44-fa9a-43ec-813b-d6ea5d5e8ed1",
+																"exec": [
+																	"const jsonData = pm.response.json();",
+																	"",
+																	"pm.test(\"Status code is 200\", function () {",
+																	"    pm.response.to.have.status(200);",
+																	"});",
+																	"",
+																	"pm.test(\"Body contains success message and it is true\", function () {",
+																	"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
+																	"})",
+																	"",
+																	"pm.test(\"Body contains message\", function () {",
+																	"    pm.expect(jsonData.message).to.eql(\"Account setup successful\").to.not.be.empty;",
+																	"})",
+																	"",
+																	"pm.test(\"Body contains meta data\", function () {",
+																	"    pm.expect(jsonData.data).to.eql(\"object\").to.not.be.empty;",
+																	"})",
+																	"",
+																	"pm.test(\"Body contains key\", function () {",
+																	"    pm.expect(typeof jsonData.data.key).to.eql(\"string\").to.not.be.empty;",
+																	"})"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "0861d6be-878a-4551-9946-34f66f627cc5",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "x-api-key",
+																"value": "AdminTest",
+																"type": "text"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n  \"firstName\": \"{{$randomFirstName}}\",\r\n  \"lastName\": \"{{$randomLastName}}\",\r\n  \"emailAddress\": \"{{$randomFirstName}}@rove10.com\",\r\n  \"password\": \"Qwerty123@\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/account/setup"
+													},
+													"response": []
+												},
+												{
 													"name": "1. Account Setup - Compound FirstName",
 													"id": "d4c7ac14-d441-421e-8b6c-0316e26a757b",
 													"protocolProfileBehavior": {
