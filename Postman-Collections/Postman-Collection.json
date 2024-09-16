@@ -1115,6 +1115,545 @@
 										}
 									],
 									"id": "49c32a41-c4df-4ca3-80f4-ebe7e5945961"
+								},
+								{
+									"name": "organizations",
+									"item": [
+										{
+											"name": "/api/v1/organizations/add/with/wallet",
+											"id": "2699aed7-3964-41b0-b4cf-7668d56a2008",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/organizations/add/with/wallet"
+											},
+											"response": [
+												{
+													"id": "a9e037d9-0ef8-4204-971c-039a11742e2e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/organizations/add/with/wallet"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/organizations/add",
+											"id": "07eefb65-4ddb-4d7d-91a3-384ccef1f9ff",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/organizations/add"
+											},
+											"response": [
+												{
+													"id": "256c8e03-cbd3-430d-9f62-f3074119c5bf",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/organizations/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/organizations/get",
+											"id": "99c37752-d609-4476-97c3-0275bd32c010",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/organizations/get"
+											},
+											"response": [
+												{
+													"id": "e0e71b22-95e0-4d64-9b50-31c8e8bc7b76",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"url": "{{baseUrl}}/api/v1/organizations/get"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/organizations/get/:id",
+											"id": "053dc71b-4885-4a5a-a9dc-10099c20b3d0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/organizations/get/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"organizations",
+														"get",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "1b064f66-6bdc-4ee1-8151-4c17a0cdea1a",
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "cf46b1cf-3d91-4843-bedd-eaf29f6633ff",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/organizations/get/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"organizations",
+																"get",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/organizations/users/add",
+											"id": "6c6e5298-ccaa-4815-8f76-bc2c787b6e7a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/organizations/users/add"
+											},
+											"response": [
+												{
+													"id": "99ff301b-c0b0-4b8f-a92c-7ea07fa2ac44",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/organizations/users/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/organizations/:id/users/get",
+											"id": "d6b036c1-1208-44fb-9099-9592271c1814",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/organizations/:id/users/get",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"organizations",
+														":id",
+														"users",
+														"get"
+													],
+													"variable": [
+														{
+															"id": "21b419af-27be-440f-9053-ad2c445a297c",
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "e300733e-23d3-4dc4-abb4-b713c7a1c9fa",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/organizations/:id/users/get",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"organizations",
+																":id",
+																"users",
+																"get"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/organizations/:id/users/key/generate",
+											"id": "17c78ec3-63e7-4e25-8aca-2129c06da80e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"organizations",
+														":id",
+														"users",
+														"key",
+														"generate"
+													],
+													"variable": [
+														{
+															"id": "ba761fad-21dc-4572-b437-66d7c57cf9ac",
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "e810fb3e-4e20-40b9-af50-8dc72cca444f",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/generate",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"organizations",
+																":id",
+																"users",
+																"key",
+																"generate"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/organizations/:id/users/key/get",
+											"id": "070fc321-85cf-4931-b9f9-bace0e66663b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/get",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"organizations",
+														":id",
+														"users",
+														"key",
+														"get"
+													],
+													"variable": [
+														{
+															"id": "d12daa6e-74b2-4c85-b3e4-0ffd941542e5",
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "e00c5ad9-8d47-4151-be03-fa01f9bf6cb9",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/get",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"organizations",
+																":id",
+																"users",
+																"key",
+																"get"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "58263600-c55d-49f5-b5c3-2b968ce20e14"
 								}
 							],
 							"id": "ac43bf42-9b83-4ae8-aeed-8c3ad539ff51",
@@ -3045,545 +3584,6 @@
 							"id": "f6c86560-32f1-4123-af0d-d54b7aa6609b"
 						},
 						{
-							"name": "organizations",
-							"item": [
-								{
-									"name": "/api/v1/organizations/add/with/wallet",
-									"id": "2699aed7-3964-41b0-b4cf-7668d56a2008",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/organizations/add/with/wallet"
-									},
-									"response": [
-										{
-											"id": "a9e037d9-0ef8-4204-971c-039a11742e2e",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/organizations/add/with/wallet"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/organizations/add",
-									"id": "07eefb65-4ddb-4d7d-91a3-384ccef1f9ff",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/organizations/add"
-									},
-									"response": [
-										{
-											"id": "256c8e03-cbd3-430d-9f62-f3074119c5bf",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/organizations/add"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/organizations/get",
-									"id": "99c37752-d609-4476-97c3-0275bd32c010",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/v1/organizations/get"
-									},
-									"response": [
-										{
-											"id": "e0e71b22-95e0-4d64-9b50-31c8e8bc7b76",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": "{{baseUrl}}/api/v1/organizations/get"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/organizations/get/:id",
-									"id": "053dc71b-4885-4a5a-a9dc-10099c20b3d0",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/v1/organizations/get/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"organizations",
-												"get",
-												":id"
-											],
-											"variable": [
-												{
-													"id": "1b064f66-6bdc-4ee1-8151-4c17a0cdea1a",
-													"key": "id",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "cf46b1cf-3d91-4843-bedd-eaf29f6633ff",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/organizations/get/:id",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"organizations",
-														"get",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/organizations/users/add",
-									"id": "6c6e5298-ccaa-4815-8f76-bc2c787b6e7a",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/organizations/users/add"
-									},
-									"response": [
-										{
-											"id": "99ff301b-c0b0-4b8f-a92c-7ea07fa2ac44",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/organizations/users/add"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/organizations/:id/users/get",
-									"id": "d6b036c1-1208-44fb-9099-9592271c1814",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/v1/organizations/:id/users/get",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"organizations",
-												":id",
-												"users",
-												"get"
-											],
-											"variable": [
-												{
-													"id": "21b419af-27be-440f-9053-ad2c445a297c",
-													"key": "id",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "e300733e-23d3-4dc4-abb4-b713c7a1c9fa",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/organizations/:id/users/get",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"organizations",
-														":id",
-														"users",
-														"get"
-													],
-													"variable": [
-														{
-															"key": "id"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/organizations/:id/users/key/generate",
-									"id": "17c78ec3-63e7-4e25-8aca-2129c06da80e",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/generate",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"organizations",
-												":id",
-												"users",
-												"key",
-												"generate"
-											],
-											"variable": [
-												{
-													"id": "ba761fad-21dc-4572-b437-66d7c57cf9ac",
-													"key": "id",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "e810fb3e-4e20-40b9-af50-8dc72cca444f",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/generate",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"organizations",
-														":id",
-														"users",
-														"key",
-														"generate"
-													],
-													"variable": [
-														{
-															"key": "id"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/organizations/:id/users/key/get",
-									"id": "070fc321-85cf-4931-b9f9-bace0e66663b",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/get",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"organizations",
-												":id",
-												"users",
-												"key",
-												"get"
-											],
-											"variable": [
-												{
-													"id": "d12daa6e-74b2-4c85-b3e4-0ffd941542e5",
-													"key": "id",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "e00c5ad9-8d47-4151-be03-fa01f9bf6cb9",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/get",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"organizations",
-														":id",
-														"users",
-														"key",
-														"get"
-													],
-													"variable": [
-														{
-															"key": "id"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "58263600-c55d-49f5-b5c3-2b968ce20e14"
-						},
-						{
 							"name": "products",
 							"item": [
 								{
@@ -3812,9 +3812,8 @@
 											],
 											"variable": [
 												{
-													"id": "ac1154ef-1c5a-4e72-99f5-a85a94994e09",
 													"key": "id",
-													"value": "<string>",
+													"value": "2",
 													"description": "(Required) "
 												}
 											]
@@ -4188,21 +4187,18 @@
 											],
 											"variable": [
 												{
-													"id": "80801559-c9d8-44c7-9f27-12bdd9687582",
 													"key": "productId",
-													"value": "<string>",
+													"value": "{{productId}}",
 													"description": "(Required) "
 												},
 												{
-													"id": "7df82140-e5bd-4436-a4c2-d52ab4e76bd0",
 													"key": "currencyId",
-													"value": "<string>",
+													"value": "127",
 													"description": "(Required) "
 												},
 												{
-													"id": "f5464285-51ea-4c69-877a-e00c44f8b17b",
 													"key": "customerId",
-													"value": "<string>",
+													"value": "{{customerId}}",
 													"description": "(Required) "
 												}
 											]
@@ -4285,15 +4281,13 @@
 											],
 											"variable": [
 												{
-													"id": "ab393acd-d85c-41c7-95ea-a44ff1046958",
 													"key": "productId",
-													"value": "<string>",
+													"value": "4",
 													"description": "(Required) "
 												},
 												{
-													"id": "2fe99d8e-b87d-4b1f-aaff-ec795370bf4b",
 													"key": "currencyId",
-													"value": "<string>",
+													"value": "107",
 													"description": "(Required) "
 												}
 											]
@@ -4420,7 +4414,25 @@
 									"request": {
 										"method": "GET",
 										"header": [],
-										"url": "{{baseUrl}}/api/v1/limits/default"
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/limits/default?currencyId=107",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"limits",
+												"default"
+											],
+											"query": [
+												{
+													"key": "currencyId",
+													"value": "107",
+													"type": "text"
+												}
+											]
+										}
 									},
 									"response": [
 										{
@@ -5654,51 +5666,68 @@
 									"name": "vault",
 									"item": [
 										{
-											"name": "/api/v1/wallets/vault/add",
-											"id": "1c6442d1-ca88-40c4-80eb-f05c021c3b65",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/wallets/vault/add"
-											},
-											"response": [
+											"name": "Create Vault",
+											"item": [
 												{
-													"id": "782e7864-d272-47a6-a184-9a18291dfbef",
-													"name": "Success",
-													"originalRequest": {
+													"name": "/api/v1/wallets/vault/add",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "3f4e8dc2-23a2-4275-a0ef-b57993daf8d4",
+																"exec": [
+																	"pm.test(\"Response status code is 200\", function () {",
+																	"  pm.response.to.have.status(200);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response Content-Type is application/json\", function () {",
+																	"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Validate the data object schema\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"",
+																	"    pm.expect(responseData.data).to.be.an('object');",
+																	"    pm.expect(responseData.data.interestRate).to.be.a('number');",
+																	"    pm.expect(responseData.data.accountNumber).to.be.a('string');",
+																	"    pm.expect(responseData.data.bookingReference).to.be.a('string');",
+																	"    pm.expect(responseData.data.estimatedYield).to.be.a('number');",
+																	"    pm.expect(responseData.data.maturityDate).to.be.a('string');",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code and message should be empty strings if success is true\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.success).to.equal(true);",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.not.be.empty;",
+																	"    pm.expect(responseData.message).to.be.a('string').and.to.not.be.empty;",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "1c6442d1-ca88-40c4-80eb-f05c021c3b65",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
 														"method": "POST",
 														"header": [
 															{
 																"key": "Content-Type",
 																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
 															}
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
+															"raw": "{\n  \"accountToDebit\": \"{{accountNumber}}\",\n  \"amount\": \"5000\",\n  \"tenor\": 30\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -5708,61 +5737,483 @@
 														},
 														"url": "{{baseUrl}}/api/v1/wallets/vault/add"
 													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
-										{
-											"name": "/api/v1/wallets/vault/:accountNumber/preliquidate",
-											"id": "248d205b-e99c-4346-be9c-6abc3304107b",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/wallets/vault/:accountNumber/preliquidate",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"wallets",
-														"vault",
-														":accountNumber",
-														"preliquidate"
-													],
-													"variable": [
+													"response": [
 														{
-															"id": "eb5b2b3e-c1c1-4e50-a5b7-c1f030d8f8a4",
-															"key": "accountNumber",
-															"value": "<string>",
-															"description": "(Required) "
+															"id": "782e7864-d272-47a6-a184-9a18291dfbef",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "x-api-key",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
 														}
 													]
-												}
-											},
-											"response": [
+												},
 												{
-													"id": "7187bc8d-17f1-4c8d-a5ee-ee05ef3a5255",
-													"name": "Success",
-													"originalRequest": {
+													"name": "/api/v1/wallets/vault/add - Invalid Account Number",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "8045bd8d-f52c-4944-9fac-ee115863876e",
+																"exec": [
+																	"pm.test(\"Response status code is 400\", function () {",
+																	"  pm.response.to.have.status(400);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+																	"  const responseData = pm.response.json();",
+																	"",
+																	"  pm.expect(responseData).to.be.an('object');",
+																	"  pm.expect(responseData.code).to.exist;",
+																	"  pm.expect(responseData.success).to.exist;",
+																	"  pm.expect(responseData.message).to.exist;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code is a non-empty string\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should be a non-empty string\");",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Success is a boolean value\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.success).to.be.a('boolean');",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "1215cebf-4f24-4f1b-8ba0-1a1ac4ace248",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
 														"method": "POST",
 														"header": [
 															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
+																"key": "Content-Type",
+																"value": "application/json"
 															}
 														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"000008360367\",\n  \"amount\": \"5000\",\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+													},
+													"response": [
+														{
+															"id": "4554e4cc-c033-4c53-9fc6-966fa2742144",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "x-api-key",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "/api/v1/wallets/vault/add - Invalid Amount",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "99439607-4bb8-4f43-82e4-376b87ced03d",
+																"exec": [
+																	"pm.test(\"Response status code is 400\", function () {",
+																	"  pm.response.to.have.status(400);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.exist;",
+																	"    pm.expect(responseData.success).to.exist;",
+																	"    pm.expect(responseData.message).to.exist;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code is a non-empty string\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Success field is a boolean value\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData.success).to.be.a('boolean');",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "6071dd92-a91e-4b5e-9732-ed2b37d5ea28",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"0000083603\",\n  \"amount\": \"5000AB\",\n  \"tenor\": 30\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+													},
+													"response": [
+														{
+															"id": "b8a7aa2f-1d34-4b7a-88fb-cd3413dd3cfd",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "x-api-key",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "/api/v1/wallets/vault/add - Invalid tenor",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "3d1d420a-b5a4-439f-b93a-fd2731061e59",
+																"exec": [
+																	"pm.test(\"Response status code is 400\", function () {",
+																	"  pm.response.to.have.status(400);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response has the required fields\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.exist;",
+																	"    pm.expect(responseData.success).to.exist;",
+																	"    pm.expect(responseData.message).to.exist;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code is a non-empty string\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should be a non-empty string\");",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response time is less than 500ms\", function () {",
+																	"  pm.expect(pm.response.responseTime).to.be.below(500);",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "7fa85dae-2381-42b5-9f3b-4a0377045d35",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"0000083603\",\n  \"amount\": \"5000\",\n  \"tenor\": \"30AD\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+													},
+													"response": [
+														{
+															"id": "94e2780d-5649-4e0a-bdeb-987a1793d1f0",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "x-api-key",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "/api/v1/wallets/vault/add - Empty Fields",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "f42b9cc6-b024-46d3-9fac-415b051cf629",
+																"exec": [
+																	"pm.test(\"Response status code is 400\", function () {",
+																	"  pm.response.to.have.status(400);",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.exist;",
+																	"    pm.expect(responseData.success).to.exist;",
+																	"    pm.expect(responseData.message).to.exist;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Code is a non-empty string, success is a boolean, message is a non-empty string, and data is null\", function () {",
+																	"    const responseData = pm.response.json();",
+																	"    ",
+																	"    pm.expect(responseData).to.be.an('object');",
+																	"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should be a non-empty string\");",
+																	"    pm.expect(responseData.success).to.be.a('boolean', \"Success should be a boolean\");",
+																	"    pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Message should be a non-empty string\");",
+																	"    pm.expect(responseData.data).to.be.null;",
+																	"});",
+																	"",
+																	"",
+																	"pm.test(\"Response time is less than 500ms\", function () {",
+																	"  pm.expect(pm.response.responseTime).to.be.below(500);",
+																	"});",
+																	""
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "a221b0b7-db50-4024-a81e-ad8f98e50f3d",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"accountToDebit\": \"\",\n  \"amount\": \"\",\n  \"tenor\": \"\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+													},
+													"response": [
+														{
+															"id": "77eaef80-6574-40bf-8a46-982d57d4c60e",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "x-api-key",
+																		"value": "<API Key>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"accountToDebit\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"tenor\": \"<integer>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/v1/wallets/vault/add"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "ad54dbe0-9309-4d30-8b28-4760e4093a73"
+										},
+										{
+											"name": "Preliquidate",
+											"item": [
+												{
+													"name": "/api/v1/wallets/vault/:accountNumber/preliquidate",
+													"id": "248d205b-e99c-4346-be9c-6abc3304107b",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "POST",
+														"header": [],
 														"url": {
 															"raw": "{{baseUrl}}/api/v1/wallets/vault/:accountNumber/preliquidate",
 															"host": [
@@ -5778,20 +6229,58 @@
 															],
 															"variable": [
 																{
-																	"key": "accountNumber"
+																	"key": "accountNumber",
+																	"value": "{{accountNumber}}",
+																	"description": "(Required) "
 																}
 															]
 														}
 													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
+													"response": [
+														{
+															"id": "7187bc8d-17f1-4c8d-a5ee-ee05ef3a5255",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: apikey",
+																		"key": "x-api-key",
+																		"value": "<API Key>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/wallets/vault/:accountNumber/preliquidate",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"wallets",
+																		"vault",
+																		":accountNumber",
+																		"preliquidate"
+																	],
+																	"variable": [
+																		{
+																			"key": "accountNumber"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
 												}
-											]
+											],
+											"id": "88b03d09-b798-4649-aa56-5ada791214fa"
 										},
 										{
 											"name": "/api/v1/wallets/vault/plans",
@@ -5855,9 +6344,8 @@
 													],
 													"variable": [
 														{
-															"id": "c76c9bf0-e8e9-4cac-91b0-c5109bb59d7d",
 															"key": "accountNumber",
-															"value": "<string>",
+															"value": "{{accountNumber}}",
 															"description": "(Required) "
 														}
 													]
@@ -6174,7 +6662,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"productId\": \"<integer>\",\n  \"organizationId\": \"<long>\",\n  \"amount\": \"<double>\",\n  \"fee\": \"<double>\",\n  \"postedDate\": \"<dateTime>\",\n  \"valueDate\": \"<dateTime>\",\n  \"transactionReference\": \"<string>\",\n  \"walletId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"isPosted\": \"<boolean>\",\n  \"direction\": \"<string>\",\n  \"remarks\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"batchReference\": \"<string>\",\n  \"accountNumber\": \"<string>\"\n}",
+													"raw": "{\n    \"productId\": 1,\n    \"amount\": 10000000,\n    \"postedDate\": \"2024-09-02\",\n    \"transactionReference\": \"1212121212-{{$randomAlphaNumeric}}\",\n    \"walletId\": 236,\n    \"customerId\": 1188,\n    \"isPosted\": true,\n    \"direction\": \"C\",\n    \"remarks\": \"Test\",\n    \"currency\": \"NGN\",\n    \"batchReference\": \"BATCH-1212121212-MMJMJ111\",\n    \"accountNumber\": \"0000044860\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -6547,71 +7035,80 @@
 													"body": ""
 												}
 											]
+										},
+										{
+											"name": "Transfer to other account",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "e380f454-17af-4e3c-b5f3-b6d2228fb6c3",
+														"exec": [
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "9da4cc25-8996-4dbb-9158-d827674c64a8",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": \"6000\",\n  \"beneficiaryCurrency\": \"GHS\",\n  \"beneficiaryId\":\"{{businessBeneficiaryId1}}\",\n  \"destinationAmount\": \"59\",\n  \"exchangeRateAmount\": \"0.0098\",\n  \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n  \"multiplier\": \"0.0098\",\n  \"sourceWalletId\": \"{{bizSourceWalletId}}\",\n  \"transactionPin\": \"2345\",\n   \"isNegotiated\": false,\n  \"negotiatedRate\": 0.0100\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/transfer/api/v1/transfers"
+											},
+											"response": []
 										}
 									],
 									"id": "d68bf1f5-5fbb-4d9d-8aba-d251fd8950e2"
 								},
 								{
-									"name": "/api/v1/wallets/add",
-									"event": [
+									"name": "Create Account",
+									"item": [
 										{
-											"listen": "test",
-											"script": {
-												"id": "09e0f058-bfe2-4b10-bf0c-59d3ea03c60f",
-												"exec": [
-													"const jsonData = pm.response.json();",
-													"",
-													"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "a930d0bc-79c4-400f-9ab1-6ae266904900",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
+											"name": "/api/v1/wallets/add - Naira",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "09e0f058-bfe2-4b10-bf0c-59d3ea03c60f",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
 												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/wallets/add"
-									},
-									"response": [
-										{
-											"id": "5330a4c3-aaa3-451e-9bd9-e27cb995bc58",
-											"name": "Success",
-											"originalRequest": {
+											],
+											"id": "a930d0bc-79c4-400f-9ab1-6ae266904900",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
 												"method": "POST",
 												"header": [
 													{
 														"key": "Content-Type",
 														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
 													}
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"walletGroupId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"availableBalance\": \"<double>\",\n  \"ledgerBalance\": \"<double>\",\n  \"walletRestrictionId\": \"<integer>\",\n  \"walletClassificationId\": \"<integer>\",\n  \"currencyId\": \"<integer>\",\n  \"isInternal\": \"<boolean>\",\n  \"isDefault\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"overdraft\": \"<double>\",\n  \"virtualAccount\": {\n    \"accountNumber\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n  },\n  \"mobNum\": \"<string>\",\n  \"customerTypeId\": \"<integer>\"\n}",
+													"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 1, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -6621,15 +7118,127 @@
 												},
 												"url": "{{baseUrl}}/api/v1/wallets/add"
 											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
+											"response": [
+												{
+													"id": "5330a4c3-aaa3-451e-9bd9-e27cb995bc58",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"walletGroupId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"availableBalance\": \"<double>\",\n  \"ledgerBalance\": \"<double>\",\n  \"walletRestrictionId\": \"<integer>\",\n  \"walletClassificationId\": \"<integer>\",\n  \"currencyId\": \"<integer>\",\n  \"isInternal\": \"<boolean>\",\n  \"isDefault\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"overdraft\": \"<double>\",\n  \"virtualAccount\": {\n    \"accountNumber\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n  },\n  \"mobNum\": \"<string>\",\n  \"customerTypeId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v1/wallets/add - Dollars",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "09e0f058-bfe2-4b10-bf0c-59d3ea03c60f",
+														"exec": [
+															"const jsonData = pm.response.json();",
+															"",
+															"pm.collectionVariables.set(\"accountNumber1\", jsonData.data.virtualAccount.accountNumber);"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "97f9c12a-ff39-47c4-956b-a9c8c81e8427",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"walletGroupId\": 32, //account type id, it is optional but if you are going to be using the chart of account feature, you must specify one\n    \"customerId\": {{customerId}},\n    \"walletClassificationId\": 1, //1 = customer account, 2 = internal account\n    \"currencyId\": 107, // 1 = NGN\n    \"name\": \"{{$randomFullName}}\" // an optional name for the account\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/wallets/add"
+											},
+											"response": [
+												{
+													"id": "fc022e25-416d-4e3d-ac8b-00555248d2ed",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"walletGroupId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"availableBalance\": \"<double>\",\n  \"ledgerBalance\": \"<double>\",\n  \"walletRestrictionId\": \"<integer>\",\n  \"walletClassificationId\": \"<integer>\",\n  \"currencyId\": \"<integer>\",\n  \"isInternal\": \"<boolean>\",\n  \"isDefault\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"overdraft\": \"<double>\",\n  \"virtualAccount\": {\n    \"accountNumber\": \"<string>\",\n    \"bankCode\": \"<string>\",\n    \"bankName\": \"<string>\"\n  },\n  \"mobNum\": \"<string>\",\n  \"customerTypeId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/wallets/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										}
-									]
+									],
+									"id": "ae578bc1-e0f4-43a5-b9c3-63855f8d96fe"
 								},
 								{
 									"name": "/api/v1/wallets/history",
@@ -6712,7 +7321,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"accountNumber\": \"<string>\",\n  \"from\": \"<dateTime>\",\n  \"to\": \"<dateTime>\"\n}",
+											"raw": "{\n  \"accountNumber\": \"{{accountNumber}}\",\n  \"from\": \"2024-09-09\",\n  \"to\": \"2024-09-10\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -7350,9 +7959,8 @@
 											],
 											"variable": [
 												{
-													"id": "0e0b4057-1951-451c-b928-c3ba1967bd1e",
 													"key": "walletId",
-													"value": "<string>",
+													"value": "",
 													"description": "(Required) "
 												}
 											]
@@ -7426,9 +8034,8 @@
 											],
 											"variable": [
 												{
-													"id": "94c65b69-4c12-4e99-9638-aba4f9f462cc",
 													"key": "accountNumber",
-													"value": "<string>",
+													"value": "0000045692",
 													"description": "(Required) "
 												}
 											]
@@ -8976,7 +9583,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"645851\"\r\n}",
+															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"426396\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
@@ -9070,7 +9677,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n  \"emailAddress\": \"{{$randomFirstName}}@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"firstName\": \"{{$randomFirstName}}\",\r\n  \"lastName\": \"{{$randomLastName}}\",\r\n  \"username\": \"{{$randomUserName}}\",\r\n  \"roleId\": {{roleId}},\r\n  \"branchId\": 8\r\n}",
+															"raw": "{\r\n  \"emailAddress\": \"{{$randomFirstName}}@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"firstName\": \"{{$randomFirstName}}\",\r\n  \"lastName\": \"{{$randomLastName}}\",\r\n  \"username\": \"{{$randomUserName}}\",\r\n  \"roleId\": {{roleId}},\r\n  \"branchId\": 13\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
@@ -9620,11 +10227,16 @@
 													{
 														"key": "Content-Type",
 														"value": "application/json"
+													},
+													{
+														"key": "x-api-key",
+														"value": "{{api-key}}",
+														"type": "text"
 													}
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": \"{{productId_1}}\",\n  \"name\": \"{{$randomJobArea}} Payment\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"D\"\n}",
+													"raw": "{\n  \"id\": \"59\",\n  \"name\": \"{{$randomJobArea}} Larry\",\n  \"description\": \"{{$randomJobDescriptor}} Payment\",\n  \"direction\": \"D\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -11345,7 +11957,7 @@
 												},
 												{
 													"key": "walletId",
-													"value": "6969"
+													"value": "8358"
 												}
 											]
 										}
@@ -11499,6 +12111,48 @@
 								},
 								{
 									"name": "Fx Transfer",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type header is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data object contains the expected fields - status and message\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"  pm.expect(responseData.data).to.have.property('status');",
+													"  pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "5328dbef-03ba-4b14-b5e4-3a5bea7cc101",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -11508,7 +12162,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"FromAccountNumber\": \"\",\n    \"ToAccountNumber\": \"\",\n    \"Fee\": \"\",\n    \"ProductId\": \"\",\n    \"TransactionReference\": \"\",\n    \"BatchReference\": \"\",\n    \"Amount\": \"\",\n    \"Remarks\": \"\",\n    \"BranchCode\": \"\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"\",\n    \"OrganizationId\": \"\",\n    \"ValueDate\": \"\"\n}",
+											"raw": "// {\n//     \"FromAccountNumber\": \"0000044860\",\n//     \"ToAccountNumber\": \"0000162667\",\n//     \"Fee\": \"1\",\n//     \"ProductId\": \"4\",\n//     \"TransactionReference\": \"Ref-{{$randomBankAccount}}\",\n//     \"BatchReference\": \"Ref-{{$randomBankAccount}}\",\n//     \"Amount\": \"15\",\n//     \"Remarks\": \"Convert FX\",\n//     \"BranchCode\": \"999\",\n//     \"TransactionTypeId\": \"\",\n//     \"FxRate\": null,\n//     \"OrganizationId\": \"1\"\n// }\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n{\n  \"Fee\": 0,\n  \"Amount\": 10000,\n  \"FxRate\": null,\n  \"Remarks\": \"Debit NGN79365.08 into 0000179807 [+NGN127721429.5932] |Ferrry Den|0000179807|Rove10\",\n  \"Currency\": 1,\n  \"Direction\": null,\n  \"AccountNumber\": null,\n  \"BatchReference\": null,\n  \"ToAccountNumber\": \"0000179807\",\n  \"FromAccountNumber\": \"0000045685\",\n  \"TransactionReference\": \"{{$randomBankAccount}}05NGN2USD072782\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -11521,6 +12175,44 @@
 								}
 							],
 							"id": "4db3f968-be3f-44f8-b03b-eebe1a24fd45"
+						},
+						{
+							"name": "EOD",
+							"item": [
+								{
+									"name": "EOD",
+									"id": "0d300fbc-9a30-4755-8ba3-62f35fc6c0d6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/wallets/end-of-day/branch/:branchCode",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"wallets",
+												"end-of-day",
+												"branch",
+												":branchCode"
+											],
+											"variable": [
+												{
+													"key": "branchCode",
+													"value": "999"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "3ca06446-1205-4d91-9933-2f5efe9b35ac"
 						}
 					],
 					"id": "569f7105-2da3-4adb-a031-7cfaf98bf166"
@@ -11541,7 +12233,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "135a292f-b01c-455e-8e81-c01b28fbb0f7",
+				"id": "0fecd716-d4b3-4040-84cf-25e88169b0af",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -11552,7 +12244,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "924ca3b9-77ae-411f-b060-143c6e213602",
+				"id": "68557aeb-0acc-4182-a3e0-5099b6dd7b8e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -11644,6 +12336,15 @@
 		{
 			"key": "accountNumber",
 			"value": ""
+		},
+		{
+			"key": "accountNumber1",
+			"value": ""
+		},
+		{
+			"key": "ApiKey",
+			"value": "SK-M13eNvwIqSauPDRrgynqXA88TEuw2f3GymuUQ3VURSjOpOUUe17XdqH92oygmtEr6tv",
+			"type": "string"
 		}
 	]
 }
