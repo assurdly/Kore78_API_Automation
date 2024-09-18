@@ -1,0 +1,6 @@
+{
+  "groupId": "<long>",
+  "featureId": "<integer>",
+  "param1": "<double>",
+  "param2": "<integer>"
+}

@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Updated Successfully","data":{"id":2,"name":"Nip Outflow ","organizationId":1,"description":"NIP Outflow","direction":"D","isActive":true,"dateCreated":"2024-08-05T15:11:56"}}

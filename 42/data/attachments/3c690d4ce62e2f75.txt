@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Updated Successfully","data":{"id":73,"name":"Configuration Payment","organizationId":1,"description":"Customer Payment","direction":"D","isActive":true,"dateCreated":"2024-09-18T18:08:48"}}

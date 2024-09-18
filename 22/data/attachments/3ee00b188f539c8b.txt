@@ -1,5 +1,0 @@
-{
-  "accountToDebit": "",
-  "amount": 500,
-  "tenor": 30
-}

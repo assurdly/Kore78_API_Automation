@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Klein",
+  "middleName": "Roel",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "722 Fermin Locks",
+  "mobileNumber": "234915946644612",
+  "emailAddress": "Nathanael.Lubowitz@gmail.com"
+}

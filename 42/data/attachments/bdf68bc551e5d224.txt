@@ -1,0 +1,12 @@
+{
+  "firstName": "Maryam",
+  "lastName": "Nolan",
+  "middleName": "Petra",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "29772 Forest Light",
+  "mobileNumber": "234914582280912",
+  "emailAddress": "Trenton_Labadie79@gmail.com"
+}
