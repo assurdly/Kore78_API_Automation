@@ -1,0 +1,12 @@
+{
+  "firstName": "Daniela",
+  "lastName": "Adams",
+  "middleName": "Dayton",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "959 Ladarius Rapid",
+  "mobileNumber": "234914664710912",
+  "emailAddress": "Damien82@hotmail.com"
+}

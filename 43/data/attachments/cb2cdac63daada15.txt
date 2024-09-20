@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Abigale",
+  "lastName": "Farrell",
+  "middleName": "Isidro",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "24035 Anabel Canyon",
+  "mobileNumber": "2349173302573",
+  "emailAddress": "Carroll.Hoeger@yahoo.com",
+  "dateCreated": "2024-08-20"
+}

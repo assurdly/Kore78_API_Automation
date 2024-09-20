@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1679,
+    "walletClassificationId": 1, 
+    "currencyId": 107, 
+    "name": "Debbie Wintheiser" 
+}

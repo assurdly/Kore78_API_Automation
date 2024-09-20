@@ -1,0 +1,5 @@
+{
+  "name": "Communications Payment",
+  "description": "Chief Payment",
+  "direction": "C"
+}

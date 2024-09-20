@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Fisher",
+  "middleName": "Amina",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "981 Hand Village",
+  "mobileNumber": "234918454735412",
+  "emailAddress": "Geoffrey_Leuschke23@gmail.com"
+}
