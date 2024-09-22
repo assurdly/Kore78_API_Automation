@@ -1,0 +1,12 @@
+{
+  "firstName": "Clotilde",
+  "lastName": "Abernathy",
+  "middleName": "Gillian",
+  "dob": "1990-05-20",
+  "city": "South Reesestad",
+  "address": "81561 Wintheiser Fields",
+  "occupation": "Dynamic Communications Specialist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

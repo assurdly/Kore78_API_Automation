@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Casper",
+  "middleName": "Sean",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "594 Ida Summit",
+  "mobileNumber": "234912225000112",
+  "emailAddress": "Frank40@hotmail.com"
+}

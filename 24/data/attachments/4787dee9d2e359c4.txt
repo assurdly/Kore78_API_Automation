@@ -1,6 +1,0 @@
-{
-    "groupId": 32, 
-    "featureId": 32, 
-    "param1": 5.5, 
-    "param2": 5 
-}
