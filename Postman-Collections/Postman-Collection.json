@@ -12408,6 +12408,10 @@
 			"value": "SK-M13eNvwIqSauPDRrgynqXA88TEuw2f3GymuUQ3VURSjOpOUUe17XdqH92oygmtEr6tv",
 			"type": "string",
 			"disabled": true
+		},
+		{
+			"key": "accountNumberGHS",
+			"value": ""
 		}
 	]
 }
