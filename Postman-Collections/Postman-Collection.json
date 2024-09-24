@@ -12234,6 +12234,18 @@
 										"url": "{{baseUrl}}/api/v1/multicurrency/transfer"
 									},
 									"response": []
+								},
+								{
+									"name": "New Request",
+									"id": "d7ffc684-83ca-4eba-8a7d-5fe77af7eef5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
 								}
 							],
 							"id": "4db3f968-be3f-44f8-b03b-eebe1a24fd45"
