@@ -1,5 +1,0 @@
-{
-    "name": "Liquidation",
-    "description": "Send money to Vault",
-    "direction": "C"
-}

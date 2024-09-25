@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kertzmann",
+  "middleName": "Lester",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "90995 Jerod Walks",
+  "mobileNumber": "234910441504412",
+  "emailAddress": "Caterina_Adams@hotmail.com"
+}

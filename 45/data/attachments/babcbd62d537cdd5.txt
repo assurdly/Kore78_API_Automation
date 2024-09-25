@@ -1,0 +1,12 @@
+{
+  "firstName": "Ashton",
+  "lastName": "Conn",
+  "middleName": "Theodore",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "63274 Lubowitz Street",
+  "mobileNumber": "234912663261612",
+  "emailAddress": "Jett.Brakus2@yahoo.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Mariela",
+  "lastName": "Wisoky",
+  "middleName": "Jodie",
+  "dob": "1990-05-20",
+  "city": "Yesseniashire",
+  "address": "43695 Kobe View",
+  "occupation": "National Quality Designer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

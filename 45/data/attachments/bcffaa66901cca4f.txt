@@ -1,0 +1,45 @@
+WiredDigitalWallet.Core.Exceptions.CustomException: Unable to get organization key
+   at WiredDigitalWallet.Controllers._BaseApiController.GetApiKey() in /src/Controllers/_BaseApiController.cs:line 39
+   at WiredDigitalWallet.Controllers.NipInflowController.ProvidusNip(NipInflowDto request) in /src/Controllers/NipInflowController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Sentry.AspNetCore.SentryTracingMiddleware.InvokeAsync(HttpContext context)
+   at Sentry.AspNetCore.SentryTracingMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+
+HEADERS
+=======
+Accept: */*
+Host: kore78-dev.bank78.co
+User-Agent: PostmanRuntime/7.39.1
+Accept-Encoding: gzip, br
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Length: 461
+Cdn-Loop: cloudflare; loops=1
+Cf-Connecting-Ip: 20.57.44.21
+Cf-Ipcountry: US
+Cf-Ray: 8c8cf6219e7c9c61-IAD
+Cf-Visitor: {"scheme":"https"}
+Postman-Token: 2651a16a-2934-4b64-8a87-670664120030
+X-Amzn-Trace-Id: Root=1-66f451ae-36a7808d7f2609db5630e1f3
+X-Api-Key: SK-ppTqE853F4jnUE3MlscobTbWZPU23vurg6aiAAq8Xoq7pR0bVulCp4He1obsVe5ehag
+X-Forwarded-For: 20.57.44.21, 172.68.15.213, 172.31.27.8
+X-Forwarded-Host: kore78-dev.bank78.co
+X-Forwarded-Port: 443
+X-Forwarded-Proto: https
+X-Forwarded-Server: ip-172-31-60-182.eu-west-1.compute.internal
+X-Real-Ip: 172.31.27.8
