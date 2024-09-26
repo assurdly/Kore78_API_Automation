@@ -6230,7 +6230,7 @@
 															"variable": [
 																{
 																	"key": "accountNumber",
-																	"value": "{{accountNumber}}",
+																	"value": "0000245715",
 																	"description": "(Required) "
 																}
 															]
@@ -7321,7 +7321,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"accountNumber\": \"{{accountNumber}}\",\n  \"from\": \"2024-09-09\",\n  \"to\": \"2024-09-10\"\n}",
+											"raw": "{\n  \"accountNumber\": \"{{accountNumber}}\",\n  \"from\": \"2024-09-02\",\n  \"to\": \"2024-09-03\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -8035,7 +8035,7 @@
 											"variable": [
 												{
 													"key": "accountNumber",
-													"value": "0000045692",
+													"value": "{{accountNumber}}",
 													"description": "(Required) "
 												}
 											]
