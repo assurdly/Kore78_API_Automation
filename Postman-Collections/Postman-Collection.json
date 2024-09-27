@@ -12176,6 +12176,49 @@
 								},
 								{
 									"name": "Modify currency rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "a3b84c80-1fbf-4b45-aed1-a0e253b4be54",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Validate the response schema for code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure the data object has the fields status and message\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"    pm.expect(responseData.data).to.have.property('status');",
+													"    pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure the success field is a boolean value\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.success).to.be.a('boolean');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "8bbc0585-2046-46cd-a75d-de2406426457",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -12198,6 +12241,33 @@
 								},
 								{
 									"name": "Reactivate Currency Rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e00532c2-12ac-4360-85f4-ae09f8f19761",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for code, success, message, and data fields\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"  pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"  pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "6ff83681-580a-4048-9214-465e14503c51",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -12220,6 +12290,35 @@
 								},
 								{
 									"name": "Deactivate Currency Rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "dc714f1b-1076-4fa5-9c1e-cf18acbdd78b",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.status).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.message).to.exist.and.to.be.a('string');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "1437274a-e113-4530-99f0-882bc9d019c4",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
