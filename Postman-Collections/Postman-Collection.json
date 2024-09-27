@@ -4032,6 +4032,71 @@
 							"item": [
 								{
 									"name": "/api/v1/limits/customer/add",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "c25f36c1-9166-4d7b-9300-ef9ad36dd022",
+												"exec": [
+													"const responseData = pm.response.json().data;",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for the required fields\", function () {",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('id');",
+													"    pm.expect(responseData).to.have.property('productCurrencyId');",
+													"    pm.expect(responseData).to.have.property('singleTransactionLimit');",
+													"    pm.expect(responseData).to.have.property('frequency');",
+													"    pm.expect(responseData).to.have.property('dailyTransactionLimit');",
+													"    pm.expect(responseData).to.have.property('monthlyTransactionLimit');",
+													"    pm.expect(responseData).to.have.property('customerId');",
+													"});",
+													"",
+													"pm.test(\"Id is a non-negative integer\", function () {",
+													"    pm.expect(responseData.id).to.be.a('number');",
+													"    pm.expect(responseData.id).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"ProductCurrencyId is a non-negative integer\", function () {",
+													"    pm.expect(responseData.productCurrencyId).to.be.a('number');",
+													"    pm.expect(responseData.productCurrencyId).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"SingleTransactionLimit is a non-negative integer\", function () {",
+													"    pm.expect(responseData.singleTransactionLimit).to.be.a('number');",
+													"    pm.expect(responseData.singleTransactionLimit).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"Frequency is a non-negative integer\", function () {",
+													"    pm.expect(responseData.frequency).to.be.a('number');",
+													"    pm.expect(responseData.frequency).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"DailyTransactionLimit is a non-negative integer\", function () {",
+													"    pm.expect(responseData.dailyTransactionLimit).to.be.a('number');",
+													"    pm.expect(responseData.dailyTransactionLimit).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"MonthlyTransactionLimit is a non-negative integer\", function () {",
+													"    pm.expect(responseData.monthlyTransactionLimit).to.be.a('number');",
+													"    pm.expect(responseData.monthlyTransactionLimit).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"CustomerId is a non-negative integer\", function () {",
+													"    pm.expect(responseData.customerId).to.be.a('number');",
+													"    pm.expect(responseData.customerId).to.be.at.least(0);",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "fe6fce59-de0f-4312-bbfb-3240161700db",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4046,7 +4111,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"currencyId\": \"<integer>\",\n  \"productId\": \"<integer>\",\n  \"customerId\": \"<long>\",\n  \"singleTransactionLimit\": \"<double>\",\n  \"frequency\": \"<double>\",\n  \"dailyTransactionLimit\": \"<double>\",\n  \"monthlyTransactionLimit\": \"<double>\",\n  \"id\": \"<integer>\"\n}",
+											"raw": "{\n  \"currencyId\": 1,\n  \"productId\": 2,\n  \"customerId\": \"{{customerId}}\",\n  \"singleTransactionLimit\": \"50000\",\n  \"frequency\": \"1\",\n  \"dailyTransactionLimit\": \"500000\",\n  \"monthlyTransactionLimit\": \"5000000\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
