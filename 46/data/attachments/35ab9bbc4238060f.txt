@@ -1,0 +1,5 @@
+{
+  "name": "Research Payment",
+  "description": "Central Payment",
+  "direction": "C"
+}

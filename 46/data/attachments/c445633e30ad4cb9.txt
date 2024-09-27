@@ -1,0 +1,21 @@
+{
+  "id": "<long>",
+  "walletGroupId": "<long>",
+  "customerId": "<long>",
+  "availableBalance": "<double>",
+  "ledgerBalance": "<double>",
+  "walletRestrictionId": "<integer>",
+  "walletClassificationId": "<integer>",
+  "currencyId": "<integer>",
+  "isInternal": "<boolean>",
+  "isDefault": "<boolean>",
+  "name": "<string>",
+  "overdraft": "<double>",
+  "virtualAccount": {
+    "accountNumber": "<string>",
+    "bankCode": "<string>",
+    "bankName": "<string>"
+  },
+  "mobNum": "<string>",
+  "customerTypeId": "<integer>"
+}

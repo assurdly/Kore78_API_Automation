@@ -1,0 +1,12 @@
+{
+  "firstName": "Jenifer",
+  "lastName": "West",
+  "middleName": "Collin",
+  "dob": "1990-05-20",
+  "city": "East Gregville",
+  "address": "1874 Rutherford Ville",
+  "occupation": "Direct Identity Coordinator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
