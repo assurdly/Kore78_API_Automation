@@ -4227,6 +4227,52 @@
 								},
 								{
 									"name": "/api/v1/limits/product/:productId/currency/:currencyId/customer/:customerId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "17c59ff2-b806-463b-888a-302443094836",
+												"exec": [
+													"const responseData = pm.response.json().data;",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.id).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.productCurrencyId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.singleTransactionLimit).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.frequency).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.dailyTransactionLimit).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.monthlyTransactionLimit).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.customerId).to.exist.and.to.be.a('number');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Code is a non-empty string and success is a boolean\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+													"    pm.expect(responseData.success).to.be.a('boolean');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the message is either an empty string or a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.have.property('message').that.is.a('string');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "5e5ba081-9937-4023-95c5-279802e2c8be",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4253,12 +4299,12 @@
 											"variable": [
 												{
 													"key": "productId",
-													"value": "{{productId}}",
+													"value": "2",
 													"description": "(Required) "
 												},
 												{
 													"key": "currencyId",
-													"value": "127",
+													"value": "1",
 													"description": "(Required) "
 												},
 												{
@@ -4323,6 +4369,47 @@
 								},
 								{
 									"name": "/api/v1/limits/product/:productId/currency/:currencyId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "f9a92b46-a060-44ad-803d-7cd5561476f3",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Code is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Success is a boolean value\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.success).to.be.a('boolean');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "4c2bc062-2291-4d81-8cf5-a61ab4279b2e",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4347,12 +4434,12 @@
 											"variable": [
 												{
 													"key": "productId",
-													"value": "4",
+													"value": "2",
 													"description": "(Required) "
 												},
 												{
 													"key": "currencyId",
-													"value": "107",
+													"value": "1",
 													"description": "(Required) "
 												}
 											]
