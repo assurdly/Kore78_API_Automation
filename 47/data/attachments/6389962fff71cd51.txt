@@ -1,0 +1,16 @@
+{
+  "id": "<long>",
+  "name": "<string>",
+  "walletGroupFeatureDto": [
+    {
+      "featureName": "<string>",
+      "featurePropertyName": "<string>",
+      "featurePropertyValue": "<string>"
+    },
+    {
+      "featureName": "<string>",
+      "featurePropertyName": "<string>",
+      "featurePropertyValue": "<string>"
+    }
+  ]
+}

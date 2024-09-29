@@ -1,0 +1,7 @@
+{
+  "customerId": "<long>",
+  "organizationId": "<long>",
+  "walletId": "<long>",
+  "from": "<dateTime>",
+  "to": "<dateTime>"
+}

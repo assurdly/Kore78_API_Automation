@@ -1,0 +1,6 @@
+{
+  "id": "88",
+  "name": "Integration Payment",
+  "description": "Corporate Payment",
+  "direction": "D"
+}

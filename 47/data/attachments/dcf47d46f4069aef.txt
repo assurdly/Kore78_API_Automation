@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Updated Successfully","data":{"id":88,"name":"Integration Payment","organizationId":1,"description":"Corporate Payment","direction":"D","isActive":true,"dateCreated":"2024-09-29T20:02:39"}}
