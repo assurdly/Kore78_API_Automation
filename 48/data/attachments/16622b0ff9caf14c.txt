@@ -1,0 +1,12 @@
+{
+  "firstName": "Erika",
+  "lastName": "Smitham",
+  "middleName": "Hector",
+  "dob": "1990-05-20",
+  "city": "Lake Forest",
+  "address": "892 White Camp",
+  "occupation": "Senior Optimization Architect",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

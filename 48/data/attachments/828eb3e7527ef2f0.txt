@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kovacek",
+  "middleName": "Burdette",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "0328 Jamar Spring",
+  "mobileNumber": "2349188444682",
+  "emailAddress": "Karina_Moore96@gmail.com"
+}

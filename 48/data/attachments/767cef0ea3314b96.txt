@@ -1,0 +1,12 @@
+{
+  "firstName": "Vanessa",
+  "lastName": "Cormier",
+  "middleName": "Addie",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "948 Ramona Pine",
+  "mobileNumber": "234919983643312",
+  "emailAddress": "Delia.Kessler@hotmail.com"
+}

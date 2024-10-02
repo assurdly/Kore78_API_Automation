@@ -1,0 +1,1 @@
+{"code":"05","success":false,"message":"Could not convert string to integer: 30AD. Path 'tenor', line 4, position 17.","data":null}

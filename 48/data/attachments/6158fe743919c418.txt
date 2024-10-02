@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Schoen",
+  "middleName": "Santos",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "7711 Tito Expressway",
+  "mobileNumber": "234912737898312",
+  "emailAddress": "Gunnar.Mohr81@gmail.com"
+}

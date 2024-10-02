@@ -1,0 +1,7 @@
+{
+  "accountNumber": "<string>",
+  "walletRestrictionId": "<integer>",
+  "accountRestrictionId": "<integer>",
+  "tellerId": "<integer>",
+  "restrictCustomerOrAccount": "<integer>"
+}

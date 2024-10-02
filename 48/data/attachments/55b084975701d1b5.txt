@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Lemke",
+  "middleName": "Dejon",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "48025 Considine Park",
+  "mobileNumber": "234914653896012",
+  "emailAddress": "Zetta.Kling81@hotmail.com"
+}

@@ -1,0 +1,9 @@
+{
+  "post": "<boolean>",
+  "transactionReference": "<string>",
+  "walletId": "<long>",
+  "customerId": "<long>",
+  "organizationId": "<long>",
+  "amount": "<double>",
+  "accountNumber": "<string>"
+}
