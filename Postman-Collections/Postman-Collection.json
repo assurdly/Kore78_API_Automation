@@ -186,7 +186,7 @@
 											]
 										},
 										{
-											"name": "Add country with incorrect name",
+											"name": "Add country - Incorrect name",
 											"event": [
 												{
 													"listen": "test",
@@ -282,7 +282,7 @@
 											]
 										},
 										{
-											"name": "Add country with incorrect country code two",
+											"name": "Add country - Incorrect country code two",
 											"event": [
 												{
 													"listen": "test",
@@ -378,7 +378,7 @@
 											]
 										},
 										{
-											"name": "Add country with incorrect country code three",
+											"name": "Add country - Incorrect country code three",
 											"event": [
 												{
 													"listen": "test",
@@ -474,7 +474,7 @@
 											]
 										},
 										{
-											"name": "Add country with empty fields",
+											"name": "Add country - Empty fields",
 											"event": [
 												{
 													"listen": "test",
@@ -771,7 +771,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/add - Empty Name",
+											"name": "Add currency - Empty Name",
 											"event": [
 												{
 													"listen": "test",
@@ -865,7 +865,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/add - Empty shortName",
+											"name": "Add currency - Empty shortName",
 											"event": [
 												{
 													"listen": "test",
@@ -959,7 +959,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/add - Empty fields",
+											"name": "Add currency - Empty fields",
 											"event": [
 												{
 													"listen": "test",
@@ -1053,7 +1053,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/get",
+											"name": "Get currency",
 											"id": "218843fe-f17d-4843-91a5-338ef2f11c78",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1250,7 +1250,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/get",
+											"name": "Get organizations",
 											"id": "99c37752-d609-4476-97c3-0275bd32c010",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
