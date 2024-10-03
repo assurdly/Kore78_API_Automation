@@ -90,7 +90,7 @@
 											]
 										},
 										{
-											"name": "Update country",
+											"name": "Add country",
 											"event": [
 												{
 													"listen": "test",
@@ -136,7 +136,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 1,\n  \"name\": \"Albania\",\n  \"countryCodeTwo\": \"AL\",\n  \"countryCodeThree\": \"ALB\"\n}",
+													"raw": "{\n  \"id\": 1,\n  \"name\": \"Togo\",\n  \"countryCodeTwo\": \"TG\",\n  \"countryCodeThree\": \"TGO\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -186,7 +186,7 @@
 											]
 										},
 										{
-											"name": "Update country with incorrect name",
+											"name": "Add country with incorrect name",
 											"event": [
 												{
 													"listen": "test",
@@ -282,7 +282,7 @@
 											]
 										},
 										{
-											"name": "Update country with incorrect country code two",
+											"name": "Add country with incorrect country code two",
 											"event": [
 												{
 													"listen": "test",
@@ -378,7 +378,7 @@
 											]
 										},
 										{
-											"name": "Update country with incorrect country code three",
+											"name": "Add country with incorrect country code three",
 											"event": [
 												{
 													"listen": "test",
@@ -474,7 +474,7 @@
 											]
 										},
 										{
-											"name": "Update country with empty fields",
+											"name": "Add country with empty fields",
 											"event": [
 												{
 													"listen": "test",
@@ -566,7 +566,7 @@
 									"name": "currencies",
 									"item": [
 										{
-											"name": "/api/v1/currencies/add",
+											"name": "Add currency",
 											"event": [
 												{
 													"listen": "test",
@@ -674,7 +674,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/add - Invalid Name",
+											"name": "Add currency - Invalid Name",
 											"event": [
 												{
 													"listen": "test",
