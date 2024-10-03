@@ -18,7 +18,7 @@
 									"name": "countries",
 									"item": [
 										{
-											"name": "/api/v1/countries/get",
+											"name": "Get all countries",
 											"event": [
 												{
 													"listen": "test",
@@ -90,7 +90,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add",
+											"name": "Add country",
 											"event": [
 												{
 													"listen": "test",
@@ -109,6 +109,10 @@
 															"",
 															"pm.test(\"Body contains data value\", function (){",
 															"    pm.expect(typeof jsonData.data).to.eql(\"object\")",
+															"})",
+															"",
+															"pm.test(\"Body contains success and it is true\", function (){",
+															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
 															"})",
 															"",
 															"pm.test(\"Body contains message and it is not empty\", function (){",
@@ -136,7 +140,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 1,\n  \"name\": \"Albania\",\n  \"countryCodeTwo\": \"AL\",\n  \"countryCodeThree\": \"ALB\"\n}",
+													"raw": "{\n  \"id\": 1,\n  \"name\": \"Togo\",\n  \"countryCodeTwo\": \"TG\",\n  \"countryCodeThree\": \"TGO\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -186,7 +190,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add with incorrect name",
+											"name": "Add country - Incorrect name",
 											"event": [
 												{
 													"listen": "test",
@@ -282,7 +286,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add with incorrect country code two",
+											"name": "Add country - Incorrect country code two",
 											"event": [
 												{
 													"listen": "test",
@@ -378,7 +382,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add with incorrect country code three",
+											"name": "Add country - Incorrect country code three",
 											"event": [
 												{
 													"listen": "test",
@@ -474,7 +478,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add with empty fields",
+											"name": "Add country - Empty fields",
 											"event": [
 												{
 													"listen": "test",
@@ -566,7 +570,7 @@
 									"name": "currencies",
 									"item": [
 										{
-											"name": "/api/v1/currencies/add",
+											"name": "Add currency",
 											"event": [
 												{
 													"listen": "test",
@@ -674,7 +678,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/add - Invalid Name",
+											"name": "Add currency - Invalid Name",
 											"event": [
 												{
 													"listen": "test",
@@ -771,7 +775,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/add - Empty Name",
+											"name": "Add currency - Empty Name",
 											"event": [
 												{
 													"listen": "test",
@@ -865,7 +869,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/add - Empty shortName",
+											"name": "Add currency - Empty shortName",
 											"event": [
 												{
 													"listen": "test",
@@ -959,7 +963,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/add - Empty fields",
+											"name": "Add currency - Empty fields",
 											"event": [
 												{
 													"listen": "test",
@@ -1053,7 +1057,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/currencies/get",
+											"name": "Get currency",
 											"id": "218843fe-f17d-4843-91a5-338ef2f11c78",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1120,7 +1124,7 @@
 									"name": "organizations",
 									"item": [
 										{
-											"name": "/api/v1/organizations/add/with/wallet",
+											"name": "Add organization - wallet",
 											"id": "2699aed7-3964-41b0-b4cf-7668d56a2008",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1185,7 +1189,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/add",
+											"name": "Add organization",
 											"id": "07eefb65-4ddb-4d7d-91a3-384ccef1f9ff",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1250,7 +1254,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/get",
+											"name": "Get organizations",
 											"id": "99c37752-d609-4476-97c3-0275bd32c010",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1286,7 +1290,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/get/:id",
+											"name": "Get organization by ID",
 											"id": "053dc71b-4885-4a5a-a9dc-10099c20b3d0",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1359,7 +1363,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/users/add",
+											"name": "Add organization - Users",
 											"id": "6c6e5298-ccaa-4815-8f76-bc2c787b6e7a",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1424,7 +1428,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/:id/users/get",
+											"name": "Get organization - User ID",
 											"id": "d6b036c1-1208-44fb-9099-9592271c1814",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1499,7 +1503,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/:id/users/key/generate",
+											"name": "Add organization - Generate user key",
 											"id": "17c78ec3-63e7-4e25-8aca-2129c06da80e",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1576,7 +1580,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/:id/users/key/get",
+											"name": "Get organization - Generate user key",
 											"id": "070fc321-85cf-4931-b9f9-bace0e66663b",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -2849,7 +2853,7 @@
 									"id": "8f59dc3f-933d-4d1a-b4a4-88888ffdedd2"
 								},
 								{
-									"name": "/api/v1/customers/get/all",
+									"name": "Get customers",
 									"event": [
 										{
 											"listen": "test",
@@ -2933,7 +2937,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/customers/types/all",
+									"name": "Get customers - All types",
 									"event": [
 										{
 											"listen": "test",
@@ -3448,7 +3452,7 @@
 									"name": "providus",
 									"item": [
 										{
-											"name": "/api/v1/nip/providus/inflow",
+											"name": "Inflow",
 											"id": "eae53f5c-4eb8-4685-acc9-a1677d9915d4",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -3513,7 +3517,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/nip/providus/outflow",
+											"name": "Outflow",
 											"id": "3e12d992-ee34-4257-9963-41eb47757661",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -3813,7 +3817,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "2",
+													"value": "68",
 													"description": "(Required) "
 												}
 											]
@@ -4032,6 +4036,71 @@
 							"item": [
 								{
 									"name": "/api/v1/limits/customer/add",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "c25f36c1-9166-4d7b-9300-ef9ad36dd022",
+												"exec": [
+													"const responseData = pm.response.json().data;",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for the required fields\", function () {",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('id');",
+													"    pm.expect(responseData).to.have.property('productCurrencyId');",
+													"    pm.expect(responseData).to.have.property('singleTransactionLimit');",
+													"    pm.expect(responseData).to.have.property('frequency');",
+													"    pm.expect(responseData).to.have.property('dailyTransactionLimit');",
+													"    pm.expect(responseData).to.have.property('monthlyTransactionLimit');",
+													"    pm.expect(responseData).to.have.property('customerId');",
+													"});",
+													"",
+													"pm.test(\"Id is a non-negative integer\", function () {",
+													"    pm.expect(responseData.id).to.be.a('number');",
+													"    pm.expect(responseData.id).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"ProductCurrencyId is a non-negative integer\", function () {",
+													"    pm.expect(responseData.productCurrencyId).to.be.a('number');",
+													"    pm.expect(responseData.productCurrencyId).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"SingleTransactionLimit is a non-negative integer\", function () {",
+													"    pm.expect(responseData.singleTransactionLimit).to.be.a('number');",
+													"    pm.expect(responseData.singleTransactionLimit).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"Frequency is a non-negative integer\", function () {",
+													"    pm.expect(responseData.frequency).to.be.a('number');",
+													"    pm.expect(responseData.frequency).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"DailyTransactionLimit is a non-negative integer\", function () {",
+													"    pm.expect(responseData.dailyTransactionLimit).to.be.a('number');",
+													"    pm.expect(responseData.dailyTransactionLimit).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"MonthlyTransactionLimit is a non-negative integer\", function () {",
+													"    pm.expect(responseData.monthlyTransactionLimit).to.be.a('number');",
+													"    pm.expect(responseData.monthlyTransactionLimit).to.be.at.least(0);",
+													"});",
+													"",
+													"pm.test(\"CustomerId is a non-negative integer\", function () {",
+													"    pm.expect(responseData.customerId).to.be.a('number');",
+													"    pm.expect(responseData.customerId).to.be.at.least(0);",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "fe6fce59-de0f-4312-bbfb-3240161700db",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4046,7 +4115,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"currencyId\": \"<integer>\",\n  \"productId\": \"<integer>\",\n  \"customerId\": \"<long>\",\n  \"singleTransactionLimit\": \"<double>\",\n  \"frequency\": \"<double>\",\n  \"dailyTransactionLimit\": \"<double>\",\n  \"monthlyTransactionLimit\": \"<double>\",\n  \"id\": \"<integer>\"\n}",
+											"raw": "{\n  \"currencyId\": 1,\n  \"productId\": 2,\n  \"customerId\": \"{{customerId}}\",\n  \"singleTransactionLimit\": \"50000\",\n  \"frequency\": \"1\",\n  \"dailyTransactionLimit\": \"500000\",\n  \"monthlyTransactionLimit\": \"5000000\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -4162,6 +4231,52 @@
 								},
 								{
 									"name": "/api/v1/limits/product/:productId/currency/:currencyId/customer/:customerId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "17c59ff2-b806-463b-888a-302443094836",
+												"exec": [
+													"const responseData = pm.response.json().data;",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.id).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.productCurrencyId).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.singleTransactionLimit).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.frequency).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.dailyTransactionLimit).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.monthlyTransactionLimit).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.customerId).to.exist.and.to.be.a('number');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Code is a non-empty string and success is a boolean\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+													"    pm.expect(responseData.success).to.be.a('boolean');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the message is either an empty string or a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.have.property('message').that.is.a('string');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "5e5ba081-9937-4023-95c5-279802e2c8be",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4188,12 +4303,12 @@
 											"variable": [
 												{
 													"key": "productId",
-													"value": "{{productId}}",
+													"value": "2",
 													"description": "(Required) "
 												},
 												{
 													"key": "currencyId",
-													"value": "127",
+													"value": "1",
 													"description": "(Required) "
 												},
 												{
@@ -4258,6 +4373,47 @@
 								},
 								{
 									"name": "/api/v1/limits/product/:productId/currency/:currencyId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "f9a92b46-a060-44ad-803d-7cd5561476f3",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Code is a non-empty string\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should not be empty\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Success is a boolean value\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.success).to.be.a('boolean');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "4c2bc062-2291-4d81-8cf5-a61ab4279b2e",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4282,12 +4438,12 @@
 											"variable": [
 												{
 													"key": "productId",
-													"value": "4",
+													"value": "2",
 													"description": "(Required) "
 												},
 												{
 													"key": "currencyId",
-													"value": "107",
+													"value": "1",
 													"description": "(Required) "
 												}
 											]
@@ -4407,6 +4563,42 @@
 								},
 								{
 									"name": "/api/v1/limits/default",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "9182888b-3b4c-44d2-9a53-ce89fb922048",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.expect(pm.response.code).to.equal(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the structure of the data object\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"    pm.expect(responseData.data).to.have.property('id').that.is.a('number');",
+													"    pm.expect(responseData.data).to.have.property('productCurrencyId').that.is.a('number');",
+													"    pm.expect(responseData.data).to.have.property('singleTransactionLimit').that.is.a('number');",
+													"    pm.expect(responseData.data).to.have.property('frequency').that.is.a('number');",
+													"    pm.expect(responseData.data).to.have.property('dailyTransactionLimit').that.is.a('number');",
+													"    pm.expect(responseData.data).to.have.property('monthlyTransactionLimit').that.is.a('number');",
+													"    pm.expect(responseData.data).to.have.property('customerId').that.is.a('number');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "a034258f-153c-40cc-9b3e-10bf228389fc",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4415,7 +4607,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/v1/limits/default?currencyId=107",
+											"raw": "{{baseUrl}}/api/v1/limits/default?currencyId=1",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -4428,8 +4620,7 @@
 											"query": [
 												{
 													"key": "currencyId",
-													"value": "107",
-													"type": "text"
+													"value": "1"
 												}
 											]
 										}
@@ -6230,7 +6421,7 @@
 															"variable": [
 																{
 																	"key": "accountNumber",
-																	"value": "{{accountNumber}}",
+																	"value": "0000245715",
 																	"description": "(Required) "
 																}
 															]
@@ -6320,6 +6511,33 @@
 										},
 										{
 											"name": "/api/v1/wallets/vault/interests/accrued/account/:accountNumber",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "e2dd606a-6606-4c7d-9056-c4ea27096e88",
+														"exec": [
+															"pm.test(\"Response status code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"",
+															"",
+															"pm.test(\"Response has the required fields\", function () {",
+															"    const responseData = pm.response.json();",
+															"    ",
+															"    pm.expect(responseData).to.be.an('object');",
+															"    pm.expect(responseData.code).to.exist;",
+															"    pm.expect(responseData.success).to.exist;",
+															"    pm.expect(responseData.message).to.exist;",
+															"    pm.expect(responseData.data).to.exist;",
+															"});",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "03c29cb0-de1f-48b6-b906-325342f60230",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -6345,7 +6563,7 @@
 													"variable": [
 														{
 															"key": "accountNumber",
-															"value": "{{accountNumber}}",
+															"value": "0000257895",
 															"description": "(Required) "
 														}
 													]
@@ -7321,7 +7539,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"accountNumber\": \"{{accountNumber}}\",\n  \"from\": \"2024-09-09\",\n  \"to\": \"2024-09-10\"\n}",
+											"raw": "{\n  \"accountNumber\": \"{{accountNumber}}\",\n  \"from\": \"2024-09-02\",\n  \"to\": \"2024-09-03\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -8035,7 +8253,7 @@
 											"variable": [
 												{
 													"key": "accountNumber",
-													"value": "0000045692",
+													"value": "0000045685",
 													"description": "(Required) "
 												}
 											]
@@ -8980,6 +9198,68 @@
 															}
 														},
 														"url": "{{baseUrl}}/api/v1/account/setup"
+													},
+													"response": []
+												},
+												{
+													"name": "1. Account Setup Copy",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "c2578a44-fa9a-43ec-813b-d6ea5d5e8ed1",
+																"exec": [
+																	"const jsonData = pm.response.json();",
+																	"",
+																	"pm.test(\"Status code is 200\", function () {",
+																	"    pm.response.to.have.status(200);",
+																	"});",
+																	"",
+																	"pm.test(\"Body contains success message and it is true\", function () {",
+																	"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
+																	"})",
+																	"",
+																	"pm.test(\"Body contains message\", function () {",
+																	"    pm.expect(jsonData.message).to.eql(\"Account setup successful\").to.not.be.empty;",
+																	"})",
+																	"",
+																	"pm.test(\"Body contains meta data\", function () {",
+																	"    pm.expect(jsonData.data).to.eql(\"object\").to.not.be.empty;",
+																	"})",
+																	"",
+																	"pm.test(\"Body contains key\", function () {",
+																	"    pm.expect(typeof jsonData.data.key).to.eql(\"string\").to.not.be.empty;",
+																	"})"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "0861d6be-878a-4551-9946-34f66f627cc5",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "x-api-key",
+																"value": "AdminTest",
+																"type": "text",
+																"disabled": true
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"firstName\": \"QA\",\r\n    \"lastName\": \"Tester\",\r\n    \"emailAddress\": \"QA@assurdly.com\",\r\n    \"password\": \"Test123@\",\r\n    \"apiKey\": \"NewOrgSetup@!22323\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/account/u/setup"
 													},
 													"response": []
 												},
@@ -12032,6 +12312,75 @@
 								},
 								{
 									"name": "Get currency rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "51cfab69-9af8-4550-9de5-f143994c9c7e",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Validate the structure of the data array\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.be.an('array');",
+													"  pm.expect(responseData.data).to.have.length.above(0, \"Data array should not be empty\");",
+													"  responseData.data.forEach(function(item) {",
+													"    pm.expect(item).to.be.an('object');",
+													"    pm.expect(item).to.have.property('currencyid');",
+													"    pm.expect(item).to.have.property('isoCurCode');",
+													"    pm.expect(item).to.have.property('shortName');",
+													"    pm.expect(item).to.have.property('curCode');",
+													"    pm.expect(item).to.have.property('name');",
+													"    pm.expect(item).to.have.property('decPla');",
+													"    pm.expect(item).to.have.property('spotRate');",
+													"    pm.expect(item).to.have.property('buyRate');",
+													"    pm.expect(item).to.have.property('sellRate');",
+													"    pm.expect(item).to.have.property('closRate');",
+													"    pm.expect(item).to.have.property('fixRate');",
+													"    pm.expect(item).to.have.property('midRate');",
+													"    pm.expect(item).to.have.property('valDays');",
+													"    pm.expect(item).to.have.property('weekend');",
+													"    pm.expect(item).to.have.property('weekEndDays');",
+													"    pm.expect(item).to.have.property('bankCode');",
+													"    pm.expect(item).to.have.property('corBraCode');",
+													"    pm.expect(item).to.have.property('intBaseDays');",
+													"    pm.expect(item).to.have.property('monDays');",
+													"    pm.expect(item).to.have.property('dateUpdated');",
+													"    pm.expect(item).to.have.property('isactive');",
+													"    pm.expect(item).to.have.property('dateCreated');",
+													"    pm.expect(item).to.have.property('createdBy');",
+													"    pm.expect(item).to.have.property('updatedBy');",
+													"    pm.expect(item).to.have.property('deletedBy');",
+													"  });",
+													"});",
+													"",
+													"",
+													"pm.test(\"All data objects in the array have the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
+													"",
+													"    responseData.data.forEach(function (dataObject) {",
+													"        pm.expect(dataObject).to.include.all.keys(",
+													"            \"currencyid\", \"isoCurCode\", \"shortName\", \"curCode\", \"name\", \"decPla\", ",
+													"            \"spotRate\", \"buyRate\", \"sellRate\", \"closRate\", \"fixRate\", \"midRate\", ",
+													"            \"valDays\", \"weekend\", \"weekEndDays\", \"bankCode\", \"corBraCode\", ",
+													"            \"intBaseDays\", \"monDays\", \"dateUpdated\", \"isactive\", \"dateCreated\", ",
+													"            \"createdBy\", \"updatedBy\", \"deletedBy\"",
+													"        );",
+													"    });",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "c297c0fc-e2ba-4889-b01c-ded5315c03b9",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -12045,6 +12394,49 @@
 								},
 								{
 									"name": "Modify currency rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "a3b84c80-1fbf-4b45-aed1-a0e253b4be54",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Validate the response schema for code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure the data object has the fields status and message\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"    pm.expect(responseData.data).to.have.property('status');",
+													"    pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure the success field is a boolean value\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.success).to.be.a('boolean');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "8bbc0585-2046-46cd-a75d-de2406426457",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -12067,6 +12459,33 @@
 								},
 								{
 									"name": "Reactivate Currency Rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e00532c2-12ac-4360-85f4-ae09f8f19761",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for code, success, message, and data fields\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"  pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"  pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "6ff83681-580a-4048-9214-465e14503c51",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -12089,6 +12508,35 @@
 								},
 								{
 									"name": "Deactivate Currency Rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "dc714f1b-1076-4fa5-9c1e-cf18acbdd78b",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.status).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.message).to.exist.and.to.be.a('string');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "1437274a-e113-4530-99f0-882bc9d019c4",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -12162,7 +12610,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "// {\n//     \"FromAccountNumber\": \"0000044860\",\n//     \"ToAccountNumber\": \"0000162667\",\n//     \"Fee\": \"1\",\n//     \"ProductId\": \"4\",\n//     \"TransactionReference\": \"Ref-{{$randomBankAccount}}\",\n//     \"BatchReference\": \"Ref-{{$randomBankAccount}}\",\n//     \"Amount\": \"15\",\n//     \"Remarks\": \"Convert FX\",\n//     \"BranchCode\": \"999\",\n//     \"TransactionTypeId\": \"\",\n//     \"FxRate\": null,\n//     \"OrganizationId\": \"1\"\n// }\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n{\n  \"Fee\": 0,\n  \"Amount\": 10000,\n  \"FxRate\": null,\n  \"Remarks\": \"Debit NGN79365.08 into 0000179807 [+NGN127721429.5932] |Ferrry Den|0000179807|Rove10\",\n  \"Currency\": 1,\n  \"Direction\": null,\n  \"AccountNumber\": null,\n  \"BatchReference\": null,\n  \"ToAccountNumber\": \"0000179807\",\n  \"FromAccountNumber\": \"0000045685\",\n  \"TransactionReference\": \"{{$randomBankAccount}}05NGN2USD072782\"\n}",
+											"raw": "// {\n//     \"FromAccountNumber\": \"0000190107\",\n//     \"ToAccountNumber\": \"0000045685\",\n//     \"Fee\": \"1\",\n//     \"ProductId\": \"7\",\n//     \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n//     \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387\",\n//     \"Amount\": \"1000\",\n//     \"Remarks\": \"Convert FX\",\n//     \"BranchCode\": \"999\",\n//     \"TransactionTypeId\": \"\",\n//     \"FxRate\": null,\n//     \"OrganizationId\": \"1\"\n// }\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n{\n  \"Fee\": 100,\n  \"Amount\": 78.55,\n  \"FxRate\": 0.0785545954438334642576590731,\n  \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n  \"Currency\": 154,\n  \"Direction\": null,\n  \"ProductId\": \"7\",\n  \"AccountNumber\": null,\n  \"BatchReference\": null,\n  \"ToAccountNumber\": \"0000045685\",\n  \"TargetCurrencyId\": 1,\n  \"FromAccountNumber\": \"0000190107\",\n  \"TransactionReference\": \"241002141352KES2NGN057414\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -12181,6 +12629,48 @@
 							"item": [
 								{
 									"name": "EOD",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b69dc5ae-299c-42f4-ab68-982ce9de4391",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type header is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.code).to.exist;",
+													"  pm.expect(responseData.success).to.exist;",
+													"  pm.expect(responseData.message).to.exist;",
+													"  pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the schema of the data object - status and message properties\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"  pm.expect(responseData.data.status).to.exist.and.to.be.a('number');",
+													"  pm.expect(responseData.data.message).to.exist.and.to.be.a('string');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "0d300fbc-9a30-4755-8ba3-62f35fc6c0d6",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -12233,7 +12723,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0fecd716-d4b3-4040-84cf-25e88169b0af",
+				"id": "9aebfd69-5c63-4b0b-bec6-11c7b2a06deb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -12244,7 +12734,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "68557aeb-0acc-4182-a3e0-5099b6dd7b8e",
+				"id": "f9ccf713-ee02-4f01-aeac-dc42bb9908d8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -12344,7 +12834,12 @@
 		{
 			"key": "ApiKey",
 			"value": "SK-M13eNvwIqSauPDRrgynqXA88TEuw2f3GymuUQ3VURSjOpOUUe17XdqH92oygmtEr6tv",
-			"type": "string"
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "accountNumberGHS",
+			"value": ""
 		}
 	]
 }
