@@ -18,7 +18,7 @@
 									"name": "countries",
 									"item": [
 										{
-											"name": "/api/v1/countries/get",
+											"name": "Get all countries",
 											"event": [
 												{
 													"listen": "test",
@@ -90,7 +90,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add",
+											"name": "Update country",
 											"event": [
 												{
 													"listen": "test",
@@ -186,7 +186,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add with incorrect name",
+											"name": "Update country with incorrect name",
 											"event": [
 												{
 													"listen": "test",
@@ -282,7 +282,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add with incorrect country code two",
+											"name": "Update country with incorrect country code two",
 											"event": [
 												{
 													"listen": "test",
@@ -378,7 +378,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add with incorrect country code three",
+											"name": "Update country with incorrect country code three",
 											"event": [
 												{
 													"listen": "test",
@@ -474,7 +474,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/countries/add with empty fields",
+											"name": "Update country with empty fields",
 											"event": [
 												{
 													"listen": "test",
