@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Stark",
+  "middleName": "Stacy",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "6044 Miller Divide",
+  "mobileNumber": "234912533991512",
+  "emailAddress": "Ana85@gmail.com"
+}

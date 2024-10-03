@@ -1,0 +1,12 @@
+{
+  "firstName": "Gaston",
+  "lastName": "Hahn",
+  "middleName": "Keely",
+  "dob": "1990-05-20",
+  "city": "Virginia Beach",
+  "address": "98340 Maggio Via",
+  "occupation": "Customer Communications Strategist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

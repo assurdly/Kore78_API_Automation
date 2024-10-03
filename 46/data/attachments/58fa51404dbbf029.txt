@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Schaden",
+  "middleName": "Lisandro",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "344 Stanton Bypass",
+  "mobileNumber": "234913028825812",
+  "emailAddress": "Willy_Gerhold@yahoo.com"
+}
