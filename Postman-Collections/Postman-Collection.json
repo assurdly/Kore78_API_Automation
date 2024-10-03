@@ -1120,7 +1120,7 @@
 									"name": "organizations",
 									"item": [
 										{
-											"name": "/api/v1/organizations/add/with/wallet",
+											"name": "Add organization - wallet",
 											"id": "2699aed7-3964-41b0-b4cf-7668d56a2008",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1185,7 +1185,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/add",
+											"name": "Add organization",
 											"id": "07eefb65-4ddb-4d7d-91a3-384ccef1f9ff",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1286,7 +1286,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/get/:id",
+											"name": "Get organization by ID",
 											"id": "053dc71b-4885-4a5a-a9dc-10099c20b3d0",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1359,7 +1359,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/users/add",
+											"name": "Add organization - Users",
 											"id": "6c6e5298-ccaa-4815-8f76-bc2c787b6e7a",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1424,7 +1424,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/:id/users/get",
+											"name": "Ger",
 											"id": "d6b036c1-1208-44fb-9099-9592271c1814",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
