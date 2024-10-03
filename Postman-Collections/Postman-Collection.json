@@ -3448,7 +3448,7 @@
 									"name": "providus",
 									"item": [
 										{
-											"name": "/api/v1/nip/providus/inflow",
+											"name": "Inflow",
 											"id": "eae53f5c-4eb8-4685-acc9-a1677d9915d4",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -3513,7 +3513,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/nip/providus/outflow",
+											"name": "Outflow",
 											"id": "3e12d992-ee34-4257-9963-41eb47757661",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
