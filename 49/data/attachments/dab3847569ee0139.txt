@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Terry",
+  "middleName": "Kristopher",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "5955 Jerde Inlet",
+  "mobileNumber": "234910707047412",
+  "emailAddress": "Guadalupe_Nicolas@hotmail.com"
+}

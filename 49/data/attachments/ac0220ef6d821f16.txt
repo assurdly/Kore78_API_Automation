@@ -1,0 +1,5 @@
+{
+  "name": "Applications Payment",
+  "description": "Legacy Payment",
+  "direction": "C"
+}

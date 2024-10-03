@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Mann",
+  "middleName": "Lonnie",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "08397 Jimmy Street",
+  "mobileNumber": "234918886177012",
+  "emailAddress": "Autumn.Kutch68@gmail.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Heller",
+  "middleName": "Shawna",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "5020 Gabriel Brook",
+  "mobileNumber": "2349164977148",
+  "emailAddress": "Odie.Bogan@yahoo.com"
+}
