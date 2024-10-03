@@ -1424,7 +1424,7 @@
 											]
 										},
 										{
-											"name": "Ger",
+											"name": "Get organization - User ID",
 											"id": "d6b036c1-1208-44fb-9099-9592271c1814",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1499,7 +1499,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/:id/users/key/generate",
+											"name": "Add organization - Generate user key",
 											"id": "17c78ec3-63e7-4e25-8aca-2129c06da80e",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1576,7 +1576,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/organizations/:id/users/key/get",
+											"name": "Get organization - Generate user key",
 											"id": "070fc321-85cf-4931-b9f9-bace0e66663b",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -2849,7 +2849,7 @@
 									"id": "8f59dc3f-933d-4d1a-b4a4-88888ffdedd2"
 								},
 								{
-									"name": "/api/v1/customers/get/all",
+									"name": "Get customers",
 									"event": [
 										{
 											"listen": "test",
@@ -2933,7 +2933,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/customers/types/all",
+									"name": "Get customers - All types",
 									"event": [
 										{
 											"listen": "test",
