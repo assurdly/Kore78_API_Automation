@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Cartwright",
+  "middleName": "Mable",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "1507 Mona Dam",
+  "mobileNumber": "234912990211312",
+  "emailAddress": "Ephraim_Howell38@gmail.com"
+}
