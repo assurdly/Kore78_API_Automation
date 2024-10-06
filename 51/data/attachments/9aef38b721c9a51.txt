@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "name": "American Samoa",
+  "countryCodeTwo": "AS",
+  "countryCodeThree": "ASK"
+}

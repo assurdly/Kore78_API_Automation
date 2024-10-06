@@ -1,0 +1,12 @@
+{
+  "firstName": "Shaun",
+  "lastName": "Romaguera",
+  "middleName": "Judah",
+  "dob": "1990-05-20",
+  "city": "Runtemouth",
+  "address": "5634 Chelsie Ville",
+  "occupation": "Central Assurance Representative",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

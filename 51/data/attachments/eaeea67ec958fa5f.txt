@@ -1,0 +1,7 @@
+{
+    "firstName": "QA",
+    "lastName": "Tester",
+    "emailAddress": "QA@assurdly.com",
+    "password": "Test123@",
+    "apiKey": "NewOrgSetup@!22323"
+}

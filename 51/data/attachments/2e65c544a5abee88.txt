@@ -1,0 +1,12 @@
+{
+  "firstName": "Candice",
+  "lastName": "Wisoky",
+  "middleName": "Kitty",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "23750 Gunnar Points",
+  "mobileNumber": "234911963928112",
+  "emailAddress": "Dee23@yahoo.com"
+}

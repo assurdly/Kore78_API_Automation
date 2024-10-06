@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Mosciski",
+  "middleName": "Steve",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "7182 Freeda Wells",
+  "mobileNumber": "2349181051354",
+  "emailAddress": "Merritt86@gmail.com"
+}

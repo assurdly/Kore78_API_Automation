@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Karen",
+  "lastName": "Crooks",
+  "middleName": "Murl",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "58972 Ryder Forks",
+  "mobileNumber": "2349162322292",
+  "emailAddress": "Ned_Ankunding80@yahoo.com",
+  "dateCreated": "2024-08-20"
+}
