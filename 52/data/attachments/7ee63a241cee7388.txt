@@ -1,0 +1,12 @@
+{
+  "firstName": "Baylee",
+  "lastName": "DuBuque",
+  "middleName": "Aileen",
+  "dob": "1990-05-20",
+  "city": "South Ottistown",
+  "address": "27690 Reba Turnpike",
+  "occupation": "Dynamic Infrastructure Analyst",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

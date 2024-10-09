@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Feil",
+  "middleName": "Rosemary",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "696 Weimann Extensions",
+  "mobileNumber": "234919514628612",
+  "emailAddress": "Olin.Kozey@hotmail.com"
+}

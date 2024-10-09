@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Infrastructure Payment",
+  "description": "Legacy Payment",
+  "direction": "D"
+}

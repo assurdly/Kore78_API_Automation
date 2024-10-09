@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hegmann",
+  "middleName": "Roosevelt",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "245 Ruecker Springs",
+  "mobileNumber": "234918481098512",
+  "emailAddress": "Ellis_Witting@gmail.com"
+}

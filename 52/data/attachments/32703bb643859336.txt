@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1752,
+    "walletClassificationId": 1, 
+    "currencyId": 1, 
+    "name": "Jon Bashirian Sr." 
+}

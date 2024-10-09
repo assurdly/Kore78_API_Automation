@@ -1,0 +1,12 @@
+{
+  "firstName": "Savannah",
+  "lastName": "Leuschke",
+  "middleName": "Nicklaus",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "400 Predovic Flat",
+  "mobileNumber": "234917406652512",
+  "emailAddress": "Rhea46@hotmail.com"
+}
