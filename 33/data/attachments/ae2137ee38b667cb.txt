@@ -1,6 +1,0 @@
-{
-  "id": "18",
-  "name": "Accountability Payment",
-  "description": "Legacy Payment",
-  "direction": "D"
-}

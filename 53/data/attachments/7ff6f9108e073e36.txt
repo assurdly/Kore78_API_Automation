@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": ,
+    "walletClassificationId": 1, 
+    "currencyId": 1, 
+    "name": "Juanita Larkin" 
+}

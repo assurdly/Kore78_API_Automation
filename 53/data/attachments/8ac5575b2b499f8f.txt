@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Jaida",
+  "lastName": "Ebert",
+  "middleName": "Gladyce",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "131 Rey Curve",
+  "mobileNumber": "2349148592572",
+  "emailAddress": "Angus70@yahoo.com",
+  "dateCreated": "2024-08-20"
+}

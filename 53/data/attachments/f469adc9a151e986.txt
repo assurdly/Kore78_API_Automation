@@ -1,0 +1,12 @@
+{
+  "firstName": "Anibal",
+  "lastName": "Lubowitz",
+  "middleName": "Hortense",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "762 Borer Station",
+  "mobileNumber": "234916160626812",
+  "emailAddress": "Reid_Rohan@yahoo.com"
+}
