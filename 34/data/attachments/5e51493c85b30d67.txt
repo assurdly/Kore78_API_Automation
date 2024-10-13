@@ -1,5 +1,0 @@
-{
-  "accountToDebit": "<string>",
-  "amount": "<double>",
-  "tenor": "<integer>"
-}

@@ -1,0 +1,5 @@
+{
+  "name": "Group Payment",
+  "description": "National Payment",
+  "direction": "C"
+}

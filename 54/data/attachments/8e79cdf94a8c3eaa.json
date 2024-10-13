@@ -1,0 +1,11 @@
+{
+    "Content-Type": "application/json",
+    "x-api-key": "SK-ppTqE853F4jnUE3MlscobTbWZPU23vurg6aiAAq8Xoq7pR0bVulCp4He1obsVe5ehag",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "f51848c1-b22e-4f39-bd3f-7009c18fd330",
+    "Host": "{{baseurl}}",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

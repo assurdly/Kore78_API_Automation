@@ -1,6 +1,0 @@
-{
-  "id": "21",
-  "name": "Mobility Payment",
-  "description": "Regional Payment",
-  "direction": "D"
-}

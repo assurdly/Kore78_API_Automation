@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Updated Successfully","data":{"id":21,"name":"Mobility Payment","organizationId":1,"description":"Regional Payment","direction":"D","isActive":true,"dateCreated":"2024-09-01T20:03:13"}}

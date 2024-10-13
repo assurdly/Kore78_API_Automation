@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Group Payment",
-  "description": "Dynamic Payment",
-  "direction": "D"
-}

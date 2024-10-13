@@ -1,0 +1,12 @@
+{
+  "firstName": "Ashly",
+  "lastName": "Lind",
+  "middleName": "Tanner",
+  "dob": "1990-05-20",
+  "city": "New Erickbury",
+  "address": "1206 Demario Manor",
+  "occupation": "Principal Web Facilitator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
