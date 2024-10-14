@@ -1,0 +1,12 @@
+{
+  "firstName": "Hailee",
+  "lastName": "Jerde",
+  "middleName": "Lucious",
+  "dob": "1990-05-20",
+  "city": "East Zaneton",
+  "address": "4070 Margarett Wells",
+  "occupation": "District Operations Administrator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

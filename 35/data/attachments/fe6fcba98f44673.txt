@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Updated Successfully","data":{"id":25,"name":"Communications Payment","organizationId":1,"description":"Dynamic Payment","direction":"D","isActive":true,"dateCreated":"2024-09-04T18:08:28"}}

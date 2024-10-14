@@ -1,0 +1,12 @@
+{
+  "firstName": "Citlalli",
+  "lastName": "Shanahan",
+  "middleName": "Breana",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "8604 Treutel Port",
+  "mobileNumber": "234910175334412",
+  "emailAddress": "Eliezer_Kirlin55@yahoo.com"
+}

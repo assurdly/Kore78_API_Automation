@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Gibson",
+  "middleName": "Okey",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "2038 Glover Avenue",
+  "mobileNumber": "2349155810477",
+  "emailAddress": "Calista.OConnell40@yahoo.com"
+}

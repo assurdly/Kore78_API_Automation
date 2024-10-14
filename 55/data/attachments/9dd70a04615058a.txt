@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Price",
+  "middleName": "Lauretta",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "75610 Effertz Path",
+  "mobileNumber": "234912742005612",
+  "emailAddress": "Frederique14@yahoo.com"
+}
