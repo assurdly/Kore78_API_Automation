@@ -1,0 +1,4 @@
+{
+    "name": "Shoes",
+    "description": "Legacy"
+}

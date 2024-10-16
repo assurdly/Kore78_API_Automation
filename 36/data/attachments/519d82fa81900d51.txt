@@ -1,5 +1,0 @@
-{
-  "name": "Creative Payment",
-  "description": "Lead Payment",
-  "direction": "C"
-}

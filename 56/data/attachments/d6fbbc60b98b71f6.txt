@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kuvalis",
+  "middleName": "Elody",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "9575 Conrad Overpass",
+  "mobileNumber": "234919932255712",
+  "emailAddress": "Chaim_Bailey13@gmail.com"
+}

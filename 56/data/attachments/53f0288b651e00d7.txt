@@ -1,0 +1,12 @@
+{
+  "firstName": "Geo",
+  "lastName": "Senger",
+  "middleName": "Breana",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "8166 Roxanne Summit",
+  "mobileNumber": "234914840122312",
+  "emailAddress": "Mohammed_Morar95@gmail.com"
+}

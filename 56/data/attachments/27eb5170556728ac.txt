@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Koepp",
+  "middleName": "Garnet",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "2147 Howell Gardens",
+  "mobileNumber": "234911100736012",
+  "emailAddress": "Eleazar_Jaskolski87@hotmail.com"
+}

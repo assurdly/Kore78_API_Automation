@@ -1,0 +1,5 @@
+{
+  "name": "Interactions Payment",
+  "description": "Dynamic Payment",
+  "direction": "C"
+}
