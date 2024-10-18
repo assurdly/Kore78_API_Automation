@@ -1,9 +1,0 @@
-{
-  "emailAddress": "Christa@rove10.com",
-  "password": "Qwerty123@",
-  "firstName": "Vanessa",
-  "lastName": "Conn",
-  "username": "Tyrell_OConnell39",
-  "roleId": ,
-  "branchId": 8
-}
