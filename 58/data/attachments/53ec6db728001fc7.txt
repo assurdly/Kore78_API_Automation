@@ -1,0 +1,12 @@
+{
+  "firstName": "Hailie",
+  "lastName": "Wolff",
+  "middleName": "Amos",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "1199 Isabel Rapid",
+  "mobileNumber": "234910519698012",
+  "emailAddress": "Kip.Kertzmann60@gmail.com"
+}

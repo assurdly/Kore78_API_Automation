@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Luettgen",
+  "middleName": "Colby",
+  "dob": "1990-05-20",
+  "customerTypeId": 6,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "584 Laney Trace",
+  "mobileNumber": "234911864387612",
+  "emailAddress": "Arely.Lemke57@gmail.com"
+}

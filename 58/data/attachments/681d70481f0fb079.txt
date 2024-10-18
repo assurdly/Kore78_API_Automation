@@ -1,0 +1,12 @@
+{
+  "firstName": "Nelda",
+  "lastName": "Torphy",
+  "middleName": "Lottie",
+  "dob": "1990-05-20",
+  "city": "Lake Elna",
+  "address": "1219 Adams Villages",
+  "occupation": "Future Quality Analyst",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

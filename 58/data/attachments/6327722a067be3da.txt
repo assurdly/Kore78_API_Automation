@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Updated Successfully","data":{"id":100,"name":"Response Payment","organizationId":1,"description":"Human Payment","direction":"D","isActive":true,"dateCreated":"2024-10-18T21:37:10"}}

@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1796,
+    "walletClassificationId": 1, 
+    "currencyId": 107, 
+    "name": "Marcella Schultz Jr." 
+}

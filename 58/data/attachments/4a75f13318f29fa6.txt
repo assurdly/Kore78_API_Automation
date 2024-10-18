@@ -1,0 +1,5 @@
+{
+  "name": "Assurance Payment",
+  "description": "Future Payment",
+  "direction": "C"
+}
