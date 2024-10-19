@@ -295,8 +295,8 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 200\", function () {",
-															"    pm.response.to.have.status(200);",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
 															"});",
 															"",
 															"pm.test(\"Body contains success and it is true\", function (){",
@@ -391,8 +391,8 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 200\", function () {",
-															"    pm.response.to.have.status(200);",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
 															"});",
 															"",
 															"pm.test(\"Body contains success and it is true\", function (){",
@@ -687,8 +687,8 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 200\", function () {",
-															"    pm.response.to.have.status(200);",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
 															"});",
 															"",
 															"pm.test(\"Body contains success\", function () {",
@@ -696,14 +696,7 @@
 															"});",
 															"",
 															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\").to.not.be.empty;",
-															"})",
-															"",
-															"pm.test(\"Body contains meta data\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\");",
-															"    pm.expect(typeof jsonData.data.id).to.eql(\"number\").to.not.be.empty;",
-															"    pm.expect(typeof jsonData.data.name).to.eql(\"string\").to.not.be.empty;",
-															"    pm.expect(typeof jsonData.data.shortName).to.eql(\"string\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Input string was not in a correct format.\").to.not.be.empty;",
 															"})"
 														],
 														"type": "text/javascript",
@@ -793,7 +786,7 @@
 															"});",
 															"",
 															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Currency name is required\").to.not.be.empty;",
 															"})",
 															"",
 															"pm.test(\"Body contains meta data\", function (){",
@@ -887,7 +880,7 @@
 															"});",
 															"",
 															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Currency Short name is required\").to.not.be.empty;",
 															"})",
 															"",
 															"pm.test(\"Body contains meta data\", function (){",
@@ -981,7 +974,7 @@
 															"});",
 															"",
 															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\").to.not.be.empty;",
+															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Currency name is required\").to.not.be.empty;",
 															"})",
 															"",
 															"pm.test(\"Body contains meta data\", function (){",
@@ -2014,6 +2007,100 @@
 									]
 								},
 								{
+									"name": "Close Branch",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "28baeab7-0374-40ab-966f-b92cd71408f0",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Verify the response schema for the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"    pm.expect(responseData.data).to.have.property('id');",
+													"    pm.expect(responseData.data).to.have.property('name');",
+													"    pm.expect(responseData.data).to.have.property('date');",
+													"    pm.expect(responseData.data).to.have.property('isBatchRunning');",
+													"    pm.expect(responseData.data).to.have.property('nextBatchRunDate');",
+													"    pm.expect(responseData.data).to.have.property('isDefault');",
+													"    pm.expect(responseData.data).to.have.property('address');",
+													"    pm.expect(responseData.data).to.have.property('cityLocationCode');",
+													"    pm.expect(responseData.data).to.have.property('sortCode');",
+													"    pm.expect(responseData.data).to.have.property('branchType');",
+													"    pm.expect(responseData.data).to.have.property('countryId');",
+													"    pm.expect(responseData.data).to.have.property('branchCode');",
+													"    pm.expect(responseData.data).to.have.property('isActive');",
+													"    pm.expect(responseData.data).to.have.property('dateCreated');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "a7c3be17-02ed-4a31-84c9-088f0239c1b1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/branches/{{branchCode}}/close"
+									},
+									"response": [
+										{
+											"id": "c093a867-e591-4271-baa4-722436c32736",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "x-api-key",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/branches/:branchCode/:openclosestatus",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"branches",
+														":branchCode",
+														":openclosestatus"
+													],
+													"variable": [
+														{
+															"key": "branchCode"
+														},
+														{
+															"key": "openclosestatus"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
 									"name": "Open Branch",
 									"event": [
 										{
@@ -2088,100 +2175,6 @@
 									"response": [
 										{
 											"id": "f5f4ae40-c6a8-4b68-834b-237af2a30467",
-											"name": "Success",
-											"originalRequest": {
-												"method": "PATCH",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/branches/:branchCode/:openclosestatus",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"branches",
-														":branchCode",
-														":openclosestatus"
-													],
-													"variable": [
-														{
-															"key": "branchCode"
-														},
-														{
-															"key": "openclosestatus"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "Close Branch",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "28baeab7-0374-40ab-966f-b92cd71408f0",
-												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													"",
-													"",
-													"pm.test(\"Verify the response schema for the required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData).to.have.property('data');",
-													"    pm.expect(responseData.data).to.have.property('id');",
-													"    pm.expect(responseData.data).to.have.property('name');",
-													"    pm.expect(responseData.data).to.have.property('date');",
-													"    pm.expect(responseData.data).to.have.property('isBatchRunning');",
-													"    pm.expect(responseData.data).to.have.property('nextBatchRunDate');",
-													"    pm.expect(responseData.data).to.have.property('isDefault');",
-													"    pm.expect(responseData.data).to.have.property('address');",
-													"    pm.expect(responseData.data).to.have.property('cityLocationCode');",
-													"    pm.expect(responseData.data).to.have.property('sortCode');",
-													"    pm.expect(responseData.data).to.have.property('branchType');",
-													"    pm.expect(responseData.data).to.have.property('countryId');",
-													"    pm.expect(responseData.data).to.have.property('branchCode');",
-													"    pm.expect(responseData.data).to.have.property('isActive');",
-													"    pm.expect(responseData.data).to.have.property('dateCreated');",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "a7c3be17-02ed-4a31-84c9-088f0239c1b1",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "PATCH",
-										"header": [],
-										"url": "{{baseUrl}}/api/v1/branches/{{branchCode}}/close"
-									},
-									"response": [
-										{
-											"id": "c093a867-e591-4271-baa4-722436c32736",
 											"name": "Success",
 											"originalRequest": {
 												"method": "PATCH",
@@ -2622,7 +2615,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"firstName\": \"Moses-George\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"customerTypeId\": 6,\n  \"countryId\": 1,\n  \"city\": \"Lagos\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"mobileNumber\": \"23491{{$randomBankAccount}}12\",\n  \"emailAddress\": \"{{$randomEmail}}\"\n}",
+													"raw": "{\n  \"firstName\": \"Moses-George\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"customerTypeId\": 60000,\n  \"countryId\": 1,\n  \"city\": \"Lagos\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"mobileNumber\": \"23491{{$randomBankAccount}}12\",\n  \"emailAddress\": \"{{$randomEmail}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -2861,38 +2854,43 @@
 												"id": "94bbf9f5-ca2d-4216-92a2-0f309ceaef0d",
 												"exec": [
 													"pm.test(\"Response status code is 200\", function () {",
-													"  pm.expect(pm.response.code).to.equal(200);",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
 													"});",
 													"",
 													"",
 													"pm.test(\"Data array is present in the response\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.data).to.exist.and.to.be.an('array');",
+													"  const responseData = pm.response.json();",
+													"  pm.expect(responseData).to.have.property('data').that.is.an('array');",
 													"});",
 													"",
 													"",
-													"pm.test(\"Validate the structure of the data object\", function () {",
+													"pm.test(\"Each 'data' object in the array has the correct structure\", function () {",
 													"    const responseData = pm.response.json();",
 													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.data).to.be.an('array');",
-													"    ",
-													"    responseData.data.forEach(function(customer) {",
-													"        pm.expect(customer).to.have.property('id').that.is.a('number');",
-													"        pm.expect(customer).to.have.property('organizationId').that.is.a('number');",
-													"        pm.expect(customer).to.have.property('firstName').that.is.a('string');",
-													"        pm.expect(customer).to.have.property('lastName').that.is.a('string');",
-													"        pm.expect(customer).to.have.property('dob').that.is.a('string');",
-													"        pm.expect(customer).to.have.property('customerTypeId').that.is.a('number');",
-													"        pm.expect(customer).to.have.property('alias').that.is.null;",
-													"        pm.expect(customer).to.have.property('countryId').that.is.a('number');",
-													"        pm.expect(customer).to.have.property('city').that.is.a('string');",
-													"        pm.expect(customer).to.have.property('address').that.is.a('string');",
-													"        pm.expect(customer).to.have.property('mobileNumber').that.is.a('string');",
-													"        pm.expect(customer).to.have.property('emailAddress').that.is.a('string');",
-													"        pm.expect(customer).to.have.property('dateCreated').that.is.a('string');",
+													"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
+													"",
+													"    responseData.data.forEach(function (customer) {",
+													"        pm.expect(customer).to.have.property('id')",
+													"        pm.expect(customer).to.have.property('organizationId')",
+													"        pm.expect(customer).to.have.property('firstName')",
+													"        pm.expect(customer).to.have.property('lastName')",
+													"        pm.expect(customer).to.have.property('middleName')",
+													"        pm.expect(customer).to.have.property('dob')",
+													"        pm.expect(customer).to.have.property('customerTypeId')",
+													"        pm.expect(customer).to.have.property('alias')",
+													"        pm.expect(customer).to.have.property('countryId')",
+													"        pm.expect(customer).to.have.property('city')",
+													"        pm.expect(customer).to.have.property('address')",
+													"        pm.expect(customer).to.have.property('mobileNumber')",
+													"        pm.expect(customer).to.have.property('emailAddress')",
+													"        pm.expect(customer).to.have.property('dateCreated')",
+													"        pm.expect(customer).to.have.property('branchCode')",
+													"        pm.expect(customer).to.have.property('isActive')",
 													"    });",
 													"});",
 													""
@@ -3178,6 +3176,9 @@
 											"script": {
 												"id": "18fa2f2f-ab6e-4980-b860-0106e75da7bb",
 												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.response.to.have.status(200);",
 													"});",
@@ -6880,7 +6881,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"productId\": 1,\n    \"amount\": 10000000,\n    \"postedDate\": \"2024-09-02\",\n    \"transactionReference\": \"1212121212-{{$randomAlphaNumeric}}\",\n    \"walletId\": 236,\n    \"customerId\": 1188,\n    \"isPosted\": true,\n    \"direction\": \"C\",\n    \"remarks\": \"Test\",\n    \"currency\": \"NGN\",\n    \"batchReference\": \"BATCH-1212121212-MMJMJ111\",\n    \"accountNumber\": \"0000044860\"\n}",
+													"raw": "{\n    \"productId\": 1,\n    \"amount\": 10000000,\n    \"postedDate\": \"2024-09-02\",\n    \"transactionReference\": \"1212121212-{{$randomAlphaNumeric}}\",\n    \"walletId\": 1,\n    \"customerId\": {{customerId}},\n    \"organizationId\": 1,\n    \"isPosted\": true,\n    \"direction\": \"C\",\n    \"remarks\": \"Test\",\n    \"currency\": \"NGN\",\n    \"batchReference\": \"BATCH-1212121212-MMJMJ111{{$randomBankAccount}}\",\n    \"accountNumber\": \"{{accountNumber}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -7305,7 +7306,7 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
+															"// pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -11415,7 +11416,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"name\": \"Vault Charges\",\n    \"walletGroupFeatureDto\": [\n        {\n            \"featureName\": \"VaultCharge\",\n            \"featurePropertyName\": \"Threshold\",\n            \"featurePropertyValue\": \"5\"\n        }\n    ]\n}",
+													"raw": "{\n    \"name\": \"{{$randomFirstName}} Charges\",\n    \"walletGroupFeatureDto\": [\n        {\n            \"featureName\": \"VaultCharge\",\n            \"featurePropertyName\": \"Threshold\",\n            \"featurePropertyValue\": \"5\"\n        }\n    ]\n}",
 													"options": {
 														"raw": {
 															"language": "json"
@@ -12213,7 +12214,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "// {\n//     \"FromAccountNumber\": \"0000190107\",\n//     \"ToAccountNumber\": \"0000045685\",\n//     \"Fee\": \"1\",\n//     \"ProductId\": \"7\",\n//     \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n//     \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387\",\n//     \"Amount\": \"1000\",\n//     \"Remarks\": \"Convert FX\",\n//     \"BranchCode\": \"999\",\n//     \"TransactionTypeId\": \"\",\n//     \"FxRate\": null,\n//     \"OrganizationId\": \"1\"\n// }\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n{\n  \"Fee\": 100,\n  \"Amount\": 78.55,\n  \"FxRate\": 0.0785545954438334642576590731,\n  \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n  \"Currency\": 154,\n  \"Direction\": null,\n  \"ProductId\": \"7\",\n  \"AccountNumber\": null,\n  \"BatchReference\": null,\n  \"ToAccountNumber\": \"0000045685\",\n  \"TargetCurrencyId\": 1,\n  \"FromAccountNumber\": \"0000190107\",\n  \"TransactionReference\": \"241002141352KES2NGN057414\"\n}",
+											"raw": "{\n    \"FromAccountNumber\": \"{{accountNumber}}\",\n    \"ToAccountNumber\": \"{{accountNumber1}}\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"68\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"10\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": null,\n    \"OrganizationId\": \"1\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
 											"options": {
 												"raw": {
 													"language": "json"
