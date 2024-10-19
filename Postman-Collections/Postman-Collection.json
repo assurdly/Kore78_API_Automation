@@ -6881,7 +6881,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"productId\": 1,\n    \"amount\": 10000000,\n    \"postedDate\": \"2024-09-02\",\n    \"transactionReference\": \"1212121212-{{$randomAlphaNumeric}}\",\n    \"walletId\": 236,\n    \"customerId\": 1188,\n    \"isPosted\": true,\n    \"direction\": \"C\",\n    \"remarks\": \"Test\",\n    \"currency\": \"NGN\",\n    \"batchReference\": \"BATCH-1212121212-MMJMJ111\",\n    \"accountNumber\": \"0000044860\"\n}",
+													"raw": "{\n    \"productId\": 1,\n    \"amount\": 10000000,\n    \"postedDate\": \"2024-09-02\",\n    \"transactionReference\": \"1212121212-{{$randomAlphaNumeric}}\",\n    \"walletId\": 1,\n    \"customerId\": {{customerId}},\n    \"organizationId\": 1,\n    \"isPosted\": true,\n    \"direction\": \"C\",\n    \"remarks\": \"Test\",\n    \"currency\": \"NGN\",\n    \"batchReference\": \"BATCH-1212121212-MMJMJ111{{$randomBankAccount}}\",\n    \"accountNumber\": \"{{accountNumber}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
