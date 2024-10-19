@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "McDermott",
+  "middleName": "Lee",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "222 Lebsack Ridge",
+  "mobileNumber": "2349192760888",
+  "emailAddress": "Ignatius87@gmail.com"
+}

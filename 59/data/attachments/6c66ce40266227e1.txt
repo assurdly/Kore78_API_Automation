@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":102,"name":"Usability Payment","organizationId":1,"description":"Legacy Payment","direction":"C","isActive":true,"dateCreated":"2024-10-19T11:33:03"}}

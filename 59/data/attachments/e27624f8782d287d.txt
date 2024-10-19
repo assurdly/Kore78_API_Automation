@@ -1,0 +1,12 @@
+{
+  "firstName": "Jameson",
+  "lastName": "Casper",
+  "middleName": "Dana",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "61950 Howell Corner",
+  "mobileNumber": "234912079509112",
+  "emailAddress": "Kenyon74@gmail.com"
+}

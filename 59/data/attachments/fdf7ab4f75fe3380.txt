@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "O'Reilly",
+  "middleName": "Easton",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "3028 Schiller Inlet",
+  "mobileNumber": "234914024323312",
+  "emailAddress": "Karen8@gmail.com"
+}

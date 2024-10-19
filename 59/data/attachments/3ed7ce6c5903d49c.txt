@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "O'Kon",
+  "middleName": "Taurean",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "29385 Werner Stream",
+  "mobileNumber": "234918078134412",
+  "emailAddress": "Brice.Howe12@gmail.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Horace",
+  "lastName": "O'Conner",
+  "middleName": "Timmothy",
+  "dob": "1990-05-20",
+  "city": "Christfurt",
+  "address": "78574 Johnson Knoll",
+  "occupation": "Regional Data Administrator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

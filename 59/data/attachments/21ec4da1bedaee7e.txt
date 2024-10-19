@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":103,"name":"Data Payment","organizationId":1,"description":"International Payment","direction":"C","isActive":true,"dateCreated":"2024-10-19T11:33:21"}}
