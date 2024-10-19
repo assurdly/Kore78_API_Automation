@@ -2615,7 +2615,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"firstName\": \"Moses-George\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"customerTypeId\": 6,\n  \"countryId\": 1,\n  \"city\": \"Lagos\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"mobileNumber\": \"23491{{$randomBankAccount}}12\",\n  \"emailAddress\": \"{{$randomEmail}}\"\n}",
+													"raw": "{\n  \"firstName\": \"Moses-George\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"customerTypeId\": 60000,\n  \"countryId\": 1,\n  \"city\": \"Lagos\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"mobileNumber\": \"23491{{$randomBankAccount}}12\",\n  \"emailAddress\": \"{{$randomEmail}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
