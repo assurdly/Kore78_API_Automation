@@ -7306,7 +7306,7 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
+															"// pm.collectionVariables.set(\"accountNumber\", jsonData.data.virtualAccount.accountNumber);"
 														],
 														"type": "text/javascript",
 														"packages": {}
