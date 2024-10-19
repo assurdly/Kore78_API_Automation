@@ -2007,6 +2007,100 @@
 									]
 								},
 								{
+									"name": "Close Branch",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "28baeab7-0374-40ab-966f-b92cd71408f0",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Verify the response schema for the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData).to.have.property('data');",
+													"    pm.expect(responseData.data).to.have.property('id');",
+													"    pm.expect(responseData.data).to.have.property('name');",
+													"    pm.expect(responseData.data).to.have.property('date');",
+													"    pm.expect(responseData.data).to.have.property('isBatchRunning');",
+													"    pm.expect(responseData.data).to.have.property('nextBatchRunDate');",
+													"    pm.expect(responseData.data).to.have.property('isDefault');",
+													"    pm.expect(responseData.data).to.have.property('address');",
+													"    pm.expect(responseData.data).to.have.property('cityLocationCode');",
+													"    pm.expect(responseData.data).to.have.property('sortCode');",
+													"    pm.expect(responseData.data).to.have.property('branchType');",
+													"    pm.expect(responseData.data).to.have.property('countryId');",
+													"    pm.expect(responseData.data).to.have.property('branchCode');",
+													"    pm.expect(responseData.data).to.have.property('isActive');",
+													"    pm.expect(responseData.data).to.have.property('dateCreated');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "a7c3be17-02ed-4a31-84c9-088f0239c1b1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/branches/{{branchCode}}/close"
+									},
+									"response": [
+										{
+											"id": "c093a867-e591-4271-baa4-722436c32736",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "x-api-key",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/branches/:branchCode/:openclosestatus",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"branches",
+														":branchCode",
+														":openclosestatus"
+													],
+													"variable": [
+														{
+															"key": "branchCode"
+														},
+														{
+															"key": "openclosestatus"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
 									"name": "Open Branch",
 									"event": [
 										{
@@ -2081,100 +2175,6 @@
 									"response": [
 										{
 											"id": "f5f4ae40-c6a8-4b68-834b-237af2a30467",
-											"name": "Success",
-											"originalRequest": {
-												"method": "PATCH",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/branches/:branchCode/:openclosestatus",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"branches",
-														":branchCode",
-														":openclosestatus"
-													],
-													"variable": [
-														{
-															"key": "branchCode"
-														},
-														{
-															"key": "openclosestatus"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "Close Branch",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "28baeab7-0374-40ab-966f-b92cd71408f0",
-												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													"",
-													"",
-													"pm.test(\"Verify the response schema for the required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData).to.have.property('data');",
-													"    pm.expect(responseData.data).to.have.property('id');",
-													"    pm.expect(responseData.data).to.have.property('name');",
-													"    pm.expect(responseData.data).to.have.property('date');",
-													"    pm.expect(responseData.data).to.have.property('isBatchRunning');",
-													"    pm.expect(responseData.data).to.have.property('nextBatchRunDate');",
-													"    pm.expect(responseData.data).to.have.property('isDefault');",
-													"    pm.expect(responseData.data).to.have.property('address');",
-													"    pm.expect(responseData.data).to.have.property('cityLocationCode');",
-													"    pm.expect(responseData.data).to.have.property('sortCode');",
-													"    pm.expect(responseData.data).to.have.property('branchType');",
-													"    pm.expect(responseData.data).to.have.property('countryId');",
-													"    pm.expect(responseData.data).to.have.property('branchCode');",
-													"    pm.expect(responseData.data).to.have.property('isActive');",
-													"    pm.expect(responseData.data).to.have.property('dateCreated');",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "a7c3be17-02ed-4a31-84c9-088f0239c1b1",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "PATCH",
-										"header": [],
-										"url": "{{baseUrl}}/api/v1/branches/{{branchCode}}/close"
-									},
-									"response": [
-										{
-											"id": "c093a867-e591-4271-baa4-722436c32736",
 											"name": "Success",
 											"originalRequest": {
 												"method": "PATCH",
@@ -11408,7 +11408,7 @@
 												"header": [],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"name\": \"Vault Charges\",\n    \"walletGroupFeatureDto\": [\n        {\n            \"featureName\": \"VaultCharge\",\n            \"featurePropertyName\": \"Threshold\",\n            \"featurePropertyValue\": \"5\"\n        }\n    ]\n}",
+													"raw": "{\n    \"name\": \"{{$randomFirstName}} Charges\",\n    \"walletGroupFeatureDto\": [\n        {\n            \"featureName\": \"VaultCharge\",\n            \"featurePropertyName\": \"Threshold\",\n            \"featurePropertyValue\": \"5\"\n        }\n    ]\n}",
 													"options": {
 														"raw": {
 															"language": "json"
