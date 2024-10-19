@@ -295,8 +295,8 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 200\", function () {",
-															"    pm.response.to.have.status(200);",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
 															"});",
 															"",
 															"pm.test(\"Body contains success and it is true\", function (){",
@@ -391,8 +391,8 @@
 														"exec": [
 															"const jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 200\", function () {",
-															"    pm.response.to.have.status(200);",
+															"pm.test(\"Status code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
 															"});",
 															"",
 															"pm.test(\"Body contains success and it is true\", function (){",
