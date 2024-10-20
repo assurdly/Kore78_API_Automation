@@ -1,9 +1,0 @@
-{
-  "emailAddress": "Hillary@rove10.com",
-  "password": "Qwerty123@",
-  "firstName": "Abelardo",
-  "lastName": "Torphy",
-  "username": "Pietro_Spencer34",
-  "roleId": ,
-  "branchId": 8
-}

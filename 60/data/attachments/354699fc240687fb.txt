@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Updated Successfully","data":{"id":104,"name":"Infrastructure Payment","organizationId":1,"description":"Human Payment","direction":"D","isActive":true,"dateCreated":"2024-10-20T20:02:10"}}

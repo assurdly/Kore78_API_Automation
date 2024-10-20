@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Trantow",
+  "middleName": "Harley",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "318 Hudson Course",
+  "mobileNumber": "234915755777112",
+  "emailAddress": "Brionna.Kunze92@gmail.com"
+}
