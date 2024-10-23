@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Bode",
+  "middleName": "Adriana",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "42887 Lester Hollow",
+  "mobileNumber": "234917024761312",
+  "emailAddress": "Sage33@yahoo.com"
+}

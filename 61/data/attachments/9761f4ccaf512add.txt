@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Product.Create"
+    },
+     {
+        "name": "Product.Edit"
+    },
+     {
+        "name": "Product.Delete"
+    },
+    {
+        "name": "User.Create"
+    }
+]

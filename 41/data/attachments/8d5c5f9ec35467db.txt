@@ -1,9 +1,0 @@
-{
-  "emailAddress": "Alexys@rove10.com",
-  "password": "Qwerty123@",
-  "firstName": "Bart",
-  "lastName": "Cassin",
-  "username": "Kaitlyn_Lueilwitz",
-  "roleId": ,
-  "branchId": 13
-}

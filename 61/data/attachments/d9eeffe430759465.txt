@@ -1,0 +1,12 @@
+{
+  "firstName": "Shayne",
+  "lastName": "Herzog",
+  "middleName": "Tyreek",
+  "dob": "1990-05-20",
+  "city": "Connellyville",
+  "address": "742 Keagan Oval",
+  "occupation": "Principal Research Officer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

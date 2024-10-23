@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Data Payment",
+  "description": "Product Payment",
+  "direction": "D"
+}
