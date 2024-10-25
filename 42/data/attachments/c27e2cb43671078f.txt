@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": 1671,
-    "walletClassificationId": 1, 
-    "currencyId": 1, 
-    "name": "Taylor Wehner" 
-}

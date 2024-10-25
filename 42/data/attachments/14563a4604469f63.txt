@@ -1,5 +1,0 @@
-{
-  "name": "Web Payment",
-  "description": "Global Payment",
-  "direction": "C"
-}

@@ -1,6 +1,0 @@
-{
-  "id": "73",
-  "name": "Configuration Payment",
-  "description": "Customer Payment",
-  "direction": "D"
-}
