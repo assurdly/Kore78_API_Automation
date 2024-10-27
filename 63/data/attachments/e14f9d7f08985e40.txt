@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Reilly",
+  "middleName": "Karli",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "46166 Koch Cliff",
+  "mobileNumber": "234914426471512",
+  "emailAddress": "Dallas47@yahoo.com"
+}

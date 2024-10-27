@@ -1,6 +1,0 @@
-{
-  "id": "59",
-  "name": "Paradigm Larry",
-  "description": "Internal Payment",
-  "direction": "D"
-}

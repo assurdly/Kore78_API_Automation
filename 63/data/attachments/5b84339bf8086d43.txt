@@ -1,0 +1,12 @@
+{
+  "firstName": "Jaylen",
+  "lastName": "Ledner",
+  "middleName": "Camilla",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "74682 Sheila Fields",
+  "mobileNumber": "234918154806312",
+  "emailAddress": "Verdie24@hotmail.com"
+}

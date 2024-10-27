@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Data Payment",
-  "description": "National Payment",
-  "direction": "D"
-}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Osinski",
+  "middleName": "Freddie",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "8510 Abshire Brook",
+  "mobileNumber": "234913408274912",
+  "emailAddress": "Donato.Skiles28@yahoo.com"
+}
