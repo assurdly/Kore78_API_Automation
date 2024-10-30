@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Ebert",
+  "middleName": "Meta",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "80498 Reinger Villages",
+  "mobileNumber": "234915784855512",
+  "emailAddress": "Damion_Schmidt70@gmail.com"
+}

@@ -1,0 +1,12 @@
+{
+    "Content-Type": "application/json",
+    "x-api-key": "SK-lXtqycpN0aJS08AL9VwpXiwlPP7dq3kIFRTp0BEjreDRnZdJxVIFjyAch7aZpuN4z8S",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "036d7a61-db1a-49a7-8fbe-6b30a1c4ecbe",
+    "Host": "kore78-dev.bank78.co",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "140"
+}

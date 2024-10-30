@@ -1,0 +1,12 @@
+{
+  "firstName": "Chanel",
+  "lastName": "Kuvalis",
+  "middleName": "Zena",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "2125 Wiegand Trail",
+  "mobileNumber": "234915141588712",
+  "emailAddress": "Ezekiel.Deckow@hotmail.com"
+}

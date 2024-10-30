@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1846,
+    "walletClassificationId": 1, 
+    "currencyId": 1, 
+    "name": "Cornelius Bayer" 
+}
