@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Quality Payment",
+  "description": "Chief Payment",
+  "direction": "D"
+}

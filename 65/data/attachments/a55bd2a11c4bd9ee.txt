@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Geovanni",
+  "lastName": "Hermann",
+  "middleName": "Otha",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "3784 Gulgowski Village",
+  "mobileNumber": "2349110199161",
+  "emailAddress": "Cicero_Nitzsche@gmail.com",
+  "dateCreated": "2024-08-20"
+}

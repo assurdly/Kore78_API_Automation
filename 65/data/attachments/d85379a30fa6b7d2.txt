@@ -1,0 +1,12 @@
+{
+  "firstName": "Esther",
+  "lastName": "Franecki",
+  "middleName": "Kaya",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "731 Daron Hills",
+  "mobileNumber": "234911966509812",
+  "emailAddress": "Leilani.Kautzer67@hotmail.com"
+}

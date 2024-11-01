@@ -1,0 +1,6 @@
+{
+  "firstName": "Dominique",
+  "lastName": "Labadie",
+  "emailAddress": "Billy@rove10.com",
+  "password": "Qwerty123@"
+}
