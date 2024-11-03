@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1867,
+    "walletClassificationId": 1, 
+    "currencyId": 1, 
+    "name": "Laverne Hand" 
+}

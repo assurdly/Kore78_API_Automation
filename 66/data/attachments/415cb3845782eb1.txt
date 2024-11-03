@@ -1,0 +1,5 @@
+{
+  "name": "Configuration Payment",
+  "description": "District Payment",
+  "direction": "C"
+}

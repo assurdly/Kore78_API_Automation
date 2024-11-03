@@ -1,5 +1,0 @@
-{
-  "name": "Communications Payment",
-  "description": "Dynamic Payment",
-  "direction": "C"
-}

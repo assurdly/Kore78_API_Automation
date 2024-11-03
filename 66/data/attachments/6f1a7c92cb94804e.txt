@@ -1,0 +1,12 @@
+{
+  "firstName": "Maxime",
+  "lastName": "Kovacek",
+  "middleName": "Moriah",
+  "dob": "1990-05-20",
+  "city": "South Heather",
+  "address": "8941 Carroll Parkway",
+  "occupation": "Investor Web Coordinator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

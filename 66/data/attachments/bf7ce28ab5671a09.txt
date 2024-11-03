@@ -1,0 +1,6 @@
+{
+
+  "emailAddress": "moses@rove10.com",
+  "password": "Qwerty123@",
+  "otp": "968515"
+}

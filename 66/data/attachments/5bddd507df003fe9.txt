@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Buckridge",
+  "middleName": "Bobby",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "3657 Rozella Walk",
+  "mobileNumber": "234919111065312",
+  "emailAddress": "Reyna42@hotmail.com"
+}

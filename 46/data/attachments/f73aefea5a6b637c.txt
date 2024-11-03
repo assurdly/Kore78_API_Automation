@@ -1,5 +1,0 @@
-{
-  "accountNumber": "<string>",
-  "transactionReference": "<string>",
-  "amount": "<double>"
-}

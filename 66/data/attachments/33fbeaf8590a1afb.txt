@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "O'Conner",
+  "middleName": "Sydni",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "572 Colt Branch",
+  "mobileNumber": "2349130929203",
+  "emailAddress": "General.Schaefer64@gmail.com"
+}
