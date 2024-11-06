@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":88,"name":"Research Payment","organizationId":1,"description":"Legacy Payment","direction":"C","isActive":true,"dateCreated":"2024-09-29T20:02:39"}}

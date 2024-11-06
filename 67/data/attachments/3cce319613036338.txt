@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Treutel",
+  "middleName": "Roslyn",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "792 Victoria Oval",
+  "mobileNumber": "2349147906237",
+  "emailAddress": "Jonatan.Stracke68@yahoo.com"
+}

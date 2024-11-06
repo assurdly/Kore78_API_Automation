@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":131,"name":"Directives Payment","organizationId":1,"description":"Regional Payment","direction":"C","isActive":true,"dateCreated":"2024-11-06T18:09:28.4418356Z"}}

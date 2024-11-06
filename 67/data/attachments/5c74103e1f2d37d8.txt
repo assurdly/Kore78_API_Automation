@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":133,"name":"Baby","description":"Lead","roleTypeId":2,"organizationId":1,"dateCreated":"2024-11-06T18:09:29.8314142Z","permissions":null}}
