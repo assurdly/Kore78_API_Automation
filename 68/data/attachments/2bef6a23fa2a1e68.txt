@@ -1,0 +1,12 @@
+{
+  "firstName": "Angelica",
+  "lastName": "Fisher",
+  "middleName": "Kenny",
+  "dob": "1990-05-20",
+  "city": "South Gilberto",
+  "address": "470 Emmerich Locks",
+  "occupation": "Principal Usability Assistant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

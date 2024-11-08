@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1882,
+    "walletClassificationId": 1, 
+    "currencyId": 1, 
+    "name": "Wilson Lakin I" 
+}

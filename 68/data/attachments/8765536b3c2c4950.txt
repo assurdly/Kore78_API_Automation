@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Fisher",
+  "middleName": "Norbert",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "9505 Declan Lock",
+  "mobileNumber": "234912318300512",
+  "emailAddress": "Delphia93@yahoo.com"
+}

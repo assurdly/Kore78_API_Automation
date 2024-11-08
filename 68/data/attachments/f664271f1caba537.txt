@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":135,"name":"Movies","description":"Direct","roleTypeId":2,"organizationId":1,"dateCreated":"2024-11-08T18:04:07.488938Z","permissions":null}}

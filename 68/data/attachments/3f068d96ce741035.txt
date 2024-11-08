@@ -1,0 +1,12 @@
+{
+  "firstName": "Brannon",
+  "lastName": "Haley",
+  "middleName": "Geovanny",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "5458 Kathlyn Spurs",
+  "mobileNumber": "234919124381012",
+  "emailAddress": "Jennings.Mitchell58@yahoo.com"
+}

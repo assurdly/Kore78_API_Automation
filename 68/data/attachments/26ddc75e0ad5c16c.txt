@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Gaylord",
+  "middleName": "Lynn",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "79526 Adell Drive",
+  "mobileNumber": "234915873677012",
+  "emailAddress": "Flavio.Rath@yahoo.com"
+}
