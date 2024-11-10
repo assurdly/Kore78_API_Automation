@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Retrieved Successfully","data":[{"id":1,"name":"PND","description":"Post no Debit"},{"id":2,"name":"PNC","description":"Post no Credit"},{"id":3,"name":"PNDC","description":"Post no Debit or Credit"},{"id":4,"name":"PND","description":"Tier1&2 Post no Debit"}]}

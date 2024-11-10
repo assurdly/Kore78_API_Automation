@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Natalia",
+  "lastName": "Fahey",
+  "middleName": "Troy",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "5491 Kasey Neck",
+  "mobileNumber": "2349163760514",
+  "emailAddress": "Odessa_Prohaska39@yahoo.com",
+  "dateCreated": "2024-08-20"
+}

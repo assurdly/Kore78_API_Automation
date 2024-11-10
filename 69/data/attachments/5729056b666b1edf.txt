@@ -1,0 +1,12 @@
+{
+  "firstName": "Aleen",
+  "lastName": "Lockman",
+  "middleName": "Jerad",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "6446 Bayer Motorway",
+  "mobileNumber": "234917432869512",
+  "emailAddress": "Gracie_Stark@yahoo.com"
+}

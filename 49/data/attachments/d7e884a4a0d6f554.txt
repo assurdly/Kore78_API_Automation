@@ -1,5 +1,0 @@
-{
-  "name": "Group Payment",
-  "description": "Chief Payment",
-  "direction": "C"
-}
