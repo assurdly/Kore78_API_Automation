@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": 1735,
-    "walletClassificationId": 1, 
-    "currencyId": 107, 
-    "name": "Stuart Nitzsche" 
-}

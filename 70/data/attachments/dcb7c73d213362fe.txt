@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Pouros",
+  "middleName": "Peggie",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "88481 Bins Knoll",
+  "mobileNumber": "2349163187423",
+  "emailAddress": "Suzanne_Pagac@gmail.com"
+}

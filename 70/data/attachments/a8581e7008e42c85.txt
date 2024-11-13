@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":142,"name":"Web Payment","organizationId":1,"description":"Internal Payment","direction":"C","isActive":true,"dateCreated":"2024-11-13T18:09:13.8797256Z"}}

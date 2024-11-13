@@ -1,0 +1,12 @@
+{
+  "firstName": "Cathryn",
+  "lastName": "Murazik",
+  "middleName": "Terrill",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "7455 Stehr Lock",
+  "mobileNumber": "234911054315112",
+  "emailAddress": "Reynold41@hotmail.com"
+}
