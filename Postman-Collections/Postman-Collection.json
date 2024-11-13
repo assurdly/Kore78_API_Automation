@@ -9658,6 +9658,24 @@
 											"id": "a1a2b325-5710-47f3-94ea-550b4c5b3dc6"
 										},
 										{
+											"name": "Change Password",
+											"item": [
+												{
+													"name": "Change my password",
+													"id": "4aff28c6-17fa-4eea-8053-2f955a6b7ce6",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "GET",
+														"header": []
+													},
+													"response": []
+												}
+											],
+											"id": "d505d76f-30a9-49ec-b291-394c725c0bd7"
+										},
+										{
 											"name": "Get Auth User",
 											"id": "eea80211-92bc-4b87-854f-d65a04ebd51c",
 											"protocolProfileBehavior": {
