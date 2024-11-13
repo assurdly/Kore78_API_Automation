@@ -9667,8 +9667,24 @@
 														"disableBodyPruning": true
 													},
 													"request": {
-														"method": "GET",
-														"header": []
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{accessToken}}"
+															}
+														},
+														"method": "PATCH",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n    \"newPassword\": \"Qwerty1234@\",\n    \"currentPassword\": \"Qwerty123@\",\n    \"otp\": \"424316\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/users/u/password/change"
 													},
 													"response": []
 												}
