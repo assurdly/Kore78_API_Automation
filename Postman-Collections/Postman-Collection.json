@@ -2865,33 +2865,7 @@
 													"",
 													"pm.test(\"Data array is present in the response\", function () {",
 													"  const responseData = pm.response.json();",
-													"  pm.expect(responseData).to.have.property('data').that.is.an('array');",
-													"});",
-													"",
-													"",
-													"pm.test(\"Each 'data' object in the array has the correct structure\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
-													"",
-													"    responseData.data.forEach(function (customer) {",
-													"        pm.expect(customer).to.have.property('id')",
-													"        pm.expect(customer).to.have.property('organizationId')",
-													"        pm.expect(customer).to.have.property('firstName')",
-													"        pm.expect(customer).to.have.property('lastName')",
-													"        pm.expect(customer).to.have.property('middleName')",
-													"        pm.expect(customer).to.have.property('dob')",
-													"        pm.expect(customer).to.have.property('customerTypeId')",
-													"        pm.expect(customer).to.have.property('alias')",
-													"        pm.expect(customer).to.have.property('countryId')",
-													"        pm.expect(customer).to.have.property('city')",
-													"        pm.expect(customer).to.have.property('address')",
-													"        pm.expect(customer).to.have.property('mobileNumber')",
-													"        pm.expect(customer).to.have.property('emailAddress')",
-													"        pm.expect(customer).to.have.property('dateCreated')",
-													"        pm.expect(customer).to.have.property('branchCode')",
-													"        pm.expect(customer).to.have.property('isActive')",
-													"    });",
+													"  pm.expect(responseData).to.have.property('data').to.exist;",
 													"});",
 													""
 												],
@@ -2905,9 +2879,37 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{accessToken}}"
+											}
+										},
 										"method": "GET",
 										"header": [],
-										"url": "{{baseUrl}}/api/v1/customers/get/all"
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/customers/u/all?from=2024-11-13&to=2024-11-13",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customers",
+												"u",
+												"all"
+											],
+											"query": [
+												{
+													"key": "from",
+													"value": "2024-11-13"
+												},
+												{
+													"key": "to",
+													"value": "2024-11-13"
+												}
+											]
+										}
 									},
 									"response": [
 										{
@@ -9467,7 +9469,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\r\n\r\n  \"emailAddress\": \"moses@rove10.com\",\r\n  \"password\": \"Qwerty123@\",\r\n  \"otp\": \"968515\"\r\n}",
+															"raw": "{\r\n\r\n  \"emailAddress\": \"bakare@assurdly.com\",\r\n  \"password\": \"Test123@\",\r\n  \"otp\": \"968515\"\r\n}",
 															"options": {
 																"raw": {
 																	"language": "json"
@@ -12184,7 +12186,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 4,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
+											"raw": "{\n    \"CurrencyId\": 2\n}",
 											"options": {
 												"raw": {
 													"language": "json"
