@@ -1,5 +1,0 @@
-{
-  "name": "Response Payment",
-  "description": "Investor Payment",
-  "direction": "C"
-}

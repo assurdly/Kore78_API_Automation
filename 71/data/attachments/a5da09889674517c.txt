@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Smith",
+  "middleName": "Adela",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "9672 Reilly Flats",
+  "mobileNumber": "234919835937612",
+  "emailAddress": "Fae.Schoen45@yahoo.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Stoltenberg",
+  "middleName": "Demarco",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "438 Ledner Spurs",
+  "mobileNumber": "234912006517812",
+  "emailAddress": "Ben_Grimes13@gmail.com"
+}

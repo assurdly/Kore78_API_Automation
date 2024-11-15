@@ -1,0 +1,12 @@
+{
+  "firstName": "Electa",
+  "lastName": "Hackett",
+  "middleName": "David",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "640 Mohamed Spur",
+  "mobileNumber": "234917639144112",
+  "emailAddress": "Marcelino_Conn@yahoo.com"
+}
