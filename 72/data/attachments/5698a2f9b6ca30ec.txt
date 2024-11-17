@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "McGlynn",
+  "middleName": "Margot",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "986 Fahey Wall",
+  "mobileNumber": "234911582906812",
+  "emailAddress": "Malcolm_Auer44@gmail.com"
+}

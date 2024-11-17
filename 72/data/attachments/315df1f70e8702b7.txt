@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Updated Successfully","data":{"id":59,"name":"Accounts Larry","organizationId":1,"description":"Legacy Payment","direction":"D","isActive":true,"dateCreated":"2024-09-11T20:55:32"}}

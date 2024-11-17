@@ -1,0 +1,12 @@
+{
+  "firstName": "Elva",
+  "lastName": "Lynch",
+  "middleName": "Emmett",
+  "dob": "1990-05-20",
+  "city": "Allyville",
+  "address": "3458 Cindy Mission",
+  "occupation": "Legacy Functionality Strategist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

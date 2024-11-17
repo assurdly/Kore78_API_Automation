@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Maurine",
+  "lastName": "Hartmann",
+  "middleName": "Ramona",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "0535 Flatley Island",
+  "mobileNumber": "2349198224500",
+  "emailAddress": "Alta33@yahoo.com",
+  "dateCreated": "2024-08-20"
+}

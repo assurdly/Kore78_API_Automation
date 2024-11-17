@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": 1752,
-    "walletClassificationId": 1, 
-    "currencyId": 107, 
-    "name": "Fannie Will" 
-}

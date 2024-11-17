@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Wiza",
+  "middleName": "Earnestine",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "48730 Finn Brooks",
+  "mobileNumber": "234915194947912",
+  "emailAddress": "Ana_Schaden@gmail.com"
+}
