@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "VonRueden",
+  "middleName": "Myah",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "54837 Mayert Curve",
+  "mobileNumber": "234916121177512",
+  "emailAddress": "Jettie_Stokes@hotmail.com"
+}

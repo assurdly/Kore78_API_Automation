@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Infrastructure Payment",
-  "description": "Corporate Payment",
-  "direction": "D"
-}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Emilio",
+  "lastName": "Boehm",
+  "middleName": "Filomena",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "95451 Antoinette Neck",
+  "mobileNumber": "234915027468512",
+  "emailAddress": "Loma_Streich@gmail.com"
+}

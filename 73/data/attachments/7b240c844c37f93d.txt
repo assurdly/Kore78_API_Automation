@@ -1,0 +1,5 @@
+{
+  "name": "Interactions Payment",
+  "description": "National Payment",
+  "direction": "C"
+}
