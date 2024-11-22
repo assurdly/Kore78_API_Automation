@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Carter",
+  "middleName": "Alvena",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "8549 Leuschke Throughway",
+  "mobileNumber": "2349189504174",
+  "emailAddress": "Reece.Morar@gmail.com"
+}

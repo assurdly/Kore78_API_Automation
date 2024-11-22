@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Dare",
+  "middleName": "Jon",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "49811 Braulio Trail",
+  "mobileNumber": "234915266128412",
+  "emailAddress": "Juwan.Bode@yahoo.com"
+}

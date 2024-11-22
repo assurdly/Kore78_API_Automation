@@ -1,0 +1,12 @@
+{
+  "firstName": "Santino",
+  "lastName": "Rolfson",
+  "middleName": "Earlene",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "6535 Rosenbaum Harbors",
+  "mobileNumber": "234918514436512",
+  "emailAddress": "Cathy.Kertzmann@hotmail.com"
+}

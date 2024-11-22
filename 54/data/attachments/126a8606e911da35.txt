@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": ,
-    "walletClassificationId": 1, 
-    "currencyId": 107, 
-    "name": "Mr. Wendell Sipes" 
-}
