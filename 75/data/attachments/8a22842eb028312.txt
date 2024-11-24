@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Medhurst",
+  "middleName": "Magdalen",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "09710 Runte Forks",
+  "mobileNumber": "234910785311212",
+  "emailAddress": "Brown36@hotmail.com"
+}

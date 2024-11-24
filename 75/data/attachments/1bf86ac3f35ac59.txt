@@ -1,0 +1,12 @@
+{
+  "firstName": "Tomas",
+  "lastName": "Stroman",
+  "middleName": "Armando",
+  "dob": "1990-05-20",
+  "city": "Conway",
+  "address": "20560 Wilfrid Shoal",
+  "occupation": "Direct Brand Assistant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

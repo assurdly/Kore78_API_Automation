@@ -1,0 +1,9 @@
+{
+  "emailAddress": "Austyn@rove10.com",
+  "password": "Qwerty123@",
+  "firstName": "Leora",
+  "lastName": "Abbott",
+  "username": "Bethany78",
+  "roleId": ,
+  "branchId": 13
+}

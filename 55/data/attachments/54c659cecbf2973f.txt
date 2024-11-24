@@ -1,6 +1,0 @@
-{
-  "id": "96",
-  "name": "Solutions Payment",
-  "description": "Senior Payment",
-  "direction": "D"
-}
