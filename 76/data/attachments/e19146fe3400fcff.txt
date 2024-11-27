@@ -1,0 +1,12 @@
+{
+  "firstName": "Joseph",
+  "lastName": "Leffler",
+  "middleName": "Jordyn",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "961 Leonard Street",
+  "mobileNumber": "234919795576512",
+  "emailAddress": "Dagmar_Hackett@hotmail.com"
+}

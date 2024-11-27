@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Fritsch",
+  "middleName": "Audrey",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "1747 Leffler Spring",
+  "mobileNumber": "234917236171712",
+  "emailAddress": "Alycia96@gmail.com"
+}

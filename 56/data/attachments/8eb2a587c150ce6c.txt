@@ -1,6 +1,0 @@
-{
-  "id": "59",
-  "name": "Marketing Larry",
-  "description": "Product Payment",
-  "direction": "D"
-}

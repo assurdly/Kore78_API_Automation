@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Tyrell",
+  "lastName": "Lowe",
+  "middleName": "Donna",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "52422 Heathcote Ways",
+  "mobileNumber": "2349178169387",
+  "emailAddress": "Adrian96@hotmail.com",
+  "dateCreated": "2024-08-20"
+}
