@@ -1,0 +1,12 @@
+{
+  "firstName": "Chadd",
+  "lastName": "Heidenreich",
+  "middleName": "Roy",
+  "dob": "1990-05-20",
+  "city": "South Zakary",
+  "address": "557 Ernesto Knoll",
+  "occupation": "Future Optimization Administrator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

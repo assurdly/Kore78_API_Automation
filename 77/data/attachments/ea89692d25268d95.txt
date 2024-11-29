@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":153,"name":"Factors Payment","organizationId":1,"description":"Dynamic Payment","direction":"C","isActive":true,"dateCreated":"2024-11-29T18:03:54.6562156Z"}}

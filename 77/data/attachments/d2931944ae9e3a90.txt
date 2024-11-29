@@ -1,0 +1,5 @@
+{
+  "name": "Division Payment",
+  "description": "National Payment",
+  "direction": "C"
+}

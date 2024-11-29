@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Crona",
+  "middleName": "Damian",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "41511 Columbus Drives",
+  "mobileNumber": "234919500247812",
+  "emailAddress": "Frederick98@gmail.com"
+}

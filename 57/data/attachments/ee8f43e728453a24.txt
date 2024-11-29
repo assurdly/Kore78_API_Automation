@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":99,"name":"Integration Payment","organizationId":1,"description":"Principal Payment","direction":"C","isActive":true,"dateCreated":"2024-10-18T18:03:49"}}

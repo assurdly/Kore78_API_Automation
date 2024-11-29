@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kassulke",
+  "middleName": "Emerald",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "414 Kennedi Harbor",
+  "mobileNumber": "2349176637412",
+  "emailAddress": "Judge94@hotmail.com"
+}
