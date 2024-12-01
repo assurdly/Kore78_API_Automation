@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Muller",
+  "middleName": "Don",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "12739 Gaylord Track",
+  "mobileNumber": "234913637847312",
+  "emailAddress": "Leann_Lockman73@yahoo.com"
+}

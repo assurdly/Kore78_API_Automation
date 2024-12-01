@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Wilkinson",
+  "middleName": "Meggie",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "152 Stroman Road",
+  "mobileNumber": "234915641829012",
+  "emailAddress": "Devyn63@yahoo.com"
+}

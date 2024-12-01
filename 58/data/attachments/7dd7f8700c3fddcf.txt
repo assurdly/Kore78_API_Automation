@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":124,"name":"Outdoors","description":"Forward","roleTypeId":2,"organizationId":1,"dateCreated":"2024-10-18T21:37:29.1366204Z","permissions":null}}

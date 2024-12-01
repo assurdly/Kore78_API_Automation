@@ -1,5 +1,0 @@
-{
-  "name": "Intranet Payment",
-  "description": "Forward Payment",
-  "direction": "C"
-}

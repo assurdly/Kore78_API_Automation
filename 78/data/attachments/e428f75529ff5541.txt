@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Optimization Payment",
+  "description": "Investor Payment",
+  "direction": "D"
+}
