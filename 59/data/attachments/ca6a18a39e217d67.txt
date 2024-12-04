@@ -1,5 +1,0 @@
-{
-  "name": "Data Payment",
-  "description": "International Payment",
-  "direction": "C"
-}

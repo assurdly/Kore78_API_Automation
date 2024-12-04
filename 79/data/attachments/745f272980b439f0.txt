@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Weissnat",
+  "middleName": "Concepcion",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "58085 Romaguera Knoll",
+  "mobileNumber": "234910519767512",
+  "emailAddress": "Ahmad.Ryan62@yahoo.com"
+}
