@@ -1,0 +1,12 @@
+{
+  "firstName": "Greyson",
+  "lastName": "Rutherford",
+  "middleName": "Novella",
+  "dob": "1990-05-20",
+  "city": "North Jeremiehaven",
+  "address": "9937 Murray Ports",
+  "occupation": "Forward Directives Planner",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

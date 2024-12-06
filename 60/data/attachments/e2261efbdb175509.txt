@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Updated Successfully","data":{"id":105,"name":"Research Payment","organizationId":1,"description":"Direct Payment","direction":"C","isActive":false,"dateCreated":"2024-10-20T20:02:28"}}

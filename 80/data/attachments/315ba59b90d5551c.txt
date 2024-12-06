@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1973,
+    "walletClassificationId": 1, 
+    "currencyId": 107, 
+    "name": "Suzanne Reinger" 
+}

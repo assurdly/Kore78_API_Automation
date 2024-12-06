@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Dibbert",
+  "middleName": "Narciso",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "54420 Lockman Point",
+  "mobileNumber": "234915382318812",
+  "emailAddress": "Deron_Douglas2@gmail.com"
+}

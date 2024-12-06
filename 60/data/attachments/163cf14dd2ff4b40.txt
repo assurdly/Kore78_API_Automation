@@ -1,6 +1,0 @@
-{
-  "id": "104",
-  "name": "Infrastructure Payment",
-  "description": "Human Payment",
-  "direction": "D"
-}
