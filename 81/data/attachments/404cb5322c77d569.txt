@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Group Payment",
+  "description": "Customer Payment",
+  "direction": "D"
+}

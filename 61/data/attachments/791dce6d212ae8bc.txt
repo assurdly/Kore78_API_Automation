@@ -1,5 +1,0 @@
-{
-  "name": "Mobility Payment",
-  "description": "Lead Payment",
-  "direction": "C"
-}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "D'Amore",
+  "middleName": "Micheal",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "5504 Jaylen Corner",
+  "mobileNumber": "234913708697512",
+  "emailAddress": "Brendan.Quigley@hotmail.com"
+}

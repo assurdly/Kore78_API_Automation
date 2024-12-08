@@ -1,0 +1,12 @@
+{
+  "firstName": "Velda",
+  "lastName": "Anderson",
+  "middleName": "Annabelle",
+  "dob": "1990-05-20",
+  "city": "Hackettshire",
+  "address": "9196 Parker Manors",
+  "occupation": "Central Applications Facilitator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

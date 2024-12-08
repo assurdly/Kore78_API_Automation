@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":127,"name":"Electronics","description":"Legacy","roleTypeId":2,"organizationId":1,"dateCreated":"2024-10-23T18:09:39.4080472Z","permissions":null}}

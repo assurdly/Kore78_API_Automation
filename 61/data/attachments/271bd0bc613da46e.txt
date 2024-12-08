@@ -1,6 +1,0 @@
-{
-  "id": "59",
-  "name": "Implementation Larry",
-  "description": "Dynamic Payment",
-  "direction": "D"
-}
