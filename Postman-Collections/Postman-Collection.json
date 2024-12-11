@@ -12778,7 +12778,7 @@
 			"id": "5575fa72-edfc-4936-a001-9516d09b880a"
 		},
 		{
-			"name": "nip Copy",
+			"name": "nip",
 			"item": [
 				{
 					"name": "providus",
@@ -12920,7 +12920,7 @@
 			"id": "a2bd3a16-775f-4c29-a33b-905196fe2b34"
 		},
 		{
-			"name": "products Copy",
+			"name": "products",
 			"item": [
 				{
 					"name": "Create Product",
@@ -13365,7 +13365,7 @@
 			"id": "8d21b655-38e7-432f-bcd3-c59792c1763c"
 		},
 		{
-			"name": "limits Copy",
+			"name": "limits",
 			"item": [
 				{
 					"name": "Add Customer Limit",
@@ -14057,7 +14057,7 @@
 			"id": "16bae843-9fdd-4ce4-9041-a45fc8e80188"
 		},
 		{
-			"name": "transaction-types Copy",
+			"name": "transaction-types",
 			"item": [
 				{
 					"name": "Get Transaction Types",
@@ -14172,7 +14172,7 @@
 			"id": "84690bbb-6194-4019-af3a-c51f835407cc"
 		},
 		{
-			"name": "utility Copy",
+			"name": "utility",
 			"item": [
 				{
 					"name": "Get All Currencies",
@@ -14286,7 +14286,7 @@
 			"id": "0282eb9f-7db6-4860-a362-5c43b0c8a47d"
 		},
 		{
-			"name": "wallets Copy",
+			"name": "wallets",
 			"item": [
 				{
 					"name": "vault",
@@ -15460,7 +15460,7 @@
 			"id": "321bdff5-eb2b-4bc7-babb-d0d7b3690b71"
 		},
 		{
-			"name": "Dashboard APi Copy",
+			"name": "Dashboard APi",
 			"item": [
 				{
 					"name": "users",
@@ -17730,7 +17730,7 @@
 			]
 		},
 		{
-			"name": "Chart Of Account Copy",
+			"name": "Chart Of Account",
 			"item": [
 				{
 					"name": "Create Account",
@@ -18262,7 +18262,7 @@
 			"id": "c8dc49a8-f964-4cdb-a95e-b771b48785aa"
 		},
 		{
-			"name": "Multi-Currency Copy",
+			"name": "Multi-Currency",
 			"item": [
 				{
 					"name": "Add New currency rate",
@@ -18601,7 +18601,7 @@
 			"id": "435aee5d-c1d1-4225-a030-abcc072b9e05"
 		},
 		{
-			"name": "EOD Copy",
+			"name": "EOD",
 			"item": [
 				{
 					"name": "EOD",
