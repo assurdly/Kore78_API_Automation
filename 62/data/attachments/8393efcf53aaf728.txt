@@ -1,5 +1,0 @@
-{
-  "name": "Brand Payment",
-  "description": "Legacy Payment",
-  "direction": "C"
-}

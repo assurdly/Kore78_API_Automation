@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Orn",
+  "middleName": "Lottie",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "00168 Harvey Mall",
+  "mobileNumber": "234919130135012",
+  "emailAddress": "Reina_Gislason19@gmail.com"
+}

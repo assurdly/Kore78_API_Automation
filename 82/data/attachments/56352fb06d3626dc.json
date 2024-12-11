@@ -1,0 +1,11 @@
+{
+    "x-api-key": "AdminTest",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "292e8023-d3f8-4c12-946b-05d4d74a810d",
+    "Host": "kore78-dev.bank78.co",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "0"
+}

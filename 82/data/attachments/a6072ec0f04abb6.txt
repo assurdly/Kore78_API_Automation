@@ -1,0 +1,9 @@
+{
+  "currencyId": 1,
+  "productId": 2,
+  "customerId": "1984",
+  "singleTransactionLimit": "50000",
+  "frequency": "1",
+  "dailyTransactionLimit": "500000",
+  "monthlyTransactionLimit": "5000000"
+}

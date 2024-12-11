@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":128,"name":"Jewelery","description":"Global","roleTypeId":2,"organizationId":1,"dateCreated":"2024-10-25T18:04:14.4862757Z","permissions":null}}

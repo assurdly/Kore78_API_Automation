@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Updated Successfully","data":{"id":1,"name":"Computers","description":"International","roleTypeId":2,"organizationId":1,"dateCreated":"2024-08-10T22:31:05.989","permissions":null}}

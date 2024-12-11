@@ -1,0 +1,12 @@
+{
+  "firstName": "Alicia",
+  "lastName": "Nikolaus",
+  "middleName": "Art",
+  "dob": "1990-05-20",
+  "city": "Vivaberg",
+  "address": "071 Bernie Isle",
+  "occupation": "Product Group Facilitator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
