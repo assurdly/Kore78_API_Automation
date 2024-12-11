@@ -1,0 +1,5 @@
+{
+  "name": "Functionality Payment",
+  "description": "Global Payment",
+  "direction": "C"
+}

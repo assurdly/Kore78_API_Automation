@@ -1,0 +1,3 @@
+{
+    "CurrencyId": 2
+}

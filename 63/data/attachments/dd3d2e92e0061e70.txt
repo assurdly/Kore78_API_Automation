@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Integration Payment",
-  "description": "Future Payment",
-  "direction": "D"
-}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Ethelyn",
+  "lastName": "Wehner",
+  "middleName": "Cleta",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "884 Rodriguez Track",
+  "mobileNumber": "234919786669712",
+  "emailAddress": "Salma.Metz61@yahoo.com"
+}

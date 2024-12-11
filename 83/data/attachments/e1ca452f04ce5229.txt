@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1988,
+    "walletClassificationId": 1, 
+    "currencyId": 1, 
+    "name": "Amos Wuckert" 
+}
