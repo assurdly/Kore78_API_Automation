@@ -2227,7 +2227,7 @@
 									"name": "Add Customer",
 									"item": [
 										{
-											"name": "/api/v1/customers/add",
+											"name": "Create Customer - Success",
 											"event": [
 												{
 													"listen": "test",
@@ -2346,7 +2346,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/customers/add - Invalid phoneNumber",
+											"name": "Create Customer - Invalid phoneNumber",
 											"event": [
 												{
 													"listen": "test",
@@ -2461,7 +2461,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/customers/add - compound name",
+											"name": "Create Customer - compound name",
 											"event": [
 												{
 													"listen": "test",
@@ -2576,7 +2576,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/customers/add - Invalid customerTypeId",
+											"name": "Create Customer - Invalid customerTypeId",
 											"event": [
 												{
 													"listen": "test",
@@ -2665,7 +2665,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/customers/add - Invalid countryId",
+											"name": "Create Customer - Invalid countryId",
 											"event": [
 												{
 													"listen": "test",
@@ -2754,7 +2754,7 @@
 											]
 										},
 										{
-											"name": "/api/v1/customers/add - Empty Fields",
+											"name": "Create Customer - Empty Fields",
 											"event": [
 												{
 													"listen": "test",
@@ -3014,7 +3014,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/customers/customer/:customerId/updatename/organization/:organizationId",
+									"name": "Update Customer",
 									"event": [
 										{
 											"listen": "test",
@@ -3171,7 +3171,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/customers/find/email",
+									"name": "Find A Customer",
 									"event": [
 										{
 											"listen": "test",
@@ -3292,7 +3292,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/customers/find/account-number",
+									"name": "Find Customer - account-number",
 									"id": "c8880afa-04d1-4331-b823-fe363fabb9de",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -3594,7 +3594,7 @@
 							"name": "products",
 							"item": [
 								{
-									"name": "/api/v1/products/add",
+									"name": "Create Product",
 									"event": [
 										{
 											"listen": "test",
@@ -3704,7 +3704,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/products/update",
+									"name": "Update Products",
 									"event": [
 										{
 											"listen": "test",
@@ -3797,7 +3797,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/products/activate/:id",
+									"name": "Activate Product",
 									"id": "5a520a79-13a5-414a-9381-9e017d9f8b0e",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
