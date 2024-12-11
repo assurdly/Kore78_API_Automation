@@ -3869,7 +3869,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/products/deactivate/:id",
+									"name": "Deactivate Product",
 									"id": "5925d556-726c-4db6-af81-94c75f4917c3",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -3942,7 +3942,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/products/get",
+									"name": "Get Product",
 									"event": [
 										{
 											"listen": "test",
@@ -4038,7 +4038,7 @@
 							"name": "limits",
 							"item": [
 								{
-									"name": "/api/v1/limits/customer/add",
+									"name": "Add Customer Limit",
 									"event": [
 										{
 											"listen": "test",
@@ -4168,7 +4168,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/limits/customer/add",
+									"name": "Update Customer Limit",
 									"id": "a7170177-09b0-4cfb-b792-32e7f24f76af",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4233,7 +4233,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/limits/product/:productId/currency/:currencyId/customer/:customerId",
+									"name": "Get Customer Limit",
 									"event": [
 										{
 											"listen": "test",
@@ -4375,7 +4375,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/limits/product/:productId/currency/:currencyId",
+									"name": "Get Currency Limit",
 									"event": [
 										{
 											"listen": "test",
@@ -4500,7 +4500,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/limits/default/add",
+									"name": "Update Customer Limit",
 									"id": "eb1d0141-19b5-4c63-ac66-7ae338ed2f60",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4565,7 +4565,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/limits/default",
+									"name": "Get Limit",
 									"event": [
 										{
 											"listen": "test",
@@ -4654,7 +4654,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/limits/default/update",
+									"name": "Update Limit",
 									"id": "73d942b3-9cbc-4aca-b7e5-2e5378d9bc2f",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -4722,295 +4722,10 @@
 							"id": "2384fd01-271a-4b84-99f0-4cdc380c6271"
 						},
 						{
-							"name": "teams",
-							"item": [
-								{
-									"name": "/api/v1/teams/u/add",
-									"id": "9761d3c3-ea54-446c-a7e1-dbfcaf2449cc",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"name\": \"<string>\",\n  \"organizationId\": \"<long>\",\n  \"id\": \"<long>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/teams/u/add"
-									},
-									"response": [
-										{
-											"id": "0b43cfa5-24f9-4108-9cd1-a819b9f2fb1a",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"name\": \"<string>\",\n  \"organizationId\": \"<long>\",\n  \"id\": \"<long>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/teams/u/add"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/teams/u/my-teams",
-									"id": "027b0996-0c3c-4e88-b443-7fe71d79a2d7",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/v1/teams/u/my-teams"
-									},
-									"response": [
-										{
-											"id": "bcc99a02-9896-472b-bea2-f131628b6be1",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": "{{baseUrl}}/api/v1/teams/u/my-teams"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/teams/u/invites",
-									"id": "80b4aa82-3285-425d-bf23-f8dfc3bcdaad",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/v1/teams/u/invites"
-									},
-									"response": [
-										{
-											"id": "9b59dac0-4f67-4db3-ade2-f83ab3e6c6a7",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": "{{baseUrl}}/api/v1/teams/u/invites"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/teams/u/invite/accept/:id",
-									"id": "03169c74-6abe-42ad-8cb8-eb579a401472",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/v1/teams/u/invite/accept/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"teams",
-												"u",
-												"invite",
-												"accept",
-												":id"
-											],
-											"variable": [
-												{
-													"id": "f9597501-ef2e-4a62-bcfb-37bfdebf7d12",
-													"key": "id",
-													"value": "<long>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "3d54da65-2265-42db-8e5e-24e59256eb29",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/teams/u/invite/accept/:id",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"teams",
-														"u",
-														"invite",
-														"accept",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/v1/teams/u/invite/send",
-									"id": "d6e43ec0-4583-426b-a5d7-35bb600a72c4",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"emailAddress\": \"<string>\",\n  \"role\": 2,\n  \"teamId\": \"<long>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/teams/u/invite/send"
-									},
-									"response": [
-										{
-											"id": "2db92797-c1e7-43a6-a0f4-d0ab08d31594",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"emailAddress\": \"<string>\",\n  \"role\": 2,\n  \"teamId\": \"<long>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/teams/u/invite/send"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "ac86b853-798b-4658-be9c-eadc730db5ac"
-						},
-						{
 							"name": "transaction-types",
 							"item": [
 								{
-									"name": "/api/v1/transaction-types/get",
+									"name": "Get Transaction Types",
 									"id": "4d7f9879-6b3d-4dc2-aa5e-2e1648d2784b",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -5046,7 +4761,7 @@
 									]
 								},
 								{
-									"name": "/api/v1/transaction-types/get/:id",
+									"name": "Get Transaction Type - ID",
 									"id": "bfd41491-881b-4db6-8f5e-58a74a98faaa",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
