@@ -1,5 +1,0 @@
-{
-  "name": "Interactions Payment",
-  "description": "Global Payment",
-  "direction": "C"
-}

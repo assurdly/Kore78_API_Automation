@@ -1,0 +1,5 @@
+{
+    "newPassword": "Qwerty1234@",
+    "currentPassword": "Qwerty123@",
+    "otp": "424316"
+}

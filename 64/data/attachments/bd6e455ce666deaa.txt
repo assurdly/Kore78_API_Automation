@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":130,"name":"Toys","description":"Customer","roleTypeId":2,"organizationId":1,"dateCreated":"2024-10-30T18:09:41.108856Z","permissions":null}}

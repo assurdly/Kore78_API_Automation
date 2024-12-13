@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Zack",
+  "lastName": "Jones",
+  "middleName": "Anya",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "2077 Rocio Flat",
+  "mobileNumber": "2349174510757",
+  "emailAddress": "Kiera24@gmail.com",
+  "dateCreated": "2024-08-20"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Samir",
+  "lastName": "Dickens",
+  "middleName": "Tamara",
+  "dob": "1990-05-20",
+  "city": "New Alfreda",
+  "address": "867 Leannon Gateway",
+  "occupation": "Dynamic Data Assistant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

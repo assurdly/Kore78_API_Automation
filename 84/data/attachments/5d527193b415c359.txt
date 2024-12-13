@@ -1,0 +1,12 @@
+{
+  "firstName": "Chloe",
+  "lastName": "Gusikowski",
+  "middleName": "Tony",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "3047 Kenneth Forge",
+  "mobileNumber": "234914233994312",
+  "emailAddress": "Harmony99@hotmail.com"
+}

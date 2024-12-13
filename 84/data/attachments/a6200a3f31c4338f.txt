@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Sanford",
+  "middleName": "Benny",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "2121 Larson Green",
+  "mobileNumber": "2349126103496",
+  "emailAddress": "Angelina_Witting19@hotmail.com"
+}
