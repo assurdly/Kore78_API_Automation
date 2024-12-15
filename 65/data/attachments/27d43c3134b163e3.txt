@@ -1,8 +1,0 @@
-{
-    "id": 1,
-    "name": "Movies",
-    "description": "Lead",
-    "roleTypeId": 131,
-    "organizationId": 1,
-    "dateCreated": "2024-08-10T22:31:05.989"
-}

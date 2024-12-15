@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Conn",
+  "middleName": "Madison",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "37806 O'Connell Cliff",
+  "mobileNumber": "234918284922712",
+  "emailAddress": "Pamela.Dietrich38@hotmail.com"
+}

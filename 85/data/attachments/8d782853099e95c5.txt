@@ -1,0 +1,12 @@
+{
+  "firstName": "Gaetano",
+  "lastName": "Hettinger",
+  "middleName": "Berry",
+  "dob": "1990-05-20",
+  "city": "San Jose",
+  "address": "334 Dickens Viaduct",
+  "occupation": "Dynamic Accounts Coordinator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Retrieved successfully","data":{"id":21,"productCurrencyId":18,"singleTransactionLimit":10000000.000000000000000000000,"frequency":1000.0000000000000000000000000,"dailyTransactionLimit":500000000.00000000000000000000,"monthlyTransactionLimit":50000000000000.000000000000000,"customerId":0}}

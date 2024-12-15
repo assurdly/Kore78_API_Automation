@@ -1,0 +1,12 @@
+{
+  "firstName": "Cristal",
+  "lastName": "Hilll",
+  "middleName": "Jovani",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "5284 Cummerata Islands",
+  "mobileNumber": "234912238913712",
+  "emailAddress": "Helene75@hotmail.com"
+}

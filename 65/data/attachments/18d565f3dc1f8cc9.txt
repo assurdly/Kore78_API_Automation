@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":115,"name":"Optimization Payment","organizationId":1,"description":"Lead Payment","direction":"C","isActive":true,"dateCreated":"2024-11-01T18:04:23"}}
