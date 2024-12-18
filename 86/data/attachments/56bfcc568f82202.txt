@@ -1,0 +1,12 @@
+{
+  "firstName": "Cecile",
+  "lastName": "Kerluke",
+  "middleName": "Gustave",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "986 Leuschke Ferry",
+  "mobileNumber": "234917250627912",
+  "emailAddress": "Nils61@hotmail.com"
+}

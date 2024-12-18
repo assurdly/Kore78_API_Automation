@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Julian",
+  "lastName": "Weissnat",
+  "middleName": "Rene",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "53695 Toni Well",
+  "mobileNumber": "2349108467693",
+  "emailAddress": "Bernardo4@yahoo.com",
+  "dateCreated": "2024-08-20"
+}

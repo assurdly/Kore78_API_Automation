@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Runte",
+  "middleName": "Clint",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "3107 Labadie Prairie",
+  "mobileNumber": "234912834222412",
+  "emailAddress": "Jewell.Weber9@hotmail.com"
+}

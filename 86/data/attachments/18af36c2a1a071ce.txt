@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 1998,
+    "walletClassificationId": 1, 
+    "currencyId": 107, 
+    "name": "Elbert Schinner" 
+}

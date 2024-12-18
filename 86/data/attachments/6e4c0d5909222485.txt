@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Retrieved Successfully","data":[{"maturityDate":"2025-02-04T00:00:00","accruedDate":"2025-02-03T00:00:00","interestOrChargePaid":"Interest Charged","tenor":30,"interestAccumulatedAmount":26.400,"bankDate":"2025-01-06T00:00:00"}]}

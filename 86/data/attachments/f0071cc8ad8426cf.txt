@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kulas",
+  "middleName": "Krista",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "70136 Kaitlyn Burgs",
+  "mobileNumber": "234916343290112",
+  "emailAddress": "Lance19@yahoo.com"
+}
