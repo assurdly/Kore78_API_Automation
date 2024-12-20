@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Updated Successfully","data":{"id":130,"name":"Marketing Payment","organizationId":1,"description":"Customer Payment","direction":"D","isActive":true,"dateCreated":"2024-11-06T18:09:12"}}

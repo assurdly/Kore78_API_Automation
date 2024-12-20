@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Added successfully","data":{"id":47,"productCurrencyId":18,"singleTransactionLimit":50000.0,"frequency":1.0,"dailyTransactionLimit":500000.0,"monthlyTransactionLimit":5000000.0,"customerId":2002}}

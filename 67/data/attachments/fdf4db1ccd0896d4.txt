@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":130,"name":"Accounts Payment","organizationId":1,"description":"Internal Payment","direction":"C","isActive":true,"dateCreated":"2024-11-06T18:09:12.5478786Z"}}

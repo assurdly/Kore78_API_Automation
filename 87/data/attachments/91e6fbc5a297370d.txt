@@ -1,0 +1,12 @@
+{
+  "firstName": "Nella",
+  "lastName": "Pouros",
+  "middleName": "Madyson",
+  "dob": "1990-05-20",
+  "city": "Conway",
+  "address": "6831 Hoeger Lake",
+  "occupation": "Dynamic Infrastructure Assistant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Abernathy",
+  "middleName": "Kale",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "05471 Dallin Keys",
+  "mobileNumber": "234910466789612",
+  "emailAddress": "Gideon_Littel82@yahoo.com"
+}

@@ -1,0 +1,60 @@
+{
+    "FromAccountNumber": "",
+    "ToAccountNumber": "0000363048",
+    "Fee": "1",
+    "ProductId": "68",
+    "TransactionReference": "Ref-Buying NGN 1647NGN2USD261384 00772618",
+    "BatchReference": "Ref- Buying NGN 1647NGN2USD26138708583139",
+    "Amount": "10",
+    "Remarks": "Convert FX",
+    "BranchCode": "999",
+    "TransactionTypeId": "",
+    "FxRate": null,
+    "OrganizationId": "1"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
