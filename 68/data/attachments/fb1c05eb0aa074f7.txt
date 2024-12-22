@@ -1,5 +1,0 @@
-{
-  "from": "<dateTime>",
-  "to": "<dateTime>",
-  "organizationId": "<long>"
-}

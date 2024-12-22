@@ -1,0 +1,12 @@
+{
+  "firstName": "Hertha",
+  "lastName": "McDermott",
+  "middleName": "Francesco",
+  "dob": "1990-05-20",
+  "city": "Manchester",
+  "address": "0098 Braulio Alley",
+  "occupation": "Customer Research Manager",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

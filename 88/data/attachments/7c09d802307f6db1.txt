@@ -1,0 +1,12 @@
+{
+  "firstName": "Elena",
+  "lastName": "Rowe",
+  "middleName": "Marshall",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "09359 Dorothea Mountain",
+  "mobileNumber": "234917360632712",
+  "emailAddress": "Theresa_Harris@hotmail.com"
+}
