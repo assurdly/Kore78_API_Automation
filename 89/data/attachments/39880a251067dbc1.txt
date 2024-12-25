@@ -1,0 +1,12 @@
+{
+  "firstName": "Randi",
+  "lastName": "Runolfsdottir",
+  "middleName": "Ron",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "785 Zulauf Parks",
+  "mobileNumber": "234915706924412",
+  "emailAddress": "Carmine_Osinski@yahoo.com"
+}

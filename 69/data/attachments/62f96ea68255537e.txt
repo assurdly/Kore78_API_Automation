@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Mobility Payment",
-  "description": "Global Payment",
-  "direction": "D"
-}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kertzmann",
+  "middleName": "Shirley",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "8056 Lolita Ridge",
+  "mobileNumber": "234911803249412",
+  "emailAddress": "Alessandra77@gmail.com"
+}

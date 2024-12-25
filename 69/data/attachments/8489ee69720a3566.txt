@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":190,"name":"Melyssa Charges","ledgerCode":null,"acctCode":null,"isActive":null,"dateCreated":null,"walletGroupFeatureDto":null}}
