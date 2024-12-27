@@ -1,5 +1,0 @@
-{
-  "name": "Response Payment",
-  "description": "Global Payment",
-  "direction": "C"
-}

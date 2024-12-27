@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": 1894,
-    "walletClassificationId": 1, 
-    "currencyId": 107, 
-    "name": "Janis Hagenes" 
-}

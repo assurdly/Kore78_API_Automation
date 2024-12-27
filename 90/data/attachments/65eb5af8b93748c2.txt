@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Web Payment",
+  "description": "Forward Payment",
+  "direction": "D"
+}

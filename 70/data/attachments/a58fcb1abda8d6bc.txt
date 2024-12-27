@@ -1,4 +1,0 @@
-{
-  "transactionReference": "<string>",
-  "organizationId": "<long>"
-}

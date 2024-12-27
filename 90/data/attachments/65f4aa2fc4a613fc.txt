@@ -1,0 +1,12 @@
+{
+  "firstName": "Nikki",
+  "lastName": "Denesik",
+  "middleName": "Halle",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "019 Marvin Key",
+  "mobileNumber": "234912465950312",
+  "emailAddress": "Kailyn25@yahoo.com"
+}

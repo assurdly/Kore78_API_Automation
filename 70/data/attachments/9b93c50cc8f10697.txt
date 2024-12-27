@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":137,"name":"Beauty","description":"Future","roleTypeId":2,"organizationId":1,"dateCreated":"2024-11-13T18:09:36.7202549Z","permissions":null}}
