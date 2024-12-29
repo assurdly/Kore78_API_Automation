@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Braun",
+  "middleName": "Ana",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "1295 Sauer Mountains",
+  "mobileNumber": "234913110885512",
+  "emailAddress": "Murl64@hotmail.com"
+}

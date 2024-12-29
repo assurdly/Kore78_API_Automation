@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Jones",
+  "middleName": "Jocelyn",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "3630 Metz Points",
+  "mobileNumber": "234915203834012",
+  "emailAddress": "Dennis_Ondricka@yahoo.com"
+}

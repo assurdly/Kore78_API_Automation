@@ -1,0 +1,10 @@
+{
+    "name": "Marc Charges",
+    "walletGroupFeatureDto": [
+        {
+            "featureName": "VaultCharge",
+            "featurePropertyName": "Threshold",
+            "featurePropertyValue": "5"
+        }
+    ]
+}

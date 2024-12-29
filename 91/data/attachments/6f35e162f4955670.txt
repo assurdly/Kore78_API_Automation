@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Program Payment",
+  "description": "International Payment",
+  "direction": "D"
+}

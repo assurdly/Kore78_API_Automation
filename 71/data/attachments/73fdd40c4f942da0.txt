@@ -1,5 +1,0 @@
-{
-  "emailAddress": "<string>",
-  "role": 2,
-  "teamId": "<long>"
-}
