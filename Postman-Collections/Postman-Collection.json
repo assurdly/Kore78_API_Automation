@@ -18749,7 +18749,7 @@
 	"auth": {
 		"type": "apikey",
 		"apikey": {
-			"value": "{{api-key}}",
+			"value": "{{Api-key}}",
 			"key": "x-api-key",
 			"in": "header"
 		}
@@ -18758,7 +18758,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6d181ee9-93ad-4a2a-9e87-7d61dd2c51c9",
+				"id": "9a2488ad-69a0-4f4c-8a14-d3400ac55605",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -18769,7 +18769,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "73893f18-63cc-4ca0-8f3b-1a8cd567a037",
+				"id": "207565be-dde6-4905-a6f8-691e78e657d8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
