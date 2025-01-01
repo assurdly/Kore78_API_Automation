@@ -1,6 +1,0 @@
-{
-  "id": "59",
-  "name": "Accounts Larry",
-  "description": "Legacy Payment",
-  "direction": "D"
-}

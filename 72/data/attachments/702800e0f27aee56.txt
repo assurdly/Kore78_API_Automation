@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Factors Payment",
-  "description": "Dynamic Payment",
-  "direction": "D"
-}

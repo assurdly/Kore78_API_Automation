@@ -1,5 +1,0 @@
-{
-  "name": "Accountability Payment",
-  "description": "International Payment",
-  "direction": "C"
-}

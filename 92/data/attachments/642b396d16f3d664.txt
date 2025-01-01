@@ -1,0 +1,12 @@
+{
+  "firstName": "Natasha",
+  "lastName": "Will",
+  "middleName": "Lupe",
+  "dob": "1990-05-20",
+  "city": "New Juliomouth",
+  "address": "9909 Muriel Crescent",
+  "occupation": "Regional Mobility Representative",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
