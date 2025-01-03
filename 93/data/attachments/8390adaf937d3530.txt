@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Schroeder",
+  "middleName": "Savanna",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "966 Morissette Vista",
+  "mobileNumber": "2349100912491",
+  "emailAddress": "Rogelio.Flatley@yahoo.com"
+}

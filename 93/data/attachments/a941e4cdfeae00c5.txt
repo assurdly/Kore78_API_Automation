@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Division Payment",
+  "description": "Lead Payment",
+  "direction": "D"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Rose",
+  "lastName": "Funk",
+  "middleName": "Meggie",
+  "dob": "1990-05-20",
+  "city": "North Ethyl",
+  "address": "462 Bernadine Well",
+  "occupation": "Future Infrastructure Engineer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

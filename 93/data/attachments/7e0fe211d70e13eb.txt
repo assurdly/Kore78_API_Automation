@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Little",
+  "middleName": "Penelope",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "83657 Neil Glen",
+  "mobileNumber": "234917554985112",
+  "emailAddress": "Demetris72@gmail.com"
+}
