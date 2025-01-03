@@ -18836,7 +18836,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "bd8a28a7-4dcf-437e-883f-60387e2ab282",
+				"id": "099b56ed-2ff5-4532-98f5-a29e9616e08d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -18847,7 +18847,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f9b0a064-5104-4a39-8f21-4111e3a95143",
+				"id": "2af1f822-cd03-459a-951b-5b517069eb1e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -18865,14 +18865,12 @@
 		{
 			"key": "api-key",
 			"value": "SK-tAsPts2rqBXKkL92V2cL8CC1jppzYDUFc2P96QCRLse4i2O2WwOocWAHI2hgPw2DwdW",
-			"type": "string",
-			"disabled": true
+			"type": "string"
 		},
 		{
 			"key": "api-key",
 			"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
-			"type": "string",
-			"disabled": true
+			"type": "string"
 		},
 		{
 			"key": "baseUrl",
