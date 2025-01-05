@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Integration Payment",
+  "description": "Dynamic Payment",
+  "direction": "D"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Dereck",
+  "lastName": "Kutch",
+  "middleName": "Trudie",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "5111 Casimer Fields",
+  "mobileNumber": "234911615096812",
+  "emailAddress": "Freeda.Becker79@gmail.com"
+}

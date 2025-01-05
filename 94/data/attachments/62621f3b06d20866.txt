@@ -1,0 +1,12 @@
+{
+  "firstName": "Zion",
+  "lastName": "Goldner",
+  "middleName": "Christ",
+  "dob": "1990-05-20",
+  "city": "South Loyceburgh",
+  "address": "6528 Thaddeus Port",
+  "occupation": "Customer Usability Engineer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

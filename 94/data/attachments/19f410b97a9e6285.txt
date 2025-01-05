@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Bosco",
+  "middleName": "Monserrat",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "093 Littel Garden",
+  "mobileNumber": "234918661614512",
+  "emailAddress": "Winston90@gmail.com"
+}

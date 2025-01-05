@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Trantow",
+  "middleName": "Julian",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "856 Fahey Creek",
+  "mobileNumber": "2349142099906",
+  "emailAddress": "Eliza_Corwin@yahoo.com"
+}
