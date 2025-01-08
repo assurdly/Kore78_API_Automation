@@ -1,5 +1,0 @@
-{
-  "name": "Paradigm Payment",
-  "description": "Central Payment",
-  "direction": "C"
-}

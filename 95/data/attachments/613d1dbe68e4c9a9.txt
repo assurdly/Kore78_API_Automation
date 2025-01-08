@@ -1,0 +1,12 @@
+{
+  "firstName": "Eleazar",
+  "lastName": "Koss",
+  "middleName": "Antonetta",
+  "dob": "1990-05-20",
+  "city": "Streichmouth",
+  "address": "538 Corine Cape",
+  "occupation": "Customer Accountability Architect",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

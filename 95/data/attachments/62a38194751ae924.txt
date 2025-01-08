@@ -1,0 +1,12 @@
+{
+  "firstName": "Asia",
+  "lastName": "Hickle",
+  "middleName": "Jedediah",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "9475 Kaya Route",
+  "mobileNumber": "234911580859012",
+  "emailAddress": "Leonard.Konopelski21@gmail.com"
+}

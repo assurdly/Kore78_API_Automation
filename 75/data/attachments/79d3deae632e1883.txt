@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Updated Successfully","data":{"id":149,"name":"Accounts Payment","organizationId":1,"description":"Global Payment","direction":"D","isActive":true,"dateCreated":"2024-11-24T20:02:20"}}

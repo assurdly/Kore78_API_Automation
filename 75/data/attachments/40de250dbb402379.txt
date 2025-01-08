@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":149,"name":"Paradigm Payment","organizationId":1,"description":"Central Payment","direction":"C","isActive":true,"dateCreated":"2024-11-24T20:02:20.5126009Z"}}
