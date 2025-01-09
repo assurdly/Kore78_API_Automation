@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Crona",
+  "middleName": "Jerald",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "288 Macey Court",
+  "mobileNumber": "234914727598612",
+  "emailAddress": "Davonte_Mosciski@yahoo.com"
+}

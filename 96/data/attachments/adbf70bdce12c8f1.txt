@@ -1,0 +1,12 @@
+{
+  "firstName": "Presley",
+  "lastName": "Kris",
+  "middleName": "Royce",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "552 Loma Villages",
+  "mobileNumber": "234919419848012",
+  "emailAddress": "Glennie50@gmail.com"
+}
