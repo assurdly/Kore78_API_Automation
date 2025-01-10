@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Ferry",
+  "middleName": "Ruby",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "2903 Marshall Shore",
+  "mobileNumber": "234919636495112",
+  "emailAddress": "Magnolia_Bosco41@gmail.com"
+}

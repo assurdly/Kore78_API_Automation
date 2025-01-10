@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Marks",
+  "middleName": "Haylee",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "51454 Maggio Burgs",
+  "mobileNumber": "234910319136012",
+  "emailAddress": "Isabella46@gmail.com"
+}
