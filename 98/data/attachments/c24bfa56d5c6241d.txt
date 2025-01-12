@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hilll",
+  "middleName": "Carmelo",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "61173 Amara Crossroad",
+  "mobileNumber": "2349178671610",
+  "emailAddress": "Peter_Flatley74@yahoo.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Mayer",
+  "middleName": "Arch",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "741 Chase Ports",
+  "mobileNumber": "234911635976712",
+  "emailAddress": "Samir_Gibson37@hotmail.com"
+}

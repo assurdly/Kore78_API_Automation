@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kris",
+  "middleName": "Geoffrey",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "806 Treutel Crossroad",
+  "mobileNumber": "234915689833412",
+  "emailAddress": "Michel12@yahoo.com"
+}

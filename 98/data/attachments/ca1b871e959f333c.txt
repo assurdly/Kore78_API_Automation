@@ -1,0 +1,12 @@
+{
+  "firstName": "Arielle",
+  "lastName": "Brekke",
+  "middleName": "Emmitt",
+  "dob": "1990-05-20",
+  "city": "Baileyville",
+  "address": "7157 Litzy Turnpike",
+  "occupation": "Investor Solutions Manager",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
