@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kulas",
+  "middleName": "Elyssa",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "35089 Lehner Spur",
+  "mobileNumber": "234917371923512",
+  "emailAddress": "Bianka.Stoltenberg@yahoo.com"
+}

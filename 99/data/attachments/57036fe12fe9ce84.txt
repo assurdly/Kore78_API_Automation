@@ -1,0 +1,5 @@
+{
+  "name": "Assurance Payment",
+  "description": "International Payment",
+  "direction": "C"
+}

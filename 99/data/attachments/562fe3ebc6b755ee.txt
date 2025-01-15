@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Gorczany",
+  "middleName": "Andrew",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "850 Trystan Roads",
+  "mobileNumber": "2349165128842",
+  "emailAddress": "Mellie.Kiehn@gmail.com"
+}

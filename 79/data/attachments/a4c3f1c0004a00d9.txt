@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Retrieved Successfully","data":[{"id":1,"name":"CLOSED BY COURT"},{"id":2,"name":"UNDER CUSTOMER REQUEST"},{"id":3,"name":"DUPLICATE ACCOUNT"},{"id":4,"name":"CLOSURE BY SYSCON ORDER"},{"id":5,"name":"OTHERS"},{"id":99,"name":"END OF PERIOD CLOSURE"}]}

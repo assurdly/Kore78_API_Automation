@@ -1,0 +1,5 @@
+{
+  "name": "Optimization Payment",
+  "description": "Chief Payment",
+  "direction": "C"
+}

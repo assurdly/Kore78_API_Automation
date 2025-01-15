@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Stamm",
+  "middleName": "Marjolaine",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "335 Langworth Circle",
+  "mobileNumber": "234917908348812",
+  "emailAddress": "Reilly.Volkman@hotmail.com"
+}

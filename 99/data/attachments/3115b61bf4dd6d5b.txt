@@ -1,0 +1,12 @@
+{
+  "firstName": "Sabina",
+  "lastName": "Mante",
+  "middleName": "Magdalena",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "28320 Towne Ports",
+  "mobileNumber": "234911807270512",
+  "emailAddress": "Retta_Crona60@yahoo.com"
+}
