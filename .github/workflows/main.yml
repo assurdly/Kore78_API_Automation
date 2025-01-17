@@ -7,6 +7,7 @@ on:
     - cron: '0 18 * * 3' # Runs every Wednesday by 7pm
     - cron: '0 18 * * 5' # Runs every Friday by 47pm
     - cron: '0 20 * * 0' # Runs every Sunday by 9pm
+  workflow_dispatch:
 jobs:
   run_tests:
     runs-on: ubuntu-latest
