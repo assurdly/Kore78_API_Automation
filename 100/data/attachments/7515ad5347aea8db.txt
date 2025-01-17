@@ -1,0 +1,12 @@
+{
+  "firstName": "Donnie",
+  "lastName": "Denesik",
+  "middleName": "Antonina",
+  "dob": "1990-05-20",
+  "city": "Folsom",
+  "address": "00311 Euna Junction",
+  "occupation": "Lead Usability Specialist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

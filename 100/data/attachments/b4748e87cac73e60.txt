@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kirlin",
+  "middleName": "Kaci",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "830 Witting Court",
+  "mobileNumber": "234918081517012",
+  "emailAddress": "Julio_Runolfsson96@hotmail.com"
+}

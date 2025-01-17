@@ -1,5 +1,0 @@
-{
-  "name": "Research Payment",
-  "description": "Corporate Payment",
-  "direction": "C"
-}

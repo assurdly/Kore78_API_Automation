@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Douglas",
+  "middleName": "Jodie",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "4468 Jamar Cliffs",
+  "mobileNumber": "234912109559212",
+  "emailAddress": "Baylee_Koss@gmail.com"
+}

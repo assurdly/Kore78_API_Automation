@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Homenick",
+  "middleName": "Jordy",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "821 Kilback Junction",
+  "mobileNumber": "2349129069799",
+  "emailAddress": "Sandra15@yahoo.com"
+}
