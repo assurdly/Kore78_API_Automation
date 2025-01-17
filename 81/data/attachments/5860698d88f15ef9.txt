@@ -1,5 +1,0 @@
-{
-  "name": "Research Payment",
-  "description": "Senior Payment",
-  "direction": "C"
-}

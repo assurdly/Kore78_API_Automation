@@ -1,0 +1,12 @@
+{
+  "firstName": "Charlotte",
+  "lastName": "Ritchie",
+  "middleName": "Angel",
+  "dob": "1990-05-20",
+  "city": "Jacobishire",
+  "address": "5208 Oscar Mountain",
+  "occupation": "Direct Applications Officer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

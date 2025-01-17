@@ -1,8 +1,0 @@
-{
-  "fromWalletId": "<long>",
-  "toWalletId": "<long>",
-  "amount": "<double>",
-  "transactionReference": "<string>",
-  "remarks": "<string>",
-  "transactionTypeId": "<integer>"
-}

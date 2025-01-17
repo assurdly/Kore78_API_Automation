@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Nitzsche",
+  "middleName": "Annalise",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "0753 Schulist Parkway",
+  "mobileNumber": "2349102406897",
+  "emailAddress": "Reece_Gutmann94@yahoo.com"
+}

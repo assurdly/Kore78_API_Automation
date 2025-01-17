@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Crona",
+  "middleName": "Nathan",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "78103 Volkman Club",
+  "mobileNumber": "234918967421012",
+  "emailAddress": "Araceli61@hotmail.com"
+}
