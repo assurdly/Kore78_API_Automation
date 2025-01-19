@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Quality Payment",
-  "description": "International Payment",
-  "direction": "D"
-}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Towne",
+  "middleName": "Clement",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "2617 Berge Mission",
+  "mobileNumber": "2349163799288",
+  "emailAddress": "Lilyan.Ondricka82@yahoo.com"
+}

@@ -1,5 +1,0 @@
-{
-  "name": "Web Payment",
-  "description": "Central Payment",
-  "direction": "C"
-}

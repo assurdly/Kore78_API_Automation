@@ -1,0 +1,12 @@
+{
+  "firstName": "Tina",
+  "lastName": "Kessler",
+  "middleName": "Herbert",
+  "dob": "1990-05-20",
+  "city": "Sugar Land",
+  "address": "8518 Kadin Extensions",
+  "occupation": "Dynamic Communications Consultant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

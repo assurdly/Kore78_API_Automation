@@ -1,5 +1,0 @@
-{
-  "name": "Accounts Payment",
-  "description": "Dynamic Payment",
-  "direction": "C"
-}

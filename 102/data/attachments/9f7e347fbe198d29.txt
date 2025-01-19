@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kreiger",
+  "middleName": "Zachary",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "825 Kristofer Locks",
+  "mobileNumber": "234911945124812",
+  "emailAddress": "Charles_Maggio@gmail.com"
+}
