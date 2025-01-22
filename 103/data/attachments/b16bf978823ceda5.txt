@@ -1,0 +1,10 @@
+{
+    "name": "Duane Charges",
+    "walletGroupFeatureDto": [
+        {
+            "featureName": "VaultCharge",
+            "featurePropertyName": "Threshold",
+            "featurePropertyValue": "5"
+        }
+    ]
+}

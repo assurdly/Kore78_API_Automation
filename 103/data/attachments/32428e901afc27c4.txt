@@ -1,0 +1,12 @@
+{
+  "firstName": "Gilberto",
+  "lastName": "Corkery",
+  "middleName": "Ruthie",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "2575 Jamison Lakes",
+  "mobileNumber": "234918689451412",
+  "emailAddress": "Heath31@gmail.com"
+}

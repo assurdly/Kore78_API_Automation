@@ -1,0 +1,12 @@
+{
+  "firstName": "Hazle",
+  "lastName": "Gutmann",
+  "middleName": "Athena",
+  "dob": "1990-05-20",
+  "city": "Danbury",
+  "address": "242 Peter Underpass",
+  "occupation": "Legacy Functionality Designer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

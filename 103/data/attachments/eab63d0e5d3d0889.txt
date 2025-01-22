@@ -1,0 +1,5 @@
+{
+  "name": "Intranet Payment",
+  "description": "Corporate Payment",
+  "direction": "C"
+}
