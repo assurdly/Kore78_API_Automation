@@ -1,6 +1,0 @@
-{
-  "id": "160",
-  "name": "Program Payment",
-  "description": "Dynamic Payment",
-  "direction": "D"
-}

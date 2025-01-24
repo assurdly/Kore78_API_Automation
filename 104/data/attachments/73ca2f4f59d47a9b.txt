@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Wuckert",
+  "middleName": "Olin",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "592 Johnathon Mews",
+  "mobileNumber": "234913041737512",
+  "emailAddress": "Arvid_Ledner@gmail.com"
+}

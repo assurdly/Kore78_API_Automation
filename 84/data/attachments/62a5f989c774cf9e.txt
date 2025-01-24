@@ -1,5 +1,0 @@
-{
-  "name": "Branding Payment",
-  "description": "Dynamic Payment",
-  "direction": "C"
-}

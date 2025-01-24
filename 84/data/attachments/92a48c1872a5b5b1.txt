@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":160,"name":"Branding Payment","organizationId":1,"description":"Dynamic Payment","direction":"C","isActive":true,"dateCreated":"2024-12-13T18:04:08.3413648Z"}}
