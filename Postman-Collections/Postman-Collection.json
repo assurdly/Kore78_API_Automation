@@ -1085,6 +1085,34 @@
 										},
 										{
 											"name": "Get organization by ID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "6f004e3c-238d-413a-a4af-994025291003",
+														"exec": [
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"pm.test(\"Successful response object is present\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", true);",
+															"});",
+															"",
+															"pm.test(\"The details of a single organization is returned\", function () {",
+															"    pm.expect(jsonData.data.id).is.not.null;",
+															"    pm.expect(jsonData.data.name).is.not.empty;",
+															"    pm.expect(jsonData.data.key).is.not.empty;",
+															"    pm.expect(jsonData.data.dateCreated).is.not.empty;",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "053dc71b-4885-4a5a-a9dc-10099c20b3d0",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1106,9 +1134,8 @@
 													],
 													"variable": [
 														{
-															"id": "1b064f66-6bdc-4ee1-8151-4c17a0cdea1a",
 															"key": "id",
-															"value": "<string>",
+															"value": "1",
 															"description": "(Required) "
 														}
 													]
