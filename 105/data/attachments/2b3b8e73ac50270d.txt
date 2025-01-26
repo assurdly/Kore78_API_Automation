@@ -1,0 +1,12 @@
+{
+  "firstName": "Summer",
+  "lastName": "Yundt",
+  "middleName": "Amos",
+  "dob": "1990-05-20",
+  "city": "Zboncakborough",
+  "address": "2653 Beer Squares",
+  "occupation": "Internal Communications Director",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

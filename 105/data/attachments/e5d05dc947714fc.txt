@@ -1,0 +1,12 @@
+{
+  "firstName": "Robbie",
+  "lastName": "Harber",
+  "middleName": "Dennis",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "4196 Keyon Port",
+  "mobileNumber": "234910856757312",
+  "emailAddress": "Rhianna_Christiansen71@gmail.com"
+}

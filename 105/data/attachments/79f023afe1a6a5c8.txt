@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Torp",
+  "middleName": "Ruthe",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "55659 Renner Plaza",
+  "mobileNumber": "234914707832712",
+  "emailAddress": "Eusebio25@hotmail.com"
+}
