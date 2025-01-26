@@ -536,7 +536,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"US Dollars\",\n  \"shortName\": \"USD\"\n}",
+													"raw": "{\n  \"name\": \"Eazy Dollars\",\n  \"shortName\": \"EZD\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -1019,136 +1019,6 @@
 								{
 									"name": "organizations",
 									"item": [
-										{
-											"name": "Add organization - wallet",
-											"id": "2699aed7-3964-41b0-b4cf-7668d56a2008",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/organizations/add/with/wallet"
-											},
-											"response": [
-												{
-													"id": "a9e037d9-0ef8-4204-971c-039a11742e2e",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/v1/organizations/add/with/wallet"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
-										{
-											"name": "Add organization",
-											"id": "07eefb65-4ddb-4d7d-91a3-384ccef1f9ff",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/organizations/add"
-											},
-											"response": [
-												{
-													"id": "256c8e03-cbd3-430d-9f62-f3074119c5bf",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/v1/organizations/add"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
 										{
 											"name": "Get organizations",
 											"id": "99c37752-d609-4476-97c3-0275bd32c010",
