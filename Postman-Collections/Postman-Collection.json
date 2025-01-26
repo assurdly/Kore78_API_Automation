@@ -25,19 +25,26 @@
 													"script": {
 														"id": "ed72e51b-959d-4ea4-8b8c-f96b12fabbb9",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Body contains success message\", function (){",
-															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true)",
-															"})",
+															"pm.test(\"Response code is 200 (OK)\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"pm.test(\"Response structure and properties for 200\", function () {",
+															"    pm.expect(pm.response.json()).to.have.property(\"code\", \"00\");",
+															"    pm.expect(pm.response.json()).to.have.property(\"success\", true);",
+															"    ",
+															"});",
 															"",
-															"pm.test(\"Body contains message\", function () {",
-															"     pm.expect(typeof jsonData.message).to.eql('string', \"Retrieved successfully\");",
-															"})",
-															"",
-															"pm.test(\"Body contains data\", function () {",
-															"     pm.expect(typeof jsonData.data).to.eql('object');",
-															"});"
+															"pm.test(\"Country details are returned\", function () {",
+															"    pm.expect(jsonData.data).to.be.an('array')",
+															"    pm.expect(jsonData.data[0].id).is.not.null;",
+															"    pm.expect(jsonData.data[0].name).is.not.null;",
+															"    pm.expect(jsonData.data[0].countryCodeTwo).is.not.null;",
+															"    pm.expect(jsonData.data[0].countryCodeThree).is.not.null;",
+															"    ",
+															"});",
+															"    "
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -97,32 +104,35 @@
 													"script": {
 														"id": "dc3fcec4-9fc8-4d6e-bb73-d2c99af77579",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 200\", function () {",
+															"pm.test(\"Response code is 200 (OK)\", function () {",
 															"    pm.response.to.have.status(200);",
 															"});",
+															"pm.test(\"Response structure and properties for 200\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", true);",
+															"    pm.expect(jsonData.data).to.be.an('object');",
+															"});",
 															"",
-															"pm.test(\"Body contains success and it is true\", function (){",
-															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
-															"})",
 															"",
-															"pm.test(\"Body contains data value\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\")",
-															"})",
+															"pm.test(\"Check if Country Added successfully property is present\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Country Added successfully\");",
+															"});",
 															"",
-															"pm.test(\"Body contains success and it is true\", function (){",
-															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
-															"})",
-															"",
-															"pm.test(\"Body contains message and it is not empty\", function (){",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Country Added successfully\")",
-															"})",
 															"",
 															""
 														],
 														"type": "text/javascript",
 														"packages": {}
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"packages": {},
+														"type": "text/javascript"
 													}
 												}
 											],
@@ -140,7 +150,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 1,\n  \"name\": \"Togo\",\n  \"countryCodeTwo\": \"TG\",\n  \"countryCodeThree\": \"TGO\"\n}",
+													"raw": "{\n  \"id\": 1,\n  \"name\": \"{{$randomCountry}}\",\n  \"countryCodeTwo\": \"{{$randomCountryCode}}\",\n  \"countryCodeThree\": \"LMO\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -197,24 +207,22 @@
 													"script": {
 														"id": "dc3fcec4-9fc8-4d6e-bb73-d2c99af77579",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 400\", function () {",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"300\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
+															"});",
 															"",
-															"pm.test(\"Body contains success and it is false\", function (){",
-															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", false);",
-															"})",
 															"",
-															"pm.test(\"Body contains data value\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\")",
-															"})",
-															"",
-															"pm.test(\"Body contains message and it is not empty\", function (){",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"The country you have specified could not be found\")",
-															"})",
-															"",
+															"pm.test(\"Error message to confirm incorrect country name\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"The country you have specified could not be found\");",
+															"});",
 															""
 														],
 														"type": "text/javascript",
@@ -286,31 +294,29 @@
 											]
 										},
 										{
-											"name": "Add country - Incorrect country code two",
+											"name": "Add country - empty country code two",
 											"event": [
 												{
 													"listen": "test",
 													"script": {
 														"id": "05529bc0-6a1b-44de-aea0-850ce2b1cbfd",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 400\", function () {",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
+															"});",
 															"",
-															"pm.test(\"Body contains success and it is true\", function (){",
-															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
-															"})",
 															"",
-															"pm.test(\"Body contains data value\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\")",
-															"})",
-															"",
-															"pm.test(\"Body contains message and it is not empty\", function (){",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Country Added successfully\")",
-															"})",
-															"",
+															"pm.test(\"Error message to confirm empty country code two\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Country code iso2 is required\");",
+															"});",
 															""
 														],
 														"type": "text/javascript",
@@ -332,7 +338,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 1,\n  \"name\": \"Algeria\",\n  \"countryCodeTwo\": \"DA\",\n  \"countryCodeThree\": \"DZA\"\n}",
+													"raw": "{\n  \"id\": 1,\n  \"name\": \"{{$randomCountry}}\",\n  \"countryCodeTwo\": \"\",\n  \"countryCodeThree\": \"DZA\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -382,32 +388,29 @@
 											]
 										},
 										{
-											"name": "Add country - Incorrect country code three",
+											"name": "Add country - empty country code three",
 											"event": [
 												{
 													"listen": "test",
 													"script": {
 														"id": "704c4c20-bb61-46ae-bcd5-ed2e49157dc9",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 400\", function () {",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
+															"});",
 															"",
-															"pm.test(\"Body contains success and it is true\", function (){",
-															"    pm.expect(typeof jsonData.success).to.eql(\"boolean\", true);",
-															"})",
 															"",
-															"pm.test(\"Body contains data value\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\")",
-															"})",
-															"",
-															"pm.test(\"Body contains message and it is not empty\", function (){",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Country Added successfully\")",
-															"})",
-															"",
-															""
+															"pm.test(\"Error message to confirm empty country code three\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Country nacode iso3 me is required\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -428,7 +431,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 1,\n  \"name\": \"American Samoa\",\n  \"countryCodeTwo\": \"AS\",\n  \"countryCodeThree\": \"ASK\"\n}",
+													"raw": "{\n  \"id\": 1,\n  \"name\": \"{{$randomCountry}}\",\n  \"countryCodeTwo\": \"{{$randomCountryCode}}\",\n  \"countryCodeThree\": \"\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -485,15 +488,22 @@
 													"script": {
 														"id": "9f436019-f4ce-4996-bae5-36ede1c14413",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 400\", function () {",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
+															"});",
 															"",
-															"pm.test(\"Body contains errors\", function (){",
-															"    pm.expect(typeof jsonData.errors).to.eql(\"object\").to.not.be.null;",
-															"})"
+															"",
+															"pm.test(\"Error message to confirm empty field\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Kindly provide values for each required field\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -577,26 +587,22 @@
 													"script": {
 														"id": "566a2dd2-28d2-4150-a571-200c376b6a07",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 200\", function () {",
+															"pm.test(\"Response code is 200 (OK)\", function () {",
 															"    pm.response.to.have.status(200);",
 															"});",
-															"",
-															"pm.test(\"Body contains success\", function () {",
-															"     pm.expect(typeof jsonData.success).to.eql('boolean', true);",
+															"pm.test(\"Response structure and properties for 200\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", true);",
+															"    pm.expect(jsonData.data).to.be.an('object');",
 															"});",
 															"",
-															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Created Successfully\").to.not.be.empty;",
-															"})",
 															"",
-															"pm.test(\"Body contains meta data\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\");",
-															"    pm.expect(typeof jsonData.data.id).to.eql(\"number\").to.not.be.empty;",
-															"    pm.expect(typeof jsonData.data.name).to.eql(\"string\").to.not.be.empty;",
-															"    pm.expect(typeof jsonData.data.shortName).to.eql(\"string\").to.not.be.empty;",
-															"})"
+															"pm.test(\"Check if Currency Added successfully property is present\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Currency added successfully\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -628,7 +634,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 0,\n  \"name\": \"Canadian Dollars\",\n  \"shortName\": \"ZDollars\"\n}",
+													"raw": "{\n  \"name\": \"US Rupees\",\n  \"shortName\": \"USR\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -685,19 +691,22 @@
 													"script": {
 														"id": "566a2dd2-28d2-4150-a571-200c376b6a07",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 400\", function () {",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"",
-															"pm.test(\"Body contains success\", function () {",
-															"     pm.expect(typeof jsonData.success).to.eql('boolean', true);",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Input string was not in a correct format.\").to.not.be.empty;",
-															"})"
+															"",
+															"pm.test(\"Error message to confirm invalid name\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"kindly provide a valid currency name\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -718,7 +727,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 0,\n  \"name\": \"Canadian Loud\",\n  \"shortName\": \"CL\"\n}",
+													"raw": "{\n  \"name\": \"Benin Naira\",\n  \"shortName\": \"BN\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -775,23 +784,22 @@
 													"script": {
 														"id": "566a2dd2-28d2-4150-a571-200c376b6a07",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 400\", function () {",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"",
-															"pm.test(\"Body contains success\", function () {",
-															"     pm.expect(typeof jsonData.success).to.eql('boolean', false);",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Currency name is required\").to.not.be.empty;",
-															"})",
 															"",
-															"pm.test(\"Body contains meta data\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\");",
-															"})"
+															"pm.test(\"Error message to confirm missing currency name\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Currency name is required\",);",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -812,7 +820,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"shortName\": \"CL\"\n}",
+													"raw": "{\n\n  \"name\": \"\",\n  \"shortName\": \"CL\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -869,23 +877,22 @@
 													"script": {
 														"id": "566a2dd2-28d2-4150-a571-200c376b6a07",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 400\", function () {",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"",
-															"pm.test(\"Body contains success\", function () {",
-															"     pm.expect(typeof jsonData.success).to.eql('boolean', false);",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Currency Short name is required\").to.not.be.empty;",
-															"})",
 															"",
-															"pm.test(\"Body contains meta data\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\");",
-															"})"
+															"pm.test(\"Error message to confirm missing currency shortname\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Currency shortname is required\",);",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -906,7 +913,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 0,\n  \"name\": \"Ghana Cedis\",\n  \"shortName\": \"\"\n}",
+													"raw": "{\n  \"name\": \"Ghana Cedis\",\n  \"shortName\": \"\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -963,23 +970,22 @@
 													"script": {
 														"id": "566a2dd2-28d2-4150-a571-200c376b6a07",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Status code is 400\", function () {",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"",
-															"pm.test(\"Body contains success\", function () {",
-															"     pm.expect(typeof jsonData.success).to.eql('boolean', false);",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															"pm.test(\"Body contains message\", function () {",
-															"    pm.expect(typeof jsonData.message).to.eql(\"string\", \"Currency name is required\").to.not.be.empty;",
-															"})",
 															"",
-															"pm.test(\"Body contains meta data\", function (){",
-															"    pm.expect(typeof jsonData.data).to.eql(\"object\");",
-															"})"
+															"pm.test(\"Error message to confirm empty field\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Kindly provide values for each required field\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -1000,7 +1006,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"shortName\": \"\"\n}",
+													"raw": "{\n  \"name\": \"\",\n  \"shortName\": \"\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -1771,9 +1777,15 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiMiIsImdyb3Vwc2lkIjoiMTciLCJuYmYiOjE3Mzc3MTA3NzQsImV4cCI6MTczNzczOTU3NCwiaWF0IjoxNzM3NzEwNzc0fQ.tLgHy_W5LG4GBXltNS5oCyB2w-xwoa_Cv1NC-iDOKoA"
+											}
+										},
 										"method": "GET",
 										"header": [],
-										"url": "{{baseUrl}}/api/v1/branches/get"
+										"url": "{{baseUrl}}/api/v1/branches/u/get"
 									},
 									"response": [
 										{
@@ -1921,7 +1933,6 @@
 													"  pm.expect(responseData.data).to.exist;",
 													"});",
 													"",
-													"",
 													"pm.test(\"Bank date is in a valid date format\", function () {",
 													"    const responseData = pm.response.json();",
 													"    ",
@@ -2017,7 +2028,6 @@
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.response.to.have.status(200);",
 													"});",
-													"",
 													"",
 													"pm.test(\"Verify the response schema for the required fields\", function () {",
 													"    const responseData = pm.response.json();",
@@ -2234,46 +2244,23 @@
 													"script": {
 														"id": "13b7388b-13a3-45fc-9dc1-492b60e21e7f",
 														"exec": [
-															"const jsonData = pm.response.json();",
+															"var jsonData = pm.response.json();",
 															"",
-															"pm.collectionVariables.set(\"customerId\", jsonData.data.id);",
-															"",
-															"pm.test(\"Response status code is 200\", function () {",
+															"pm.test(\"Response code is 200 (OK)\", function () {",
 															"    pm.response.to.have.status(200);",
 															"});",
-															"",
-															"",
-															"pm.test(\"Response has the required fields\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData.data).to.be.an('object');",
-															"    pm.expect(responseData.data.id).to.exist;",
-															"    pm.expect(responseData.data.organizationId).to.exist;",
-															"    pm.expect(responseData.data.firstName).to.exist;",
-															"    pm.expect(responseData.data.lastName).to.exist;",
-															"    pm.expect(responseData.data.dob).to.exist;",
-															"    pm.expect(responseData.data.customerTypeId).to.exist;",
-															"    pm.expect(responseData.data.countryId).to.exist;",
-															"    pm.expect(responseData.data.city).to.exist;",
-															"    pm.expect(responseData.data.address).to.exist;",
-															"    pm.expect(responseData.data.mobileNumber).to.exist;",
-															"    pm.expect(responseData.data.emailAddress).to.exist;",
-															"    pm.expect(responseData.data.dateCreated).to.exist;",
+															"pm.test(\"Response structure and properties for 200\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", true);",
+															"    pm.expect(jsonData.data).to.be.an('object');",
 															"});",
 															"",
 															"",
-															"pm.test(\"DateCreated is in a valid date format\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData).to.be.an('object');",
+															"pm.test(\"Check if Customer was successfully created \", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Created Successfully\");",
 															"});",
 															"",
-															"",
-															"pm.test(\"MobileNumber is in a valid format\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData).to.be.an('object');",
-															"});",
 															"",
 															""
 														],
@@ -2353,44 +2340,22 @@
 													"script": {
 														"id": "13b7388b-13a3-45fc-9dc1-492b60e21e7f",
 														"exec": [
-															"pm.test(\"Response status code is 200\", function () {",
-															"    pm.response.to.have.status(200);",
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 400\", function () {",
+															"    pm.response.to.have.status(400);",
+															"});",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
 															"",
-															"pm.test(\"Response has the required fields\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData.data).to.be.an('object');",
-															"    pm.expect(responseData.data.id).to.exist;",
-															"    pm.expect(responseData.data.organizationId).to.exist;",
-															"    pm.expect(responseData.data.firstName).to.exist;",
-															"    pm.expect(responseData.data.lastName).to.exist;",
-															"    pm.expect(responseData.data.dob).to.exist;",
-															"    pm.expect(responseData.data.customerTypeId).to.exist;",
-															"    pm.expect(responseData.data.countryId).to.exist;",
-															"    pm.expect(responseData.data.city).to.exist;",
-															"    pm.expect(responseData.data.address).to.exist;",
-															"    pm.expect(responseData.data.mobileNumber).to.exist;",
-															"    pm.expect(responseData.data.emailAddress).to.exist;",
-															"    pm.expect(responseData.data.dateCreated).to.exist;",
-															"});",
-															"",
-															"",
-															"pm.test(\"DateCreated is in a valid date format\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData).to.be.an('object');",
-															"});",
-															"",
-															"",
-															"pm.test(\"MobileNumber is in a valid format\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData).to.be.an('object');",
-															"});",
-															"",
-															""
+															"pm.test(\"Error message to confirm invalid phone number\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Invalid mobile number\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -2411,7 +2376,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"customerTypeId\": 1,\n  \"countryId\": 1,\n  \"city\": \"Lagos\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"mobileNumber\": \"23491{{$randomBankAccount}}12\",\n  \"emailAddress\": \"{{$randomEmail}}\"\n}",
+													"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"customerTypeId\": 1,\n  \"countryId\": 1,\n  \"city\": \"Lagos\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"mobileNumber\": \"080\",\n  \"emailAddress\": \"{{$randomEmail}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -2468,42 +2433,23 @@
 													"script": {
 														"id": "13b7388b-13a3-45fc-9dc1-492b60e21e7f",
 														"exec": [
-															"pm.test(\"Response status code is 200\", function () {",
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 200 (OK)\", function () {",
 															"    pm.response.to.have.status(200);",
 															"});",
-															"",
-															"",
-															"pm.test(\"Response has the required fields\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData.data).to.be.an('object');",
-															"    pm.expect(responseData.data.id).to.exist;",
-															"    pm.expect(responseData.data.organizationId).to.exist;",
-															"    pm.expect(responseData.data.firstName).to.exist;",
-															"    pm.expect(responseData.data.lastName).to.exist;",
-															"    pm.expect(responseData.data.dob).to.exist;",
-															"    pm.expect(responseData.data.customerTypeId).to.exist;",
-															"    pm.expect(responseData.data.countryId).to.exist;",
-															"    pm.expect(responseData.data.city).to.exist;",
-															"    pm.expect(responseData.data.address).to.exist;",
-															"    pm.expect(responseData.data.mobileNumber).to.exist;",
-															"    pm.expect(responseData.data.emailAddress).to.exist;",
-															"    pm.expect(responseData.data.dateCreated).to.exist;",
+															"pm.test(\"Response structure and properties for 200\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", true);",
+															"    pm.expect(jsonData.data).to.be.an('object');",
 															"});",
 															"",
 															"",
-															"pm.test(\"DateCreated is in a valid date format\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData).to.be.an('object');",
+															"pm.test(\"Check if Customer was successfully created \", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Created Successfully\");",
 															"});",
 															"",
-															"",
-															"pm.test(\"MobileNumber is in a valid format\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData).to.be.an('object');",
-															"});",
 															"",
 															""
 														],
@@ -2583,18 +2529,22 @@
 													"script": {
 														"id": "13b7388b-13a3-45fc-9dc1-492b60e21e7f",
 														"exec": [
-															"pm.test(\"Response status code is 400\", function () {",
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"",
-															"",
-															"pm.test(\"Response has message field\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData.message).to.be.an('string');",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															""
+															"",
+															"pm.test(\"Error message to address invalid customer type\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"The customer type you have selected does not exist\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -2672,18 +2622,22 @@
 													"script": {
 														"id": "13b7388b-13a3-45fc-9dc1-492b60e21e7f",
 														"exec": [
-															"pm.test(\"Response status code is 400\", function () {",
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"",
-															"",
-															"pm.test(\"Response has message field\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData.message).to.be.an('string');",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															""
+															"",
+															"pm.test(\"Error message to address invalid country\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"The country you have selected does not exist\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -2761,18 +2715,22 @@
 													"script": {
 														"id": "13b7388b-13a3-45fc-9dc1-492b60e21e7f",
 														"exec": [
-															"pm.test(\"Response status code is 400\", function () {",
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"",
-															"",
-															"pm.test(\"Response has message field\", function () {",
-															"    const responseData = pm.response.json();",
-															"    ",
-															"    pm.expect(responseData.message).to.be.an('string');",
+															"pm.test(\"Response structure and properties for 400\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", false);",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															""
+															"",
+															"pm.test(\"Error message to missing fields\", function () {",
+															"    var responseBody = pm.response.json();",
+															"    pm.expect(responseBody.message).to.eql(\"Kindly provide all required fields\");",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -2879,37 +2837,9 @@
 										"disableBodyPruning": true
 									},
 									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{accessToken}}"
-											}
-										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/v1/customers/u/all?from=2024-11-13&to=2024-11-13",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"customers",
-												"u",
-												"all"
-											],
-											"query": [
-												{
-													"key": "from",
-													"value": "2024-11-13"
-												},
-												{
-													"key": "to",
-													"value": "2024-11-13"
-												}
-											]
-										}
+										"url": "{{baseUrl}}/api/v1/customers/u/all"
 									},
 									"response": [
 										{
@@ -3026,31 +2956,29 @@
 													"});",
 													"",
 													"",
-													"pm.test(\"Content-Type is application/json\", function () {",
-													"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
-													"});",
-													"",
-													"",
-													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"pm.test(\"Response has the required fields\", function () {",
 													"    const responseData = pm.response.json();",
 													"    ",
 													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.code).to.exist;",
-													"    pm.expect(responseData.success).to.exist;",
-													"    pm.expect(responseData.message).to.exist;",
-													"    pm.expect(responseData.data).to.exist;",
+													"    pm.expect(responseData).to.have.property('code');",
+													"    pm.expect(responseData).to.have.property('success');",
+													"    pm.expect(responseData).to.have.property('message');",
+													"    pm.expect(responseData).to.have.property('data');",
 													"});",
 													"",
 													"",
-													"pm.test(\"Code is a non-empty string, success is a boolean, message is a string, and data is a boolean\", function () {",
+													"pm.test(\"Data schema is valid\", function () {",
 													"  const responseData = pm.response.json();",
 													"  ",
 													"  pm.expect(responseData).to.be.an('object');",
-													"  pm.expect(responseData.code).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Code should be a non-empty string\");",
-													"  pm.expect(responseData.success).to.be.a('boolean', \"Success should be a boolean\");",
-													"  pm.expect(responseData.message).to.be.a('string', \"Message should be a string\");",
-													"  pm.expect(responseData.data).to.be.a('boolean', \"Data should be a boolean\");",
+													"  pm.expect(responseData.data).to.be.an('array');",
+													"  ",
+													"  responseData.data.forEach(function(item) {",
+													"    pm.expect(item).to.have.property('id').that.is.a('number');",
+													"    pm.expect(item).to.have.property('name').that.is.a('string');",
+													"  });",
 													"});",
+													"",
 													""
 												],
 												"type": "text/javascript",
@@ -3063,12 +2991,6 @@
 										"disableBodyPruning": true
 									},
 									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{accessToken}}"
-											}
-										},
 										"method": "PATCH",
 										"header": [
 											{
@@ -7513,6 +7435,10 @@
 														"id": "f963fb9b-6e62-4b76-8e64-356981b2b47e",
 														"exec": [
 															"const jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response status code is 200\", function () {",
+															"  pm.response.to.have.status(200);",
+															"});",
 															"",
 															"pm.collectionVariables.set(\"roleName\", jsonData.data[0].name);",
 															"",
@@ -18669,7 +18595,7 @@
 					"response": []
 				},
 				{
-					"name": "Fx Transfer Copy",
+					"name": "Fx USD - NGN Convert",
 					"event": [
 						{
 							"listen": "test",
@@ -18730,7 +18656,153 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"FromAccountNumber\": \"0000029775\",\n    \"ToAccountNumber\": \"0000076528\",\n    \"Fee\": \"1.0\",\n    \"ProductId\": \"263\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"14000\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1.2\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": 2\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
+							"raw": "{\n    \"FromAccountNumber\": \"0000079086\", //USD\n    \"ToAccountNumber\": \"0000079055\",  //NGN\n    \"Fee\": \"10\",\n    \"ProductId\": \"281\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"USD-NGN\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1600\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": \"\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://wallet-dev.bank78.co/api/v1/multicurrency/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Fx NGN - USD Convert",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type header is application/json\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.code).to.exist;",
+									"    pm.expect(responseData.success).to.exist;",
+									"    pm.expect(responseData.message).to.exist;",
+									"    pm.expect(responseData.data).to.exist;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Data object contains the expected fields - status and message\", function () {",
+									"  const responseData = pm.response.json();",
+									"",
+									"  pm.expect(responseData).to.be.an('object');",
+									"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+									"  pm.expect(responseData.data).to.have.property('status');",
+									"  pm.expect(responseData.data).to.have.property('message');",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "a1f12e7b-2f73-45c1-bae8-e74452173baa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"FromAccountNumber\": \"0000079653\", //NGN\n    \"ToAccountNumber\": \"0000079725\", //USD\n    \"Fee\": \"10\",\n    \"ProductId\": \"263\",\n    \"TransactionReference\": \"Ref-Buying USD 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying USD 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"NGN-USD\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1600\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": 107\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://wallet-dev.bank78.co/api/v1/multicurrency/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Fx USD - USD External",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type header is application/json\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.code).to.exist;",
+									"    pm.expect(responseData.success).to.exist;",
+									"    pm.expect(responseData.message).to.exist;",
+									"    pm.expect(responseData.data).to.exist;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Data object contains the expected fields - status and message\", function () {",
+									"  const responseData = pm.response.json();",
+									"",
+									"  pm.expect(responseData).to.be.an('object');",
+									"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+									"  pm.expect(responseData.data).to.have.property('status');",
+									"  pm.expect(responseData.data).to.have.property('message');",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "dbdc50e0-5fbd-4621-b8ba-981aa856a4f6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"FromAccountNumber\": \"0000079086\", //Paga\n    \"ToAccountNumber\": \"00000001232\", // external\n    \"Fee\": \"10\",\n    \"ProductId\": \"300\",\n    \"TransactionReference\": \"Transfer between USD - USD 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Transfer between USD - USD 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"USD-USD External\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": \"\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
