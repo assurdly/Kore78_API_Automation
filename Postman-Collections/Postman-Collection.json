@@ -311,7 +311,7 @@
 															"",
 															"",
 															"pm.test(\"An error message about the invalid country code name is returned\", function () {",
-															"    pm.expect(jsonData.message).to.eql(\"Country code iso2 is required\");",
+															"    pm.expect(jsonData.message).to.eql(\"Country code ISO2 is required\");",
 															"});",
 															""
 														],
@@ -404,7 +404,7 @@
 															"",
 															"",
 															"pm.test(\"An error message about the invalid country code type is returned\", function () {",
-															"    pm.expect(jsonData.message).to.eql(\"Country code iso3 is required\");",
+															"    pm.expect(jsonData.message).to.eql(\"Country code ISO3 is required\");",
 															"});",
 															""
 														],
