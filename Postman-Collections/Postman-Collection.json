@@ -97,7 +97,7 @@
 											]
 										},
 										{
-											"name": "Add country",
+											"name": "Add country - country name exists",
 											"event": [
 												{
 													"listen": "test",
@@ -131,8 +131,12 @@
 												{
 													"listen": "prerequest",
 													"script": {
-														"packages": {},
-														"type": "text/javascript"
+														"id": "8df626a2-e6fc-440f-a80f-75be60b3c76e",
+														"exec": [
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
 													}
 												}
 											],
@@ -150,7 +154,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 1,\n  \"name\": \"{{$randomCountry}}\",\n  \"countryCodeTwo\": \"{{$randomCountryCode}}\",\n  \"countryCodeThree\": \"LMO\"\n}",
+													"raw": "{\n  \"id\": 1,\n  \"name\": \"France\",\n  \"countryCodeTwo\": \"{{$randomCountryCode}}\",\n  \"countryCodeThree\": \"LMO\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
