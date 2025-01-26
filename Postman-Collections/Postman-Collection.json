@@ -1021,6 +1021,34 @@
 									"item": [
 										{
 											"name": "Get organizations",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "72716a24-36e5-42eb-823f-54fce16987df",
+														"exec": [
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"pm.test(\"Successful response object is present\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", true);",
+															"});",
+															"",
+															"pm.test(\"The list of organizations is returned\", function () {",
+															"    pm.expect(jsonData.data[0].id).is.not.null;",
+															"    pm.expect(jsonData.data[0].name).is.not.empty;",
+															"    pm.expect(jsonData.data[0].key).is.not.empty;",
+															"    pm.expect(jsonData.data[0].dateCreated).is.not.empty;",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "99c37752-d609-4476-97c3-0275bd32c010",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
