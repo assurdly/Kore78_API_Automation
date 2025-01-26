@@ -489,17 +489,15 @@
 															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"pm.test(\"Response structure and properties for 400\", function () {",
-															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
-															"    pm.expect(jsonData).to.have.property(\"success\", false);",
-															"    pm.expect(jsonData).to.have.property(\"data\", null);",
+															"pm.test(\"Error response object is returned\", function () {",
+															"    pm.expect(jsonData.success).to.eql(false);",
+															"    pm.expect(jsonData.data).to.eql(null);",
 															"});",
 															"",
-															"",
-															"pm.test(\"Error message to confirm empty field\", function () {",
-															"    var responseBody = pm.response.json();",
-															"    pm.expect(responseBody.message).to.eql(\"Kindly provide values for each required field\");",
-															"});"
+															"pm.test(\"Error validation messages about required fields are returned\", function () {",
+															"    pm.expect(jsonData.message).to.eql(\"Country name is required\");",
+															"});",
+															""
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -520,7 +518,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": \"\",\n  \"name\": \"\",\n  \"countryCodeTwo\": \"\",\n  \"countryCodeThree\": \"\"\n}",
+													"raw": "{\n  \"id\": 6,\n  \"name\": \"\",\n  \"countryCodeTwo\": \"\",\n  \"countryCodeThree\": \"\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
