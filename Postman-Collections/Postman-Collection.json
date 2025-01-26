@@ -492,7 +492,7 @@
 														"exec": [
 															"var jsonData = pm.response.json();",
 															"",
-															"pm.test(\"Response code is 200 (OK)\", function () {",
+															"pm.test(\"Response code is 200\", function () {",
 															"    pm.response.to.have.status(200);",
 															"});",
 															"pm.test(\"Response structure and properties for 200\", function () {",
