@@ -501,8 +501,7 @@
 															"    pm.expect(jsonData.data).to.be.an('object');",
 															"});",
 															"",
-															"",
-															"pm.test(\"Check if Currency Added successfully property is present\", function () {",
+															"pm.test(\"A success message about adding a currency is returned\", function () {",
 															"    var responseBody = pm.response.json();",
 															"    pm.expect(responseBody.message).to.eql(\"Currency added successfully\");",
 															"});"
@@ -537,7 +536,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"US Rupees\",\n  \"shortName\": \"USR\"\n}",
+													"raw": "{\n  \"name\": \"US Dollars\",\n  \"shortName\": \"USD\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
