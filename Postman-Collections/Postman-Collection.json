@@ -18496,7 +18496,7 @@
 	"auth": {
 		"type": "apikey",
 		"apikey": {
-			"value": "SK-lXtqycpN0aJS08AL9VwpXiwlPP7dq3kIFRTp0BEjreDRnZdJxVIFjyAch7aZpuN4z8S",
+			"value": "{{api-key-branch}}",
 			"key": "x-api-key",
 			"in": "header"
 		}
@@ -18505,7 +18505,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7c32f69f-efcf-4990-995f-9d4c03a02787",
+				"id": "cd8f165b-d8af-4f43-b7de-54544dd68823",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -18516,7 +18516,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2bd6ef4b-dca6-46b2-a35a-8acebdbe686f",
+				"id": "3128cbef-234f-41bc-9532-e90ef6a7c228",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
