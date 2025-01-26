@@ -1084,106 +1084,6 @@
 											]
 										},
 										{
-											"name": "Get organization by ID",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "6f004e3c-238d-413a-a4af-994025291003",
-														"exec": [
-															"var jsonData = pm.response.json();",
-															"",
-															"pm.test(\"Response code is 200\", function () {",
-															"    pm.response.to.have.status(200);",
-															"});",
-															"pm.test(\"Successful response object is present\", function () {",
-															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
-															"    pm.expect(jsonData).to.have.property(\"success\", true);",
-															"});",
-															"",
-															"pm.test(\"The details of a single organization is returned\", function () {",
-															"    pm.expect(jsonData.data.id).is.not.null;",
-															"    pm.expect(jsonData.data.name).is.not.empty;",
-															"    pm.expect(jsonData.data.key).is.not.empty;",
-															"    pm.expect(jsonData.data.dateCreated).is.not.empty;",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "053dc71b-4885-4a5a-a9dc-10099c20b3d0",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/organizations/get/:id",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"organizations",
-														"get",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": "1",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "cf46b1cf-3d91-4843-bedd-eaf29f6633ff",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/v1/organizations/get/:id",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"v1",
-																"organizations",
-																"get",
-																":id"
-															],
-															"variable": [
-																{
-																	"key": "id"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
-										{
 											"name": "Add organization - Users",
 											"id": "6c6e5298-ccaa-4815-8f76-bc2c787b6e7a",
 											"protocolProfileBehavior": {
@@ -1250,6 +1150,34 @@
 										},
 										{
 											"name": "Get organization - User ID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "04801ba3-9d08-4ab3-a100-33ae41e397d6",
+														"exec": [
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"pm.test(\"Successful response object is present\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", true);",
+															"});",
+															"",
+															"pm.test(\"A single organization is returned\", function () {",
+															"    pm.expect(jsonData.data.id).is.not.null;",
+															"    pm.expect(jsonData.data.name).is.not.empty;",
+															"    pm.expect(jsonData.data.key).is.not.empty;",
+															"    pm.expect(jsonData.data.dateCreated).is.not.empty;",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "d6b036c1-1208-44fb-9099-9592271c1814",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1272,9 +1200,8 @@
 													],
 													"variable": [
 														{
-															"id": "21b419af-27be-440f-9053-ad2c445a297c",
 															"key": "id",
-															"value": "<string>",
+															"value": "1",
 															"description": "(Required) "
 														}
 													]
@@ -1304,160 +1231,6 @@
 																"organizations",
 																":id",
 																"users",
-																"get"
-															],
-															"variable": [
-																{
-																	"key": "id"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
-										{
-											"name": "Add organization - Generate user key",
-											"id": "17c78ec3-63e7-4e25-8aca-2129c06da80e",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/generate",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"organizations",
-														":id",
-														"users",
-														"key",
-														"generate"
-													],
-													"variable": [
-														{
-															"id": "ba761fad-21dc-4572-b437-66d7c57cf9ac",
-															"key": "id",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "e810fb3e-4e20-40b9-af50-8dc72cca444f",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/generate",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"v1",
-																"organizations",
-																":id",
-																"users",
-																"key",
-																"generate"
-															],
-															"variable": [
-																{
-																	"key": "id"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
-										{
-											"name": "Get organization - Generate user key",
-											"id": "070fc321-85cf-4931-b9f9-bace0e66663b",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/get",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"organizations",
-														":id",
-														"users",
-														"key",
-														"get"
-													],
-													"variable": [
-														{
-															"id": "d12daa6e-74b2-4c85-b3e4-0ffd941542e5",
-															"key": "id",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "e00c5ad9-8d47-4151-be03-fa01f9bf6cb9",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/v1/organizations/:id/users/key/get",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"v1",
-																"organizations",
-																":id",
-																"users",
-																"key",
 																"get"
 															],
 															"variable": [
