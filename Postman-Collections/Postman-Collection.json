@@ -475,97 +475,6 @@
 													"body": ""
 												}
 											]
-										},
-										{
-											"name": "Add country - Empty fields",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "9f436019-f4ce-4996-bae5-36ede1c14413",
-														"exec": [
-															"var jsonData = pm.response.json();",
-															"",
-															"pm.test(\"Response code is 400\", function () {",
-															"    pm.response.to.have.status(400);",
-															"});",
-															"pm.test(\"Error response object is returned\", function () {",
-															"    pm.expect(jsonData.success).to.eql(false);",
-															"    pm.expect(jsonData.data).to.eql(null);",
-															"});",
-															"",
-															"pm.test(\"Error validation messages about required fields are returned\", function () {",
-															"    pm.expect(jsonData.message).to.eql(\"Country name is required\");",
-															"});",
-															""
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "5e90ddf8-395b-44c9-a628-0b4c4ed0f98f",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"id\": 6,\n  \"name\": \"\",\n  \"countryCodeTwo\": \"\",\n  \"countryCodeThree\": \"\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/countries/add"
-											},
-											"response": [
-												{
-													"id": "3699a29c-eddc-4acc-9873-11522ad40a22",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: apikey",
-																"key": "x-api-key",
-																"value": "<API Key>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"countryCodeTwo\": \"<string>\",\n  \"countryCodeThree\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/v1/countries/add"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
 										}
 									],
 									"id": "12e46656-6ab8-4de0-abf5-cb26668127d4"
@@ -781,16 +690,14 @@
 															"pm.test(\"Response code is 400\", function () {",
 															"    pm.response.to.have.status(400);",
 															"});",
-															"pm.test(\"Response structure and properties for 400\", function () {",
+															"pm.test(\"Error response object is returned\", function () {",
 															"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
 															"    pm.expect(jsonData).to.have.property(\"success\", false);",
 															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															"",
-															"pm.test(\"Error message to confirm missing currency name\", function () {",
-															"    var responseBody = pm.response.json();",
-															"    pm.expect(responseBody.message).to.eql(\"Currency name is required\",);",
+															"pm.test(\"Error message is returned about the required currency name\", function () {",
+															"    pm.expect(jsonData.message).to.eql(\"Currency name is required\");",
 															"});"
 														],
 														"type": "text/javascript",
@@ -812,7 +719,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n\n  \"name\": \"\",\n  \"shortName\": \"CL\"\n}",
+													"raw": "{\n  \"name\": \"\",\n  \"shortName\": \"CL\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -880,10 +787,9 @@
 															"    pm.expect(jsonData).to.have.property(\"data\", null);",
 															"});",
 															"",
-															"",
 															"pm.test(\"Error message to confirm missing currency shortname\", function () {",
 															"    var responseBody = pm.response.json();",
-															"    pm.expect(responseBody.message).to.eql(\"Currency shortname is required\",);",
+															"    pm.expect(responseBody.message).to.eql(\"Currency shortname is required\");",
 															"});"
 														],
 														"type": "text/javascript",
