@@ -1258,7 +1258,7 @@
 							"auth": {
 								"type": "apikey",
 								"apikey": {
-									"value": "AdminTest",
+									"value": "{{api-key-branch}}",
 									"key": "x-api-key"
 								}
 							},
@@ -1266,7 +1266,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "63e5f934-cbec-4388-8cb7-be349c30a855",
+										"id": "b2a496d3-2503-4b3b-8f33-28a080c03b66",
 										"type": "text/javascript",
 										"packages": {},
 										"exec": [
@@ -1277,7 +1277,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "69a3c465-d300-4d15-8fd7-37aa3255ed76",
+										"id": "4a277129-0ae9-4f32-81a3-372537224be7",
 										"type": "text/javascript",
 										"packages": {},
 										"exec": [
@@ -1298,27 +1298,20 @@
 											"script": {
 												"id": "05752602-cd74-4998-a412-fd40440938a1",
 												"exec": [
-													"const jsonData = pm.response.json();",
+													"var jsonData = pm.response.json();",
 													"",
-													"pm.collectionVariables.set(\"branchCode\", jsonData.data.code);",
-													"",
-													"pm.test(\"Response status code is 200\", function () {",
-													"  pm.response.to.have.status(200);",
+													"pm.test(\"Response code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test(\"Error response object is returned\", function () {",
+													"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+													"    pm.expect(jsonData).to.have.property(\"success\", false);",
+													"    pm.expect(jsonData).to.have.property(\"data\", null);",
 													"});",
 													"",
-													"pm.test(\"Validate the response schema for the required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData).to.have.property('data').that.is.an('object');",
-													"    ",
-													"    const requiredFields = ['id', 'name', 'code', 'date', 'isBatchRunning', 'nextBatchRunDate', 'isDefault', 'address', 'cityLocationCode', 'sortCode', 'branchType', 'countryId', 'branchCode', 'isActive', 'dateCreated'];",
-													"    ",
-													"    requiredFields.forEach(field => {",
-													"        pm.expect(responseData.data).to.have.property(field);",
-													"    });",
-													"});",
-													""
+													"pm.test(\"Error message about not being able to add a branch is returned\", function () {",
+													"    pm.expect(jsonData.message).to.eql(\"Your subscription does not support multiple bank branches, please engage support for further assistance\");",
+													"});"
 												],
 												"type": "text/javascript",
 												"packages": {}
