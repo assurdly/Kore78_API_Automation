@@ -1291,123 +1291,6 @@
 							"name": "Branches",
 							"item": [
 								{
-									"name": "Get Branches",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "e3957ad9-8569-43c3-bd53-70a335c87516",
-												"exec": [
-													"const jsonData = pm.response.json();",
-													"",
-													"pm.collectionVariables.set(\"branchId\", jsonData.data[0].id);",
-													"",
-													"",
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													"",
-													"pm.test(\"Response has the required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.data).to.be.an('array');",
-													"    ",
-													"    responseData.data.forEach(function(branch) {",
-													"        pm.expect(branch).to.have.property('id');",
-													"        pm.expect(branch).to.have.property('name');",
-													"        pm.expect(branch).to.have.property('code');",
-													"        pm.expect(branch).to.have.property('date');",
-													"        pm.expect(branch).to.have.property('isBatchRunning');",
-													"        pm.expect(branch).to.have.property('nextBatchRunDate');",
-													"        pm.expect(branch).to.have.property('isDefault');",
-													"        pm.expect(branch).to.have.property('address');",
-													"        pm.expect(branch).to.have.property('cityLocationCode');",
-													"        pm.expect(branch).to.have.property('sortCode');",
-													"        pm.expect(branch).to.have.property('branchType');",
-													"        pm.expect(branch).to.have.property('countryId');",
-													"        pm.expect(branch).to.have.property('branchCode');",
-													"        pm.expect(branch).to.have.property('isActive');",
-													"        pm.expect(branch).to.have.property('dateCreated');",
-													"    });",
-													"});",
-													"",
-													"",
-													"pm.test(\"Id is a non-negative integer\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData.data).to.be.an('array');",
-													"    responseData.data.forEach(function(branch) {",
-													"        pm.expect(branch.id).to.be.a('number').and.to.satisfy((id) => id >= 0);",
-													"    });",
-													"});",
-													"",
-													"",
-													"pm.test(\"Name is a non-empty string\", function () {",
-													"  const responseData = pm.response.json();",
-													"  responseData.data.forEach(function(branch){",
-													"    pm.expect(branch.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should not be empty\");",
-													"  });",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "b6013257-ed57-40b3-9906-d531016ac1e6",
-												"exec": [
-													"pm.environment.set('baseUrl', 'https://kore78-dev.bank78.co')"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "5472ea00-442a-438c-9e05-2555b2fa8d8c",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiMiIsImdyb3Vwc2lkIjoiMTciLCJuYmYiOjE3Mzc3MTA3NzQsImV4cCI6MTczNzczOTU3NCwiaWF0IjoxNzM3NzEwNzc0fQ.tLgHy_W5LG4GBXltNS5oCyB2w-xwoa_Cv1NC-iDOKoA"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/v1/branches/u/get"
-									},
-									"response": [
-										{
-											"id": "b5e471bd-730c-4bd4-9db4-1d698fa70e84",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "x-api-key",
-														"value": "<API Key>"
-													}
-												],
-												"url": "{{baseUrl}}/api/v1/branches/get"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
 									"name": "Add new branch",
 									"event": [
 										{
@@ -1811,6 +1694,117 @@
 														}
 													]
 												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Get Branches",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e3957ad9-8569-43c3-bd53-70a335c87516",
+												"exec": [
+													"const jsonData = pm.response.json();",
+													"",
+													"pm.collectionVariables.set(\"branchId\", jsonData.data[0].id);",
+													"",
+													"",
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data).to.be.an('array');",
+													"    ",
+													"    responseData.data.forEach(function(branch) {",
+													"        pm.expect(branch).to.have.property('id');",
+													"        pm.expect(branch).to.have.property('name');",
+													"        pm.expect(branch).to.have.property('code');",
+													"        pm.expect(branch).to.have.property('date');",
+													"        pm.expect(branch).to.have.property('isBatchRunning');",
+													"        pm.expect(branch).to.have.property('nextBatchRunDate');",
+													"        pm.expect(branch).to.have.property('isDefault');",
+													"        pm.expect(branch).to.have.property('address');",
+													"        pm.expect(branch).to.have.property('cityLocationCode');",
+													"        pm.expect(branch).to.have.property('sortCode');",
+													"        pm.expect(branch).to.have.property('branchType');",
+													"        pm.expect(branch).to.have.property('countryId');",
+													"        pm.expect(branch).to.have.property('branchCode');",
+													"        pm.expect(branch).to.have.property('isActive');",
+													"        pm.expect(branch).to.have.property('dateCreated');",
+													"    });",
+													"});",
+													"",
+													"",
+													"pm.test(\"Id is a non-negative integer\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('array');",
+													"    responseData.data.forEach(function(branch) {",
+													"        pm.expect(branch.id).to.be.a('number').and.to.satisfy((id) => id >= 0);",
+													"    });",
+													"});",
+													"",
+													"",
+													"pm.test(\"Name is a non-empty string\", function () {",
+													"  const responseData = pm.response.json();",
+													"  responseData.data.forEach(function(branch){",
+													"    pm.expect(branch.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should not be empty\");",
+													"  });",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "b6013257-ed57-40b3-9906-d531016ac1e6",
+												"exec": [
+													"pm.environment.set('baseUrl', 'https://kore78-dev.bank78.co')"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "34f736dc-91d9-406b-89ff-6e1037d7f2ca",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/branches/get"
+									},
+									"response": [
+										{
+											"id": "60903415-b5ec-4cc2-8f2c-0c4cea417e7b",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "x-api-key",
+														"value": "<API Key>"
+													}
+												],
+												"url": "{{baseUrl}}/api/v1/branches/get"
 											},
 											"status": "OK",
 											"code": 200,
