@@ -18440,7 +18440,7 @@
 	"auth": {
 		"type": "apikey",
 		"apikey": {
-			"value": "{{api-key-branch}}",
+			"value": "{{admin-api-key}}\n",
 			"key": "x-api-key",
 			"in": "header"
 		}
@@ -18449,7 +18449,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "cd8f165b-d8af-4f43-b7de-54544dd68823",
+				"id": "a7ad76ed-61ae-42a1-80a9-f7432f4fd0fa",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -18460,7 +18460,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3128cbef-234f-41bc-9532-e90ef6a7c228",
+				"id": "14a3d8e5-43fb-4551-9b28-583357923b99",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -18569,6 +18569,11 @@
 		{
 			"key": "accountNumberGHS",
 			"value": ""
+		},
+		{
+			"key": "admin-api-key",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
