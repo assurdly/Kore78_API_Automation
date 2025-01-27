@@ -110,7 +110,7 @@
 															"    pm.response.to.have.status(400);",
 															"});",
 															"pm.test(\"Error response object is returned\", function () {",
-															"    pm.expect(jsonData.success).to.eql(\"false\");",
+															"    pm.expect(jsonData.success).to.eql(false);",
 															"});",
 															"",
 															"pm.test(\"An error message about the existing country name is returned\", function () {",
@@ -1258,7 +1258,7 @@
 							"auth": {
 								"type": "apikey",
 								"apikey": {
-									"value": "{{api-key-branch}}",
+									"value": "{{AdminTest}}",
 									"key": "x-api-key"
 								}
 							},
@@ -1266,7 +1266,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "b2a496d3-2503-4b3b-8f33-28a080c03b66",
+										"id": "b345c4f2-f174-4b14-955e-2a49283c1697",
 										"type": "text/javascript",
 										"packages": {},
 										"exec": [
@@ -1277,7 +1277,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "4a277129-0ae9-4f32-81a3-372537224be7",
+										"id": "407b1219-4be1-41b5-aa11-d30c5182463d",
 										"type": "text/javascript",
 										"packages": {},
 										"exec": [
@@ -18440,7 +18440,7 @@
 	"auth": {
 		"type": "apikey",
 		"apikey": {
-			"value": "{{API-KEY}}\n",
+			"value": "AdminTest\n",
 			"key": "x-api-key",
 			"in": "header"
 		}
@@ -18449,7 +18449,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "da1dd5fa-5090-4092-a671-6212a705e6e3",
+				"id": "9a47c5d5-4c62-4a87-935f-54ae38ee7c39",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -18460,7 +18460,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8dcfccb5-7a4b-4e6c-b752-be1f9d1fb392",
+				"id": "26b0f2d5-4603-40e1-a216-b48d85ab38d6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -18569,6 +18569,11 @@
 		{
 			"key": "accountNumberGHS",
 			"value": ""
+		},
+		{
+			"key": "AdminTest",
+			"value": "AdminTest",
+			"type": "string"
 		}
 	]
 }
