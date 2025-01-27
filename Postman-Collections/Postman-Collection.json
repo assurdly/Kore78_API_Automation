@@ -502,7 +502,6 @@
 															"});",
 															"",
 															"pm.test(\"A success message about adding a currency is returned\", function () {",
-															"    var responseBody = pm.response.json();",
 															"    pm.expect(responseBody.message).to.eql(\"Currency added successfully\");",
 															"});"
 														],
