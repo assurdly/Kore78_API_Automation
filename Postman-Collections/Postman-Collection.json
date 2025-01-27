@@ -586,7 +586,7 @@
 									"name": "currencies",
 									"item": [
 										{
-											"name": "Add currency",
+											"name": "Successfully Add currency",
 											"event": [
 												{
 													"listen": "test",
