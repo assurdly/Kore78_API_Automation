@@ -3135,6 +3135,9 @@
 													"  const responseData = pm.response.json();",
 													"  pm.expect(responseData).to.have.property('data').to.exist;",
 													"});",
+													"",
+													"pm.collectionVariables.set(\"customerId\", jsonData.data.items.customer.id)",
+													"",
 													""
 												],
 												"type": "text/javascript",
@@ -3387,42 +3390,27 @@
 									]
 								},
 								{
-									"name": "Update Customer - Missing First Name",
+									"name": "Update Customer - Empty First Name",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"id": "f3665ce1-7fb1-46ef-9f5d-6974bc966cc8",
 												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.expect(pm.response.code).to.equal(200);",
+													"var jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test(\"Error response object is returned\", function () {",
+													"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+													"    pm.expect(jsonData).to.have.property(\"success\", false);",
+													"    pm.expect(jsonData).to.have.property(\"data\", null);",
 													"});",
 													"",
-													"",
-													"pm.test(\"Response has the required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData).to.have.property('code');",
-													"    pm.expect(responseData).to.have.property('success');",
-													"    pm.expect(responseData).to.have.property('message');",
-													"    pm.expect(responseData).to.have.property('data');",
-													"});",
-													"",
-													"",
-													"pm.test(\"Data schema is valid\", function () {",
-													"  const responseData = pm.response.json();",
-													"  ",
-													"  pm.expect(responseData).to.be.an('object');",
-													"  pm.expect(responseData.data).to.be.an('array');",
-													"  ",
-													"  responseData.data.forEach(function(item) {",
-													"    pm.expect(item).to.have.property('id').that.is.a('number');",
-													"    pm.expect(item).to.have.property('name').that.is.a('string');",
-													"  });",
-													"});",
-													"",
-													""
+													"pm.test(\"Error message about empty First Name\", function () {",
+													"    pm.expect(jsonData.message).to.eql(\"Kindly provide a first name\");",
+													"});"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -3543,35 +3531,20 @@
 											"script": {
 												"id": "f3665ce1-7fb1-46ef-9f5d-6974bc966cc8",
 												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.expect(pm.response.code).to.equal(200);",
+													"var jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test(\"Error response object is returned\", function () {",
+													"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+													"    pm.expect(jsonData).to.have.property(\"success\", false);",
+													"    pm.expect(jsonData).to.have.property(\"data\", null);",
 													"});",
 													"",
-													"",
-													"pm.test(\"Response has the required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData).to.have.property('code');",
-													"    pm.expect(responseData).to.have.property('success');",
-													"    pm.expect(responseData).to.have.property('message');",
-													"    pm.expect(responseData).to.have.property('data');",
-													"});",
-													"",
-													"",
-													"pm.test(\"Data schema is valid\", function () {",
-													"  const responseData = pm.response.json();",
-													"  ",
-													"  pm.expect(responseData).to.be.an('object');",
-													"  pm.expect(responseData.data).to.be.an('array');",
-													"  ",
-													"  responseData.data.forEach(function(item) {",
-													"    pm.expect(item).to.have.property('id').that.is.a('number');",
-													"    pm.expect(item).to.have.property('name').that.is.a('string');",
-													"  });",
-													"});",
-													"",
-													""
+													"pm.test(\"Error message about empty field\", function () {",
+													"    pm.expect(jsonData.message).to.eql(\"Kindly provide all required fields\");",
+													"});"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -3592,7 +3565,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"city\": \"{{$randomCity}}\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"occupation\": \"{{$randomJobTitle}}\",\n  \"gender\": \"Male\",\n  \"bvnverified\": true,\n  \"ninVerified\": true\n}",
+											"raw": "{\n  \"firstName\": \"{\",\n  \"lastName\": \"\",\n  \"middleName\": \"\",\n  \"dob\": \"\",\n  \"city\": \"\",\n  \"address\": \"\",\n  \"occupation\": \"\",\n  \"gender\": \"\",\n  \"bvnverified\": \"\",\n  \"ninVerified\": \"\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -3615,7 +3588,6 @@
 											],
 											"variable": [
 												{
-													"id": "c0792a8c-e93a-4aac-8c6c-1f307eb6c837",
 													"key": "customerId",
 													"value": "{{customerId}}",
 													"description": "(Required) "
