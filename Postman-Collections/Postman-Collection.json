@@ -19205,7 +19205,7 @@
 	"auth": {
 		"type": "apikey",
 		"apikey": {
-			"value": "AdminTest\n",
+			"value": "AdminTest",
 			"key": "x-api-key",
 			"in": "header"
 		}
@@ -19214,7 +19214,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9a47c5d5-4c62-4a87-935f-54ae38ee7c39",
+				"id": "7b4a6d69-97d3-43f6-87e7-d69d34980d1f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -19225,7 +19225,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "26b0f2d5-4603-40e1-a216-b48d85ab38d6",
+				"id": "034e5979-bb83-4462-9db8-6916ef9a312d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
