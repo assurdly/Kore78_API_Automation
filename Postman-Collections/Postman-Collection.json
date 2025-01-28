@@ -3720,7 +3720,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"emailAddress\": \"Marc33@hotmail.com\",\n  \"organizationId\": 1\n}",
+											"raw": "{\n  \"emailAddress\": \"Marc33@hotmail.com\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -3733,6 +3733,118 @@
 									"response": [
 										{
 											"id": "bd94b584-8846-4fae-acc0-1676fbab3c1d",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "x-api-key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"emailAddress\": \"<string>\",\n  \"organizationId\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/customers/find/email"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Find Customer by Email - Invalid email",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "18fa2f2f-ab6e-4980-b860-0106e75da7bb",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data.customer).to.have.property('id');",
+													"    pm.expect(responseData.data.customer).to.have.property('organizationId');",
+													"    pm.expect(responseData.data.customer).to.have.property('firstName');",
+													"    pm.expect(responseData.data.customer).to.have.property('lastName');",
+													"    pm.expect(responseData.data.customer).to.have.property('dob');",
+													"    pm.expect(responseData.data.customer).to.have.property('customerTypeId');",
+													"    pm.expect(responseData.data.customer).to.have.property('countryId');",
+													"    pm.expect(responseData.data.customer).to.have.property('city');",
+													"    pm.expect(responseData.data.customer).to.have.property('address');",
+													"    pm.expect(responseData.data.customer).to.have.property('mobileNumber');",
+													"    pm.expect(responseData.data.customer).to.have.property('emailAddress');",
+													"    pm.expect(responseData.data.customer).to.have.property('dateCreated');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the structure of the 'data' object\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.customer).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.customerType).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.walletDtos).to.exist.and.to.be.an('array');",
+													"    pm.expect(responseData.data.customerProperties).to.exist.and.to.be.an('array');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "4e5f8d8c-e065-42d6-bb8b-ce66e550b0b4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"emailAddress\": \"Marc33@hotmail.com\",\n  \"organizationId\": 1\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/customers/u/find/email"
+									},
+									"response": [
+										{
+											"id": "32a7aa19-6b33-44a0-a8af-e0266ea0f920",
 											"name": "Success",
 											"originalRequest": {
 												"method": "POST",
@@ -3804,6 +3916,77 @@
 									"response": [
 										{
 											"id": "bbbb37a7-09c9-4a23-9154-33eb46e3cd31",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "x-api-key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accountNumber\": \"<string>\",\n  \"organizationId\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/customers/find/account-number"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Find Customer by Account Number Copy",
+									"id": "d8e16e20-0a84-4ce2-aa06-310aa778f7dc",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{accessToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"accountNumber\": \"<string>\",\n  \"organizationId\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/customers/find/account-number"
+									},
+									"response": [
+										{
+											"id": "31ed1a27-6a95-4726-896d-098c89422ecd",
 											"name": "Success",
 											"originalRequest": {
 												"method": "POST",
