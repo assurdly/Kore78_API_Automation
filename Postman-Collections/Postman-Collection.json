@@ -1251,6 +1251,71 @@
 											]
 										},
 										{
+											"name": "Add organization - Users Copy",
+											"id": "8180a75a-f5c5-4d98-8296-7b93605f91c0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 5,\n  \"name\": \"Assurdly\",\n  \"key\": \"70f7fe9f8648786e1328f67a804b857c59f5f456ca5a75ce5fb846fdb3361726\", \n   \"dateCreated\": \"2024-09-16T20:53:36.251678\"\n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/organizations/users/add"
+											},
+											"response": [
+												{
+													"id": "05255eee-2a00-4f53-ac66-8929e7e1f9ac",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "x-api-key",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"key\": \"<string>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/organizations/users/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
 											"name": "Get organization - User ID",
 											"event": [
 												{
