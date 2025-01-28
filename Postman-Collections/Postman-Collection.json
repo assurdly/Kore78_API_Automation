@@ -1798,6 +1798,97 @@
 													"    pm.expect(jsonData).to.have.property(\"data\", null);",
 													"});",
 													"",
+													"pm.test(\"Error message about not being able to add a branch is returned\", function () {",
+													"    pm.expect(jsonData.message).to.eql(\"Your subscription does not support multiple bank branches, please engage support for further assistance\");",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "4a7addf7-97f3-46cd-abfa-e229a8b902c4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"{{$randomUserName}}\",\n  \"code\": \"{{$randomInt}}\",\n  \"date\": \"2024-08-20\",\n  \"isBatchRunning\": true,\n  \"nextBatchRunDate\": \"2024-09-20\",\n  \"isDefault\": false,\n  \"address\": \"14 Olatunde Onimole Street\",\n  \"cityLocationCode\": \"00001\",\n  \"sortCode\": \"00001\",\n  \"branchType\": \"Online\",\n  \"countryId\": 1,\n  \"branchCode\": \"007\",\n  \"isActive\": true,\n  \"dateCreated\": \"2024-08-20\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/branches/add"
+									},
+									"response": [
+										{
+											"id": "2edcf61a-c2eb-4003-934d-57c4c2cb1bc4",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "x-api-key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"isBatchRunning\": \"<boolean>\",\n  \"nextBatchRunDate\": \"<dateTime>\",\n  \"isDefault\": \"<boolean>\",\n  \"address\": \"<string>\",\n  \"cityLocationCode\": \"<string>\",\n  \"sortCode\": \"<string>\",\n  \"branchType\": \"<string>\",\n  \"countryId\": \"<integer>\",\n  \"branchCode\": \"<string>\",\n  \"isActive\": \"<boolean>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/branches/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Add new branch - Empty Branch Name",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "05752602-cd74-4998-a412-fd40440938a1",
+												"exec": [
+													"var jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test(\"Error response object is returned\", function () {",
+													"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+													"    pm.expect(jsonData).to.have.property(\"success\", false);",
+													"    pm.expect(jsonData).to.have.property(\"data\", null);",
+													"});",
+													"",
 													"pm.test(\"Error message about empty name is returned\", function () {",
 													"    pm.expect(jsonData.message).to.eql(\"Kindly provide a branch name\");",
 													"});"
@@ -1834,6 +1925,97 @@
 									"response": [
 										{
 											"id": "0697d319-886c-4988-b7b0-1801c1ce2839",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "x-api-key",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"isBatchRunning\": \"<boolean>\",\n  \"nextBatchRunDate\": \"<dateTime>\",\n  \"isDefault\": \"<boolean>\",\n  \"address\": \"<string>\",\n  \"cityLocationCode\": \"<string>\",\n  \"sortCode\": \"<string>\",\n  \"branchType\": \"<string>\",\n  \"countryId\": \"<integer>\",\n  \"branchCode\": \"<string>\",\n  \"isActive\": \"<boolean>\",\n  \"dateCreated\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/branches/add"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Add new branch - Empty branch Code",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "05752602-cd74-4998-a412-fd40440938a1",
+												"exec": [
+													"var jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test(\"Error response object is returned\", function () {",
+													"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+													"    pm.expect(jsonData).to.have.property(\"success\", false);",
+													"    pm.expect(jsonData).to.have.property(\"data\", null);",
+													"});",
+													"",
+													"pm.test(\"Error message about empty branch code is returned\", function () {",
+													"    pm.expect(jsonData.message).to.eql(\"Kindly provide a valid branch code\");",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "bd014a69-3806-44c8-b861-8841559647fa",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"{{$randomUserName}}\",\n  \"code\": \"\",\n  \"date\": \"2024-08-20\",\n  \"isBatchRunning\": true,\n  \"nextBatchRunDate\": \"2024-09-20\",\n  \"isDefault\": false,\n  \"address\": \"14 Olatunde Onimole Street\",\n  \"cityLocationCode\": \"00001\",\n  \"sortCode\": \"00001\",\n  \"branchType\": \"Online\",\n  \"countryId\": 1,\n  \"branchCode\": \"007\",\n  \"isActive\": true,\n  \"dateCreated\": \"2024-08-20\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/branches/add"
+									},
+									"response": [
+										{
+											"id": "d68de465-e07e-4c93-bd22-e31ff66283e1",
 											"name": "Success",
 											"originalRequest": {
 												"method": "POST",
