@@ -3777,39 +3777,19 @@
 											"script": {
 												"id": "18fa2f2f-ab6e-4980-b860-0106e75da7bb",
 												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
+													"var jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test(\"Error response object is returned\", function () {",
+													"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+													"    pm.expect(jsonData).to.have.property(\"success\", false);",
+													"    pm.expect(jsonData).to.have.property(\"data\", null);",
 													"});",
 													"",
-													"",
-													"pm.test(\"Response has the required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.data.customer).to.have.property('id');",
-													"    pm.expect(responseData.data.customer).to.have.property('organizationId');",
-													"    pm.expect(responseData.data.customer).to.have.property('firstName');",
-													"    pm.expect(responseData.data.customer).to.have.property('lastName');",
-													"    pm.expect(responseData.data.customer).to.have.property('dob');",
-													"    pm.expect(responseData.data.customer).to.have.property('customerTypeId');",
-													"    pm.expect(responseData.data.customer).to.have.property('countryId');",
-													"    pm.expect(responseData.data.customer).to.have.property('city');",
-													"    pm.expect(responseData.data.customer).to.have.property('address');",
-													"    pm.expect(responseData.data.customer).to.have.property('mobileNumber');",
-													"    pm.expect(responseData.data.customer).to.have.property('emailAddress');",
-													"    pm.expect(responseData.data.customer).to.have.property('dateCreated');",
-													"});",
-													"",
-													"",
-													"pm.test(\"Validate the structure of the 'data' object\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-													"    pm.expect(responseData.data.customer).to.exist.and.to.be.an('object');",
-													"    pm.expect(responseData.data.customerType).to.exist.and.to.be.an('object');",
-													"    pm.expect(responseData.data.walletDtos).to.exist.and.to.be.an('array');",
-													"    pm.expect(responseData.data.customerProperties).to.exist.and.to.be.an('array');",
+													"pm.test(\"Error message about Invalid email\", function () {",
+													"    pm.expect(jsonData.message).to.eql(\"Invalid email address\");",
 													"});",
 													""
 												],
@@ -3832,7 +3812,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"emailAddress\": \"Marc33@hotmail.com\",\n  \"organizationId\": 1\n}",
+											"raw": "{\n  \"emailAddress\": \"Marc33@hot\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -3954,6 +3934,33 @@
 								},
 								{
 									"name": "Find Customer by Account Number Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "8a06a297-d69e-429b-b0d5-918347707dd0",
+												"exec": [
+													"var jsonData = pm.response.json();",
+													"",
+													"pm.test(\"Response code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test(\"Error response object is returned\", function () {",
+													"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+													"    pm.expect(jsonData).to.have.property(\"success\", false);",
+													"    pm.expect(jsonData).to.have.property(\"data\", null);",
+													"});",
+													"",
+													"pm.test(\"Error message about Invalid account name\", function () {",
+													"    pm.expect(jsonData.message).to.eql(\"Invalid account number\");",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "d8e16e20-0a84-4ce2-aa06-310aa778f7dc",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -3974,7 +3981,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"accountNumber\": \"<string>\",\n  \"organizationId\": \"<long>\"\n}",
+											"raw": "{\n  \"accountNumber\": \"000000098711\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
