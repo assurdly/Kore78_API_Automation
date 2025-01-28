@@ -3658,16 +3658,13 @@
 									]
 								},
 								{
-									"name": "Find A Customer",
+									"name": "Find Customer by Email",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"id": "18fa2f2f-ab6e-4980-b860-0106e75da7bb",
 												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
 													"pm.test(\"Response status code is 200\", function () {",
 													"    pm.response.to.have.status(200);",
 													"});",
@@ -3714,12 +3711,6 @@
 										"disableBodyPruning": true
 									},
 									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{accessToken}}"
-											}
-										},
 										"method": "POST",
 										"header": [
 											{
@@ -3779,7 +3770,7 @@
 									]
 								},
 								{
-									"name": "Find Customer - account-number",
+									"name": "Find Customer by Account Number",
 									"id": "c8880afa-04d1-4331-b823-fe363fabb9de",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
