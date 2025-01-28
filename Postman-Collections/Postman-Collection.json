@@ -9104,6 +9104,564 @@
 							]
 						},
 						{
+							"name": "Multi-Currency",
+							"item": [
+								{
+									"name": "Add New currency rate",
+									"id": "5d2c5318-a8bd-4fe8-b07d-9285820b5fd7",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"2\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"EUR\",\n    \"BankCode\": \"930\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/add"
+									},
+									"response": []
+								},
+								{
+									"name": "Get currency rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "51cfab69-9af8-4550-9de5-f143994c9c7e",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Validate the structure of the data array\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.be.an('array');",
+													"  pm.expect(responseData.data).to.have.length.above(0, \"Data array should not be empty\");",
+													"  responseData.data.forEach(function(item) {",
+													"    pm.expect(item).to.be.an('object');",
+													"    pm.expect(item).to.have.property('currencyid');",
+													"    pm.expect(item).to.have.property('isoCurCode');",
+													"    pm.expect(item).to.have.property('shortName');",
+													"    pm.expect(item).to.have.property('curCode');",
+													"    pm.expect(item).to.have.property('name');",
+													"    pm.expect(item).to.have.property('decPla');",
+													"    pm.expect(item).to.have.property('spotRate');",
+													"    pm.expect(item).to.have.property('buyRate');",
+													"    pm.expect(item).to.have.property('sellRate');",
+													"    pm.expect(item).to.have.property('closRate');",
+													"    pm.expect(item).to.have.property('fixRate');",
+													"    pm.expect(item).to.have.property('midRate');",
+													"    pm.expect(item).to.have.property('valDays');",
+													"    pm.expect(item).to.have.property('weekend');",
+													"    pm.expect(item).to.have.property('weekEndDays');",
+													"    pm.expect(item).to.have.property('bankCode');",
+													"    pm.expect(item).to.have.property('corBraCode');",
+													"    pm.expect(item).to.have.property('intBaseDays');",
+													"    pm.expect(item).to.have.property('monDays');",
+													"    pm.expect(item).to.have.property('dateUpdated');",
+													"    pm.expect(item).to.have.property('isactive');",
+													"    pm.expect(item).to.have.property('dateCreated');",
+													"    pm.expect(item).to.have.property('createdBy');",
+													"    pm.expect(item).to.have.property('updatedBy');",
+													"    pm.expect(item).to.have.property('deletedBy');",
+													"  });",
+													"});",
+													"",
+													"",
+													"pm.test(\"All data objects in the array have the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
+													"",
+													"    responseData.data.forEach(function (dataObject) {",
+													"        pm.expect(dataObject).to.include.all.keys(",
+													"            \"currencyid\", \"isoCurCode\", \"shortName\", \"curCode\", \"name\", \"decPla\", ",
+													"            \"spotRate\", \"buyRate\", \"sellRate\", \"closRate\", \"fixRate\", \"midRate\", ",
+													"            \"valDays\", \"weekend\", \"weekEndDays\", \"bankCode\", \"corBraCode\", ",
+													"            \"intBaseDays\", \"monDays\", \"dateUpdated\", \"isactive\", \"dateCreated\", ",
+													"            \"createdBy\", \"updatedBy\", \"deletedBy\"",
+													"        );",
+													"    });",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "3bd48b43-9eae-4a9b-a8f1-e99bb1ecc5cc",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rates"
+									},
+									"response": []
+								},
+								{
+									"name": "Modify currency rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "a3b84c80-1fbf-4b45-aed1-a0e253b4be54",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Validate the response schema for code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure the data object has the fields status and message\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData.data).to.be.an('object');",
+													"    pm.expect(responseData.data).to.have.property('status');",
+													"    pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Ensure the success field is a boolean value\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.success).to.be.a('boolean');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "02537728-b26a-4ad1-bea8-51cd4e865044",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"CurrencyId\": 181,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"3\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"31\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"978\",\n    \"BankCode\": \"045\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/modify"
+									},
+									"response": []
+								},
+								{
+									"name": "Reactivate Currency Rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e00532c2-12ac-4360-85f4-ae09f8f19761",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for code, success, message, and data fields\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"  pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"  pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "e93e98f4-b650-4373-8934-7ee4cae5b837",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"CurrencyId\": 4,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/reactivate"
+									},
+									"response": []
+								},
+								{
+									"name": "Deactivate Currency Rate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "dc714f1b-1076-4fa5-9c1e-cf18acbdd78b",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
+													"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.status).to.exist.and.to.be.a('number');",
+													"    pm.expect(responseData.data.message).to.exist.and.to.be.a('string');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "06ad087b-2876-4bb0-b1e4-1d2ade402f1b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"CurrencyId\": 2\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/deactivate"
+									},
+									"response": []
+								},
+								{
+									"name": "Fx Transfer",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type header is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data object contains the expected fields - status and message\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"  pm.expect(responseData.data).to.have.property('status');",
+													"  pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "0ca46328-14e7-46b0-9314-3de9e25e9597",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"FromAccountNumber\": \"{{accountNumber}}\",\n    \"ToAccountNumber\": \"{{accountNumber1}}\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"68\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"10\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": null,\n    \"OrganizationId\": \"1\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/multicurrency/transfer"
+									},
+									"response": []
+								},
+								{
+									"name": "Fx USD - NGN Convert",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type header is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data object contains the expected fields - status and message\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"  pm.expect(responseData.data).to.have.property('status');",
+													"  pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "8a826e7b-43ce-4205-baa4-6bc2eb421d5a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"FromAccountNumber\": \"0000079086\", //USD\n    \"ToAccountNumber\": \"0000079055\",  //NGN\n    \"Fee\": \"10\",\n    \"ProductId\": \"281\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"USD-NGN\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1600\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": \"\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://wallet-dev.bank78.co/api/v1/multicurrency/transfer"
+									},
+									"response": []
+								},
+								{
+									"name": "Fx NGN - USD Convert",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type header is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data object contains the expected fields - status and message\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"  pm.expect(responseData.data).to.have.property('status');",
+													"  pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "a1f12e7b-2f73-45c1-bae8-e74452173baa",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"FromAccountNumber\": \"0000079653\", //NGN\n    \"ToAccountNumber\": \"0000079725\", //USD\n    \"Fee\": \"10\",\n    \"ProductId\": \"263\",\n    \"TransactionReference\": \"Ref-Buying USD 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying USD 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"NGN-USD\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1600\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": 107\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://wallet-dev.bank78.co/api/v1/multicurrency/transfer"
+									},
+									"response": []
+								},
+								{
+									"name": "Fx USD - USD External",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type header is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.code).to.exist;",
+													"    pm.expect(responseData.success).to.exist;",
+													"    pm.expect(responseData.message).to.exist;",
+													"    pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Data object contains the expected fields - status and message\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"  pm.expect(responseData.data).to.have.property('status');",
+													"  pm.expect(responseData.data).to.have.property('message');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "dbdc50e0-5fbd-4621-b8ba-981aa856a4f6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-api-key",
+												"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"FromAccountNumber\": \"0000079086\", //Paga\n    \"ToAccountNumber\": \"00000001232\", // external\n    \"Fee\": \"10\",\n    \"ProductId\": \"300\",\n    \"TransactionReference\": \"Transfer between USD - USD 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Transfer between USD - USD 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"USD-USD External\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": \"\"\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://wallet-dev.bank78.co/api/v1/multicurrency/transfer"
+									},
+									"response": []
+								}
+							],
+							"id": "435aee5d-c1d1-4225-a030-abcc072b9e05"
+						},
+						{
 							"name": "Chart Of Account",
 							"item": [
 								{
@@ -9630,980 +10188,12 @@
 								}
 							],
 							"id": "dd1a849f-ae11-4f4a-80d1-3504649beef7"
-						},
-						{
-							"name": "Multi-Currency",
-							"item": [
-								{
-									"name": "Add New currency rate",
-									"id": "876cafbe-6496-4a07-8db6-aece8d5c7a3b",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"2\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"EUR\",\n    \"BankCode\": \"930\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/add"
-									},
-									"response": []
-								},
-								{
-									"name": "Get currency rate",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "51cfab69-9af8-4550-9de5-f143994c9c7e",
-												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													"",
-													"pm.test(\"Validate the structure of the data array\", function () {",
-													"  const responseData = pm.response.json();",
-													"  ",
-													"  pm.expect(responseData).to.be.an('object');",
-													"  pm.expect(responseData.data).to.be.an('array');",
-													"  pm.expect(responseData.data).to.have.length.above(0, \"Data array should not be empty\");",
-													"  responseData.data.forEach(function(item) {",
-													"    pm.expect(item).to.be.an('object');",
-													"    pm.expect(item).to.have.property('currencyid');",
-													"    pm.expect(item).to.have.property('isoCurCode');",
-													"    pm.expect(item).to.have.property('shortName');",
-													"    pm.expect(item).to.have.property('curCode');",
-													"    pm.expect(item).to.have.property('name');",
-													"    pm.expect(item).to.have.property('decPla');",
-													"    pm.expect(item).to.have.property('spotRate');",
-													"    pm.expect(item).to.have.property('buyRate');",
-													"    pm.expect(item).to.have.property('sellRate');",
-													"    pm.expect(item).to.have.property('closRate');",
-													"    pm.expect(item).to.have.property('fixRate');",
-													"    pm.expect(item).to.have.property('midRate');",
-													"    pm.expect(item).to.have.property('valDays');",
-													"    pm.expect(item).to.have.property('weekend');",
-													"    pm.expect(item).to.have.property('weekEndDays');",
-													"    pm.expect(item).to.have.property('bankCode');",
-													"    pm.expect(item).to.have.property('corBraCode');",
-													"    pm.expect(item).to.have.property('intBaseDays');",
-													"    pm.expect(item).to.have.property('monDays');",
-													"    pm.expect(item).to.have.property('dateUpdated');",
-													"    pm.expect(item).to.have.property('isactive');",
-													"    pm.expect(item).to.have.property('dateCreated');",
-													"    pm.expect(item).to.have.property('createdBy');",
-													"    pm.expect(item).to.have.property('updatedBy');",
-													"    pm.expect(item).to.have.property('deletedBy');",
-													"  });",
-													"});",
-													"",
-													"",
-													"pm.test(\"All data objects in the array have the required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"",
-													"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
-													"",
-													"    responseData.data.forEach(function (dataObject) {",
-													"        pm.expect(dataObject).to.include.all.keys(",
-													"            \"currencyid\", \"isoCurCode\", \"shortName\", \"curCode\", \"name\", \"decPla\", ",
-													"            \"spotRate\", \"buyRate\", \"sellRate\", \"closRate\", \"fixRate\", \"midRate\", ",
-													"            \"valDays\", \"weekend\", \"weekEndDays\", \"bankCode\", \"corBraCode\", ",
-													"            \"intBaseDays\", \"monDays\", \"dateUpdated\", \"isactive\", \"dateCreated\", ",
-													"            \"createdBy\", \"updatedBy\", \"deletedBy\"",
-													"        );",
-													"    });",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "c297c0fc-e2ba-4889-b01c-ded5315c03b9",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rates"
-									},
-									"response": []
-								},
-								{
-									"name": "Modify currency rate",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "a3b84c80-1fbf-4b45-aed1-a0e253b4be54",
-												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													"",
-													"pm.test(\"Validate the response schema for code, success, message, and data\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
-													"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
-													"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
-													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-													"});",
-													"",
-													"",
-													"pm.test(\"Ensure the data object has the fields status and message\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData.data).to.be.an('object');",
-													"    pm.expect(responseData.data).to.have.property('status');",
-													"    pm.expect(responseData.data).to.have.property('message');",
-													"});",
-													"",
-													"",
-													"pm.test(\"Ensure the success field is a boolean value\", function () {",
-													"  const responseData = pm.response.json();",
-													"  ",
-													"  pm.expect(responseData).to.be.an('object');",
-													"  pm.expect(responseData.success).to.be.a('boolean');",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "8bbc0585-2046-46cd-a75d-de2406426457",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 181,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"3\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"31\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"978\",\n    \"BankCode\": \"045\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/modify"
-									},
-									"response": []
-								},
-								{
-									"name": "Reactivate Currency Rate",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "e00532c2-12ac-4360-85f4-ae09f8f19761",
-												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													"",
-													"",
-													"pm.test(\"Validate the response schema for code, success, message, and data fields\", function () {",
-													"  const responseData = pm.response.json();",
-													"  ",
-													"  pm.expect(responseData).to.be.an('object');",
-													"  pm.expect(responseData.code).to.exist.and.to.be.a('string');",
-													"  pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
-													"  pm.expect(responseData.message).to.exist.and.to.be.a('string');",
-													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "6ff83681-580a-4048-9214-465e14503c51",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 4,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/reactivate"
-									},
-									"response": []
-								},
-								{
-									"name": "Deactivate Currency Rate",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "dc714f1b-1076-4fa5-9c1e-cf18acbdd78b",
-												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"  pm.response.to.have.status(200);",
-													"});",
-													"",
-													"",
-													"pm.test(\"Validate the response schema for required fields\", function () {",
-													"    const responseData = pm.response.json();",
-													"",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
-													"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
-													"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
-													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-													"    pm.expect(responseData.data.status).to.exist.and.to.be.a('number');",
-													"    pm.expect(responseData.data.message).to.exist.and.to.be.a('string');",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "1437274a-e113-4530-99f0-882bc9d019c4",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"CurrencyId\": 2\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/deactivate"
-									},
-									"response": []
-								},
-								{
-									"name": "Fx Transfer",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
-												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"  pm.response.to.have.status(200);",
-													"});",
-													"",
-													"",
-													"pm.test(\"Content-Type header is application/json\", function () {",
-													"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
-													"});",
-													"",
-													"",
-													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.code).to.exist;",
-													"    pm.expect(responseData.success).to.exist;",
-													"    pm.expect(responseData.message).to.exist;",
-													"    pm.expect(responseData.data).to.exist;",
-													"});",
-													"",
-													"",
-													"pm.test(\"Data object contains the expected fields - status and message\", function () {",
-													"  const responseData = pm.response.json();",
-													"",
-													"  pm.expect(responseData).to.be.an('object');",
-													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-													"  pm.expect(responseData.data).to.have.property('status');",
-													"  pm.expect(responseData.data).to.have.property('message');",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "5328dbef-03ba-4b14-b5e4-3a5bea7cc101",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"FromAccountNumber\": \"{{accountNumber}}\",\n    \"ToAccountNumber\": \"{{accountNumber1}}\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"68\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"10\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": null,\n    \"OrganizationId\": \"1\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/multicurrency/transfer"
-									},
-									"response": []
-								},
-								{
-									"name": "Fx Transfer Copy",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
-												"exec": [
-													"pm.test(\"Response status code is 200\", function () {",
-													"  pm.response.to.have.status(200);",
-													"});",
-													"",
-													"",
-													"pm.test(\"Content-Type header is application/json\", function () {",
-													"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
-													"});",
-													"",
-													"",
-													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
-													"    const responseData = pm.response.json();",
-													"    ",
-													"    pm.expect(responseData).to.be.an('object');",
-													"    pm.expect(responseData.code).to.exist;",
-													"    pm.expect(responseData.success).to.exist;",
-													"    pm.expect(responseData.message).to.exist;",
-													"    pm.expect(responseData.data).to.exist;",
-													"});",
-													"",
-													"",
-													"pm.test(\"Data object contains the expected fields - status and message\", function () {",
-													"  const responseData = pm.response.json();",
-													"",
-													"  pm.expect(responseData).to.be.an('object');",
-													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-													"  pm.expect(responseData.data).to.have.property('status');",
-													"  pm.expect(responseData.data).to.have.property('message');",
-													"});",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "a02b97bc-2ba8-4a24-ac11-e74db5c623cd",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Api-key",
-												"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
-												"type": "text",
-												"disabled": true
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "\n{\n    \"FromAccountNumber\": \"0000029775\",\n    \"ToAccountNumber\": \"0000076528\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"68\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"10000\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": null,\n    \"OrganizationId\": \"1\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/multicurrency/transfer"
-									},
-									"response": []
-								}
-							],
-							"id": "4db3f968-be3f-44f8-b03b-eebe1a24fd45"
 						}
 					],
 					"id": "569f7105-2da3-4adb-a031-7cfaf98bf166"
 				}
 			],
 			"id": "87ade3bf-d704-4eae-a90f-e2b96b375c3c"
-		},
-		{
-			"name": "Multi-Currency",
-			"item": [
-				{
-					"name": "Add New currency rate",
-					"id": "5d2c5318-a8bd-4fe8-b07d-9285820b5fd7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"CurrencyId\": 1,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"2\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"EUR\",\n    \"BankCode\": \"930\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/add"
-					},
-					"response": []
-				},
-				{
-					"name": "Get currency rate",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "51cfab69-9af8-4550-9de5-f143994c9c7e",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Validate the structure of the data array\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.data).to.be.an('array');",
-									"  pm.expect(responseData.data).to.have.length.above(0, \"Data array should not be empty\");",
-									"  responseData.data.forEach(function(item) {",
-									"    pm.expect(item).to.be.an('object');",
-									"    pm.expect(item).to.have.property('currencyid');",
-									"    pm.expect(item).to.have.property('isoCurCode');",
-									"    pm.expect(item).to.have.property('shortName');",
-									"    pm.expect(item).to.have.property('curCode');",
-									"    pm.expect(item).to.have.property('name');",
-									"    pm.expect(item).to.have.property('decPla');",
-									"    pm.expect(item).to.have.property('spotRate');",
-									"    pm.expect(item).to.have.property('buyRate');",
-									"    pm.expect(item).to.have.property('sellRate');",
-									"    pm.expect(item).to.have.property('closRate');",
-									"    pm.expect(item).to.have.property('fixRate');",
-									"    pm.expect(item).to.have.property('midRate');",
-									"    pm.expect(item).to.have.property('valDays');",
-									"    pm.expect(item).to.have.property('weekend');",
-									"    pm.expect(item).to.have.property('weekEndDays');",
-									"    pm.expect(item).to.have.property('bankCode');",
-									"    pm.expect(item).to.have.property('corBraCode');",
-									"    pm.expect(item).to.have.property('intBaseDays');",
-									"    pm.expect(item).to.have.property('monDays');",
-									"    pm.expect(item).to.have.property('dateUpdated');",
-									"    pm.expect(item).to.have.property('isactive');",
-									"    pm.expect(item).to.have.property('dateCreated');",
-									"    pm.expect(item).to.have.property('createdBy');",
-									"    pm.expect(item).to.have.property('updatedBy');",
-									"    pm.expect(item).to.have.property('deletedBy');",
-									"  });",
-									"});",
-									"",
-									"",
-									"pm.test(\"All data objects in the array have the required fields\", function () {",
-									"    const responseData = pm.response.json();",
-									"",
-									"    pm.expect(responseData.data).to.be.an('array').that.is.not.empty;",
-									"",
-									"    responseData.data.forEach(function (dataObject) {",
-									"        pm.expect(dataObject).to.include.all.keys(",
-									"            \"currencyid\", \"isoCurCode\", \"shortName\", \"curCode\", \"name\", \"decPla\", ",
-									"            \"spotRate\", \"buyRate\", \"sellRate\", \"closRate\", \"fixRate\", \"midRate\", ",
-									"            \"valDays\", \"weekend\", \"weekEndDays\", \"bankCode\", \"corBraCode\", ",
-									"            \"intBaseDays\", \"monDays\", \"dateUpdated\", \"isactive\", \"dateCreated\", ",
-									"            \"createdBy\", \"updatedBy\", \"deletedBy\"",
-									"        );",
-									"    });",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "3bd48b43-9eae-4a9b-a8f1-e99bb1ecc5cc",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/api/v1/multicurrency/currency/rates"
-					},
-					"response": []
-				},
-				{
-					"name": "Modify currency rate",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "a3b84c80-1fbf-4b45-aed1-a0e253b4be54",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Validate the response schema for code, success, message, and data\", function () {",
-									"    const responseData = pm.response.json();",
-									"    ",
-									"    pm.expect(responseData).to.be.an('object');",
-									"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
-									"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
-									"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
-									"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-									"});",
-									"",
-									"",
-									"pm.test(\"Ensure the data object has the fields status and message\", function () {",
-									"    const responseData = pm.response.json();",
-									"    ",
-									"    pm.expect(responseData.data).to.be.an('object');",
-									"    pm.expect(responseData.data).to.have.property('status');",
-									"    pm.expect(responseData.data).to.have.property('message');",
-									"});",
-									"",
-									"",
-									"pm.test(\"Ensure the success field is a boolean value\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.success).to.be.a('boolean');",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "02537728-b26a-4ad1-bea8-51cd4e865044",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"CurrencyId\": 181,\n    \"FixRate\": \"2\",\n    \"BuyRate\": \"2\",\n    \"SellRate\": \"3\",\n    \"MidRate\": \"2\",\n    \"CloseRate\": \"2\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"EUR\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"31\",\n    \"Name\": \"EUR\",\n    \"IsoCode\": \"978\",\n    \"BankCode\": \"045\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/modify"
-					},
-					"response": []
-				},
-				{
-					"name": "Reactivate Currency Rate",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e00532c2-12ac-4360-85f4-ae09f8f19761",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"",
-									"pm.test(\"Validate the response schema for code, success, message, and data fields\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.code).to.exist.and.to.be.a('string');",
-									"  pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
-									"  pm.expect(responseData.message).to.exist.and.to.be.a('string');",
-									"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "e93e98f4-b650-4373-8934-7ee4cae5b837",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"CurrencyId\": 4,\n    \"FixRate\": \"1500\",\n    \"BuyRate\": \"1400\",\n    \"SellRate\": \"1600\",\n    \"MidRate\": \"1500\",\n    \"CloseRate\": \"1500\",\n    \"CreatedBy\": \"1\",\n    \"Code\": \"KRD\",\n    \"CurrencyDecimalPlace\": \"2\",\n    \"NumberOfDaysInAWeek\": \"7\",\n    \"NumberOfWeekendDays\": \"2\",\n    \"NumberOfDaysInAYear\": \"365\",\n    \"NumberOfDaysInAMonth\": \"30\",\n    \"Name\": \"KRD\",\n    \"IsoCode\": \"KRD\",\n    \"BankCode\": \"044\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/reactivate"
-					},
-					"response": []
-				},
-				{
-					"name": "Deactivate Currency Rate",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "dc714f1b-1076-4fa5-9c1e-cf18acbdd78b",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"  pm.response.to.have.status(200);",
-									"});",
-									"",
-									"",
-									"pm.test(\"Validate the response schema for required fields\", function () {",
-									"    const responseData = pm.response.json();",
-									"",
-									"    pm.expect(responseData).to.be.an('object');",
-									"    pm.expect(responseData.code).to.exist.and.to.be.a('string');",
-									"    pm.expect(responseData.success).to.exist.and.to.be.a('boolean');",
-									"    pm.expect(responseData.message).to.exist.and.to.be.a('string');",
-									"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-									"    pm.expect(responseData.data.status).to.exist.and.to.be.a('number');",
-									"    pm.expect(responseData.data.message).to.exist.and.to.be.a('string');",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "06ad087b-2876-4bb0-b1e4-1d2ade402f1b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"CurrencyId\": 2\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v1/multicurrency/currency/rate/deactivate"
-					},
-					"response": []
-				},
-				{
-					"name": "Fx Transfer",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"  pm.response.to.have.status(200);",
-									"});",
-									"",
-									"",
-									"pm.test(\"Content-Type header is application/json\", function () {",
-									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
-									"});",
-									"",
-									"",
-									"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
-									"    const responseData = pm.response.json();",
-									"    ",
-									"    pm.expect(responseData).to.be.an('object');",
-									"    pm.expect(responseData.code).to.exist;",
-									"    pm.expect(responseData.success).to.exist;",
-									"    pm.expect(responseData.message).to.exist;",
-									"    pm.expect(responseData.data).to.exist;",
-									"});",
-									"",
-									"",
-									"pm.test(\"Data object contains the expected fields - status and message\", function () {",
-									"  const responseData = pm.response.json();",
-									"",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-									"  pm.expect(responseData.data).to.have.property('status');",
-									"  pm.expect(responseData.data).to.have.property('message');",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "0ca46328-14e7-46b0-9314-3de9e25e9597",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"FromAccountNumber\": \"{{accountNumber}}\",\n    \"ToAccountNumber\": \"{{accountNumber1}}\",\n    \"Fee\": \"1\",\n    \"ProductId\": \"68\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"10\",\n    \"Remarks\": \"Convert FX\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": null,\n    \"OrganizationId\": \"1\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/v1/multicurrency/transfer"
-					},
-					"response": []
-				},
-				{
-					"name": "Fx USD - NGN Convert",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"  pm.response.to.have.status(200);",
-									"});",
-									"",
-									"",
-									"pm.test(\"Content-Type header is application/json\", function () {",
-									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
-									"});",
-									"",
-									"",
-									"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
-									"    const responseData = pm.response.json();",
-									"    ",
-									"    pm.expect(responseData).to.be.an('object');",
-									"    pm.expect(responseData.code).to.exist;",
-									"    pm.expect(responseData.success).to.exist;",
-									"    pm.expect(responseData.message).to.exist;",
-									"    pm.expect(responseData.data).to.exist;",
-									"});",
-									"",
-									"",
-									"pm.test(\"Data object contains the expected fields - status and message\", function () {",
-									"  const responseData = pm.response.json();",
-									"",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-									"  pm.expect(responseData.data).to.have.property('status');",
-									"  pm.expect(responseData.data).to.have.property('message');",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "8a826e7b-43ce-4205-baa4-6bc2eb421d5a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"FromAccountNumber\": \"0000079086\", //USD\n    \"ToAccountNumber\": \"0000079055\",  //NGN\n    \"Fee\": \"10\",\n    \"ProductId\": \"281\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"USD-NGN\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1600\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": \"\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://wallet-dev.bank78.co/api/v1/multicurrency/transfer"
-					},
-					"response": []
-				},
-				{
-					"name": "Fx NGN - USD Convert",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"  pm.response.to.have.status(200);",
-									"});",
-									"",
-									"",
-									"pm.test(\"Content-Type header is application/json\", function () {",
-									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
-									"});",
-									"",
-									"",
-									"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
-									"    const responseData = pm.response.json();",
-									"    ",
-									"    pm.expect(responseData).to.be.an('object');",
-									"    pm.expect(responseData.code).to.exist;",
-									"    pm.expect(responseData.success).to.exist;",
-									"    pm.expect(responseData.message).to.exist;",
-									"    pm.expect(responseData.data).to.exist;",
-									"});",
-									"",
-									"",
-									"pm.test(\"Data object contains the expected fields - status and message\", function () {",
-									"  const responseData = pm.response.json();",
-									"",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-									"  pm.expect(responseData.data).to.have.property('status');",
-									"  pm.expect(responseData.data).to.have.property('message');",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "a1f12e7b-2f73-45c1-bae8-e74452173baa",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"FromAccountNumber\": \"0000079653\", //NGN\n    \"ToAccountNumber\": \"0000079725\", //USD\n    \"Fee\": \"10\",\n    \"ProductId\": \"263\",\n    \"TransactionReference\": \"Ref-Buying USD 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying USD 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"NGN-USD\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1600\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": 107\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://wallet-dev.bank78.co/api/v1/multicurrency/transfer"
-					},
-					"response": []
-				},
-				{
-					"name": "Fx USD - USD External",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e4ec5b97-a786-4067-88b0-5d8e93ffaaba",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"  pm.response.to.have.status(200);",
-									"});",
-									"",
-									"",
-									"pm.test(\"Content-Type header is application/json\", function () {",
-									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
-									"});",
-									"",
-									"",
-									"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
-									"    const responseData = pm.response.json();",
-									"    ",
-									"    pm.expect(responseData).to.be.an('object');",
-									"    pm.expect(responseData.code).to.exist;",
-									"    pm.expect(responseData.success).to.exist;",
-									"    pm.expect(responseData.message).to.exist;",
-									"    pm.expect(responseData.data).to.exist;",
-									"});",
-									"",
-									"",
-									"pm.test(\"Data object contains the expected fields - status and message\", function () {",
-									"  const responseData = pm.response.json();",
-									"",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-									"  pm.expect(responseData.data).to.have.property('status');",
-									"  pm.expect(responseData.data).to.have.property('message');",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "dbdc50e0-5fbd-4621-b8ba-981aa856a4f6",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"FromAccountNumber\": \"0000079086\", //Paga\n    \"ToAccountNumber\": \"00000001232\", // external\n    \"Fee\": \"10\",\n    \"ProductId\": \"300\",\n    \"TransactionReference\": \"Transfer between USD - USD 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Transfer between USD - USD 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"USD-USD External\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": \"\"\n}\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://wallet-dev.bank78.co/api/v1/multicurrency/transfer"
-					},
-					"response": []
-				}
-			],
-			"id": "435aee5d-c1d1-4225-a030-abcc072b9e05"
 		},
 		{
 			"name": "EOD",
