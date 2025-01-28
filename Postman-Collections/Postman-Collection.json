@@ -3319,8 +3319,7 @@
 											"variable": [
 												{
 													"key": "customerId",
-													"value": "{{customerId}}",
-													"description": "(Required) "
+													"value": "{{customerId}}"
 												}
 											]
 										}
