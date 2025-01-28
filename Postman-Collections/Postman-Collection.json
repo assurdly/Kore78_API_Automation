@@ -3863,6 +3863,52 @@
 								},
 								{
 									"name": "Find Customer by Account Number",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "8914e6d9-4e2e-4ac4-82de-c48fd9373c83",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data.customer).to.have.property('id');",
+													"    pm.expect(responseData.data.customer).to.have.property('organizationId');",
+													"    pm.expect(responseData.data.customer).to.have.property('firstName');",
+													"    pm.expect(responseData.data.customer).to.have.property('lastName');",
+													"    pm.expect(responseData.data.customer).to.have.property('dob');",
+													"    pm.expect(responseData.data.customer).to.have.property('customerTypeId');",
+													"    pm.expect(responseData.data.customer).to.have.property('countryId');",
+													"    pm.expect(responseData.data.customer).to.have.property('city');",
+													"    pm.expect(responseData.data.customer).to.have.property('address');",
+													"    pm.expect(responseData.data.customer).to.have.property('mobileNumber');",
+													"    pm.expect(responseData.data.customer).to.have.property('emailAddress');",
+													"    pm.expect(responseData.data.customer).to.have.property('dateCreated');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the structure of the 'data' object\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.customer).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.customerType).to.exist.and.to.be.an('object');",
+													"    pm.expect(responseData.data.walletDtos).to.exist.and.to.be.an('array');",
+													"    pm.expect(responseData.data.customerProperties).to.exist.and.to.be.an('array');",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "c8880afa-04d1-4331-b823-fe363fabb9de",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -3883,7 +3929,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"accountNumber\": \"<string>\",\n  \"organizationId\": \"<long>\"\n}",
+											"raw": "{\n  \"accountNumber\": \"0000163372\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
