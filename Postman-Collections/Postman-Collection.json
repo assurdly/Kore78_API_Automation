@@ -3536,7 +3536,7 @@
 									]
 								},
 								{
-									"name": "Update Customer Copy 2",
+									"name": "Update Customer - Empty Fields",
 									"event": [
 										{
 											"listen": "test",
