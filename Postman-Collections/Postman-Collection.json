@@ -1187,6 +1187,32 @@
 										},
 										{
 											"name": "Add organization - Users",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "1ad3b2c8-8f34-4e29-9db4-0c50ea9dcd0d",
+														"exec": [
+															"var jsonData = pm.response.json();",
+															"",
+															"pm.test(\"Response code is 200\", function () {",
+															"    pm.response.to.have.status(200);",
+															"});",
+															"pm.test(\"Response structure and properties for 200\", function () {",
+															"    pm.expect(jsonData).to.have.property(\"code\", \"00\");",
+															"    pm.expect(jsonData).to.have.property(\"success\", true);",
+															"    pm.expect(jsonData.data).to.be.an('object');",
+															"});",
+															"",
+															"pm.test(\"A success message about adding an organization is returned\", function () {",
+															"    pm.expect(jsonData.message).to.eql(\"organization added successfully\");",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "6c6e5298-ccaa-4815-8f76-bc2c787b6e7a",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -1201,7 +1227,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"id\": 5,\n  \"name\": \"Assurdly\",\n  \"key\": \"70f7fe9f8648786e1328f67a804b857c59f5f456ca5a75ce5fb846fdb3361726\", \n   \"dateCreated\": \"2024-09-16T20:53:36.251678\"\n}\n",
+													"raw": "{\n  \"id\": 5,\n  \"name\": \"Assurdly\",\n  \"key\": \"70f7fe9f8648786e1328f67a804b857c59f5f456ca5a75ce5fb846fdb3361726\", \n  \"dateCreated\": \"2024-09-16T20:53:36.251678\"\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -1268,8 +1294,8 @@
 															"    pm.expect(jsonData.data).to.eql(null);",
 															"});",
 															"",
-															"pm.test(\"An error message about the empty organization name\", function () {",
-															"    pm.expect(jsonData.message).to.eql(\"Organization name cannot be empty\");",
+															"pm.test(\"An error message about the empty fields \", function () {",
+															"    pm.expect(jsonData.message).to.eql(\"Kindly provide all required fields\");",
 															"});"
 														],
 														"type": "text/javascript",
@@ -1291,7 +1317,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"\",\n  \"key\": \"70f7fe9f8648786e1328f67a804b857c59f5f456ca5a75ce5fb846fdb3361726\", \n  \"dateCreated\": \"2024-09-16T20:53:36.251678\"\n}\n",
+													"raw": "{\n  \"name\": \"\",\n  \"key\": \"\", \n  \"dateCreated\": \"\"\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -1431,7 +1457,7 @@
 											]
 										},
 										{
-											"name": "Add organization - Invallid Organization Name Copy",
+											"name": "Add organization - Invallid Organization Key",
 											"event": [
 												{
 													"listen": "test",
@@ -1448,8 +1474,8 @@
 															"    pm.expect(jsonData.data).to.eql(null);",
 															"});",
 															"",
-															"pm.test(\"An error message about the empty organization name\", function () {",
-															"    pm.expect(jsonData.message).to.eql(\"Organization name cannot be empty\");",
+															"pm.test(\"An error message about Invalid organization key\", function () {",
+															"    pm.expect(jsonData.message).to.eql(\"Organization key provided is incorrect\");",
 															"});"
 														],
 														"type": "text/javascript",
@@ -1471,7 +1497,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"name\": \"\",\n  \"key\": \"70f7fe9f8648786e1328f67a804b857c59f5f456ca5a75ce5fb846fdb3361726\", \n  \"dateCreated\": \"2024-09-16T20:53:36.251678\"\n}\n",
+													"raw": "{\n  \"name\": \"Assurdly\",\n  \"key\": \"70f7fe9f8648786e1328f67a804b857c59f5f456ca5a75ce5fb846fdb3361726wwwww\", \n  \"dateCreated\": \"2024-09-16T20:53:36.251678\"\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
