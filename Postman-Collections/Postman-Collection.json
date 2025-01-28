@@ -1780,7 +1780,7 @@
 									]
 								},
 								{
-									"name": "Add new branch - not allowed Copy",
+									"name": "Add new branch - No Authorization",
 									"event": [
 										{
 											"listen": "test",
@@ -1789,17 +1789,17 @@
 												"exec": [
 													"var jsonData = pm.response.json();",
 													"",
-													"pm.test(\"Response code is 400\", function () {",
-													"    pm.response.to.have.status(400);",
+													"pm.test(\"Response code is 401\", function () {",
+													"    pm.response.to.have.status(401);",
 													"});",
 													"pm.test(\"Error response object is returned\", function () {",
-													"    pm.expect(jsonData).to.have.property(\"code\", \"400\");",
+													"    pm.expect(jsonData).to.have.property(\"code\", \"401\");",
 													"    pm.expect(jsonData).to.have.property(\"success\", false);",
 													"    pm.expect(jsonData).to.have.property(\"data\", null);",
 													"});",
 													"",
-													"pm.test(\"Error message about not being able to add a branch is returned\", function () {",
-													"    pm.expect(jsonData.message).to.eql(\"Your subscription does not support multiple bank branches, please engage support for further assistance\");",
+													"pm.test(\"Error message confirming No Authorization\", function () {",
+													"    pm.expect(jsonData.message).to.eql(\"x-api-key is missing in the header\");",
 													"});"
 												],
 												"type": "text/javascript",
@@ -1812,6 +1812,9 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "POST",
 										"header": [
 											{
