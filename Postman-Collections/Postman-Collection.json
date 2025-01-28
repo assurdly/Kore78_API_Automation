@@ -3388,7 +3388,7 @@
 									]
 								},
 								{
-									"name": "Update Customer Copy",
+									"name": "Update Customer - Missing First Name",
 									"event": [
 										{
 											"listen": "test",
@@ -3444,7 +3444,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"city\": \"{{$randomCity}}\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"occupation\": \"{{$randomJobTitle}}\",\n  \"gender\": \"Male\",\n  \"bvnverified\": true,\n  \"ninVerified\": true\n}",
+											"raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"middleName\": \"{{$randomFirstName}}\",\n  \"dob\": \"1990-05-20\",\n  \"city\": \"{{$randomCity}}\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"occupation\": \"{{$randomJobTitle}}\",\n  \"gender\": \"Male\",\n  \"bvnverified\": true,\n  \"ninVerified\": true\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -3467,7 +3467,6 @@
 											],
 											"variable": [
 												{
-													"id": "c0792a8c-e93a-4aac-8c6c-1f307eb6c837",
 													"key": "customerId",
 													"value": "{{customerId}}",
 													"description": "(Required) "
