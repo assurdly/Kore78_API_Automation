@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Wisozk",
+  "middleName": "Lorine",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "600 Torphy Canyon",
+  "mobileNumber": "234912427053112",
+  "emailAddress": "Lowell_Davis39@gmail.com"
+}

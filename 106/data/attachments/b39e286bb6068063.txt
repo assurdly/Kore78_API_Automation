@@ -1,0 +1,1 @@
+{"code":"00","success":true,"message":"Created Successfully","data":{"id":241,"name":"Otha Charges","ledgerCode":null,"acctCode":null,"isActive":null,"dateCreated":null,"walletGroupFeatureDto":null}}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Kaleigh",
+  "lastName": "Hettinger",
+  "middleName": "Everett",
+  "dob": "1990-05-20",
+  "city": "Lake Peytonton",
+  "address": "756 Alex Lane",
+  "occupation": "Investor Solutions Liaison",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

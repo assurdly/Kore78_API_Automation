@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Intranet Payment",
+  "description": "Future Payment",
+  "direction": "D"
+}

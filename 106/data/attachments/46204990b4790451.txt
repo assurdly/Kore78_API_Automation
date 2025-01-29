@@ -1,0 +1,12 @@
+{
+  "firstName": "Rickie",
+  "lastName": "Carter",
+  "middleName": "Claudia",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "1526 Neva Plaza",
+  "mobileNumber": "234917431721112",
+  "emailAddress": "Moises.Goyette26@hotmail.com"
+}

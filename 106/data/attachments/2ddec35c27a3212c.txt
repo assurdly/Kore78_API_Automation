@@ -1,0 +1,10 @@
+{
+    "name": "Otha Charges",
+    "walletGroupFeatureDto": [
+        {
+            "featureName": "VaultCharge",
+            "featurePropertyName": "Threshold",
+            "featurePropertyValue": "5"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "productId": 1,
+    "amount": 10000000,
+    "postedDate": "2024-09-02",
+    "transactionReference": "1212121212-g",
+    "walletId": 1,
+    "customerId": 2079,
+    "organizationId": 1,
+    "isPosted": true,
+    "direction": "C",
+    "remarks": "Test",
+    "currency": "NGN",
+    "batchReference": "BATCH-1212121212-MMJMJ11161532515",
+    "accountNumber": ""
+}
