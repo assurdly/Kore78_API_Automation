@@ -9501,7 +9501,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"FromAccountNumber\": \"0000079086\", //USD\n    \"ToAccountNumber\": \"0000079055\",  //NGN\n    \"Fee\": \"10\",\n    \"ProductId\": \"281\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"USD-NGN\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"1600\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": \"\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
+											"raw": " {\n    \"FromAccountNumber\": \"0000079086\", //USD\n    \"ToAccountNumber\": \"0000079062\",  //NGN\n    \"Fee\": \"10\",\n    \"ProductId\": \"281\",\n    \"TransactionReference\": \"Ref-Buying NGN 1647NGN2USD261384 {{$randomBankAccount}}\",\n    \"BatchReference\": \"Ref- Buying NGN 1647NGN2USD261387{{$randomBankAccount}}\",\n    \"Amount\": \"100\",\n    \"Remarks\": \"USD-NGN\",\n    \"BranchCode\": \"999\",\n    \"TransactionTypeId\": \"\",\n    \"FxRate\": \"\",\n    \"OrganizationId\": \"23\",\n    \"targetCurrencyId\": \"\"\n}\n\n// {\n//  \"Fee\": 0,\n//  \"Amount\": 15,\n//  \"FxRate\": null,\n//  \"Remarks\": \"Debit NGN23809.52380952381 into 0000045692 [+NGN15.0000000000000003] |Ferrry Den|0000045692|Rove10\",\n//  \"Currency\": 125,\n//  \"Direction\": \"C\",\n//  \"AccountNumber\": null,\n//  \"BatchReference\": null,\n//  \"ToAccountNumber\": \"2330004231\",\n//  \"FromAccountNumber\": \"0000044860\",\n//  \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"amount\": \"6000\",\n//   \"beneficiaryCurrency\": \"GHS\",\n//   \"beneficiaryId\":\"944\",\n//   \"destinationAmount\": \"59\",\n//   \"exchangeRateAmount\": \"0.0098\",\n//   \"exhangeRateId\": \"e99016e65ce84623b88f5eda8ffd92e8\",\n//   \"multiplier\": \"0.0098\",\n//   \"sourceWalletId\": \"235\",\n//   \"transactionPin\": \"2345\",\n//    \"isNegotiated\": false,\n//   \"negotiatedRate\": 0.0100,\n//   \"FromAccountNumber\": \"{{accountNumber}}\",\n//   \"ToAccountNumber\": \"0000087157\",\n//   \"TransactionReference\": \"{{$randomBankAccount}}1647NGN2USD261384\"\n// }\n\n// {\n//   \"Fee\": 100,\n//   \"Amount\": 78.55,\n//   \"FxRate\": 0.0785545954438334642576590731,\n//   \"Remarks\": \"Debit KES78.55 into 0000045685 [+KES999.9415] |Ferrry Den|0000045685|Rove10\",\n//   \"Currency\": 154,\n//   \"Direction\": null,\n//   \"ProductId\": \"7\",\n//   \"AccountNumber\": null,\n//   \"BatchReference\": null,\n//   \"ToAccountNumber\": \"0000045685\",\n//   \"TargetCurrencyId\": 1,\n//   \"FromAccountNumber\": \"0000190107\",\n//   \"TransactionReference\": \"241002141352KES2NGN057414\"\n// }",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -10188,93 +10188,93 @@
 								}
 							],
 							"id": "dd1a849f-ae11-4f4a-80d1-3504649beef7"
+						},
+						{
+							"name": "EOD",
+							"item": [
+								{
+									"name": "EOD",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b69dc5ae-299c-42f4-ab68-982ce9de4391",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Content-Type header is application/json\", function () {",
+													"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.code).to.exist;",
+													"  pm.expect(responseData.success).to.exist;",
+													"  pm.expect(responseData.message).to.exist;",
+													"  pm.expect(responseData.data).to.exist;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the schema of the data object - status and message properties\", function () {",
+													"  const responseData = pm.response.json();",
+													"",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+													"  pm.expect(responseData.data.status).to.exist.and.to.be.a('number');",
+													"  pm.expect(responseData.data.message).to.exist.and.to.be.a('string');",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "334b4f05-eae6-4bbc-aa80-c807b5357bf7",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/wallets/end-of-day/branch/:branchCode",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"wallets",
+												"end-of-day",
+												"branch",
+												":branchCode"
+											],
+											"variable": [
+												{
+													"id": "9fc8557f-1985-45fd-8e64-9a769e0d3d32",
+													"key": "branchCode",
+													"value": "999"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "81ef7529-b38a-4c41-80be-d8849cf737ce"
 						}
 					],
 					"id": "569f7105-2da3-4adb-a031-7cfaf98bf166"
 				}
 			],
 			"id": "87ade3bf-d704-4eae-a90f-e2b96b375c3c"
-		},
-		{
-			"name": "EOD",
-			"item": [
-				{
-					"name": "EOD",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b69dc5ae-299c-42f4-ab68-982ce9de4391",
-								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"  pm.response.to.have.status(200);",
-									"});",
-									"",
-									"",
-									"pm.test(\"Content-Type header is application/json\", function () {",
-									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
-									"});",
-									"",
-									"",
-									"pm.test(\"Response has the required fields - code, success, message, and data\", function () {",
-									"  const responseData = pm.response.json();",
-									"  ",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.code).to.exist;",
-									"  pm.expect(responseData.success).to.exist;",
-									"  pm.expect(responseData.message).to.exist;",
-									"  pm.expect(responseData.data).to.exist;",
-									"});",
-									"",
-									"",
-									"pm.test(\"Validate the schema of the data object - status and message properties\", function () {",
-									"  const responseData = pm.response.json();",
-									"",
-									"  pm.expect(responseData).to.be.an('object');",
-									"  pm.expect(responseData.data).to.exist.and.to.be.an('object');",
-									"  pm.expect(responseData.data.status).to.exist.and.to.be.a('number');",
-									"  pm.expect(responseData.data.message).to.exist.and.to.be.a('string');",
-									"});",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "334b4f05-eae6-4bbc-aa80-c807b5357bf7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/api/v1/wallets/end-of-day/branch/:branchCode",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"wallets",
-								"end-of-day",
-								"branch",
-								":branchCode"
-							],
-							"variable": [
-								{
-									"id": "9fc8557f-1985-45fd-8e64-9a769e0d3d32",
-									"key": "branchCode",
-									"value": "999"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"id": "81ef7529-b38a-4c41-80be-d8849cf737ce"
 		}
 	],
 	"auth": {
