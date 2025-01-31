@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": 2002,
-    "walletClassificationId": 1, 
-    "currencyId": 107, 
-    "name": "Salvatore Anderson" 
-}

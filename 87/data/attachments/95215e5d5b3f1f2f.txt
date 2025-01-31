@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":163,"name":"Tactics Payment","organizationId":1,"description":"Lead Payment","direction":"C","isActive":true,"dateCreated":"2024-12-20T18:03:57.4602322Z"}}

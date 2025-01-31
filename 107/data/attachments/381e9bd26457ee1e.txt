@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Armstrong",
+  "middleName": "Bernadette",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "4186 Destin Glens",
+  "mobileNumber": "234917178539712",
+  "emailAddress": "Jayce_Bernhard96@hotmail.com"
+}

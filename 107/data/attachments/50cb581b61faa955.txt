@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Smith",
+  "middleName": "Alfonzo",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "7565 Brooklyn Mission",
+  "mobileNumber": "234913376893212",
+  "emailAddress": "Rowan53@gmail.com"
+}

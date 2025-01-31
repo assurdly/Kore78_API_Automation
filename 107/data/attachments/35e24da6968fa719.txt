@@ -1,0 +1,12 @@
+{
+  "firstName": "Allison",
+  "lastName": "O'Hara",
+  "middleName": "Isidro",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "8024 Thaddeus Points",
+  "mobileNumber": "234910610882012",
+  "emailAddress": "Vernon55@gmail.com"
+}

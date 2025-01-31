@@ -1,0 +1,5 @@
+{
+  "name": "Infrastructure Payment",
+  "description": "International Payment",
+  "direction": "C"
+}
