@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Weber",
+  "middleName": "Gwendolyn",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "66607 Gusikowski Mountains",
+  "mobileNumber": "234912087583012",
+  "emailAddress": "Kaela.Bednar57@yahoo.com"
+}

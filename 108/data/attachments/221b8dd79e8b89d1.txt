@@ -1,0 +1,7 @@
+{
+    "walletGroupId": 32, 
+    "customerId": 2087,
+    "walletClassificationId": 1, 
+    "currencyId": 1, 
+    "name": "Dr. Frank Bartell" 
+}

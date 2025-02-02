@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Research Payment",
-  "description": "Chief Payment",
-  "direction": "D"
-}

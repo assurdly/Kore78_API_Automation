@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Emard",
+  "middleName": "Cassandra",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "171 Bernier Views",
+  "mobileNumber": "234910376159212",
+  "emailAddress": "Marques89@yahoo.com"
+}

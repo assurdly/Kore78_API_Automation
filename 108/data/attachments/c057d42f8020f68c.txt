@@ -1,0 +1,12 @@
+{
+  "firstName": "Amelia",
+  "lastName": "McLaughlin",
+  "middleName": "Shawna",
+  "dob": "1990-05-20",
+  "city": "Lake Burdette",
+  "address": "9388 Timothy Lights",
+  "occupation": "Senior Identity Representative",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
