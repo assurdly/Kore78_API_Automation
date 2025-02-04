@@ -67,7 +67,7 @@
 											"request": {
 												"method": "GET",
 												"header": [],
-												"url": "{{baseUrl}}/api/v1/countries/get"
+												"url": "{{base_Url}}/api/v1/countries/get"
 											},
 											"response": [
 												{
@@ -1652,7 +1652,7 @@
 							"auth": {
 								"type": "apikey",
 								"apikey": {
-									"value": "{{AdminTest}}",
+									"value": "{{api-key}}",
 									"key": "x-api-key"
 								}
 							},
@@ -1660,7 +1660,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "b345c4f2-f174-4b14-955e-2a49283c1697",
+										"id": "958fd95b-beaf-4989-9f0f-926a00f7733a",
 										"type": "text/javascript",
 										"packages": {},
 										"exec": [
@@ -1671,7 +1671,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "407b1219-4be1-41b5-aa11-d30c5182463d",
+										"id": "f2c32e89-06d8-42fb-9c8e-2a63292e63a2",
 										"type": "text/javascript",
 										"packages": {},
 										"exec": [
