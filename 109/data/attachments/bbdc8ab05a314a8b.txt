@@ -1,0 +1,12 @@
+{
+  "firstName": "Carol",
+  "lastName": "Rolfson",
+  "middleName": "Lydia",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "921 Presley Islands",
+  "mobileNumber": "080",
+  "emailAddress": "Keely_Ortiz@gmail.com"
+}

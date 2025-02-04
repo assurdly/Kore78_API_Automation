@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hodkiewicz",
+  "middleName": "Clair",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "168 Micaela Fork",
+  "mobileNumber": "234918455602912",
+  "emailAddress": "Fermin3@yahoo.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Haley",
+  "middleName": "Pasquale",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "4563 Towne Cove",
+  "mobileNumber": "2349196402657",
+  "emailAddress": "August.Jenkins87@gmail.com"
+}

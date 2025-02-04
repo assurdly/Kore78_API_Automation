@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Blick",
+  "middleName": "Lorenz",
+  "dob": "1990-05-20",
+  "city": "Mooreberg",
+  "address": "55753 Beier Summit",
+  "occupation": "Regional Mobility Manager",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

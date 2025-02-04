@@ -1,1 +1,0 @@
-{"code":"400","success":false,"message":"A currency with the code EUR already exists. use the modify endpoint to change the rates","data":null}

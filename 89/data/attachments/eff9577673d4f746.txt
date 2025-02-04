@@ -1,6 +1,0 @@
-{
-  "id": "59",
-  "name": "Program Larry",
-  "description": "Principal Payment",
-  "direction": "D"
-}

@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "name": "Macao",
+  "countryCodeTwo": "",
+  "countryCodeThree": "DZA"
+}
