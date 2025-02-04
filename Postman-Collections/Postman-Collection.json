@@ -2504,9 +2504,15 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{customer_access_token}}"
+											}
+										},
 										"method": "GET",
 										"header": [],
-										"url": "{{baseUrl}}/api/v1/branches/u/get"
+										"url": "{{base_Url}}/api/v1/branches/u/get"
 									},
 									"response": [
 										{
