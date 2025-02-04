@@ -10276,7 +10276,7 @@
 	"auth": {
 		"type": "apikey",
 		"apikey": {
-			"value": "AdminTest",
+			"value": "{{api-key}}",
 			"key": "x-api-key",
 			"in": "header"
 		}
@@ -10285,7 +10285,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7b4a6d69-97d3-43f6-87e7-d69d34980d1f",
+				"id": "3ee1dc3b-2148-46e3-b061-336931128677",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -10296,7 +10296,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "034e5979-bb83-4462-9db8-6916ef9a312d",
+				"id": "e90b04ad-31be-4a25-b3f1-c486e663dee0",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -10314,12 +10314,14 @@
 		{
 			"key": "api-key",
 			"value": "SK-tAsPts2rqBXKkL92V2cL8CC1jppzYDUFc2P96QCRLse4i2O2WwOocWAHI2hgPw2DwdW",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "api-key",
 			"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "baseUrl",
@@ -10329,12 +10331,14 @@
 		{
 			"key": "api-key",
 			"value": "SK-lXtqycpN0aJS08AL9VwpXiwlPP7dq3kIFRTp0BEjreDRnZdJxVIFjyAch7aZpuN4z8S",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "Api-key",
 			"value": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "accessToken",
@@ -10409,6 +10413,12 @@
 		{
 			"key": "AdminTest",
 			"value": "AdminTest",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "api-key",
+			"value": "SK-G1JLmVYUyG3QEN4ghcTNZ4kWVy0Rz6dHIKGY9NcMKkH41yiuEZBdVT4mkNWVEyhYPX3",
 			"type": "string"
 		}
 	]
