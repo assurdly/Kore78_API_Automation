@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Murazik",
+  "middleName": "Nash",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "223 Botsford Heights",
+  "mobileNumber": "2349190214385",
+  "emailAddress": "Montana.Rowe@gmail.com"
+}

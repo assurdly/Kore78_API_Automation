@@ -1,0 +1,12 @@
+{
+  "firstName": "Jack",
+  "lastName": "Toy",
+  "middleName": "Elmira",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "91656 Lourdes Points",
+  "mobileNumber": "080",
+  "emailAddress": "Randal.Hansen54@yahoo.com"
+}

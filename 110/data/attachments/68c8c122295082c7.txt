@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Prohaska",
+  "middleName": "Danielle",
+  "dob": "1990-05-20",
+  "city": "Konopelskifurt",
+  "address": "676 Macejkovic Landing",
+  "occupation": "Human Program Technician",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

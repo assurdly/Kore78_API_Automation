@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Moore",
+  "middleName": "Rudy",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "991 Kobe Stream",
+  "mobileNumber": "234916546435412",
+  "emailAddress": "Leonora_Lubowitz@gmail.com"
+}

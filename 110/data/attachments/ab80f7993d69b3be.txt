@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Carroll",
+  "middleName": "Hubert",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "53944 Frederique Unions",
+  "mobileNumber": "234916071226012",
+  "emailAddress": "Lavinia_Conn49@hotmail.com"
+}
