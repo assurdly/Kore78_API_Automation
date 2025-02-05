@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Waters",
+  "middleName": "Ludie",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "76909 Madilyn Lake",
+  "mobileNumber": "234912641159512",
+  "emailAddress": "Jerel_Schmidt23@gmail.com"
+}

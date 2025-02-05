@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Schmeler",
+  "middleName": "Neoma",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "9624 Westley Passage",
+  "mobileNumber": "234910012413812",
+  "emailAddress": "Velma.Kiehn@gmail.com"
+}

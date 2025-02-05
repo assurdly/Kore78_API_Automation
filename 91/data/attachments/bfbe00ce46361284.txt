@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": 2017,
-    "walletClassificationId": 1, 
-    "currencyId": 1, 
-    "name": "Penny Mueller" 
-}

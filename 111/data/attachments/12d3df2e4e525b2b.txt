@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Tremblay",
+  "middleName": "Ronaldo",
+  "dob": "1990-05-20",
+  "city": "East Honolulu",
+  "address": "506 Johnston Terrace",
+  "occupation": "Direct Communications Specialist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
