@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Marks",
+  "middleName": "Cruz",
+  "dob": "1990-05-20",
+  "city": "East Marcelinohaven",
+  "address": "7651 Kelley Valleys",
+  "occupation": "Senior Communications Assistant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "McClure",
+  "middleName": "Helene",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "5788 Ines Road",
+  "mobileNumber": "2349115930172",
+  "emailAddress": "Reese.Balistreri@gmail.com"
+}

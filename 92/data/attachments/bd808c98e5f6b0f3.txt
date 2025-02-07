@@ -1,4 +1,0 @@
-{
-  "accountNumber": "<string>",
-  "organizationId": "<long>"
-}

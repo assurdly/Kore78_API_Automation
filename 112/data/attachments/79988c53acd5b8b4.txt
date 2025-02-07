@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "McDermott",
+  "middleName": "Jakob",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "47516 Luettgen Street",
+  "mobileNumber": "234918798282712",
+  "emailAddress": "Lawson_Aufderhar@gmail.com"
+}

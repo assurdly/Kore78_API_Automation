@@ -1,0 +1,12 @@
+{
+  "firstName": "Mekhi",
+  "lastName": "Smitham",
+  "middleName": "Lowell",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "492 Murray Landing",
+  "mobileNumber": "080",
+  "emailAddress": "Vicenta.Lesch@hotmail.com"
+}

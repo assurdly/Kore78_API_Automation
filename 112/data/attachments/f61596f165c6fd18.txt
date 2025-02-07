@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Jermaine",
+  "lastName": "Schaden",
+  "middleName": "Chadrick",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "37792 Jast Motorway",
+  "mobileNumber": "2349183655550",
+  "emailAddress": "Judd_Sauer34@gmail.com",
+  "dateCreated": "2024-08-20"
+}

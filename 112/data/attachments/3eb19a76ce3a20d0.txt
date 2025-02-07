@@ -1,0 +1,12 @@
+{
+  "firstName": "Nikki",
+  "lastName": "Raynor",
+  "middleName": "Baylee",
+  "dob": "1990-05-20",
+  "city": "North Monserratport",
+  "address": "1671 Orpha Ville",
+  "occupation": "Future Interactions Director",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

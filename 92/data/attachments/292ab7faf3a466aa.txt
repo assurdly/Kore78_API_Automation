@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Retrieved Successfully","data":[{"transactionTypeId":0,"name":""}]}
