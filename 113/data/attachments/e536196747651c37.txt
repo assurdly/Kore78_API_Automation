@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Aufderhar",
+  "middleName": "Claud",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "2780 Lela Station",
+  "mobileNumber": "234917929525212",
+  "emailAddress": "Woodrow.Bergstrom2@hotmail.com"
+}

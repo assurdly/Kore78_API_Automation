@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Factors Payment",
+  "description": "Direct Payment",
+  "direction": "D"
+}

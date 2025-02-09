@@ -1,0 +1,12 @@
+{
+  "firstName": "Nayeli",
+  "lastName": "Miller",
+  "middleName": "Asa",
+  "dob": "1990-05-20",
+  "city": "Emardview",
+  "address": "0129 Jason Shore",
+  "occupation": "Forward Quality Consultant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

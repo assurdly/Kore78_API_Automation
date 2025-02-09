@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "name": "Kyrgyz Republic",
+  "countryCodeTwo": "",
+  "countryCodeThree": "DZA"
+}

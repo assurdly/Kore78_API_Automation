@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Weimann",
+  "middleName": "Neva",
+  "dob": "1990-05-20",
+  "city": "South Fredaview",
+  "address": "002 Kautzer Unions",
+  "occupation": "Product Communications Facilitator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

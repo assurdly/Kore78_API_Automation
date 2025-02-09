@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Schaefer",
+  "middleName": "Jarrett",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "61138 Kuvalis Neck",
+  "mobileNumber": "234917686403912",
+  "emailAddress": "Braeden.Parker@gmail.com"
+}
