@@ -1,0 +1,12 @@
+{
+  "firstName": "Dannie",
+  "lastName": "Orn",
+  "middleName": "Melody",
+  "dob": "1990-05-20",
+  "city": "Dakotaville",
+  "address": "04378 Welch Locks",
+  "occupation": "Principal Division Executive",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

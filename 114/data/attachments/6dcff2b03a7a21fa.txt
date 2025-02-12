@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hahn",
+  "middleName": "Roxanne",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "23155 Liliane Place",
+  "mobileNumber": "2349117641656",
+  "emailAddress": "Kirk_Beier79@yahoo.com"
+}

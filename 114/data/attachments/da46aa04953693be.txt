@@ -1,0 +1,5 @@
+{
+  "name": "Mobility Payment",
+  "description": "Central Payment",
+  "direction": "C"
+}

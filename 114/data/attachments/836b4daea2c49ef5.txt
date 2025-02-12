@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Mobility Payment",
+  "description": "Senior Payment",
+  "direction": "D"
+}

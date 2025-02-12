@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Dickens",
+  "middleName": "Candice",
+  "dob": "1990-05-20",
+  "city": "Gusikowskiport",
+  "address": "0979 Ramona Drives",
+  "occupation": "Product Factors Supervisor",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

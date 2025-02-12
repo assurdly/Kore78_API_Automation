@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Nienow",
+  "middleName": "Jarret",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "995 Spencer Park",
+  "mobileNumber": "234911188917312",
+  "emailAddress": "Electa_Beer@yahoo.com"
+}

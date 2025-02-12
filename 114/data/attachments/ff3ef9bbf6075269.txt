@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Krajcik",
+  "middleName": "King",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "4544 Stanton Terrace",
+  "mobileNumber": "234916318785412",
+  "emailAddress": "Armando_Schaefer70@yahoo.com"
+}

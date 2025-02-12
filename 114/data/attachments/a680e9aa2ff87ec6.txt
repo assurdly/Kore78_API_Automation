@@ -1,0 +1,12 @@
+{
+  "firstName": "Nyasia",
+  "lastName": "Marks",
+  "middleName": "Leonora",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "918 O'Hara Forge",
+  "mobileNumber": "080",
+  "emailAddress": "Preston_Bosco41@gmail.com"
+}
