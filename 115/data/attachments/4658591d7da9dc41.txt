@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "name": "Nauru",
+  "countryCodeTwo": "",
+  "countryCodeThree": "DZA"
+}

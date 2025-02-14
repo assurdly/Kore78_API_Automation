@@ -1,0 +1,12 @@
+{
+  "firstName": "Megane",
+  "lastName": "Conn",
+  "middleName": "Freddie",
+  "dob": "1990-05-20",
+  "city": "North Claudiaburgh",
+  "address": "1096 Blick Center",
+  "occupation": "Dynamic Quality Consultant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

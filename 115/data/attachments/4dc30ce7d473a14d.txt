@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Mayer",
+  "middleName": "Heaven",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "492 Lisandro Mill",
+  "mobileNumber": "2349136533672",
+  "emailAddress": "Jovani.Rutherford33@gmail.com"
+}

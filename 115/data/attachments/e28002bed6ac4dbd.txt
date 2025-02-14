@@ -1,0 +1,12 @@
+{
+  "firstName": "Dallin",
+  "lastName": "Wiegand",
+  "middleName": "Araceli",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "083 Piper Freeway",
+  "mobileNumber": "080",
+  "emailAddress": "Karelle66@yahoo.com"
+}

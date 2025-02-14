@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Turcotte",
+  "middleName": "Willy",
+  "dob": "1990-05-20",
+  "city": "Marjorieberg",
+  "address": "39132 Gleichner Circle",
+  "occupation": "Investor Web Specialist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

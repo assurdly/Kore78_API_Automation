@@ -1,0 +1,16 @@
+{
+  "name": "Hassan56",
+  "code": "23",
+  "date": "2024-08-20",
+  "isBatchRunning": true,
+  "nextBatchRunDate": "2024-09-20",
+  "isDefault": false,
+  "address": "14 Olatunde Onimole Street",
+  "cityLocationCode": "00001",
+  "sortCode": "00001",
+  "branchType": "Online",
+  "countryId": 1000,
+  "branchCode": "007",
+  "isActive": true,
+  "dateCreated": "2024-08-20"
+}

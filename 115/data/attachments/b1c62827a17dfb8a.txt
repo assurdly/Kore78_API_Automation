@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Parisian",
+  "middleName": "Itzel",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "835 Lockman Drive",
+  "mobileNumber": "234914524801212",
+  "emailAddress": "Emilio.Robel42@yahoo.com"
+}
