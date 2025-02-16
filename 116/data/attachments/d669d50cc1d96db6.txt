@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Fay",
+  "middleName": "Amir",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "58680 Krystina Roads",
+  "mobileNumber": "2349175420044",
+  "emailAddress": "Sammy_Abbott@yahoo.com"
+}

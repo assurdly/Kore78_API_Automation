@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Abbott",
+  "middleName": "Lorenzo",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "0991 Runolfsson Locks",
+  "mobileNumber": "234911767417012",
+  "emailAddress": "Graciela_Nitzsche16@gmail.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Thompson",
+  "middleName": "Kirstin",
+  "dob": "1990-05-20",
+  "city": "Alizeberg",
+  "address": "186 Jewell Mountains",
+  "occupation": "Human Assurance Director",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

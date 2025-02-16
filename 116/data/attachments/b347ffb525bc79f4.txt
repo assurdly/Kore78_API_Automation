@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Leannon",
+  "middleName": "Jarrod",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "4659 Ansley Track",
+  "mobileNumber": "234914700549912",
+  "emailAddress": "Julia20@yahoo.com"
+}

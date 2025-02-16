@@ -1,6 +1,0 @@
-{
-  "id": "<long>",
-  "name": "<string>",
-  "key": "<string>",
-  "dateCreated": "<dateTime>"
-}

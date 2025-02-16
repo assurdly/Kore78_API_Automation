@@ -1,0 +1,12 @@
+{
+  "firstName": "Henriette",
+  "lastName": "Kertzmann",
+  "middleName": "Hanna",
+  "dob": "1990-05-20",
+  "city": "Wilkinsonfort",
+  "address": "7345 Lizzie Brooks",
+  "occupation": "Dynamic Solutions Engineer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

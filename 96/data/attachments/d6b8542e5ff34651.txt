@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Created Successfully","data":{"id":172,"name":"Identity Payment","organizationId":1,"description":"Lead Payment","direction":"C","isActive":true,"dateCreated":"2025-01-09T07:16:49.7382004Z"}}
