@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Huel",
+  "middleName": "Shannon",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "05004 Kody Radial",
+  "mobileNumber": "2349153226579",
+  "emailAddress": "Lorenzo_Runte@yahoo.com"
+}

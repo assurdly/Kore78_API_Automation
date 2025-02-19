@@ -1,0 +1,12 @@
+{
+  "firstName": "Werner",
+  "lastName": "Konopelski",
+  "middleName": "Gia",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "1142 Barton Ports",
+  "mobileNumber": "080",
+  "emailAddress": "Aida_Hegmann@yahoo.com"
+}

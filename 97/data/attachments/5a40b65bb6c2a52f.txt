@@ -1,5 +1,0 @@
-{
-  "name": "Functionality Payment",
-  "description": "Internal Payment",
-  "direction": "C"
-}

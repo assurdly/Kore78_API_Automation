@@ -1,0 +1,5 @@
+{
+  "name": "Accounts Payment",
+  "description": "Product Payment",
+  "direction": "C"
+}

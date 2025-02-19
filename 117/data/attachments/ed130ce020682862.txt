@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hermiston",
+  "middleName": "Camille",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "093 Pacocha Light",
+  "mobileNumber": "234917095027412",
+  "emailAddress": "Jakob_Bergstrom@yahoo.com"
+}

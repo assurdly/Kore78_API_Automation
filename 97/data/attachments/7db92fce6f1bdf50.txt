@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Retrieved Successfully","data":[{"id":1,"name":"Individual"},{"id":2,"name":"Corporate"},{"id":3,"name":"Individual_Tier1"},{"id":4,"name":"Individual_Tier2"},{"id":5,"name":"Individual Tier 0"},{"id":6,"name":"Internal"}]}

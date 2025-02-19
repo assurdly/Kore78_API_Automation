@@ -1,0 +1,15 @@
+{
+    "FromAccountNumber": "0000079086", 
+    "ToAccountNumber": "00000001232", 
+    "Fee": "10",
+    "ProductId": "300",
+    "TransactionReference": "Transfer between USD - USD 1647NGN2USD261384 87845015",
+    "BatchReference": "Transfer between USD - USD 1647NGN2USD26138723380889",
+    "Amount": "100",
+    "Remarks": "USD-USD External",
+    "BranchCode": "999",
+    "TransactionTypeId": "",
+    "FxRate": "",
+    "OrganizationId": "23",
+    "targetCurrencyId": ""
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Andre",
+  "lastName": "Rogahn",
+  "middleName": "Jarod",
+  "dob": "1990-05-20",
+  "city": "Apex",
+  "address": "9693 Rosenbaum Locks",
+  "occupation": "Global Security Facilitator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Green",
+  "middleName": "Mariana",
+  "dob": "1990-05-20",
+  "city": "Sydnishire",
+  "address": "954 Assunta Trail",
+  "occupation": "Human Communications Manager",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
