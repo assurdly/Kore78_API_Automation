@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Koch",
+  "middleName": "Shea",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "401 Santa Loop",
+  "mobileNumber": "2349131588268",
+  "emailAddress": "Adolph37@yahoo.com"
+}

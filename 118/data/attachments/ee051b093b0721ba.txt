@@ -1,0 +1,12 @@
+{
+  "firstName": "Andres",
+  "lastName": "Harvey",
+  "middleName": "Lorenz",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "9241 Andres Fork",
+  "mobileNumber": "080",
+  "emailAddress": "Myra.Mraz93@hotmail.com"
+}

@@ -1,5 +1,0 @@
-{
-  "name": "Configuration Payment",
-  "description": "Corporate Payment",
-  "direction": "C"
-}

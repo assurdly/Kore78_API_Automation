@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "name": "Czech Republic",
+  "countryCodeTwo": "",
+  "countryCodeThree": "DZA"
+}

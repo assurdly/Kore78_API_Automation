@@ -1,0 +1,12 @@
+{
+  "firstName": "Marilou",
+  "lastName": "Borer",
+  "middleName": "Bridie",
+  "dob": "1990-05-20",
+  "city": "New Modestaborough",
+  "address": "9964 Iliana Burgs",
+  "occupation": "Corporate Program Developer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

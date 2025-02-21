@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Ward",
+  "middleName": "Trey",
+  "dob": "1990-05-20",
+  "city": "Isadoreport",
+  "address": "743 Edison Flat",
+  "occupation": "Senior Optimization Producer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

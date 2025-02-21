@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Troy",
+  "lastName": "Hegmann",
+  "middleName": "Carleton",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "068 Bayer Mountains",
+  "mobileNumber": "2349168862178",
+  "emailAddress": "Megane28@yahoo.com",
+  "dateCreated": "2024-08-20"
+}

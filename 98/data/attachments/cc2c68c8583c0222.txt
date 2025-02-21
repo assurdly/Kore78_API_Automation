@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Operations Payment",
-  "description": "District Payment",
-  "direction": "D"
-}

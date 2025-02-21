@@ -1,6 +1,0 @@
-{
-  "id": "59",
-  "name": "Factors Larry",
-  "description": "Dynamic Payment",
-  "direction": "D"
-}

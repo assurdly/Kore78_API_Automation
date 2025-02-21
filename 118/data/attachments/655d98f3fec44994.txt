@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Carter",
+  "middleName": "Lonie",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "52039 Flatley Village",
+  "mobileNumber": "234914288569312",
+  "emailAddress": "Skylar97@yahoo.com"
+}
