@@ -1,0 +1,5 @@
+{
+  "name": "Integration Payment",
+  "description": "Internal Payment",
+  "direction": "C"
+}

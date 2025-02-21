@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Mosciski",
+  "middleName": "Karen",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "9957 Ruthe Circles",
+  "mobileNumber": "2349140087725",
+  "emailAddress": "Marcelle_Quitzon@yahoo.com"
+}

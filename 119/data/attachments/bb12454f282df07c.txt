@@ -1,0 +1,12 @@
+{
+  "firstName": "Laury",
+  "lastName": "Rosenbaum",
+  "middleName": "Robbie",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "74113 Nat Hills",
+  "mobileNumber": "080",
+  "emailAddress": "Deion.Pollich55@yahoo.com"
+}

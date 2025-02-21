@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Anderson",
+  "middleName": "Dortha",
+  "dob": "1990-05-20",
+  "city": "South Uriahborough",
+  "address": "3622 Derek Harbors",
+  "occupation": "Lead Implementation Agent",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

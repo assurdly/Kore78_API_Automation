@@ -1,0 +1,12 @@
+{
+  "firstName": "Rhiannon",
+  "lastName": "Dickens",
+  "middleName": "Eda",
+  "dob": "1990-05-20",
+  "city": "Milwaukee",
+  "address": "9797 Treutel Squares",
+  "occupation": "Investor Directives Orchestrator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "McClure",
+  "middleName": "Brandt",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "001 Lesch Harbor",
+  "mobileNumber": "234912566944512",
+  "emailAddress": "Henderson_Mitchell@yahoo.com"
+}

@@ -1,0 +1,10 @@
+{
+    "Date": "Fri, 21 Feb 2025 18:16:56 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "112",
+    "Connection": "keep-alive",
+    "Server": "cloudflare",
+    "Cf-Cache-Status": "DYNAMIC",
+    "CF-RAY": "9158bafa6d9dce54-SJC",
+    "alt-svc": "h3=\":443\"; ma=86400"
+}

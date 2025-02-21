@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Functionality Payment",
+  "description": "Central Payment",
+  "direction": "D"
+}

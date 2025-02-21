@@ -1,0 +1,4 @@
+{
+  "name": "Eazy Dollars",
+  "shortName": "EZD"
+}

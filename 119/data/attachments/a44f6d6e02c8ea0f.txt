@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kessler",
+  "middleName": "Ross",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "680 Cara Estate",
+  "mobileNumber": "234914394178512",
+  "emailAddress": "Carmelo94@gmail.com"
+}
