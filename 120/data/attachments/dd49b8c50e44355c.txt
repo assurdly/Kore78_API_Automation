@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Gorczany",
+  "middleName": "Greta",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "9429 Tyshawn Circles",
+  "mobileNumber": "234919763081812",
+  "emailAddress": "Elijah57@yahoo.com"
+}

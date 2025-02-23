@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Casper",
+  "middleName": "Leopoldo",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "39876 Zakary Common",
+  "mobileNumber": "2349192289789",
+  "emailAddress": "Marcella95@hotmail.com"
+}

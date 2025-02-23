@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Auer",
+  "middleName": "Ozella",
+  "dob": "1990-05-20",
+  "city": "Reillyfort",
+  "address": "200 Mac Estate",
+  "occupation": "Direct Brand Strategist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

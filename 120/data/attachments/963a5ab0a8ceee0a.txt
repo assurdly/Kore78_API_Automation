@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Ziemann",
+  "middleName": "Wilhelmine",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "780 Cedrick Shores",
+  "mobileNumber": "234910522540512",
+  "emailAddress": "Marguerite.Littel@yahoo.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Ellis",
+  "lastName": "Lemke",
+  "middleName": "Celia",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "546 Stark Walks",
+  "mobileNumber": "080",
+  "emailAddress": "Sister.McLaughlin17@hotmail.com"
+}

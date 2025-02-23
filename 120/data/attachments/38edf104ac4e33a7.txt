@@ -1,0 +1,12 @@
+{
+  "firstName": "Shanelle",
+  "lastName": "Rosenbaum",
+  "middleName": "Gabe",
+  "dob": "1990-05-20",
+  "city": "Beaverton",
+  "address": "6280 Joanne Club",
+  "occupation": "Corporate Paradigm Planner",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
