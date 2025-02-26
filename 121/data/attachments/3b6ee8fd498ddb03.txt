@@ -1,0 +1,12 @@
+{
+  "firstName": "Lowell",
+  "lastName": "Dach",
+  "middleName": "Ocie",
+  "dob": "1990-05-20",
+  "city": "Karleybury",
+  "address": "824 Volkman Square",
+  "occupation": "Direct Metrics Administrator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

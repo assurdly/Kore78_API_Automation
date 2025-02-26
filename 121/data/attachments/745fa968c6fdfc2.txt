@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Leffler",
+  "middleName": "Korbin",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "02877 Volkman Pass",
+  "mobileNumber": "234911786844812",
+  "emailAddress": "Howell33@gmail.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Skiles",
+  "middleName": "Jason",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "11045 Grimes View",
+  "mobileNumber": "234919271782912",
+  "emailAddress": "Lavonne92@gmail.com"
+}

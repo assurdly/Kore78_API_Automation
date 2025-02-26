@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Keebler",
+  "middleName": "Angie",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "7466 Oberbrunner Mall",
+  "mobileNumber": "2349145945238",
+  "emailAddress": "Rozella_Hamill@hotmail.com"
+}

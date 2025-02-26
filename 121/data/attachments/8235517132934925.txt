@@ -1,0 +1,5 @@
+{
+  "name": "Identity Payment",
+  "description": "Forward Payment",
+  "direction": "C"
+}

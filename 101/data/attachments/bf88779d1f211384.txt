@@ -1,1 +1,0 @@
-{"code":"1644","success":false,"message":"Program Name = VAULT_INTEREST_V2Message =Cross currency transfers is currently unavailable","data":null}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Kaden",
+  "lastName": "Borer",
+  "middleName": "Ari",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "967 Ondricka Union",
+  "mobileNumber": "080",
+  "emailAddress": "Shaun.Reinger@gmail.com"
+}

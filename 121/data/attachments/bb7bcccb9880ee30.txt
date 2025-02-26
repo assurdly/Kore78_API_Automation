@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Hoppe",
+  "middleName": "Jaqueline",
+  "dob": "1990-05-20",
+  "city": "Donnellyton",
+  "address": "884 Rosalyn Cliffs",
+  "occupation": "Customer Markets Analyst",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

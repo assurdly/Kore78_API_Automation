@@ -1,7 +1,0 @@
-{
-    "walletGroupId": 32, 
-    "customerId": 2053,
-    "walletClassificationId": 1, 
-    "currencyId": 1, 
-    "name": "Miss Cecilia Jacobs" 
-}
