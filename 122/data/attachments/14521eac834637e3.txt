@@ -1,0 +1,6 @@
+{
+  "id": 1, 
+  "name": "France",
+  "countryCodeTwo": "RU",
+  "countryCodeThree": "LMO"
+}

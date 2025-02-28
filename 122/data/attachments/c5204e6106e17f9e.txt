@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Krajcik",
+  "middleName": "Raleigh",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "08833 Kulas Motorway",
+  "mobileNumber": "234917512442512",
+  "emailAddress": "Libbie.Morissette@gmail.com"
+}

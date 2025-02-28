@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Lang",
+  "middleName": "Camden",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "83482 Nitzsche Square",
+  "mobileNumber": "234912284909012",
+  "emailAddress": "Kariane10@gmail.com"
+}

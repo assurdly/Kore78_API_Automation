@@ -1,5 +1,0 @@
-{
-  "name": "Operations Payment",
-  "description": "Internal Payment",
-  "direction": "C"
-}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Efrain",
+  "lastName": "Fahey",
+  "middleName": "Casper",
+  "dob": "1990-05-20",
+  "city": "Cutler Bay",
+  "address": "692 Strosin Points",
+  "occupation": "Chief Applications Designer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

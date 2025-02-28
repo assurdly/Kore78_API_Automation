@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Osinski",
+  "middleName": "Era",
+  "dob": "1990-05-20",
+  "city": "Marielaton",
+  "address": "7212 Bogisich Wells",
+  "occupation": "Future Marketing Executive",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
