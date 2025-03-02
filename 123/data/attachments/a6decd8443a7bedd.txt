@@ -1,0 +1,5 @@
+{
+  "name": "Markets Payment",
+  "description": "Direct Payment",
+  "direction": "C"
+}

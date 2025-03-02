@@ -1,0 +1,12 @@
+{
+  "firstName": "Russ",
+  "lastName": "Batz",
+  "middleName": "Alva",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "93390 Bartell Flat",
+  "mobileNumber": "080",
+  "emailAddress": "Joan32@hotmail.com"
+}

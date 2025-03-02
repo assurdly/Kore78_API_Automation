@@ -1,9 +1,0 @@
-{
-  "emailAddress": "Deangelo@rove10.com",
-  "password": "Qwerty123@",
-  "firstName": "Keagan",
-  "lastName": "Ernser",
-  "username": "Landen59",
-  "roleId": ,
-  "branchId": 13
-}

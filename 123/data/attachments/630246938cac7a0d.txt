@@ -1,0 +1,5 @@
+{
+  "name": "Solutions Payment",
+  "description": "Principal Payment",
+  "direction": "C"
+}

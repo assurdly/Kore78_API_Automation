@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Bosco",
+  "middleName": "Jaiden",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "9369 Batz Haven",
+  "mobileNumber": "234916192867812",
+  "emailAddress": "Lexus.Mitchell@yahoo.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Leone",
+  "lastName": "Zieme",
+  "middleName": "Candelario",
+  "dob": "1990-05-20",
+  "city": "South Claudiafurt",
+  "address": "298 Khalil Inlet",
+  "occupation": "Forward Directives Consultant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

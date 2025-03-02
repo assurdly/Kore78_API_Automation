@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Klocko",
+  "middleName": "Jayce",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "67626 Genevieve Courts",
+  "mobileNumber": "234919897763012",
+  "emailAddress": "Kimberly.Raynor@hotmail.com"
+}

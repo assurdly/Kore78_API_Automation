@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Hyatt",
+  "middleName": "Alessandro",
+  "dob": "1990-05-20",
+  "city": "North Abelardofort",
+  "address": "85832 Carmella Expressway",
+  "occupation": "Global Paradigm Representative",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

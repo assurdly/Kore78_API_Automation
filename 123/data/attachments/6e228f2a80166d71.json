@@ -1,0 +1,9 @@
+{
+    "Date": "Sun, 02 Mar 2025 20:10:22 GMT",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Server": "cloudflare",
+    "Cf-Cache-Status": "DYNAMIC",
+    "CF-RAY": "91a389829e0582aa-IAD",
+    "alt-svc": "h3=\":443\"; ma=86400"
+}

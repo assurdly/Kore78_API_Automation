@@ -1,6 +1,0 @@
-{
-  "id": "59",
-  "name": "Mobility Larry",
-  "description": "Global Payment",
-  "direction": "D"
-}
