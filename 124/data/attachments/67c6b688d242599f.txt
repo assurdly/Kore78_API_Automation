@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hamill",
+  "middleName": "Morris",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "950 Aracely Mills",
+  "mobileNumber": "234917456041612",
+  "emailAddress": "Kavon37@hotmail.com"
+}

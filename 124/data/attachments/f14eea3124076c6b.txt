@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Murphy",
+  "middleName": "Lavon",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "742 Schoen Rapid",
+  "mobileNumber": "234913237884412",
+  "emailAddress": "Cordell.Ankunding@hotmail.com"
+}

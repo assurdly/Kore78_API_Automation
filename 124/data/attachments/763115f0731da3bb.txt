@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Schoen",
+  "middleName": "Providenci",
+  "dob": "1990-05-20",
+  "city": "Alexandria",
+  "address": "3625 Effertz Cove",
+  "occupation": "Lead Marketing Analyst",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

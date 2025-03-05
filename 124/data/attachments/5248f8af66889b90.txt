@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hermann",
+  "middleName": "Tyra",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "0985 Thiel Summit",
+  "mobileNumber": "2349162788080",
+  "emailAddress": "Onie_Reichel@hotmail.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Beaulah",
+  "lastName": "Hansen",
+  "middleName": "Amy",
+  "dob": "1990-05-20",
+  "city": "New Tia",
+  "address": "425 Lowe Lake",
+  "occupation": "International Infrastructure Agent",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
