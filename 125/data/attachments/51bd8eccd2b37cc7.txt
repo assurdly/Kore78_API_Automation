@@ -1,0 +1,12 @@
+{
+  "firstName": "Bernard",
+  "lastName": "Walsh",
+  "middleName": "Karley",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "016 Queen Plains",
+  "mobileNumber": "080",
+  "emailAddress": "Melisa32@yahoo.com"
+}

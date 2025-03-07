@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hills",
+  "middleName": "Wendell",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "014 Abbott Prairie",
+  "mobileNumber": "234915957441412",
+  "emailAddress": "Eunice85@gmail.com"
+}

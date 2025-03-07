@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "name": "Mauritania",
+  "countryCodeTwo": "IR",
+  "countryCodeThree": ""
+}

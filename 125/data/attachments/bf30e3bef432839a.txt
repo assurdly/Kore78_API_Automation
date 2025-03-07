@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Fadel",
+  "middleName": "Gunnar",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "692 Susana Mountain",
+  "mobileNumber": "2349120889765",
+  "emailAddress": "Amelia.Hauck@hotmail.com"
+}

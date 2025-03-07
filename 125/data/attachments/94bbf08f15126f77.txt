@@ -1,0 +1,12 @@
+{
+  "firstName": "{",
+  "lastName": "",
+  "middleName": "",
+  "dob": "",
+  "city": "",
+  "address": "",
+  "occupation": "",
+  "gender": "",
+  "bvnverified": "",
+  "ninVerified": ""
+}

@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "organizationId": 1,
+  "firstName": "Caitlyn",
+  "lastName": "Hahn",
+  "middleName": "Ashley",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "alias": "<string>",
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "354 Dariana Mount",
+  "mobileNumber": "2349164232741",
+  "emailAddress": "German17@hotmail.com",
+  "dateCreated": "2024-08-20"
+}

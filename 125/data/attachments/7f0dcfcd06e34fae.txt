@@ -1,0 +1,12 @@
+{
+  "firstName": "Bessie",
+  "lastName": "Lebsack",
+  "middleName": "Gerard",
+  "dob": "1990-05-20",
+  "city": "McKenziebury",
+  "address": "525 Allen Crossing",
+  "occupation": "Senior Security Developer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

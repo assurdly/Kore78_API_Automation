@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Gibson",
+  "middleName": "Ardella",
+  "dob": "1990-05-20",
+  "city": "North Aylatown",
+  "address": "3286 Fadel Freeway",
+  "occupation": "Global Security Analyst",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}
