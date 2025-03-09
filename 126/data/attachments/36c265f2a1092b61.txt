@@ -1,0 +1,4 @@
+{
+  "name": "Benin Naira",
+  "shortName": "BN"
+}

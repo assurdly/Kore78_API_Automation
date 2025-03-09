@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Gibson",
+  "middleName": "Marjolaine",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "674 Leffler Vista",
+  "mobileNumber": "234911381641612",
+  "emailAddress": "Alva_Raynor65@hotmail.com"
+}

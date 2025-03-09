@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Prosacco",
+  "middleName": "Gabe",
+  "dob": "1990-05-20",
+  "city": "West Nicholas",
+  "address": "8346 Telly Meadows",
+  "occupation": "Legacy Tactics Designer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

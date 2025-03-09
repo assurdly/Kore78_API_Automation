@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Hoeger",
+  "middleName": "Marcelle",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "37151 Reichert Street",
+  "mobileNumber": "2349118105733",
+  "emailAddress": "Jessy_Ledner38@yahoo.com"
+}

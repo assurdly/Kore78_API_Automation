@@ -1,0 +1,12 @@
+{
+  "firstName": "Harold",
+  "lastName": "Kovacek",
+  "middleName": "Erika",
+  "dob": "1990-05-20",
+  "city": "South Santiagoburgh",
+  "address": "4436 Kutch Grove",
+  "occupation": "Future Web Associate",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

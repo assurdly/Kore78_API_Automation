@@ -1,0 +1,12 @@
+{
+  "firstName": "Dino",
+  "lastName": "Tremblay",
+  "middleName": "Alda",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "020 Ledner Manor",
+  "mobileNumber": "080",
+  "emailAddress": "Zelda.Kuphal64@yahoo.com"
+}
