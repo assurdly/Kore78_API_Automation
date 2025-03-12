@@ -1,0 +1,12 @@
+{
+  "firstName": "Else",
+  "lastName": "Harber",
+  "middleName": "Berneice",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "5963 Cristopher Pass",
+  "mobileNumber": "080",
+  "emailAddress": "Jeromy.OReilly49@hotmail.com"
+}

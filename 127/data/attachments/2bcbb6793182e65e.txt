@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Romaguera",
+  "middleName": "Floy",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "0036 Kilback Wells",
+  "mobileNumber": "234914688362812",
+  "emailAddress": "Clemens75@gmail.com"
+}

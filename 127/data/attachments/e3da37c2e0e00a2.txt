@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Kihn",
+  "middleName": "Roselyn",
+  "dob": "1990-05-20",
+  "city": "South Kevon",
+  "address": "749 Easton Light",
+  "occupation": "Customer Paradigm Supervisor",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

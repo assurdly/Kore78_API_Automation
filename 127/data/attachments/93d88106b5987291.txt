@@ -1,0 +1,12 @@
+{
+  "firstName": "Zula",
+  "lastName": "Carter",
+  "middleName": "Aracely",
+  "dob": "1990-05-20",
+  "city": "New Maudie",
+  "address": "786 Tristian Roads",
+  "occupation": "Corporate Infrastructure Producer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

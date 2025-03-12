@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Configuration Payment",
+  "description": "Senior Payment",
+  "direction": "D"
+}

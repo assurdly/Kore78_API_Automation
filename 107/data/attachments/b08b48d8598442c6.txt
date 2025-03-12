@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Division Payment",
-  "description": "Internal Payment",
-  "direction": "D"
-}

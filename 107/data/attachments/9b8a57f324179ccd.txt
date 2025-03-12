@@ -1,5 +1,0 @@
-{
-  "name": "Usability Payment",
-  "description": "Regional Payment",
-  "direction": "C"
-}
