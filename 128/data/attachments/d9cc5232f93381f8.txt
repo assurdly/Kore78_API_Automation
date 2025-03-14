@@ -1,0 +1,12 @@
+{
+  "firstName": "Riley",
+  "lastName": "VonRueden",
+  "middleName": "Catharine",
+  "dob": "1990-05-20",
+  "city": "Kent",
+  "address": "010 Sherwood Inlet",
+  "occupation": "Central Paradigm Consultant",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Rau",
+  "middleName": "Vivienne",
+  "dob": "1990-05-20",
+  "city": "Ezratown",
+  "address": "27917 Ryan Isle",
+  "occupation": "Senior Group Manager",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

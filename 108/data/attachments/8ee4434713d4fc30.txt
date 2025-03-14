@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Functionality Payment",
-  "description": "National Payment",
-  "direction": "D"
-}

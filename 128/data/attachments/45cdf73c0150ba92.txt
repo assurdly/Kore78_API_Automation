@@ -1,0 +1,5 @@
+{
+  "name": "Accountability Payment",
+  "description": "Principal Payment",
+  "direction": "C"
+}

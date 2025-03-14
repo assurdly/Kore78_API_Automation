@@ -1,5 +1,0 @@
-{
-  "name": "Accounts Payment",
-  "description": "Lead Payment",
-  "direction": "C"
-}

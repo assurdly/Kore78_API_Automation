@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Koch",
+  "middleName": "Lawson",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "35354 Deckow Locks",
+  "mobileNumber": "234911483171812",
+  "emailAddress": "Dovie_Crona@gmail.com"
+}

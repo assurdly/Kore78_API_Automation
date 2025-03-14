@@ -1,0 +1,12 @@
+{
+  "firstName": "Anjali",
+  "lastName": "Hudson",
+  "middleName": "Arlene",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "787 Mitchell Spur",
+  "mobileNumber": "080",
+  "emailAddress": "Benedict37@hotmail.com"
+}

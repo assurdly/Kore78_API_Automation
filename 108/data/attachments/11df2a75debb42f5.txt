@@ -1,4 +1,0 @@
-{
-    "name": "Computers",
-    "description": "International"
-}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Stiedemann",
+  "middleName": "Dannie",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "53700 Stanton View",
+  "mobileNumber": "234912374391612",
+  "emailAddress": "Jonathan11@gmail.com"
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Pfannerstill",
+  "middleName": "Phoebe",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "581 Rippin Mountains",
+  "mobileNumber": "2349151224611",
+  "emailAddress": "Aleen_Hayes@yahoo.com"
+}
