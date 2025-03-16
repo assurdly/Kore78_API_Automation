@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Branding Payment",
+  "description": "Central Payment",
+  "direction": "D"
+}

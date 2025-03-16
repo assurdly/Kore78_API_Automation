@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Nicolas",
+  "middleName": "Jeremy",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "6858 Kessler Falls",
+  "mobileNumber": "234919273587612",
+  "emailAddress": "Rosella57@yahoo.com"
+}

@@ -1,9 +1,0 @@
-{
-  "emailAddress": "Vilma@rove10.com",
-  "password": "Qwerty123@",
-  "firstName": "Santa",
-  "lastName": "Cruickshank",
-  "username": "Rosetta_Harber",
-  "roleId": ,
-  "branchId": 13
-}

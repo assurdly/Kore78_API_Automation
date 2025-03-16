@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Russel",
+  "middleName": "Bernhard",
+  "dob": "1990-05-20",
+  "city": "East Gastonland",
+  "address": "86871 Juwan Mall",
+  "occupation": "National Group Developer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

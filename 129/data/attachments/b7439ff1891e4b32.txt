@@ -1,0 +1,12 @@
+{
+  "firstName": "Nichole",
+  "lastName": "Rippin",
+  "middleName": "Fay",
+  "dob": "1990-05-20",
+  "city": "Metztown",
+  "address": "491 Kaden Place",
+  "occupation": "Principal Data Representative",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

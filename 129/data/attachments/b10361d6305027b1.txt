@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Abshire",
+  "middleName": "Beulah",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "752 Casper Vista",
+  "mobileNumber": "234912852042112",
+  "emailAddress": "Lamont.VonRueden@hotmail.com"
+}
