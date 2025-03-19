@@ -1,0 +1,5 @@
+{
+  "name": "Configuration Payment",
+  "description": "Dynamic Payment",
+  "direction": "C"
+}

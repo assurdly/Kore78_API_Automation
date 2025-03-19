@@ -1,6 +1,0 @@
-{
-  "id": "",
-  "name": "Directives Payment",
-  "description": "Chief Payment",
-  "direction": "D"
-}

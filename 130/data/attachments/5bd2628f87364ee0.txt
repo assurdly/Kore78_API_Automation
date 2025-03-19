@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Paucek",
+  "middleName": "Jacinto",
+  "dob": "1990-05-20",
+  "customerTypeId": 5,
+  "countryId": 100,
+  "city": "Lagos",
+  "address": "12617 Jacobs Dam",
+  "mobileNumber": "2349116562623",
+  "emailAddress": "Cody.Wintheiser0@gmail.com"
+}

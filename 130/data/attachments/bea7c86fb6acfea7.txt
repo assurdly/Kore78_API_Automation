@@ -1,0 +1,6 @@
+{
+  "id": "",
+  "name": "Response Payment",
+  "description": "Central Payment",
+  "direction": "D"
+}

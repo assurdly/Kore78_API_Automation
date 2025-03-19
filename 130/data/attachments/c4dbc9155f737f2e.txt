@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Kling",
+  "middleName": "Michele",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "186 Edwin Villages",
+  "mobileNumber": "234910162326112",
+  "emailAddress": "Elton96@hotmail.com"
+}

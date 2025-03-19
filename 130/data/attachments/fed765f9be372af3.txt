@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Anderson",
+  "middleName": "Grayce",
+  "dob": "1990-05-20",
+  "customerTypeId": 60000,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "25611 Arnoldo Key",
+  "mobileNumber": "234910714798612",
+  "emailAddress": "Flossie_Kunze@yahoo.com"
+}

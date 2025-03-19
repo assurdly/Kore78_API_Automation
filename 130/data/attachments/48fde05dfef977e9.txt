@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Crooks",
+  "middleName": "Nicholaus",
+  "dob": "1990-05-20",
+  "city": "Strosinland",
+  "address": "148 Vincent Meadow",
+  "occupation": "District Markets Strategist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

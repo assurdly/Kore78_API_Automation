@@ -1,0 +1,11 @@
+{
+    "x-api-key": "SK-sdyviR0yfjGtNppimytqkX6Y7lJqDNWw5NdPHCK8hYjpqk8oM0Adn4hoBHEsDUWqRgm",
+    "Content-Type": "application/json",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "daca8bfa-1165-4ca9-8bbb-4404b4de2fc7",
+    "Host": "wallet-dev.bank78.co",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

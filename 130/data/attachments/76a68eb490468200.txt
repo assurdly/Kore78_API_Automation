@@ -1,0 +1,12 @@
+{
+  "firstName": "Keaton",
+  "lastName": "Glover",
+  "middleName": "Monty",
+  "dob": "1990-05-20",
+  "city": "New Clairside",
+  "address": "269 Judge Stream",
+  "occupation": "Regional Factors Producer",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

@@ -1,0 +1,12 @@
+{
+  "firstName": "Will",
+  "lastName": "Fadel",
+  "middleName": "Ephraim",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "973 Satterfield Rue",
+  "mobileNumber": "080",
+  "emailAddress": "Reese44@gmail.com"
+}
