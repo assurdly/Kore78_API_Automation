@@ -1,0 +1,12 @@
+{
+  "firstName": "Moses-George",
+  "lastName": "Leannon",
+  "middleName": "Christy",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "4457 Tyra Ford",
+  "mobileNumber": "234911668402712",
+  "emailAddress": "Roberta42@gmail.com"
+}

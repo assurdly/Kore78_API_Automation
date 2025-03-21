@@ -1,0 +1,12 @@
+{
+  "firstName": "Jaylon",
+  "lastName": "Ondricka",
+  "middleName": "Lexi",
+  "dob": "1990-05-20",
+  "customerTypeId": 1,
+  "countryId": 1,
+  "city": "Lagos",
+  "address": "49276 Malvina Parkways",
+  "mobileNumber": "080",
+  "emailAddress": "Marcellus.Ryan4@yahoo.com"
+}

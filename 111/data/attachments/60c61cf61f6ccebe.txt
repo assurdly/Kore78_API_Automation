@@ -1,5 +1,0 @@
-{
-  "name": "Security Payment",
-  "description": "Legacy Payment",
-  "direction": "C"
-}

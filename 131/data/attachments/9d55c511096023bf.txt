@@ -1,0 +1,10 @@
+{
+    "name": "Domingo Charges",
+    "walletGroupFeatureDto": [
+        {
+            "featureName": "VaultCharge",
+            "featurePropertyName": "Threshold",
+            "featurePropertyValue": "5"
+        }
+    ]
+}

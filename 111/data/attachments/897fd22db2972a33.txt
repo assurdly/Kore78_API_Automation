@@ -1,9 +1,0 @@
-{
-  "emailAddress": "Alexzander@rove10.com",
-  "password": "Qwerty123@",
-  "firstName": "Marietta",
-  "lastName": "Dickinson",
-  "username": "Camilla_Nienow65",
-  "roleId": ,
-  "branchId": 13
-}

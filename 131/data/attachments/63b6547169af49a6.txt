@@ -1,0 +1,12 @@
+{
+  "firstName": "Zena",
+  "lastName": "Moen",
+  "middleName": "Maritza",
+  "dob": "1990-05-20",
+  "city": "Ariannahaven",
+  "address": "257 Horacio Squares",
+  "occupation": "District Metrics Coordinator",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

@@ -1,0 +1,10 @@
+{
+    "Date": "Fri, 21 Mar 2025 18:17:57 GMT",
+    "Content-Length": "0",
+    "Connection": "keep-alive",
+    "Server": "cloudflare",
+    "Www-Authenticate": "Bearer",
+    "Cf-Cache-Status": "DYNAMIC",
+    "CF-RAY": "923f72f3295cfa9a-SJC",
+    "alt-svc": "h3=\":443\"; ma=86400"
+}

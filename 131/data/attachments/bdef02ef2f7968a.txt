@@ -1,0 +1,12 @@
+{
+  "firstName": "",
+  "lastName": "Quigley",
+  "middleName": "Sofia",
+  "dob": "1990-05-20",
+  "city": "Swaniawskiland",
+  "address": "52895 Rohan Cape",
+  "occupation": "Product Data Strategist",
+  "gender": "Male",
+  "bvnverified": true,
+  "ninVerified": true
+}

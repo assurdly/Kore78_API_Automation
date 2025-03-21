@@ -1,1 +1,0 @@
-{"code":"00","success":true,"message":"Transfer successful","data":{"status":0,"message":"OK"}}
